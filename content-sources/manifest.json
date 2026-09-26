@@ -1,0 +1,563 @@
+{
+  "separation_rule": "Never move content between markets without explicit source evidence.",
+  "sources": [
+    {
+      "id": "usa-resume",
+      "market": "usa",
+      "kind": "docx",
+      "source": "C:\\Users\\ouhha\\OneDrive\\Documents\\Marie Gaelle Mentor\\Document Word\\Marie Gaelle Mentor Resume.docx",
+      "output": "usa\\usa-resume",
+      "paragraphs": 5,
+      "media": 1,
+      "images": [
+        {
+          "file": "image1.jpeg",
+          "width": 486,
+          "height": 479,
+          "format": "JPEG"
+        }
+      ]
+    },
+    {
+      "id": "usa-portfolio",
+      "market": "usa",
+      "kind": "docx",
+      "source": "C:\\Users\\ouhha\\Downloads\\portfolio Mme Mentor (1).docx",
+      "output": "usa\\usa-portfolio",
+      "paragraphs": 51,
+      "media": 90,
+      "images": [
+        {
+          "file": "hdphoto1.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto1.wdp'"
+        },
+        {
+          "file": "hdphoto10.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto10.wdp'"
+        },
+        {
+          "file": "hdphoto11.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto11.wdp'"
+        },
+        {
+          "file": "hdphoto12.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto12.wdp'"
+        },
+        {
+          "file": "hdphoto13.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto13.wdp'"
+        },
+        {
+          "file": "hdphoto14.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto14.wdp'"
+        },
+        {
+          "file": "hdphoto15.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto15.wdp'"
+        },
+        {
+          "file": "hdphoto16.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto16.wdp'"
+        },
+        {
+          "file": "hdphoto17.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto17.wdp'"
+        },
+        {
+          "file": "hdphoto18.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto18.wdp'"
+        },
+        {
+          "file": "hdphoto19.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto19.wdp'"
+        },
+        {
+          "file": "hdphoto2.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto2.wdp'"
+        },
+        {
+          "file": "hdphoto20.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto20.wdp'"
+        },
+        {
+          "file": "hdphoto21.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto21.wdp'"
+        },
+        {
+          "file": "hdphoto3.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto3.wdp'"
+        },
+        {
+          "file": "hdphoto4.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto4.wdp'"
+        },
+        {
+          "file": "hdphoto5.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto5.wdp'"
+        },
+        {
+          "file": "hdphoto6.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto6.wdp'"
+        },
+        {
+          "file": "hdphoto7.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto7.wdp'"
+        },
+        {
+          "file": "hdphoto8.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto8.wdp'"
+        },
+        {
+          "file": "hdphoto9.wdp",
+          "error": "cannot identify image file 'C:\\\\Users\\\\ouhha\\\\OneDrive\\\\Desktop\\\\website gaelle mentor\\\\content-sources\\\\usa\\\\usa-portfolio\\\\media\\\\hdphoto9.wdp'"
+        },
+        {
+          "file": "image1.jpeg",
+          "width": 898,
+          "height": 901,
+          "format": "JPEG"
+        },
+        {
+          "file": "image10.png",
+          "width": 1442,
+          "height": 717,
+          "format": "PNG"
+        },
+        {
+          "file": "image11.png",
+          "width": 1888,
+          "height": 727,
+          "format": "PNG"
+        },
+        {
+          "file": "image12.jpeg",
+          "width": 2048,
+          "height": 1536,
+          "format": "JPEG"
+        },
+        {
+          "file": "image13.jpeg",
+          "width": 1094,
+          "height": 858,
+          "format": "JPEG"
+        },
+        {
+          "file": "image14.jpeg",
+          "width": 1201,
+          "height": 847,
+          "format": "JPEG"
+        },
+        {
+          "file": "image15.jpeg",
+          "width": 1024,
+          "height": 682,
+          "format": "JPEG"
+        },
+        {
+          "file": "image16.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image17.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image18.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image19.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image2.png",
+          "width": 610,
+          "height": 684,
+          "format": "PNG"
+        },
+        {
+          "file": "image20.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image21.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image22.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image23.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image24.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image25.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image26.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image27.jpeg",
+          "width": 1024,
+          "height": 682,
+          "format": "JPEG"
+        },
+        {
+          "file": "image28.jpeg",
+          "width": 1024,
+          "height": 682,
+          "format": "JPEG"
+        },
+        {
+          "file": "image29.jpeg",
+          "width": 1024,
+          "height": 682,
+          "format": "JPEG"
+        },
+        {
+          "file": "image3.jpeg",
+          "width": 2048,
+          "height": 1536,
+          "format": "JPEG"
+        },
+        {
+          "file": "image30.jpeg",
+          "width": 1024,
+          "height": 682,
+          "format": "JPEG"
+        },
+        {
+          "file": "image31.jpeg",
+          "width": 1024,
+          "height": 682,
+          "format": "JPEG"
+        },
+        {
+          "file": "image32.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image33.jpeg",
+          "width": 1833,
+          "height": 1222,
+          "format": "JPEG"
+        },
+        {
+          "file": "image34.jpeg",
+          "width": 1594,
+          "height": 1063,
+          "format": "JPEG"
+        },
+        {
+          "file": "image35.jpeg",
+          "width": 2000,
+          "height": 1333,
+          "format": "JPEG"
+        },
+        {
+          "file": "image36.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image37.png",
+          "width": 2000,
+          "height": 1333,
+          "format": "PNG"
+        },
+        {
+          "file": "image38.jpeg",
+          "width": 650,
+          "height": 433,
+          "format": "JPEG"
+        },
+        {
+          "file": "image39.jpeg",
+          "width": 650,
+          "height": 433,
+          "format": "JPEG"
+        },
+        {
+          "file": "image4.jpeg",
+          "width": 1315,
+          "height": 902,
+          "format": "JPEG"
+        },
+        {
+          "file": "image40.jpeg",
+          "width": 650,
+          "height": 433,
+          "format": "JPEG"
+        },
+        {
+          "file": "image41.jpeg",
+          "width": 650,
+          "height": 433,
+          "format": "JPEG"
+        },
+        {
+          "file": "image42.jpeg",
+          "width": 1277,
+          "height": 730,
+          "format": "JPEG"
+        },
+        {
+          "file": "image43.jpeg",
+          "width": 1513,
+          "height": 2311,
+          "format": "JPEG"
+        },
+        {
+          "file": "image44.jpeg",
+          "width": 1566,
+          "height": 2268,
+          "format": "JPEG"
+        },
+        {
+          "file": "image45.jpeg",
+          "width": 2000,
+          "height": 3000,
+          "format": "JPEG"
+        },
+        {
+          "file": "image46.jpeg",
+          "width": 1388,
+          "height": 2215,
+          "format": "JPEG"
+        },
+        {
+          "file": "image47.jpeg",
+          "width": 1277,
+          "height": 730,
+          "format": "JPEG"
+        },
+        {
+          "file": "image48.jpeg",
+          "width": 1080,
+          "height": 805,
+          "format": "JPEG"
+        },
+        {
+          "file": "image49.jpeg",
+          "width": 1600,
+          "height": 1200,
+          "format": "JPEG"
+        },
+        {
+          "file": "image5.png",
+          "width": 1421,
+          "height": 996,
+          "format": "PNG"
+        },
+        {
+          "file": "image50.jpeg",
+          "width": 1600,
+          "height": 1200,
+          "format": "JPEG"
+        },
+        {
+          "file": "image51.jpeg",
+          "width": 1600,
+          "height": 1200,
+          "format": "JPEG"
+        },
+        {
+          "file": "image52.jpeg",
+          "width": 1048,
+          "height": 392,
+          "format": "JPEG"
+        },
+        {
+          "file": "image53.jpeg",
+          "width": 925,
+          "height": 690,
+          "format": "JPEG"
+        },
+        {
+          "file": "image54.jpeg",
+          "width": 900,
+          "height": 671,
+          "format": "JPEG"
+        },
+        {
+          "file": "image55.jpeg",
+          "width": 1665,
+          "height": 1022,
+          "format": "JPEG"
+        },
+        {
+          "file": "image56.png",
+          "width": 732,
+          "height": 485,
+          "format": "PNG"
+        },
+        {
+          "file": "image57.png",
+          "width": 728,
+          "height": 567,
+          "format": "PNG"
+        },
+        {
+          "file": "image58.png",
+          "width": 656,
+          "height": 510,
+          "format": "PNG"
+        },
+        {
+          "file": "image59.png",
+          "width": 691,
+          "height": 517,
+          "format": "PNG"
+        },
+        {
+          "file": "image6.png",
+          "width": 1398,
+          "height": 882,
+          "format": "PNG"
+        },
+        {
+          "file": "image60.png",
+          "width": 575,
+          "height": 337,
+          "format": "PNG"
+        },
+        {
+          "file": "image61.png",
+          "width": 704,
+          "height": 462,
+          "format": "PNG"
+        },
+        {
+          "file": "image62.jpeg",
+          "width": 913,
+          "height": 698,
+          "format": "JPEG"
+        },
+        {
+          "file": "image63.jpeg",
+          "width": 974,
+          "height": 704,
+          "format": "JPEG"
+        },
+        {
+          "file": "image64.jpeg",
+          "width": 1000,
+          "height": 675,
+          "format": "JPEG"
+        },
+        {
+          "file": "image65.jpeg",
+          "width": 982,
+          "height": 711,
+          "format": "JPEG"
+        },
+        {
+          "file": "image66.jpeg",
+          "width": 900,
+          "height": 643,
+          "format": "JPEG"
+        },
+        {
+          "file": "image67.jpeg",
+          "width": 922,
+          "height": 681,
+          "format": "JPEG"
+        },
+        {
+          "file": "image68.jpeg",
+          "width": 880,
+          "height": 736,
+          "format": "JPEG"
+        },
+        {
+          "file": "image69.jpeg",
+          "width": 858,
+          "height": 630,
+          "format": "JPEG"
+        },
+        {
+          "file": "image7.png",
+          "width": 1404,
+          "height": 866,
+          "format": "PNG"
+        },
+        {
+          "file": "image8.png",
+          "width": 1287,
+          "height": 658,
+          "format": "PNG"
+        },
+        {
+          "file": "image9.png",
+          "width": 1548,
+          "height": 713,
+          "format": "PNG"
+        }
+      ]
+    },
+    {
+      "id": "haiti-livret",
+      "market": "haiti",
+      "kind": "pdf",
+      "source": "C:\\Users\\ouhha\\OneDrive\\Documents\\Marie Gaelle Mentor\\Les Entreprises\\MGM\\Livret MGM\\Livret MGM-Haiti.pdf",
+      "output": "haiti\\haiti-livret",
+      "pages": 43,
+      "rendered_pages": 43,
+      "contact_sheets": [
+        "pages-001-012.jpg",
+        "pages-013-024.jpg",
+        "pages-025-036.jpg",
+        "pages-037-043.jpg"
+      ]
+    },
+    {
+      "id": "mixed-portfolio",
+      "market": "mixed",
+      "kind": "pdf",
+      "source": "C:\\Users\\ouhha\\OneDrive\\Documents\\Marie Gaelle Mentor\\Les Entreprises\\MGM\\Stuff\\portfolio Mme Mentor_Haiti et USA.pdf",
+      "output": "mixed\\mixed-portfolio",
+      "pages": 65,
+      "rendered_pages": 65,
+      "contact_sheets": [
+        "pages-001-012.jpg",
+        "pages-013-024.jpg",
+        "pages-025-036.jpg",
+        "pages-037-048.jpg",
+        "pages-049-060.jpg",
+        "pages-061-065.jpg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+---
+interface Props { pdfDark?: string; pdfLight?: string; title: string }
+const { pdfDark, pdfLight, title } = Astro.props;
+---
+<section class="portfolio-reader" data-reader data-pdf-dark={pdfDark} data-pdf-light={pdfLight} aria-labelledby="reader-title">
+  <div class="section-heading">
+    <p class="eyebrow">Portfolio</p>
+    <h2 id="reader-title">{title}</h2>
+  </div>
+  {pdfDark && pdfLight ? (
+    <>
+      <div class="book-stage" data-book aria-live="polite"><p>Chargement du portfolio…</p></div>
+      <div class="reader-controls">
+        <button class="icon-button" type="button" data-prev aria-label="Page précédente">←</button>
+        <output data-page>1 / 1</output>
+        <button class="icon-button" type="button" data-next aria-label="Page suivante">→</button>
+        <button class="button button-quiet" type="button" data-zoom>Zoom</button>
+      </div>
+    </>
+  ) : (
+    <p class="empty-state">Le portfolio optimisé et filigrané sera affiché ici dès que les quatre versions obligatoires auront été validées.</p>
+  )}
+</section>
+
+<script>
+  import { GlobalWorkerOptions, getDocument } from 'pdfjs-dist';
+  import pdfWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
+  import { PageFlip } from 'page-flip';
+
+  GlobalWorkerOptions.workerSrc = pdfWorker;
+
+  async function initializeReader(reader: HTMLElement) {
+    const stage = reader.querySelector<HTMLElement>('[data-book]');
+    if (!stage) return;
+    const theme = document.documentElement.dataset.theme || 'dark';
+    const source = theme === 'light' ? reader.dataset.pdfLight : reader.dataset.pdfDark;
+    if (!source) return;
+
+    try {
+      const pdf = await getDocument({ url: source, disableAutoFetch: false }).promise;
+      stage.innerHTML = '';
+      const pageElements: HTMLElement[] = [];
+
+      for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+        const page = await pdf.getPage(pageNumber);
+        const viewport = page.getViewport({ scale: 1.35 });
+        const wrapper = document.createElement('div');
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        wrapper.className = 'book-page';
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        canvas.setAttribute('aria-label', `Page ${pageNumber}`);
+        wrapper.append(canvas);
+        stage.append(wrapper);
+        pageElements.push(wrapper);
+        if (context) await page.render({ canvasContext: context, viewport }).promise;
+      }
+
+      const flip = new PageFlip(stage, {
+        width: 760,
+        height: 1020,
+        size: 'stretch',
+        minWidth: 280,
+        maxWidth: 760,
+        minHeight: 380,
+        maxHeight: 1020,
+        showCover: true,
+        usePortrait: true,
+        mobileScrollSupport: false
+      });
+      flip.loadFromHTML(pageElements);
+      const indicator = reader.querySelector<HTMLOutputElement>('[data-page]');
+      const updateIndicator = () => {
+        if (indicator) indicator.value = `${flip.getCurrentPageIndex() + 1} / ${pdf.numPages}`;
+      };
+      flip.on('flip', updateIndicator);
+      reader.querySelector('[data-prev]')?.addEventListener('click', () => flip.flipPrev());
+      reader.querySelector('[data-next]')?.addEventListener('click', () => flip.flipNext());
+      reader.querySelector('[data-zoom]')?.addEventListener('click', () => stage.classList.toggle('is-zoomed'));
+      stage.tabIndex = 0;
+      stage.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') flip.flipPrev();
+        if (event.key === 'ArrowRight') flip.flipNext();
+      });
+      updateIndicator();
+    } catch {
+      stage.innerHTML = '<p>Le portfolio ne peut pas être chargé pour le moment.</p>';
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-reader]').forEach((reader) => initializeReader(reader));
+</script>

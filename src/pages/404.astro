@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+Astro.response.status = 404;
+---
+<BaseLayout title="Page introuvable | Marie Gaëlle Mentor" noindex>
+  <div class="page-shell container"><section class="page-intro"><p class="eyebrow">Erreur 404</p><div><h1>Cette page n’existe pas.</h1><p>Le projet ou le contenu recherché a peut-être été déplacé.</p><a class="button button-primary" href="/projects">Voir les réalisations</a></div></section></div>
+</BaseLayout>

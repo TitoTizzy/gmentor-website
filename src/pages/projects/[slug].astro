@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortfolioReader from '../../components/PortfolioReader.astro';
+import { publishedProjects } from '../../data/projects';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return publishedProjects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+const { project } = Astro.props;
+---
+<BaseLayout title={`${project.title} | Marie Gaëlle Mentor`} description={`${project.type} — ${project.city}, ${project.country}.`} image={project.cover}>
+  <section class="project-hero">
+    <img src={project.cover} alt={project.coverAlt} width="1536" height="1024" />
+    <div class="project-hero-copy"><p class="eyebrow">{project.type}</p><h1>{project.title}</h1></div>
+  </section>
+  <div class="container band">
+    {project.placeholder && <p class="empty-state">Ce visuel est temporaire et ne représente pas le projet réel. Il sera remplacé par les médias optimisés et filigranés validés.</p>}
+    <dl class="project-meta">
+      {project.city && <div><dt>Ville</dt><dd>{project.city}</dd></div>}
+      {project.country && <div><dt>Pays</dt><dd>{project.country}</dd></div>}
+      {project.year && <div><dt>Année</dt><dd>{project.year}</dd></div>}
+      <div><dt>Type</dt><dd>{project.type}</dd></div>
+      {project.role && <div><dt>Rôle</dt><dd>{project.role}</dd></div>}
+      {project.credits && <div><dt>Crédits</dt><dd>{project.credits}</dd></div>}
+    </dl>
+    <PortfolioReader title={project.title} />
+  </div>
+</BaseLayout>

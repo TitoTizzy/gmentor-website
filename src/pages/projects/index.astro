@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { publishedProjects } from '../../data/projects';
+const countries = [...new Set(publishedProjects.map((p) => p.country).filter(Boolean))];
+const cities = [...new Set(publishedProjects.map((p) => p.city).filter(Boolean))];
+const years = [...new Set(publishedProjects.map((p) => p.year).filter(Boolean))];
+const types = [...new Set(publishedProjects.map((p) => p.type))];
+---
+<BaseLayout title="Réalisations | Architecte Marie Gaëlle Mentor" description="Projets architecturaux de Marie Gaëlle Mentor aux États-Unis et en Haïti.">
+  <div class="page-shell container">
+    <header class="page-intro">
+      <p class="eyebrow">Réalisations</p>
+      <div><h1>Projets</h1><p>Une sélection organisée par lieu, année et typologie. Les projets restent filtrés selon le marché choisi.</p></div>
+    </header>
+    <form class="filters" data-filters aria-label="Filtrer les réalisations">
+      <div class="field"><label for="country">Pays</label><select id="country" name="country"><option value="">Tous</option>{countries.map((value) => <option value={value}>{value}</option>)}</select></div>
+      <div class="field"><label for="city">Ville</label><select id="city" name="city"><option value="">Toutes</option>{cities.map((value) => <option value={value}>{value}</option>)}</select></div>
+      <div class="field"><label for="year">Année</label><select id="year" name="year"><option value="">Toutes</option>{years.map((value) => <option value={value}>{value}</option>)}</select></div>
+      <div class="field"><label for="type">Type</label><select id="type" name="type"><option value="">Tous</option>{types.map((value) => <option value={value}>{value}</option>)}</select></div>
+      <button class="button button-quiet" type="reset">Réinitialiser</button>
+    </form>
+    <p aria-live="polite" data-results-count>{publishedProjects.length} projets</p>
+    <div class="project-grid" data-project-grid>
+      {publishedProjects.map((project, index) => <ProjectCard project={project} index={index} />)}
+    </div>
+  </div>
+  <script>
+    const form = document.querySelector<HTMLFormElement>('[data-filters]');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-project-card]')];
+    const count = document.querySelector('[data-results-count]');
+    function filterProjects() {
+      if (!form) return;
+      const data = new FormData(form);
+      const market = document.documentElement.dataset.market || 'ht';
+      let visible = 0;
+      cards.forEach((card) => {
+        const matches = ['country', 'city', 'year', 'type'].every((key) => !data.get(key) || card.getAttribute(`data-${key}`) === data.get(key));
+        const matchesMarket = (card.getAttribute('data-market') || '').split(',').includes(market);
+        const show = matches && matchesMarket;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (count) count.textContent = `${visible} projet${visible === 1 ? '' : 's'}`;
+    }
+    form?.addEventListener('input', filterProjects);
+    form?.addEventListener('reset', () => setTimeout(filterProjects));
+    window.addEventListener('mgm:preference-change', filterProjects);
+    filterProjects();
+  </script>
+</BaseLayout>

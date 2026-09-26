@@ -1,0 +1,331 @@
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var body = document.body;
+  var assetRoot = body.dataset.root || ".";
+  var page = body.dataset.page || "home";
+  var labels = {
+    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Architectural Designer" },
+    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Architecte licenciée en Haïti" },
+    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Achitèk lisansye an Ayiti" }
+  };
+
+  function href(name) {
+    return assetRoot + "/" + name;
+  }
+
+  function initializePreferences() {
+    var browserLanguage = (navigator.language || "en").toLowerCase();
+    var savedMarket = localStorage.getItem("mgm-market");
+    var market = savedMarket || (/^(fr|ht)/.test(browserLanguage) ? "ht" : "us");
+    var locale = localStorage.getItem("mgm-locale") || (market === "us" ? "en" : browserLanguage.indexOf("ht") === 0 ? "kr" : "fr");
+    var theme = localStorage.getItem("mgm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    root.dataset.market = market;
+    root.dataset.locale = market === "us" ? "en" : locale;
+    root.dataset.theme = theme;
+  }
+
+  function renderShell() {
+    var header = document.querySelector("[data-site-header]");
+    var footer = document.querySelector("[data-site-footer]");
+    if (header) {
+      header.innerHTML = [
+        '<a class="brand" href="' + href("index.html") + '" aria-label="Marie Gaëlle Mentor, accueil">',
+        '<img src="' + href("assets/mgm-logo.png") + '" alt="" width="56" height="56">',
+        '<span class="brand-copy"><strong>Marie Gaëlle Mentor</strong><small data-market-title></small></span></a>',
+        '<button class="icon-button nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle><span aria-hidden="true">☰</span></button>',
+        '<nav class="main-nav" aria-label="Navigation principale" data-nav>',
+        navLink("index.html", "home"), navLink("about.html", "about"), navLink("projects.html", "projects"), navLink("portfolio.html", "portfolio"), navLink("contact.html", "contact"),
+        '</nav>',
+        '<div class="header-tools"><div class="segmented" aria-label="Marché"><button type="button" data-market="us">USA</button><button type="button" data-market="ht">Haïti</button></div>',
+        '<div class="segmented locale-switch" aria-label="Langue"><button type="button" data-locale="fr">FR</button><button type="button" data-locale="kr">KR</button></div>',
+        '<button class="icon-button" type="button" aria-label="Changer le thème" data-theme-toggle><span aria-hidden="true">◐</span></button></div>'
+      ].join("");
+    }
+    if (footer) {
+      footer.innerHTML = '<div><img src="' + href("assets/mgm-logo.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p>Architecte Marie Gaëlle Mentor</p></div>' +
+        '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a><a href="' + href("admin/login.html") + '" data-i18n data-en="Administration" data-fr="Administration" data-kr="Administrasyon">Administration</a></div>' +
+        '<p class="footer-note">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor</p>';
+    }
+    if (!document.querySelector("[data-consent]")) {
+      var consent = document.createElement("aside");
+      consent.className = "consent";
+      consent.hidden = true;
+      consent.dataset.consent = "";
+      consent.setAttribute("aria-label", "Préférences statistiques");
+      consent.innerHTML = '<p data-i18n data-en="We use privacy-friendly analytics to improve the site." data-fr="Nous utilisons des statistiques respectueuses de votre vie privée pour améliorer le site." data-kr="Nou itilize estatistik ki respekte vi prive ou pou amelyore sit la.">Nous utilisons des statistiques respectueuses de votre vie privée pour améliorer le site.</p><div class="consent-actions"><button class="button button-primary" type="button" data-consent-choice="accepted" data-i18n data-en="Accept" data-fr="Accepter" data-kr="Aksepte">Accepter</button><button class="button" type="button" data-consent-choice="refused" data-i18n data-en="Decline" data-fr="Refuser" data-kr="Refize">Refuser</button></div>';
+      body.appendChild(consent);
+    }
+  }
+
+  function navLink(file, key) {
+    var current = page === key ? ' aria-current="page"' : "";
+    return '<a href="' + href(file) + '" data-nav-label="' + key + '"' + current + '></a>';
+  }
+
+  function syncPreferences() {
+    var market = root.dataset.market || "ht";
+    var locale = market === "us" ? "en" : (root.dataset.locale || "fr");
+    root.dataset.locale = locale;
+    root.lang = locale === "kr" ? "ht" : locale;
+    document.querySelectorAll("[data-market]").forEach(function (button) {
+      if (button.tagName === "BUTTON") button.setAttribute("aria-pressed", String(button.dataset.market === market));
+    });
+    document.querySelectorAll("[data-locale]").forEach(function (button) {
+      button.setAttribute("aria-pressed", String(button.dataset.locale === locale));
+    });
+    document.querySelectorAll("[data-nav-label]").forEach(function (link) {
+      link.textContent = labels[locale][link.dataset.navLabel];
+    });
+    var title = document.querySelector("[data-market-title]");
+    if (title) title.textContent = labels[locale].title;
+    document.querySelectorAll("[data-i18n]").forEach(function (node) {
+      var translated = node.dataset[locale] || node.dataset.fr;
+      if (translated) node.textContent = translated;
+    });
+    document.querySelectorAll("[data-market-image]").forEach(function (image) {
+      var source = market === "us" ? image.dataset.usSrc : image.dataset.htSrc;
+      if (source && image.getAttribute("src") !== source) image.setAttribute("src", source);
+    });
+    document.dispatchEvent(new CustomEvent("mgm:preferences"));
+  }
+
+  function bindControls() {
+    var navButton = document.querySelector("[data-nav-toggle]");
+    var nav = document.querySelector("[data-nav]");
+
+    function closeNavigation() {
+      if (!navButton || !nav) return;
+      navButton.setAttribute("aria-expanded", "false");
+      navButton.setAttribute("aria-label", "Ouvrir le menu");
+      navButton.firstElementChild.textContent = "☰";
+      nav.classList.remove("open");
+      body.classList.remove("menu-open");
+    }
+
+    document.querySelectorAll("button[data-market]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        root.dataset.market = button.dataset.market;
+        root.dataset.locale = button.dataset.market === "us" ? "en" : (localStorage.getItem("mgm-locale-ht") || "fr");
+        localStorage.setItem("mgm-market", root.dataset.market);
+        syncPreferences();
+        closeNavigation();
+      });
+    });
+    document.querySelectorAll("button[data-locale]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        root.dataset.locale = button.dataset.locale;
+        localStorage.setItem("mgm-locale", root.dataset.locale);
+        localStorage.setItem("mgm-locale-ht", root.dataset.locale);
+        syncPreferences();
+        closeNavigation();
+      });
+    });
+    var themeButton = document.querySelector("[data-theme-toggle]");
+    if (themeButton) themeButton.addEventListener("click", function () {
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("mgm-theme", root.dataset.theme);
+    });
+    if (navButton && nav) navButton.addEventListener("click", function () {
+      var open = navButton.getAttribute("aria-expanded") !== "true";
+      navButton.setAttribute("aria-expanded", String(open));
+      navButton.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      navButton.firstElementChild.textContent = open ? "×" : "☰";
+      nav.classList.toggle("open", open);
+      body.classList.toggle("menu-open", open);
+    });
+  }
+
+  function initializeConsent() {
+    var panel = document.querySelector("[data-consent]");
+    if (!panel || localStorage.getItem("mgm-analytics-consent")) return;
+    panel.hidden = false;
+    panel.querySelectorAll("[data-consent-choice]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        localStorage.setItem("mgm-analytics-consent", button.dataset.consentChoice);
+        panel.hidden = true;
+      });
+    });
+  }
+
+  function renderServices() {
+    var grid = document.querySelector("[data-services]");
+    if (!grid || !window.MGM_DATA) return;
+    grid.innerHTML = window.MGM_DATA.services.map(function (service, index) {
+      return '<article class="service"><span>0' + (index + 1) + '</span><h3 data-i18n data-en="' + service.en + '" data-fr="' + service.fr + '" data-kr="' + service.kr + '">' + service.fr + '</h3></article>';
+    }).join("");
+  }
+
+  function projectCard(project, index) {
+    return '<article class="project-card" data-project data-market="' + project.markets.join(",") + '" data-country="' + project.country + '" data-city="' + project.city + '" data-year="' + project.year + '" data-type="' + project.type + '">' +
+      '<a href="project.html?slug=' + encodeURIComponent(project.slug) + '"><figure><img src="images/' + project.cover + '" alt="' + project.alt + '" width="1600" height="1067" loading="' + (index < 2 ? "eager" : "lazy") + '"></figure>' +
+      '<div class="project-copy"><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h2>' + project.title + '</h2><p>' + project.type + '</p></div></a></article>';
+  }
+
+  function renderProjects() {
+    var grid = document.querySelector("[data-projects]");
+    if (!grid || !window.MGM_DATA) return;
+    var limit = Number(grid.dataset.limit || 0);
+    var items = window.MGM_DATA.projects.filter(function (project) { return project.published; });
+    if (limit) {
+      var marketCounts = {};
+      items = items.filter(function (project) {
+        var market = project.markets[0];
+        marketCounts[market] = marketCounts[market] || 0;
+        if (marketCounts[market] >= limit) return false;
+        marketCounts[market] += 1;
+        return true;
+      });
+    }
+    grid.innerHTML = items.map(projectCard).join("");
+    filterProjects();
+  }
+
+  function filterProjects() {
+    var cards = document.querySelectorAll("[data-project]");
+    if (!cards.length) return;
+    var form = document.querySelector("[data-filters]");
+    var market = root.dataset.market || "ht";
+    var values = form ? Object.fromEntries(new FormData(form)) : {};
+    var visible = 0;
+    cards.forEach(function (card) {
+      var marketMatch = card.dataset.market.split(",").indexOf(market) >= 0;
+      var filterMatch = ["country", "city", "year", "type"].every(function (key) {
+        return !values[key] || card.dataset[key] === values[key];
+      });
+      card.hidden = !(marketMatch && filterMatch);
+      if (!card.hidden) visible += 1;
+    });
+    var count = document.querySelector("[data-results-count]");
+    if (count) count.textContent = visible + " projet" + (visible === 1 ? "" : "s");
+  }
+
+  function initializeFilters() {
+    var form = document.querySelector("[data-filters]");
+    if (!form || !window.MGM_DATA) return;
+    var published = window.MGM_DATA.projects.filter(function (project) { return project.published; });
+    populateSelect(form.elements.country, published.map(function (project) { return project.country; }));
+    populateSelect(form.elements.city, published.map(function (project) { return project.city; }));
+    populateSelect(form.elements.year, published.map(function (project) { return project.year; }));
+    populateSelect(form.elements.type, published.map(function (project) { return project.type; }));
+    form.addEventListener("input", filterProjects);
+    form.addEventListener("reset", function () { window.setTimeout(filterProjects, 0); });
+  }
+
+  function populateSelect(select, values) {
+    if (!select) return;
+    Array.from(new Set(values.filter(Boolean))).sort().forEach(function (value) {
+      var option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      select.appendChild(option);
+    });
+  }
+
+  function initializeHero() {
+    var hero = document.querySelector("[data-hero]");
+    if (!hero || !window.MGM_DATA) return;
+    var projects = window.MGM_DATA.projects.filter(function (project) { return project.published && project.featured; });
+    var slides = hero.querySelector("[data-hero-slides]");
+    var dots = hero.querySelector("[data-hero-dots]");
+    var active = 0;
+    slides.innerHTML = projects.map(function (project, index) {
+      return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="images/' + project.cover + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="project.html?slug=' + encodeURIComponent(project.slug) + '" aria-label="Découvrir ' + project.title + '"></a><div class="hero-content"><img class="hero-logo" src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
+    }).join("");
+    dots.innerHTML = projects.map(function (project, index) { return '<button type="button" aria-label="Afficher ' + project.title + '" data-hero-dot="' + index + '"></button>'; }).join("");
+
+    function show(index) {
+      var market = root.dataset.market || "ht";
+      var eligible = projects.map(function (project, itemIndex) { return project.markets.indexOf(market) >= 0 ? itemIndex : -1; }).filter(function (itemIndex) { return itemIndex >= 0; });
+      active = eligible.indexOf(index) >= 0 ? index : (eligible[0] || 0);
+      hero.querySelectorAll("[data-hero-slide]").forEach(function (slide, itemIndex) {
+        slide.hidden = eligible.indexOf(itemIndex) < 0;
+        slide.classList.toggle("active", itemIndex === active);
+      });
+      hero.querySelectorAll("[data-hero-dot]").forEach(function (dot, itemIndex) {
+        dot.hidden = eligible.indexOf(itemIndex) < 0;
+        dot.setAttribute("aria-pressed", String(itemIndex === active));
+      });
+    }
+    hero.querySelectorAll("[data-hero-dot]").forEach(function (dot) { dot.addEventListener("click", function () { show(Number(dot.dataset.heroDot)); }); });
+    document.addEventListener("mgm:preferences", function () { show(active); });
+    show(0);
+  }
+
+  function renderProjectDetail() {
+    var target = document.querySelector("[data-project-detail]");
+    if (!target || !window.MGM_DATA) return;
+    var slug = new URLSearchParams(location.search).get("slug");
+    var project = window.MGM_DATA.projects.find(function (item) { return item.slug === slug && item.published; });
+    if (!project) {
+      target.innerHTML = '<div class="page-shell container"><p class="eyebrow">Projet</p><h1>Projet introuvable</h1><p><a class="text-link" href="projects.html">Retour aux réalisations</a></p></div>';
+      return;
+    }
+    var projectMarket = project.markets[0];
+    if (projectMarket && root.dataset.market !== projectMarket) {
+      root.dataset.market = projectMarket;
+      root.dataset.locale = projectMarket === "us" ? "en" : (localStorage.getItem("mgm-locale-ht") || "fr");
+      localStorage.setItem("mgm-market", projectMarket);
+    }
+    var detailLabels = projectMarket === "us" ? {
+      project: "Project", location: "Location", year: "Year", type: "Type", role: "Role", unknownYear: "Not specified", gallery: "Project photos and drawings"
+    } : {
+      project: "Projet", location: "Lieu", year: "Année", type: "Typologie", role: "Mission", unknownYear: "Non précisée", gallery: "Photos et plans du projet"
+    };
+    document.title = project.title + " | Marie Gaëlle Mentor";
+    var gallery = (project.gallery || []).map(function (item, index) {
+      return '<figure class="project-media project-media-' + ((index % 5) + 1) + '"><img src="images/' + item.src + '" alt="' + item.alt + '" loading="lazy"><figcaption>' + item.label + '</figcaption></figure>';
+    }).join("");
+    target.innerHTML = '<section class="project-hero"><img src="images/' + project.cover + '" alt="' + project.alt + '"><div class="project-hero-copy"><p class="eyebrow">' + project.type + '</p><h1>' + project.title + '</h1></div></section>' +
+      '<div class="container"><section class="project-intro band"><div><p class="eyebrow">' + detailLabels.project + '</p><p class="project-lead">' + project.description + '</p></div><dl class="project-meta"><div><dt>' + detailLabels.location + '</dt><dd>' + ([project.city, project.country].filter(Boolean).join(", ") || "—") + '</dd></div><div><dt>' + detailLabels.year + '</dt><dd>' + (project.year || detailLabels.unknownYear) + '</dd></div><div><dt>' + detailLabels.type + '</dt><dd>' + project.type + '</dd></div><div><dt>' + detailLabels.role + '</dt><dd>' + project.role + '</dd></div></dl></section>' +
+      '<section class="project-gallery band" aria-label="' + detailLabels.gallery + '">' + gallery + '</section></div>';
+  }
+
+  function renderAbout() {
+    var target = document.querySelector("[data-about-content]");
+    if (!target || !window.MGM_DATA || !window.MGM_DATA.profiles) return;
+    var market = root.dataset.market || "ht";
+    var profile = window.MGM_DATA.profiles[market];
+    var aboutLabels = market === "us" ? { journey: "Practice", heading: "Design with precision, deliver with care." } : { journey: "Parcours", heading: "Concevoir avec précision, construire avec attention." };
+    target.innerHTML = '<header class="page-intro"><p class="eyebrow">' + profile.eyebrow + '</p><div><h1>' + profile.title + '</h1><p>' + profile.lead + '</p></div></header>' +
+      '<section class="about-grid"><figure><img src="images/' + profile.portrait + '" alt="' + profile.portraitAlt + '"></figure><div class="about-copy"><p class="eyebrow">' + aboutLabels.journey + '</p><h2>' + aboutLabels.heading + '</h2><p>' + profile.body + '</p><div class="timeline">' + profile.timeline.map(function (item) { return '<article><h3>' + item.title + '</h3><p>' + item.text + '</p></article>'; }).join("") + '</div></div></section>';
+  }
+
+  function initializeContact() {
+    var form = document.querySelector("[data-contact-form]");
+    if (!form) return;
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var status = form.querySelector("[data-form-status]");
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var requests = JSON.parse(localStorage.getItem("mgm-demo-requests") || "[]");
+      var request = Object.fromEntries(new FormData(form));
+      request.market = root.dataset.market || "ht";
+      request.locale = root.dataset.locale || "fr";
+      request.createdAt = new Date().toISOString();
+      requests.push(request);
+      localStorage.setItem("mgm-demo-requests", JSON.stringify(requests));
+      form.reset();
+      if (status) status.textContent = "Demande enregistrée dans cette démonstration. Le backend pourra ensuite l’envoyer à Supabase.";
+    });
+  }
+
+  initializePreferences();
+  renderShell();
+  renderServices();
+  renderProjects();
+  initializeHero();
+  initializeFilters();
+  renderProjectDetail();
+  renderAbout();
+  bindControls();
+  initializeConsent();
+  initializeContact();
+  syncPreferences();
+  document.addEventListener("mgm:preferences", filterProjects);
+  document.addEventListener("mgm:preferences", renderAbout);
+}());

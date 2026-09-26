@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.pdf$
+Sitemap: https://gaellementor.com/sitemap-index.xml
