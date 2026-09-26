@@ -1,26 +1,120 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const profiles = {
+  ht: {
+    eyebrow: 'Architecte licenciée en Haïti',
+    title: 'Une architecte haïtienne engagée au service de lieux durables et profondément humains.',
+    lead: 'Depuis ses premiers chantiers en 1995, Marie Gaëlle Mentor construit un parcours où la conception architecturale ne se sépare jamais de la réalité du terrain.',
+    image: '/images/about-haiti.webp',
+    imageAlt: 'Beach House réalisée à Pierre Payen, Montrouis, Haïti',
+    imageCaption: 'La Beach House de Pierre Payen, entre architecture contemporaine et paysage tropical.',
+    storyTitle: 'Du dessin au chantier, une vision portée avec constance.',
+    story: [
+      'Diplômée en architecture de l’Université GOC à Port-au-Prince, Marie Gaëlle Mentor débute chez Gecim Construction comme conceptrice et superviseure de chantier. Elle poursuit ensuite aux Chantiers Nationaux puis chez Acropole à Pétion-Ville, approfondissant sa connaissance des matériaux, des équipes de métier et des conditions concrètes de réalisation en Haïti.',
+      'De 2014 à 2019, elle occupe les fonctions de Directrice générale et Architecte senior de Shelter IT Haiti & USA. Elle y encadre les études, la coordination et l’exécution de projets résidentiels, institutionnels et de shelters dans de nombreuses communautés du pays.',
+      'En 2020, elle fonde MGM, entreprise haïtienne de conception, de supervision et de construction. Les maisons du Grand Sud, la Beach House de Pierre Payen et l’extension des bureaux de l’UCE illustrent sa capacité à maintenir une même exigence, de l’intention architecturale à la livraison.'
+    ],
+    facts: [
+      ['1995', 'début de pratique en Haïti'],
+      ['2020', 'fondation de MGM'],
+      ['10+', 'années d’interventions documentées en Haïti']
+    ],
+    quote: 'Construire en Haïti exige plus qu’une bonne idée : il faut comprendre le lieu, anticiper ses contraintes et rester présente jusqu’à la réalisation.',
+    milestones: [
+      ['1990–1995', 'Baccalauréat en architecture à l’Université GOC, Port-au-Prince, complété par une formation en mouvements et environnements spatiaux.'],
+      ['1995–1999', 'Conceptrice architecturale et superviseure de chantier chez Gecim Construction puis aux Chantiers Nationaux.'],
+      ['1999–2003', 'Architectural Designer chez Acropole à Pétion-Ville, au contact de projets résidentiels et de leur mise en œuvre.'],
+      ['2014–2019', 'Directrice générale et Architecte senior de Shelter IT Haiti & USA ; direction de projets et de programmes de shelters.'],
+      ['2018', 'Conception et suivi de l’extension légère des bureaux de l’UCE, pensée pour préserver le site et pouvoir être démontée.'],
+      ['Depuis 2020', 'Fondatrice et dirigeante de MGM, active en conception, supervision, construction et habitat résilient sur le territoire haïtien.']
+    ],
+    values: [
+      ['Résilience constructive', 'Des solutions attentives aux risques sismiques et cycloniques, aux matériaux disponibles et à la pérennité des ouvrages.'],
+      ['Maîtrise du terrain', 'Une expérience directe de la coordination des équipes, de la qualité d’exécution et des contraintes logistiques.'],
+      ['Architecture humaine', 'Des espaces pensés pour les habitudes, le climat, la communauté et le sentiment d’habiter pleinement un lieu.']
+    ]
+  },
+  us: {
+    eyebrow: 'Architectural Designer',
+    title: 'A career shaped by architecture, leadership and an international point of view.',
+    lead: 'Marie Gaëlle Mentor brings three decades of architectural practice to every commission, creating places that are practical, expressive and genuinely comfortable to inhabit.',
+    image: '/images/about-usa.webp',
+    imageAlt: 'Water View East residential project in Norwalk, Connecticut',
+    imageCaption: 'Water View East, a residential collaboration in Norwalk, Connecticut.',
+    storyTitle: 'Local rigor, global perspective.',
+    story: [
+      'Her United States journey began in New York, where she developed her command of architectural drafting and residential design before moving into increasingly independent roles. At PowerHouse Architect in Queens, MGM Remodeling and Design in New York, and later AWA Design Group in Stamford, she contributed to residential projects at multiple scales.',
+      'Her practice expanded beyond design alone. As owner of MGM Remodeling and Design in Hamden, she combined interior design with contracting; as a residential inspector in Woodbridge, she strengthened her understanding of codes, compliance and implementation. Since 2019, her work with New England Outdoor Product has continued this hands-on approach.',
+      'Today, through Marie Gaëlle Mentor Architectural Designer LLC, she draws on experience across disciplines and borders. Her Connecticut portfolio includes townhouses and multifamily communities in Waterbury, Norwalk and Forest Street, with an emphasis on efficient plans, durable materials and natural light.'
+    ],
+    facts: [
+      ['30+', 'years in architectural practice'],
+      ['NY + CT', 'United States experience'],
+      ['3', 'languages: English, French and Creole']
+    ],
+    quote: 'The best residential architecture does more than organize space. It gives daily life clarity, comfort and a sense of belonging.',
+    milestones: [
+      ['1990–1995', "Bachelor's degree in Architecture at GOC University in Port-au-Prince, followed by additional study in movement and spatial environments."],
+      ['2003–2006', 'Architectural drafting and design roles in New York with PowerHouse Architect and MGM Remodeling and Design.'],
+      ['2006–2008', 'Architectural Designer at AWA Design Group in Stamford, Connecticut, contributing to residential plans and developments.'],
+      ['2009–2011', 'Owner, Interior Designer and Contractor at MGM Remodeling and Design in Hamden, followed by work as a Residential Inspector in Woodbridge.'],
+      ['2014–2019', 'General Manager and Senior Architect at Shelter IT Haiti & USA, leading multidisciplinary work across design and delivery.'],
+      ['2019–Today', 'Architectural Designer at New England Outdoor Product and principal of Marie Gaëlle Mentor Architectural Designer LLC.']
+    ],
+    values: [
+      ['Residential intelligence', 'Plans shaped around circulation, daylight, comfort and the way people actually live.'],
+      ['Technical clarity', 'Careful coordination of drawings, codes, materials and construction requirements.'],
+      ['Collaborative leadership', 'A direct, attentive process that keeps clients and project partners aligned from idea to implementation.']
+    ]
+  }
+};
 ---
-<BaseLayout title="À propos | Architecte Marie Gaëlle Mentor" description="Parcours, approche et expérience de Marie Gaëlle Mentor.">
+
+<BaseLayout title="À propos | Architecte Marie Gaëlle Mentor" description="Le parcours professionnel de Marie Gaëlle Mentor en Haïti et aux États-Unis.">
   <div class="page-shell container">
-    <header class="page-intro">
-      <p class="eyebrow">À propos</p>
-      <div><h1>Une pratique attentive aux lieux et aux usages.</h1><p>Cette page accueillera les versions éditoriales validées du CV américain, français et créole. Aucun élément professionnel non confirmé n’est publié.</p></div>
-    </header>
-    <section class="about-grid">
-      <figure><img src="/images/studio-process.webp" alt="Maquette architecturale et dessins dans un atelier" width="1120" height="1402" /></figure>
-      <div class="about-copy">
-        <p class="eyebrow">Démarche</p>
-        <h2>Transformer les contraintes en espaces cohérents et durables.</h2>
-        <p>Marie Gaëlle Mentor développe une approche architecturale fondée sur l’écoute, la précision et la compréhension du contexte. Son travail relie conception, expérience intérieure et faisabilité constructive.</p>
-        <p>Aux États-Unis, elle exerce sous le titre d’Architectural Designer. En Haïti, elle est architecte licenciée.</p>
-        <div class="timeline">
-          <article><h3>Expérience</h3><p>Contenu du parcours professionnel à confirmer et à intégrer par le développeur.</p></article>
-          <article><h3>Formation</h3><p>Établissements, diplômes et dates à confirmer.</p></article>
-          <article><h3>Compétences</h3><p>Conception architecturale, design intérieur, rénovation, modélisation 3D et coordination de projet.</p></article>
-          <article><h3>Collaborations</h3><p>Crédits et collaborations à confirmer avant publication.</p></article>
-        </div>
-      </div>
-    </section>
+    {Object.entries(profiles).map(([market, profile]) => (
+      <article data-about-market={market}>
+        <header class="page-intro">
+          <p class="eyebrow">{profile.eyebrow}</p>
+          <div><h1>{profile.title}</h1><p>{profile.lead}</p></div>
+        </header>
+
+        <section class="about-facts" aria-label={market === 'us' ? 'Career highlights' : 'Repères du parcours'}>
+          {profile.facts.map(([value, label]) => <div class="about-fact"><strong>{value}</strong><span>{label}</span></div>)}
+        </section>
+
+        <section class="about-grid">
+          <figure><img src={profile.image} alt={profile.imageAlt} width="1200" height="1500" /><figcaption>{profile.imageCaption}</figcaption></figure>
+          <div class="about-copy">
+            <p class="eyebrow">{market === 'us' ? 'Her story' : 'Son histoire'}</p>
+            <h2>{profile.storyTitle}</h2>
+            <div class="about-story">{profile.story.map((paragraph) => <p>{paragraph}</p>)}</div>
+            <blockquote>“{profile.quote}”</blockquote>
+          </div>
+        </section>
+
+        <section class="about-history band">
+          <div class="section-heading"><div><p class="eyebrow">{market === 'us' ? 'Career milestones' : 'Repères du parcours'}</p><h2>{market === 'us' ? 'A practice built over time.' : 'Une pratique construite dans la durée.'}</h2></div></div>
+          <div class="timeline">{profile.milestones.map(([period, text]) => <article><h3>{period}</h3><p>{text}</p></article>)}</div>
+        </section>
+
+        <section class="about-values band">
+          <div class="section-heading"><div><p class="eyebrow">{market === 'us' ? 'Principles of practice' : 'Principes de pratique'}</p><h2>{market === 'us' ? 'What guides every project.' : 'Ce qui guide chaque projet.'}</h2></div></div>
+          <div class="about-value-list">{profile.values.map(([title, text], index) => <article><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+        </section>
+      </article>
+    ))}
   </div>
+
+  <script>
+    function syncAboutMarket() {
+      const market = document.documentElement.dataset.market || 'ht';
+      document.querySelectorAll<HTMLElement>('[data-about-market]').forEach((profile) => {
+        profile.hidden = profile.dataset.aboutMarket !== market;
+      });
+    }
+    syncAboutMarket();
+    window.addEventListener('mgm:preference-change', syncAboutMarket);
+  </script>
 </BaseLayout>
