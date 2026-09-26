@@ -287,9 +287,15 @@
     if (!target || !window.MGM_DATA || !window.MGM_DATA.profiles) return;
     var market = root.dataset.market || "ht";
     var profile = window.MGM_DATA.profiles[market];
-    var aboutLabels = market === "us" ? { journey: "Practice", heading: "Design with precision, deliver with care." } : { journey: "Parcours", heading: "Concevoir avec précision, construire avec attention." };
+    var aboutLabels = market === "us" ? { journey: "Her story", milestones: "Career milestones", principles: "Principles of practice" } : { journey: "Son histoire", milestones: "Repères du parcours", principles: "Principes de pratique" };
+    var story = (profile.story || [profile.body]).map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join("");
+    var facts = (profile.facts || []).map(function (fact) { return '<div class="about-fact"><strong>' + fact.value + '</strong><span>' + fact.label + '</span></div>'; }).join("");
+    var values = (profile.values || []).map(function (item, index) { return '<article><span>0' + (index + 1) + '</span><div><h3>' + item.title + '</h3><p>' + item.text + '</p></div></article>'; }).join("");
     target.innerHTML = '<header class="page-intro"><p class="eyebrow">' + profile.eyebrow + '</p><div><h1>' + profile.title + '</h1><p>' + profile.lead + '</p></div></header>' +
-      '<section class="about-grid"><figure><img src="images/' + profile.portrait + '" alt="' + profile.portraitAlt + '"></figure><div class="about-copy"><p class="eyebrow">' + aboutLabels.journey + '</p><h2>' + aboutLabels.heading + '</h2><p>' + profile.body + '</p><div class="timeline">' + profile.timeline.map(function (item) { return '<article><h3>' + item.title + '</h3><p>' + item.text + '</p></article>'; }).join("") + '</div></div></section>';
+      '<section class="about-facts" aria-label="' + aboutLabels.milestones + '">' + facts + '</section>' +
+      '<section class="about-grid"><figure><img src="images/' + profile.portrait + '" alt="' + profile.portraitAlt + '"><figcaption>' + profile.portraitCaption + '</figcaption></figure><div class="about-copy"><p class="eyebrow">' + aboutLabels.journey + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><blockquote>“' + profile.quote + '”</blockquote></div></section>' +
+      '<section class="about-history band"><div class="section-heading"><div><p class="eyebrow">' + aboutLabels.milestones + '</p><h2>' + (market === "us" ? "A practice built over time." : "Une pratique construite dans la durée.") + '</h2></div></div><div class="timeline">' + profile.timeline.map(function (item) { return '<article><h3>' + item.title + '</h3><p>' + item.text + '</p></article>'; }).join("") + '</div></section>' +
+      '<section class="about-values band"><div class="section-heading"><div><p class="eyebrow">' + aboutLabels.principles + '</p><h2>' + (market === "us" ? "What guides every project." : "Ce qui guide chaque projet.") + '</h2></div></div><div class="about-value-list">' + values + '</div></section>';
   }
 
   function initializeContact() {

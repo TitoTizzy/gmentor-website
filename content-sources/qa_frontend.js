@@ -43,6 +43,7 @@ const output = path.resolve(__dirname, "qa-screenshots");
   const results = [];
   results.push(await inspect("home-haiti-desktop", "index.html", async () => page.getByRole("button", { name: "Haïti" }).click()));
   results.push(await inspect("home-usa-desktop", "index.html", async () => page.getByRole("button", { name: "USA" }).click()));
+  results.push(await inspect("about-haiti-desktop", "about.html", async () => page.getByRole("button", { name: "Haïti" }).click()));
   results.push(await inspect("about-usa-desktop", "about.html", async () => page.getByRole("button", { name: "USA" }).click()));
   results.push(await inspect("project-beach-house-desktop", "project.html?slug=beach-house-pierre-payen"));
   results.push(await inspect("portfolio-haiti-desktop", "portfolio.html", async () => {
@@ -55,6 +56,10 @@ const output = path.resolve(__dirname, "qa-screenshots");
 
   await page.setViewportSize({ width: 390, height: 844 });
   results.push(await inspect("home-haiti-mobile", "index.html", async () => {
+    await page.getByRole("button", { name: "Ouvrir le menu" }).click();
+    await page.getByRole("button", { name: "Haïti" }).click();
+  }));
+  results.push(await inspect("about-haiti-mobile", "about.html", async () => {
     await page.getByRole("button", { name: "Ouvrir le menu" }).click();
     await page.getByRole("button", { name: "Haïti" }).click();
   }));
