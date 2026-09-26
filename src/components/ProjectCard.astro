@@ -1,0 +1,18 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project; index?: number }
+const { project, index = 0 } = Astro.props;
+---
+<article class="project-card" data-project-card data-country={project.country} data-city={project.city} data-year={project.year ?? ''} data-type={project.type} data-market={project.markets.join(',')}>
+  <a href={`/projects/${project.slug}`} aria-label={`Voir ${project.title}`}>
+    <figure>
+      <img src={project.cover} alt={project.coverAlt} width="1536" height="1024" loading={index < 2 ? 'eager' : 'lazy'} decoding="async" />
+      {project.placeholder && <figcaption>Visuel éditorial temporaire</figcaption>}
+    </figure>
+    <div class="project-card-copy">
+      <p class="eyebrow">{project.city}{project.city && project.country ? ', ' : ''}{project.country}</p>
+      <h2>{project.title}</h2>
+      <p>{project.year ? `${project.year} · ` : ''}{project.type}</p>
+    </div>
+  </a>
+</article>

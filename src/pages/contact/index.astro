@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { services } from '../../data/services';
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+<BaseLayout title="Contact | Architecte Marie Gaëlle Mentor" description="Présentez votre projet architectural à Marie Gaëlle Mentor.">
+  <div class="page-shell container">
+    <header class="page-intro">
+      <p class="eyebrow">Contact</p>
+      <div><h1>Parlons de votre projet.</h1><p>Partagez les informations essentielles. Mme Mentor choisira le moyen de réponse le plus approprié.</p></div>
+    </header>
+    <section class="contact-grid">
+      <aside>
+        <p class="eyebrow">Marché sélectionné</p>
+        <h2 data-contact-market>Haïti</h2>
+        <p class="form-note">L’adresse professionnelle et les horaires seront affichés après leur validation. Aucun numéro de téléphone n’est publié.</p>
+      </aside>
+      <form class="contact-form" action="/api/contact" method="post" data-contact-form>
+        <input type="hidden" name="market" value="ht" data-market-input />
+        <input type="hidden" name="locale" value="fr" data-locale-input />
+        <div class="field"><label for="fullName">Nom complet *</label><input id="fullName" name="fullName" autocomplete="name" required maxlength="120" /></div>
+        <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" /></div>
+        <div class="field"><label for="phone">Téléphone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" /></div>
+        <div class="field"><label for="country">Pays *</label><input id="country" name="country" autocomplete="country-name" required maxlength="100" /></div>
+        <div class="field"><label for="city">Ville *</label><input id="city" name="city" autocomplete="address-level2" required maxlength="100" /></div>
+        <div class="field"><label for="projectType">Type de projet *</label><select id="projectType" name="projectType" required><option value="">Choisir</option>{services.map((service) => <option value={service.key}>{service.fr}</option>)}</select></div>
+        <div class="field span-2"><label for="description">Description du projet</label><textarea id="description" name="description" maxlength="2500"></textarea></div>
+        <label class="checkbox span-2"><input type="checkbox" name="usesWhatsapp" value="true" /><span>Ce numéro utilise WhatsApp</span></label>
+        <label class="checkbox span-2"><input type="checkbox" name="privacyAccepted" value="true" required /><span>J’accepte la <a href="/privacy" style="text-decoration:underline">politique de confidentialité</a> *</span></label>
+        <div class="span-2">
+          {turnstileKey ? <div class="cf-turnstile" data-sitekey={turnstileKey}></div> : <p class="form-note">Turnstile sera activé dès que la clé publique sera configurée.</p>}
+        </div>
+        <p class="form-note span-2" role="status" data-form-status></p>
+        <div class="span-2"><button class="button button-primary" type="submit">Envoyer la demande</button></div>
+      </form>
+    </section>
+  </div>
+  {turnstileKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+  <script>
+    function syncContact() {
+      const market = document.documentElement.dataset.market || 'ht';
+      const locale = document.documentElement.dataset.locale || 'fr';
+      const marketInput = document.querySelector<HTMLInputElement>('[data-market-input]');
+      const localeInput = document.querySelector<HTMLInputElement>('[data-locale-input]');
+      const title = document.querySelector('[data-contact-market]');
+      if (marketInput) marketInput.value = market;
+      if (localeInput) localeInput.value = locale;
+      if (title) title.textContent = market === 'us' ? 'United States' : 'Haïti';
+    }
+    syncContact();
+    window.addEventListener('mgm:preference-change', syncContact);
+  </script>
+</BaseLayout>

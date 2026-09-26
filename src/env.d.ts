@@ -1,0 +1,24 @@
+/// <reference types="astro/client" />
+
+interface ImportMetaEnv {
+  readonly PUBLIC_SUPABASE_URL?: string;
+  readonly PUBLIC_SUPABASE_ANON_KEY?: string;
+  readonly SUPABASE_SERVICE_ROLE_KEY?: string;
+  readonly RESEND_API_KEY?: string;
+  readonly TURNSTILE_SECRET_KEY?: string;
+  readonly PUBLIC_TURNSTILE_SITE_KEY?: string;
+  readonly CONTACT_EMAIL_US?: string;
+  readonly CONTACT_EMAIL_HT?: string;
+  readonly PUBLIC_SITE_URL?: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+
+declare namespace App {
+  interface Locals {
+    demoMode?: boolean;
+    user?: import('@supabase/supabase-js').User;
+  }
+}

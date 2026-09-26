@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+const demoMode = Astro.locals.demoMode === true;
+---
+<BaseLayout title="Tableau de bord | Marie Gaëlle Mentor" noindex>
+  <div class="admin-shell">
+    <aside class="admin-sidebar"><p class="eyebrow">Administration</p><nav aria-label="Administration"><a href="/admin" aria-current="page">Vue d’ensemble</a><a href="/admin/projects">Projets</a><a href="/admin/requests">Demandes</a><a href="/admin/services">Services</a><a href="/admin/settings">Paramètres</a></nav></aside>
+    <section class="admin-main">
+      <div class="section-heading"><div><p class="eyebrow">Tableau de bord</p><h1 style="font:400 clamp(2.6rem,6vw,5rem)/1 var(--serif);margin:0">Vue d’ensemble</h1></div><button class="button button-primary">Nouveau projet</button></div>
+      {demoMode && <p class="empty-state">Mode démonstration : connectez Supabase pour activer l’authentification, les données et les actions.</p>}
+      <div class="stat-grid"><article class="stat"><span>Projets</span><strong>{projects.length}</strong></article><article class="stat"><span>Publiés</span><strong>{projects.filter((p) => p.status === 'published').length}</strong></article><article class="stat"><span>Nouvelles demandes</span><strong>0</strong></article><article class="stat"><span>Vues ce mois</span><strong>—</strong></article></div>
+      <div class="table-scroll"><table class="data-table"><thead><tr><th>Projet</th><th>Marché</th><th>Lieu</th><th>Statut</th></tr></thead><tbody>{projects.map((project) => <tr><td>{project.title}</td><td>{project.markets.join(' + ').toUpperCase()}</td><td>{project.city || project.country}</td><td><span class="status">{project.status === 'published' ? 'Publié' : 'Brouillon'}</span></td></tr>)}</tbody></table></div>
+    </section>
+  </div>
+</BaseLayout>

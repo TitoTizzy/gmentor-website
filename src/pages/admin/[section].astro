@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const prerender = true;
+export function getStaticPaths() {
+  return [
+    { params: { section: 'projects' }, props: { title: 'Projets', description: 'Gérer les fiches, médias, portfolios, marchés et publications.' } },
+    { params: { section: 'requests' }, props: { title: 'Demandes', description: 'Suivre les nouvelles demandes et leurs statuts.' } },
+    { params: { section: 'services' }, props: { title: 'Services', description: 'Adapter les services existants selon le marché.' } },
+    { params: { section: 'settings' }, props: { title: 'Paramètres', description: 'Coordonnées, horaires, logos et configuration générale.' } }
+  ];
+}
+const { title, description } = Astro.props;
+---
+<BaseLayout title={`${title} — Administration`} noindex>
+  <div class="admin-shell">
+    <aside class="admin-sidebar"><p class="eyebrow">Administration</p><nav aria-label="Administration"><a href="/admin">Vue d’ensemble</a><a href="/admin/projects" aria-current={title === 'Projets' ? 'page' : undefined}>Projets</a><a href="/admin/requests" aria-current={title === 'Demandes' ? 'page' : undefined}>Demandes</a><a href="/admin/services" aria-current={title === 'Services' ? 'page' : undefined}>Services</a><a href="/admin/settings" aria-current={title === 'Paramètres' ? 'page' : undefined}>Paramètres</a></nav></aside>
+    <section class="admin-main"><p class="eyebrow">Gestion</p><h1 style="font:400 clamp(2.8rem,7vw,5.5rem)/1 var(--serif);margin:0 0 1rem">{title}</h1><p>{description}</p><div class="empty-state" style="margin-top:3rem">Cette surface est reliée au schéma Supabase. Les formulaires d’édition seront activés après configuration des identifiants et création des deux comptes MFA.</div></section>
+  </div>
+</BaseLayout>

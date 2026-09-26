@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { publishedProjects } from '../data/projects';
+import { services } from '../data/services';
+const featured = publishedProjects.filter((project) => project.featured);
+---
+<BaseLayout title="Architecte Marie Gaëlle Mentor" description="Portfolio architectural de Marie Gaëlle Mentor aux États-Unis et en Haïti.">
+  <section class="hero" aria-label="Projets sélectionnés" data-hero>
+    <div class="hero-media">
+      {featured.map((project, index) => (
+        <article class:list={['hero-slide', { 'is-active': index === 0 }]} data-hero-slide data-market={project.markets.join(',')}>
+          <img src={project.cover} alt={project.coverAlt} width="1536" height="1024" loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
+          <a class="hero-link" href={`/projects/${project.slug}`} aria-label={`Découvrir ${project.title}`}></a>
+          <div class="hero-content">
+            <img src="/assets/mgm-logo-original.png" alt="Marie Gaëlle Mentor" width="180" height="180" />
+            <div class="hero-meta">
+              <div>
+                <p class="eyebrow">{project.city}, {project.country}</p>
+                <h1>{project.title}</h1>
+                <p>{project.year ? `${project.year} · ` : ''}{project.type}</p>
+              </div>
+              <span class="hero-count">0{index + 1}</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="hero-dots" aria-label="Choisir un projet">
+      {featured.map((project, index) => <button type="button" aria-label={`Afficher ${project.title}`} aria-pressed={index === 0 ? 'true' : 'false'} data-hero-dot={index}></button>)}
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Expertise</p><h2>Concevoir avec justesse, du concept au chantier.</h2></div>
+        <a href="/contact">Parler de votre projet</a>
+      </div>
+      <div class="service-grid">
+        {services.map((service, index) => (
+          <article class="service-item" data-service data-en={service.en} data-fr={service.fr} data-kr={service.kr}>
+            <span>0{index + 1}</span><h3>{service.fr}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Réalisations</p><h2>Une architecture ancrée dans son contexte.</h2></div>
+        <a href="/projects">Toutes les réalisations</a>
+      </div>
+      <div class="project-grid">
+        {publishedProjects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container page-intro">
+      <p class="eyebrow">Nouveau projet</p>
+      <div><h2 style="font: 400 clamp(2.8rem, 7vw, 6rem)/.95 var(--serif); margin:0 0 2rem;">Donnons une forme claire à vos ambitions.</h2><a class="button button-primary" href="/contact">Prendre contact</a></div>
+    </div>
+  </section>
+
+  <script>
+    const slides = [...document.querySelectorAll('[data-hero-slide]')];
+    const dots = [...document.querySelectorAll('[data-hero-dot]')];
+    let active = 0;
+    function eligibleIndexes() {
+      const market = document.documentElement.dataset.market || 'ht';
+      return slides.map((slide, index) => (slide.getAttribute('data-market') || '').split(',').includes(market) ? index : -1).filter((index) => index >= 0);
+    }
+    function show(index: number) {
+      const eligible = eligibleIndexes();
+      if (!eligible.length) return;
+      active = eligible.includes(index) ? index : (eligible[0] ?? index);
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === active));
+      dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === active)));
+    }
+    function syncHeroMarket() {
+      const eligible = eligibleIndexes();
+      slides.forEach((slide, index) => slide.toggleAttribute('hidden', !eligible.includes(index)));
+      dots.forEach((dot, index) => dot.toggleAttribute('hidden', !eligible.includes(index)));
+      show(eligible[0] ?? 0);
+    }
+    dots.forEach((dot, index) => dot.addEventListener('click', () => show(index)));
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && slides.length > 1) setInterval(() => {
+      const eligible = eligibleIndexes();
+      const position = eligible.indexOf(active);
+      show(eligible[(position + 1) % eligible.length] ?? 0);
+    }, 6500);
+    function syncServices() {
+      const locale = document.documentElement.dataset.locale || 'fr';
+      document.querySelectorAll('[data-service]').forEach((item) => {
+        const heading = item.querySelector('h3');
+        if (heading) heading.textContent = item.getAttribute(`data-${locale}`) || item.getAttribute('data-fr') || '';
+      });
+    }
+    syncServices();
+    syncHeroMarket();
+    window.addEventListener('mgm:preference-change', () => {
+      syncServices();
+      syncHeroMarket();
+    });
+  </script>
+</BaseLayout>

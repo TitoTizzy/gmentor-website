@@ -1,0 +1,176 @@
+---
+import { Menu, Moon, Sun, X } from '@lucide/astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Portfolio architectural de Marie Gaëlle Mentor.',
+  image,
+  noindex = false
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="fr" data-theme="dark" data-market="ht" data-locale="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#11100f" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en-US" href={canonical} />
+    <link rel="alternate" hreflang="fr-HT" href={canonical} />
+    <link rel="alternate" hreflang="ht-HT" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('mgm-theme');
+        const savedMarket = localStorage.getItem('mgm-market');
+        const savedLocale = localStorage.getItem('mgm-locale');
+        const browserLanguage = navigator.language.toLowerCase();
+        const market = savedMarket || (browserLanguage.startsWith('fr') || browserLanguage.startsWith('ht') ? 'ht' : 'us');
+        const locale = savedLocale || (market === 'us' ? 'en' : browserLanguage.startsWith('ht') ? 'kr' : 'fr');
+        const theme = savedTheme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        root.dataset.theme = theme;
+        root.dataset.market = market;
+        root.dataset.locale = locale;
+        root.lang = locale === 'kr' ? 'ht' : locale;
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="Architecte Marie Gaëlle Mentor, accueil">
+        <img src="/assets/mgm-logo-original.png" alt="" width="80" height="80" />
+        <span><strong>Marie Gaëlle Mentor</strong><small data-market-title>Architecte licenciée en Haïti</small></span>
+      </a>
+      <button class="icon-button nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle>
+        <Menu class="menu-icon" size={22} aria-hidden="true" />
+        <X class="close-icon" size={22} aria-hidden="true" />
+      </button>
+      <nav class="main-nav" aria-label="Navigation principale" data-nav>
+        <a href="/" data-nav-label="home">Accueil</a>
+        <a href="/about" data-nav-label="about">À propos</a>
+        <a href="/projects" data-nav-label="projects">Réalisations</a>
+        <a href="/contact" data-nav-label="contact">Contact</a>
+      </nav>
+      <div class="header-tools">
+        <div class="segmented" aria-label="Marché">
+          <button type="button" data-market-button="us">USA</button>
+          <button type="button" data-market-button="ht">Haïti</button>
+        </div>
+        <div class="segmented locale-switch" aria-label="Langue">
+          <button type="button" data-locale-button="fr">FR</button>
+          <button type="button" data-locale-button="kr">KR</button>
+        </div>
+        <button class="icon-button" type="button" aria-label="Changer le thème" data-theme-toggle>
+          <Sun class="sun-icon" size={19} aria-hidden="true" />
+          <Moon class="moon-icon" size={19} aria-hidden="true" />
+        </button>
+      </div>
+    </header>
+
+    <main id="main"><slot /></main>
+
+    <footer class="site-footer">
+      <div>
+        <img src="/assets/mgm-logo-original.png" alt="Logo Marie Gaëlle Mentor" width="104" height="104" />
+        <p>Architecte Marie Gaëlle Mentor</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Confidentialité</a>
+        <a href="/cookies">Cookies</a>
+        <a href="/legal">Mentions légales</a>
+        <a href="/admin/login">Administration</a>
+      </div>
+      <p class="footer-note">© {new Date().getFullYear()} Marie Gaëlle Mentor</p>
+    </footer>
+
+    <aside class="consent" hidden data-consent aria-label="Préférences statistiques">
+      <p>Nous utilisons des statistiques respectueuses de votre vie privée pour améliorer le site.</p>
+      <div>
+        <button class="button button-primary" type="button" data-consent-choice="accepted">Accepter les statistiques</button>
+        <button class="button button-quiet" type="button" data-consent-choice="refused">Refuser</button>
+      </div>
+    </aside>
+
+    <script>
+      const root = document.documentElement;
+      const labels = {
+        en: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact', title: 'Architectural Designer' },
+        fr: { home: 'Accueil', about: 'À propos', projects: 'Réalisations', contact: 'Contact', title: 'Architecte licenciée en Haïti' },
+        kr: { home: 'Akèy', about: 'Konsènan', projects: 'Pwojè', contact: 'Kontak', title: 'Achitèk lisansye an Ayiti' }
+      };
+
+      function syncUi() {
+        const market = root.dataset.market || 'ht';
+        const locale = (market === 'us' ? 'en' : root.dataset.locale || 'fr') as keyof typeof labels;
+        root.dataset.locale = locale;
+        root.lang = locale === 'kr' ? 'ht' : locale;
+        document.querySelectorAll('[data-market-button]').forEach((button) => button.setAttribute('aria-pressed', String(button.getAttribute('data-market-button') === market)));
+        document.querySelectorAll('[data-locale-button]').forEach((button) => button.setAttribute('aria-pressed', String(button.getAttribute('data-locale-button') === locale)));
+        document.querySelectorAll('[data-nav-label]').forEach((link) => {
+          const key = link.getAttribute('data-nav-label') as keyof (typeof labels)['fr'] | null;
+          if (key && key in labels[locale]) link.textContent = labels[locale][key];
+        });
+        const title = document.querySelector('[data-market-title]');
+        if (title) title.textContent = labels[locale].title;
+      }
+
+      document.querySelectorAll('[data-market-button]').forEach((button) => button.addEventListener('click', () => {
+        const market = button.getAttribute('data-market-button') || 'ht';
+        root.dataset.market = market;
+        root.dataset.locale = market === 'us' ? 'en' : (localStorage.getItem('mgm-locale-ht') || 'fr');
+        localStorage.setItem('mgm-market', market);
+        syncUi();
+        window.dispatchEvent(new CustomEvent('mgm:preference-change'));
+      }));
+
+      document.querySelectorAll('[data-locale-button]').forEach((button) => button.addEventListener('click', () => {
+        const locale = button.getAttribute('data-locale-button') || 'fr';
+        root.dataset.locale = locale;
+        localStorage.setItem('mgm-locale', locale);
+        localStorage.setItem('mgm-locale-ht', locale);
+        syncUi();
+        window.dispatchEvent(new CustomEvent('mgm:preference-change'));
+      }));
+
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('mgm-theme', root.dataset.theme);
+      });
+
+      const navButton = document.querySelector('[data-nav-toggle]');
+      navButton?.addEventListener('click', () => {
+        const open = navButton.getAttribute('aria-expanded') !== 'true';
+        navButton.setAttribute('aria-expanded', String(open));
+        document.querySelector('[data-nav]')?.classList.toggle('is-open', open);
+      });
+
+      const consent = document.querySelector<HTMLElement>('[data-consent]');
+      if (consent && !localStorage.getItem('mgm-analytics-consent')) consent.hidden = false;
+      document.querySelectorAll('[data-consent-choice]').forEach((button) => button.addEventListener('click', () => {
+        localStorage.setItem('mgm-analytics-consent', button.getAttribute('data-consent-choice') || 'refused');
+        if (consent) consent.hidden = true;
+      }));
+      syncUi();
+    </script>
+  </body>
+</html>
