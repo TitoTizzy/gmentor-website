@@ -12,6 +12,12 @@ Créer deux projets d’hébergement à partir de ce dépôt :
 
 Chaque projet doit être publié depuis son propre dossier. Le site USA ne doit jamais utiliser sites/haiti comme racine ou comme source d’assets.
 
+## Entrées GitHub Pages
+
+- \`index.html\` redirige vers le site USA.
+- \`indexhaiti.html\` redirige vers le site Haïti.
+- \`frontend/index.html\` est uniquement une redirection de compatibilité pour les anciens liens USA.
+
 ## Application Astro
 
 1. Créer le projet Supabase et appliquer la migration puis le seed.
