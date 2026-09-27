@@ -8,6 +8,10 @@ const { chromium } = require("playwright");
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const screenshots = path.join(root, "content-sources", "qa-screenshots");
 
+function rootFileUrl(file) {
+  return `file:///${path.join(root, file).replace(/\\/g, "/")}`;
+}
+
 function fileUrl(variant, file) {
   return `file:///${path.join(root, "sites", variant, file).replace(/\\/g, "/")}`;
 }
@@ -53,6 +57,16 @@ function fileUrl(variant, file) {
   }
 
   const results = [];
+  const entrypoints = [];
+  for (const [file, expectedPath] of [
+    ["index.html", "/sites/usa/index.html"],
+    ["indexhaiti.html", "/sites/haiti/index.html"],
+    ["frontend/index.html", "/sites/usa/index.html"]
+  ]) {
+    await page.goto(rootFileUrl(file));
+    await page.waitForTimeout(100);
+    entrypoints.push({ file, expectedPath, destination: new URL(page.url()).pathname });
+  }
   results.push(await inspect("usa", "index.html"));
   results.push(await inspect("usa", "about.html"));
   results.push(await inspect("usa", "contact.html"));
@@ -69,6 +83,11 @@ function fileUrl(variant, file) {
   }, { width: 390, height: 844 }));
 
   const failures = [];
+  for (const entrypoint of entrypoints) {
+    if (!entrypoint.destination.endsWith(entrypoint.expectedPath)) {
+      failures.push(`${entrypoint.file}: redirects to ${entrypoint.destination}`);
+    }
+  }
   for (const result of results) {
     if (result.brokenImages.length) failures.push(`${result.variant}/${result.file}: broken images`);
     if (result.horizontalOverflow) failures.push(`${result.variant}/${result.file}: horizontal overflow`);
@@ -80,6 +99,7 @@ function fileUrl(variant, file) {
   }
 
   console.log(JSON.stringify({
+    entrypoints,
     results: results.map(({ visibleText, ...result }) => result),
     errors,
     failures
