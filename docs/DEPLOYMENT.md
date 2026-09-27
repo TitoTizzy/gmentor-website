@@ -1,17 +1,16 @@
 # Déploiement des deux sites
 
-Le même dépôt produit deux sites statiques réellement séparés :
+Le dépôt contient deux applications web autonomes. Elles ne sont plus générées depuis un frontend commun :
 
-- npm run build:usa génère dist-site/ pour mariegaellementor.com. Ce build contient uniquement le profil, les projets et les images USA, en anglais.
-- npm run build:haiti génère dist-site/ pour haiti.mariegaellementor.com. Ce build contient les marchés USA et Haïti avec le sélecteur de marché.
-- npm run build:sites génère les deux variantes dans dist-sites/usa/ et dist-sites/haiti/ pour la vérification locale.
+- sites/usa/ est le site anglais de mariegaellementor.com. Il contient uniquement le profil, les projets et les images USA.
+- sites/haiti/ est le site de haiti.mariegaellementor.com. Il contient les expériences USA et Haïti avec le sélecteur de marché.
 
 Créer deux projets d’hébergement à partir de ce dépôt :
 
-1. Projet mgm-usa : commande npm run build:usa, dossier de sortie dist-site, domaine mariegaellementor.com.
-2. Projet mgm-haiti : commande npm run build:haiti, dossier de sortie dist-site, domaine haiti.mariegaellementor.com.
+1. Projet mgm-usa : dossier racine sites/usa, aucun build requis, domaine mariegaellementor.com.
+2. Projet mgm-haiti : dossier racine sites/haiti, aucun build requis, domaine haiti.mariegaellementor.com.
 
-Ne pas pointer les deux domaines vers un seul artefact : cela remettrait les données Haïti dans les fichiers téléchargés par les visiteurs USA.
+Chaque projet doit être publié depuis son propre dossier. Le site USA ne doit jamais utiliser sites/haiti comme racine ou comme source d’assets.
 
 ## Application Astro
 

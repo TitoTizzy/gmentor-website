@@ -1,6 +1,13 @@
 # Architecte Marie Gaëlle Mentor
 
-Portfolio architectural multi-marché construit avec Astro, TypeScript, Supabase et Vercel.
+Ce dépôt contient deux sites web autonomes pour Marie Gaëlle Mentor, ainsi qu'une application Astro expérimentale conservée pour les fonctions serveur et l'administration.
+
+## Sites publics
+
+- `sites/usa/` : site anglais réservé aux activités aux États-Unis, destiné à `mariegaellementor.com`.
+- `sites/haiti/` : site Haïti contenant les parcours et projets Haïti et USA, destiné à `haiti.mariegaellementor.com`.
+
+Les deux dossiers possèdent leurs propres pages HTML, CSS, JavaScript, contenus et médias. Ils peuvent être déployés ou déplacés dans deux dépôts distincts sans reconstruction.
 
 ## Installation
 
@@ -17,6 +24,7 @@ Portfolio architectural multi-marché construit avec Astro, TypeScript, Supabase
 - `pnpm test` : tests unitaires
 - `pnpm test:e2e` : tests navigateur
 - `pnpm build` : build Vercel
+- `npm run qa:sites` : contrôle les deux sites statiques sur ordinateur et mobile
 
 ## Fonctionnalités intégrées
 
