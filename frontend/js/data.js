@@ -1,6 +1,7 @@
 (function () {
   "use strict";
 
+  window.MGM_SITE_VARIANT = window.MGM_SITE_VARIANT || "haiti";
   window.MGM_DATA = {
     services: [
       { en: "Architectural design", fr: "Conception architecturale", kr: "Konsepsyon achitekti" },

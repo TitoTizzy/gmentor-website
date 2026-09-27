@@ -5,6 +5,7 @@
   var body = document.body;
   var assetRoot = body.dataset.root || ".";
   var page = body.dataset.page || "home";
+  var siteVariant = window.MGM_SITE_VARIANT || "haiti";
   var labels = {
     en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Architectural Designer" },
     fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Architecte licenciée en Haïti" },
@@ -17,6 +18,13 @@
 
   function initializePreferences() {
     var browserLanguage = (navigator.language || "en").toLowerCase();
+    if (siteVariant === "usa") {
+      root.dataset.market = "us";
+      root.dataset.locale = "en";
+      root.dataset.siteVariant = "usa";
+      root.dataset.theme = localStorage.getItem("mgm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      return;
+    }
     var savedMarket = localStorage.getItem("mgm-market");
     var market = savedMarket || (/^(fr|ht)/.test(browserLanguage) ? "ht" : "us");
     var locale = localStorage.getItem("mgm-locale") || (market === "us" ? "en" : browserLanguage.indexOf("ht") === 0 ? "kr" : "fr");
@@ -24,28 +32,36 @@
     root.dataset.market = market;
     root.dataset.locale = market === "us" ? "en" : locale;
     root.dataset.theme = theme;
+    root.dataset.siteVariant = "haiti";
   }
 
   function renderShell() {
     var header = document.querySelector("[data-site-header]");
     var footer = document.querySelector("[data-site-footer]");
+    var shellLocale = siteVariant === "usa" ? "en" : (root.dataset.locale || "fr");
+    var shellText = shellLocale === "en" ? {
+      home: "home", menu: "Open menu", navigation: "Primary navigation", theme: "Change theme", footer: "Marie Gaëlle Mentor Architectural Designer"
+    } : {
+      home: "accueil", menu: "Ouvrir le menu", navigation: "Navigation principale", theme: "Changer le thème", footer: "Architecte Marie Gaëlle Mentor"
+    };
+    var marketTools = siteVariant === "usa" ? "" : '<div class="segmented" aria-label="Marché"><button type="button" data-market="us">USA</button><button type="button" data-market="ht">Haïti</button></div><div class="segmented locale-switch" aria-label="Langue"><button type="button" data-locale="fr">FR</button><button type="button" data-locale="kr">KR</button></div>';
     if (header) {
       header.innerHTML = [
-        '<a class="brand" href="' + href("index.html") + '" aria-label="Marie Gaëlle Mentor, accueil">',
+        '<a class="brand" href="' + href("index.html") + '" aria-label="Marie Gaëlle Mentor, ' + shellText.home + '">',
         '<img src="' + href("assets/mgm-logo.png") + '" alt="" width="56" height="56">',
         '<span class="brand-copy"><strong>Marie Gaëlle Mentor</strong><small data-market-title></small></span></a>',
-        '<button class="icon-button nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle><span aria-hidden="true">☰</span></button>',
-        '<nav class="main-nav" aria-label="Navigation principale" data-nav>',
+        '<button class="icon-button nav-toggle" type="button" aria-label="' + shellText.menu + '" aria-expanded="false" data-nav-toggle><span aria-hidden="true">☰</span></button>',
+        '<nav class="main-nav" aria-label="' + shellText.navigation + '" data-nav>',
         navLink("index.html", "home"), navLink("about.html", "about"), navLink("projects.html", "projects"), navLink("portfolio.html", "portfolio"), navLink("contact.html", "contact"),
         '</nav>',
-        '<div class="header-tools"><div class="segmented" aria-label="Marché"><button type="button" data-market="us">USA</button><button type="button" data-market="ht">Haïti</button></div>',
-        '<div class="segmented locale-switch" aria-label="Langue"><button type="button" data-locale="fr">FR</button><button type="button" data-locale="kr">KR</button></div>',
-        '<button class="icon-button" type="button" aria-label="Changer le thème" data-theme-toggle><span aria-hidden="true">◐</span></button></div>'
+        '<div class="header-tools">' + marketTools,
+        '<button class="icon-button" type="button" aria-label="' + shellText.theme + '" data-theme-toggle><span aria-hidden="true">◐</span></button></div>'
       ].join("");
     }
     if (footer) {
-      footer.innerHTML = '<div><img src="' + href("assets/mgm-logo.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p>Architecte Marie Gaëlle Mentor</p></div>' +
-        '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a><a href="' + href("admin/login.html") + '" data-i18n data-en="Administration" data-fr="Administration" data-kr="Administrasyon">Administration</a></div>' +
+      var adminLink = siteVariant === "usa" ? "" : '<a href="' + href("admin/login.html") + '" data-i18n data-en="Administration" data-fr="Administration" data-kr="Administrasyon">Administration</a>';
+      footer.innerHTML = '<div><img src="' + href("assets/mgm-logo.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
+        '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a>' + adminLink + '</div>' +
         '<p class="footer-note">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor</p>';
     }
     if (!document.querySelector("[data-consent]")) {
@@ -65,8 +81,9 @@
   }
 
   function syncPreferences() {
-    var market = root.dataset.market || "ht";
+    var market = siteVariant === "usa" ? "us" : (root.dataset.market || "ht");
     var locale = market === "us" ? "en" : (root.dataset.locale || "fr");
+    root.dataset.market = market;
     root.dataset.locale = locale;
     root.lang = locale === "kr" ? "ht" : locale;
     document.querySelectorAll("[data-market]").forEach(function (button) {
@@ -80,6 +97,8 @@
     });
     var title = document.querySelector("[data-market-title]");
     if (title) title.textContent = labels[locale].title;
+    var footerTitle = document.querySelector("[data-footer-title]");
+    if (footerTitle) footerTitle.textContent = locale === "en" ? "Marie Gaëlle Mentor Architectural Designer" : locale === "kr" ? "Achitèk Marie Gaëlle Mentor" : "Architecte Marie Gaëlle Mentor";
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var translated = node.dataset[locale] || node.dataset.fr;
       if (translated) node.textContent = translated;
@@ -98,7 +117,7 @@
     function closeNavigation() {
       if (!navButton || !nav) return;
       navButton.setAttribute("aria-expanded", "false");
-      navButton.setAttribute("aria-label", "Ouvrir le menu");
+      navButton.setAttribute("aria-label", siteVariant === "usa" ? "Open menu" : "Ouvrir le menu");
       navButton.firstElementChild.textContent = "☰";
       nav.classList.remove("open");
       body.classList.remove("menu-open");
@@ -130,7 +149,7 @@
     if (navButton && nav) navButton.addEventListener("click", function () {
       var open = navButton.getAttribute("aria-expanded") !== "true";
       navButton.setAttribute("aria-expanded", String(open));
-      navButton.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      navButton.setAttribute("aria-label", open ? (siteVariant === "usa" ? "Close menu" : "Fermer le menu") : (siteVariant === "usa" ? "Open menu" : "Ouvrir le menu"));
       navButton.firstElementChild.textContent = open ? "×" : "☰";
       nav.classList.toggle("open", open);
       body.classList.toggle("menu-open", open);
@@ -259,7 +278,7 @@
     var slug = new URLSearchParams(location.search).get("slug");
     var project = window.MGM_DATA.projects.find(function (item) { return item.slug === slug && item.published; });
     if (!project) {
-      target.innerHTML = '<div class="page-shell container"><p class="eyebrow">Projet</p><h1>Projet introuvable</h1><p><a class="text-link" href="projects.html">Retour aux réalisations</a></p></div>';
+      target.innerHTML = siteVariant === "usa" ? '<div class="page-shell container"><p class="eyebrow">Project</p><h1>Project not found</h1><p><a class="text-link" href="projects.html">Back to projects</a></p></div>' : '<div class="page-shell container"><p class="eyebrow">Projet</p><h1>Projet introuvable</h1><p><a class="text-link" href="projects.html">Retour aux réalisations</a></p></div>';
       return;
     }
     var projectMarket = project.markets[0];
@@ -316,7 +335,7 @@
       requests.push(request);
       localStorage.setItem("mgm-demo-requests", JSON.stringify(requests));
       form.reset();
-      if (status) status.textContent = "Demande enregistrée dans cette démonstration. Le backend pourra ensuite l’envoyer à Supabase.";
+      if (status) status.textContent = siteVariant === "usa" ? "Request saved in this demonstration. The backend can then send it to Supabase." : "Demande enregistrée dans cette démonstration. Le backend pourra ensuite l’envoyer à Supabase.";
     });
   }
 

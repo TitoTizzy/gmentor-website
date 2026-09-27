@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
+    "build:site": "node scripts/build-static-site.mjs",
+    "build:usa": "node scripts/build-static-site.mjs usa dist-site",
+    "build:haiti": "node scripts/build-static-site.mjs haiti dist-site",
+    "build:sites": "node scripts/build-static-site.mjs --all",
     "preview": "astro preview",
     "typecheck": "astro check",
     "test": "vitest run",
