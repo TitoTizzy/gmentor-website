@@ -9,7 +9,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const screenshots = path.join(root, "content-sources", "qa-screenshots");
 
 function fileUrl(variant, file) {
-  return `file:///${path.join(root, "dist-sites", variant, file).replace(/\\/g, "/")}`;
+  return `file:///${path.join(root, "sites", variant, file).replace(/\\/g, "/")}`;
 }
 
 (async () => {

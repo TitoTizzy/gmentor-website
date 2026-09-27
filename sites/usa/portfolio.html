@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-market="us" data-locale="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive United States architectural portfolio of Marie Gaëlle Mentor.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Portfolio | Marie Gaëlle Mentor</title>
+</head>
+<body data-root="." data-page="portfolio">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main" class="portfolio-shell">
+    <header class="portfolio-heading container">
+      <div><p class="eyebrow" data-book-market-label>United States Portfolio</p><h1 data-book-title>Turn the pages.</h1></div>
+      <p data-book-intro>Photos, rendus et plans réunis dans un livre interactif.</p>
+    </header>
+    <section class="book-stage" data-book-stage aria-label="Interactive portfolio">
+      <div class="book-toolbar" aria-label="Portfolio controls">
+        <button class="icon-button" type="button" data-book-prev title="Previous page" aria-label="Previous page">←</button>
+        <span class="book-counter" data-book-counter aria-live="polite">1 / 1</span>
+        <button class="icon-button" type="button" data-book-next title="Next page" aria-label="Next page">→</button>
+        <button class="icon-button" type="button" data-book-fullscreen title="Fullscreen" aria-label="View portfolio in fullscreen">⛶</button>
+      </div>
+      <div class="portfolio-book" data-portfolio-book></div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script src="js/data.js" defer></script>
+  <script src="js/vendor/page-flip.browser.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+</body>
+</html>

@@ -9,7 +9,11 @@ from PIL import Image, ImageFilter, ImageOps
 
 
 ROOT = Path(__file__).resolve().parent
-FRONTEND = ROOT.parent / "frontend" / "images"
+SITES = ROOT.parent / "sites"
+SITE_IMAGES = {
+    "usa": [SITES / "usa" / "images" / "usa", SITES / "haiti" / "images" / "usa"],
+    "haiti": [SITES / "haiti" / "images" / "haiti"],
+}
 USA_MEDIA = ROOT / "usa" / "usa-portfolio" / "media"
 HAITI_MIXED = ROOT / "mixed" / "mixed-portfolio" / "haiti-media"
 HAITI_LIVRET = ROOT / "haiti" / "haiti-livret" / "media"
@@ -66,9 +70,9 @@ ASSETS = [
 
 def main() -> None:
     only_asset = os.environ.get("MGM_ASSET")
-    for market in ("usa", "haiti"):
-        target = FRONTEND / market
-        target.mkdir(parents=True, exist_ok=True)
+    for targets in SITE_IMAGES.values():
+        for target in targets:
+            target.mkdir(parents=True, exist_ok=True)
 
     manifest_path = ROOT / "web-asset-manifest.json"
     if only_asset and manifest_path.exists():
@@ -80,7 +84,7 @@ def main() -> None:
             continue
         if not source.exists():
             raise FileNotFoundError(source)
-        target = FRONTEND / market / filename
+        targets = [directory / filename for directory in SITE_IMAGES[market]]
         with Image.open(source) as image:
             converted = ImageOps.exif_transpose(image).convert("RGB")
             scale = FOUR_K_LONG_EDGE / max(converted.size)
@@ -88,13 +92,15 @@ def main() -> None:
             converted = converted.resize(size, Image.Resampling.LANCZOS)
             if asset_type in {"cover", "photo", "render"}:
                 converted = converted.filter(ImageFilter.UnsharpMask(radius=1.3, percent=115, threshold=3))
-            converted.save(target, "WEBP", quality=95, method=6)
+            for target in targets:
+                converted.save(target, "WEBP", quality=95, method=6)
         manifest.append(
             {
                 "market": market,
                 "project": project,
                 "type": asset_type,
-                "web_asset": str(target.relative_to(FRONTEND.parent)).replace("\\", "/"),
+                "web_asset": str(targets[0].relative_to(ROOT.parent)).replace("\\", "/"),
+                "web_assets": [str(target.relative_to(ROOT.parent)).replace("\\", "/") for target in targets],
                 "source": str(source.relative_to(ROOT)).replace("\\", "/"),
                 "source_page": page,
                 "output_width": converted.width,
