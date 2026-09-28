@@ -56,7 +56,7 @@
     if (header) {
       header.innerHTML = [
         '<a class="brand" href="' + href("index.html") + '" aria-label="Marie Gaëlle Mentor, ' + shellText.home + '">',
-        '<img src="' + href("assets/mgm-logo.png") + '" alt="" width="56" height="56">',
+        '<img class="theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="" width="56" height="56">',
         '<span class="brand-copy"><strong>Marie Gaëlle Mentor</strong><small data-market-title></small></span></a>',
         '<button class="icon-button nav-toggle" type="button" aria-label="' + shellText.menu + '" aria-expanded="false" data-nav-toggle><span aria-hidden="true">☰</span></button>',
         '<nav class="main-nav" aria-label="' + shellText.navigation + '" data-nav>',
@@ -67,7 +67,7 @@
       ].join("");
     }
     if (footer) {
-      footer.innerHTML = '<div><img src="' + href("assets/mgm-logo.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
+      footer.innerHTML = '<div><img class="theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
         '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a></div>' +
         '<p class="footer-note">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor</p>';
     }
@@ -260,7 +260,7 @@
     var dots = hero.querySelector("[data-hero-dots]");
     var active = 0;
     slides.innerHTML = projects.map(function (project, index) {
-      return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="Découvrir ' + project.title + '"></a><div class="hero-content"><img class="hero-logo" src="' + href("assets/mgm-logo.png") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
+      return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="Découvrir ' + project.title + '"></a><div class="hero-content"><img class="hero-logo theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
     }).join("");
     dots.innerHTML = projects.map(function (project, index) { return '<button type="button" aria-label="Afficher ' + project.title + '" data-hero-dot="' + index + '"></button>'; }).join("");
 

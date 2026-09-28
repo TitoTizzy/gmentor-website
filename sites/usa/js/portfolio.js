@@ -34,11 +34,11 @@
     });
     var cover = projects[0];
     var pages = [
-      '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><p>United States Portfolio</p><h2>Marie Gaëlle Mentor</h2><span>Architectural Designer</span></div></article>',
+      '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img class="theme-logo" src="assets/mgm-logo-dark.png" alt="Marie Gaëlle Mentor"><p>United States Portfolio</p><h2>Marie Gaëlle Mentor</h2><span>Architectural Designer</span></div></article>',
       '<article class="book-page book-opening"><p class="eyebrow">Selected work</p><h2>Architecture grounded in use, place and detail.</h2><p>A selection of residential work in Connecticut, presented through built photographs and architectural drawings.</p><span class="book-opening-count">' + projects.length + ' projects</span></article>'
     ];
     projects.forEach(function (project) { pages = pages.concat(projectPages(project)); });
-    pages.push('<article class="book-page book-back" data-density="hard"><img src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><p>Spaces that inspire a better tomorrow</p><a href="contact.html">Discuss a project</a></article>');
+    pages.push('<article class="book-page book-back" data-density="hard"><img class="theme-logo" src="assets/mgm-logo-dark.png" alt="Marie Gaëlle Mentor"><p>Spaces that inspire a better tomorrow</p><a href="contact.html">Discuss a project</a></article>');
 
     if (pageFlip) {
       pageFlip.destroy();
