@@ -500,4 +500,191 @@
     }
   ]
 };
+
+window.MGM_DATA.projectLocales = {
+  en: {
+    "beach-house-pierre-payen": {
+      title: "Beach House", country: "Haiti", city: "Pierre Payen, Montrouis", type: "Coastal residence", role: "Architectural design and coordination",
+      alt: "Beach House built in Pierre Payen, Montrouis, Haiti",
+      description: "Built on the waterfront in Pierre Payen, this residence combines an open layout, wide glazed openings and outdoor extensions oriented toward the landscape. The project was delivered in a demanding logistical context, with constant attention to continuity between design and construction."
+    },
+    "extension-uce": {
+      title: "UCE Office Extension", country: "Haiti", type: "Office and institutional project", role: "Design and construction supervision",
+      alt: "Lightweight extension of the UCE offices in Haiti",
+      description: "A lightweight structure designed above an existing swimming pool, with the option of being dismantled if the site needed to be restored. The project preserves nearby trees and shrubs while responding carefully to access and siting constraints."
+    },
+    "maisons-grand-sud": {
+      title: "Earthquake-Resistant Homes in the Grand Sud", country: "Haiti", city: "Grand Sud", type: "Resilient housing", role: "Design, supervision and construction",
+      alt: "House with a veranda completed in Haiti's Grand Sud",
+      description: "A family of two- to four-bedroom homes designed for areas exposed to earthquakes and hurricanes. The models combine compact planning, shaded verandas, appropriate materials and confined-masonry principles."
+    }
+  },
+  fr: {
+    "townhouse-waterbury": {
+      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial", role: "Conception architecturale",
+      alt: "Maison multifamiliale bleu-gris réalisée à Waterbury, Connecticut",
+      description: "Un bâtiment résidentiel contemporain organisé pour optimiser l'espace, la lumière naturelle et la ventilation. Le bardage horizontal, le rythme vertical lisible et la toiture à pignon lui donnent une identité résidentielle durable et mesurée."
+    },
+    "water-view-east": {
+      country: "États-Unis", city: "Norwalk, Connecticut", type: "Habitat multifamilial", role: "Conception architecturale en collaboration avec AWA Design Group",
+      alt: "Résidence multifamiliale symétrique de Water View East à Norwalk",
+      description: "Un ensemble résidentiel multifamilial qui associe des proportions classiques à des modes de vie contemporains. Les bow-windows, les balcons et le soubassement en brique donnent de la profondeur à la façade, tandis que les espaces ouverts relient matériaux chaleureux et lumière naturelle généreuse."
+    },
+    "forest-street": {
+      title: "Ensemble résidentiel, Forest Street", country: "États-Unis", city: "Connecticut", type: "Ensemble résidentiel", role: "Conception architecturale en collaboration avec AWA Design Group",
+      alt: "Ensemble de maisons mitoyennes sur Forest Street, Connecticut",
+      description: "Un quartier résidentiel composé de maisons mitoyennes symétriques, de toitures à pignon et d'entrées soigneusement alignées. Le projet associe des documents d'exécution détaillés à des intérieurs ouverts et chaleureux, dans une relation cohérente entre bâtiments et paysage."
+    }
+  },
+  kr: {
+    "townhouse-waterbury": {
+      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal", role: "Konsepsyon achitekti",
+      alt: "Kay miltifamilyal ki fini nan Waterbury, Connecticut",
+      description: "Yon bilding rezidansyèl modèn ki òganize pou byen itilize espas, limyè natirèl ak vantilasyon. Revètman orizontal la, ritm vètikal la ak twati an pignon bay pwojè a yon karaktè dirab ak ekilibre."
+    },
+    "water-view-east": {
+      country: "Etazini", city: "Norwalk, Connecticut", type: "Lojman miltifamilyal", role: "Konsepsyon achitekti an kolaborasyon ak AWA Design Group",
+      alt: "Rezidans miltifamilyal Water View East nan Norwalk",
+      description: "Yon pwojè rezidansyèl miltifamilyal ki mete pwopòsyon klasik ansanm ak fason moun viv jodi a. Fenèt an avan, balkon ak baz an brik bay fasad la pwofondè, pandan espas ouvè yo mare materyo cho ak anpil limyè natirèl."
+    },
+    "forest-street": {
+      title: "Devlopman rezidansyèl Forest Street", country: "Etazini", city: "Connecticut", type: "Devlopman rezidansyèl", role: "Konsepsyon achitekti an kolaborasyon ak AWA Design Group",
+      alt: "Devlopman kay kole sou Forest Street nan Connecticut",
+      description: "Yon ansanbl rezidansyèl ki fèt ak kay kole simetrik, twati an pignon ak antre ki aliyen avèk presizyon. Pwojè a mete plan konstriksyon detaye ansanm ak enteryè ouvè ak cho, nan yon relasyon klè ant bilding yo ak peyizaj la."
+    },
+    "beach-house-pierre-payen": {
+      title: "Kay bò lanmè", country: "Ayiti", city: "Pierre Payen, Montrouis", type: "Rezidans bò lanmè", role: "Konsepsyon achitekti ak kowòdinasyon",
+      alt: "Kay bò lanmè ki bati nan Pierre Payen, Montrouis, Ayiti",
+      description: "Rezidans sa a, ki bati bò lanmè nan Pierre Payen, genyen yon òganizasyon ouvè, gwo ouvèti ak espas deyò ki vire sou peyizaj la. Pwojè a te reyalize nan yon kontèks lojistik ki te mande anpil swivi ak atansyon ant konsepsyon ak konstriksyon."
+    },
+    "extension-uce": {
+      title: "Ekstansyon biwo UCE", country: "Ayiti", type: "Biwo ak pwojè enstitisyonèl", role: "Konsepsyon ak swivi konstriksyon",
+      alt: "Ekstansyon lejè biwo UCE ann Ayiti",
+      description: "Yon estrikti lejè ki fèt anlè yon pisin ki te deja la, avèk posiblite pou demonte li si sit la ta dwe retabli. Pwojè a pwoteje pyebwa ak plant ki toupre yo pandan li reponn ak presizyon ak kontrent aksè ak anplasman."
+    },
+    "maisons-grand-sud": {
+      title: "Kay ki reziste tranblemanntè nan Gran Sid", country: "Ayiti", city: "Gran Sid", type: "Lojman rezilyan", role: "Konsepsyon, sipèvizyon ak konstriksyon",
+      alt: "Kay ak galri ki reyalize nan Gran Sid Ayiti",
+      description: "Yon seri kay de rive kat chanm ki fèt pou zòn ki ekspoze ak tranblemanntè ak siklòn. Modèl yo mete ansanm yon plan konpak, galri, materyo adapte ak prensip masonri chennen."
+    }
+  }
+};
+
+window.MGM_DATA.profileLocales = {
+  en: {
+    us: window.MGM_DATA.profiles.us,
+    ht: {
+      eyebrow: "Licensed Architect in Haiti",
+      title: "In Haiti, architecture conceived on paper and proven in the field.",
+      portraitAlt: "Portrait of architect Marie Gaëlle Mentor wearing yellow",
+      portraitCaption: "Marie Gaëlle Mentor, licensed architect in Haiti.",
+      lead: "Marie Gaëlle Mentor's professional journey began in Port-au-Prince and developed through direct contact with construction sites, companies, institutions and families. Since 1995, her practice has brought together design, supervision, coordination and delivery, with sustained attention to safety, climate, available resources and the dignity of use.",
+      storyTitle: "From architectural studies to project leadership.",
+      story: [
+        "Marie Gaëlle Mentor studied architecture at GOC University in Port-au-Prince from 1990 to 1995. Her education developed her command of drawing, composition and spatial thinking, complemented by studies of movement and environments. From the outset, her work treated space as a setting for gestures, habits, culture and distinct ways of living.",
+        "After graduating, she joined Gecim Construction as an architectural designer and site supervisor. From 1995 to 1997, she tested drawings against materials, schedules and the daily work of building teams, then continued those responsibilities at Chantiers Nationaux through 1999. These formative years established a lasting discipline rooted in observation, anticipation and attentive presence during construction.",
+        "From 1999 to 2003, her work at Acropole in Pétion-Ville consolidated her residential design experience. She developed an approach attentive to interior organization, daylight, ventilation and the relationship between a home and its surroundings. This period also prepared the international dimension of her career in New York and Connecticut while maintaining a continuous professional connection with Haiti.",
+        "Her Haitian experience gradually expanded beyond private housing to shelters, schools, sanitation blocks, drinking-water systems, courthouses, clinics and community or institutional facilities. Each commission called for responses adapted to essential needs, precise budgets and complex logistical realities, with every project treated as a responsibility toward its future users.",
+        "In 2014, she directed an administrative building and enclosure project for the Centre d'Art and FOKAL. From August 2014 to July 2019, she served as General Manager and Senior Architect of Shelter IT Haiti & USA, coordinating studies, teams and delivery for residential, institutional and shelter projects in Port-au-Prince, Cap-Haïtien, Limbé, Pierre Payen, Caracol, Port-de-Paix, Jacmel, Léogâne, Les Cayes and many other communities.",
+        "Representative assignments include the rehabilitation of the North-East COUD and an approximately 100-square-metre office shelter developed with BCE and GPM. The lightweight UCE office extension addressed another challenge: intervening precisely, preserving the site and creating a structure that could be dismantled. These projects demonstrate the breadth of responses required by architectural practice.",
+        "Over the years, she also guided residences and facilities in Jacmel, Pétion-Ville, Cap-Haïtien, Fort-Liberté, Vivy Mitchell, Carrefour, Tabarre, Léogâne, La Boule, Thomassin and Bourdon. Homes, clinics, orphanages, offices, parking facilities, bakeries and control towers each required a method adapted to the place rather than a fixed formula.",
+        "In 2020, she founded MGM to unite this experience within a Haitian design, supervision and construction practice. Architects, engineers and technical teams work through a clear method: understand the site and needs, define a realistic response, coordinate every participant and defend quality through completion."
+      ],
+      facts: [{ value: "1995", label: "beginning of practice in Haiti" }, { value: "2020", label: "MGM founded" }, { value: "10+", label: "years of documented work in Haiti" }],
+      quote: "Building in Haiti requires more than a good idea: the place must be understood, its constraints anticipated and the intention followed until it becomes a fitting, durable work.",
+      timeline: [
+        { title: "1990–1995", text: "Bachelor's degree in Architecture at GOC University in Port-au-Prince, complemented by the study of movement and spatial environments." },
+        { title: "1995–1999", text: "Architectural designer and site supervisor at Gecim Construction, followed by the same responsibilities at Chantiers Nationaux." },
+        { title: "1999–2003", text: "Residential design and implementation experience consolidated at Acropole in Pétion-Ville." },
+        { title: "2003–2011", text: "United States experience enriched her Haitian practice through technical drafting, codes, interiors, contracting and residential inspection." },
+        { title: "April–July 2014", text: "Leadership of an administrative building and enclosure project for the Centre d'Art and FOKAL." },
+        { title: "2014–2019", text: "Leadership of projects, teams and shelter programs across Haiti as General Manager and Senior Architect of Shelter IT Haiti & USA." },
+        { title: "2018", text: "Design and supervision of the lightweight UCE office extension, conceived to preserve the site and remain removable." },
+        { title: "2019–2020", text: "Rehabilitation of the North-East COUD and development of an office shelter with BCE and GPM." },
+        { title: "Since 2020", text: "Founder and director of MGM, active in design, supervision, construction and resilient housing in Haiti." }
+      ],
+      values: [
+        { title: "Constructive resilience", text: "Solutions account for seismic and hurricane risk, available materials and the long-term durability of every structure." },
+        { title: "Command of the field", text: "Coordination is grounded in direct experience of teams, workmanship and the logistical constraints of each site." },
+        { title: "Human architecture", text: "Spaces respond to habits, climate, community and the full experience of inhabiting a place." }
+      ]
+    }
+  },
+  fr: {
+    ht: window.MGM_DATA.profiles.ht,
+    us: {
+      eyebrow: "Conceptrice architecturale",
+      title: "Un parcours américain reliant ambition de conception et précision technique.",
+      portraitAlt: "Portrait de la conceptrice architecturale Marie Gaëlle Mentor portant une tenue jaune",
+      portraitCaption: "Marie Gaëlle Mentor, conceptrice architecturale.",
+      lead: "Marie Gaëlle Mentor arrive aux États-Unis avec une expérience de l'architecture et du suivi de chantier déjà forgée en Haïti. New York et le Connecticut lui font découvrir de nouvelles cultures constructives, réglementations et formes de collaboration, tout en confirmant un principe central: une idée forte ne devient architecture que lorsqu'elle est clairement dessinée, coordonnée avec responsabilité et bien construite.",
+      storyTitle: "Construire une pratique entre New York et le Connecticut.",
+      story: [
+        "Son parcours professionnel aux États-Unis débute dans le Queens en 2003. Chez PowerHouse Architect, elle exerce comme dessinatrice et apprend à traduire les intentions en documents architecturaux rigoureux. Cette expérience affine son regard sur les proportions et le détail, tout en établissant l'importance de la précision.",
+        "De 2005 à 2006, elle poursuit comme conceptrice architecturale chez MGM Remodeling and Design à New York. Son rôle s'étend à la planification résidentielle et aux choix pratiques qui rendent un logement cohérent, confortable et réalisable.",
+        "En 2006, elle rejoint AWA Design Group P.C. à Stamford. Elle contribue à des ensembles résidentiels plus importants, dont Water View East à Norwalk et les résidences de Forest Street. Plans, élévations, ouvertures, circulations et relations paysagères sont développés comme les éléments d'un même langage architectural.",
+        "Elle fonde ensuite MGM Remodeling and Design à Hamden, où elle exerce comme propriétaire, designer d'intérieur et entrepreneure de 2009 à 2010. Cette pratique met conception et réalisation en dialogue direct et renforce à la fois la dimension entrepreneuriale de son parcours et sa capacité à conduire un projet jusqu'à un résultat concret.",
+        "Son travail d'inspectrice résidentielle à l'Institute of Professional Practice de Woodbridge, de 2010 à 2011, ajoute une dimension essentielle. L'examen des logements sous l'angle des codes, de la sécurité et de la conformité confirme que la rigueur technique soutient la créativité en protégeant les occupants et la qualité du projet.",
+        "De 2014 à 2019, elle mobilise cette expérience comme Directrice générale et Architecte senior de Shelter IT Haiti & USA. Depuis juillet 2019, son activité chez New England Outdoor Product maintient sa pratique au contact des clients, des matériaux et des solutions constructibles. Marie Gaëlle Mentor Architectural Designer LLC réunit aujourd'hui dessin, conception résidentielle, intérieurs, inspection, construction et leadership international.",
+        "Dans les maisons mitoyennes, les résidences multifamiliales et les maisons individuelles, sa méthode part toujours de celles et ceux qui habiteront les lieux. Circulations claires, lumière naturelle, matériaux durables et identité extérieure liée au contexte restent des priorités constantes."
+      ],
+      facts: [{ value: "30+", label: "années de pratique architecturale" }, { value: "NY + CT", label: "expérience aux États-Unis" }, { value: "3", label: "langues: anglais, français et créole" }],
+      quote: "La meilleure architecture résidentielle ne se limite pas à organiser l'espace; elle apporte au quotidien clarté, confort et véritable sentiment d'appartenance.",
+      timeline: [
+        { title: "1990–1995", text: "Baccalauréat en architecture à l'Université GOC de Port-au-Prince, complété par des études sur le mouvement et les environnements spatiaux." },
+        { title: "2003–2006", text: "Début de sa pratique américaine comme dessinatrice chez PowerHouse Architect dans le Queens, puis comme conceptrice chez MGM Remodeling and Design à New York." },
+        { title: "2006–2008", text: "Conceptrice architecturale chez AWA Design Group à Stamford, avec une contribution à Water View East et Forest Street." },
+        { title: "2009–2011", text: "Propriétaire, designer d'intérieur et entrepreneure chez MGM Remodeling and Design à Hamden, puis inspectrice résidentielle à Woodbridge." },
+        { title: "2014–2019", text: "Directrice générale et Architecte senior de Shelter IT Haiti & USA, avec coordination d'équipes pluridisciplinaires." },
+        { title: "2019–Aujourd'hui", text: "Conceptrice architecturale chez New England Outdoor Product et dirigeante de Marie Gaëlle Mentor Architectural Designer LLC." }
+      ],
+      values: [
+        { title: "Intelligence résidentielle", text: "Les plans sont conçus autour des circulations, de la lumière, du confort et des usages réels, au-delà de la seule apparence." },
+        { title: "Clarté technique", text: "Dessins, codes, matériaux et exigences de construction sont coordonnés afin que l'intention reste lisible à chaque étape." },
+        { title: "Leadership collaboratif", text: "Une méthode attentive et directe maintient clients et partenaires alignés de la première idée à la réalisation." }
+      ]
+    }
+  },
+  kr: {
+    ht: {
+      eyebrow: "Achitèk lisansye ann Ayiti", title: "Ann Ayiti, yon achitekti ki fèt sou papye epi ki verifye sou teren.", portraitAlt: "Pòtrè achitèk Marie Gaëlle Mentor ak yon rad jòn", portraitCaption: "Marie Gaëlle Mentor, achitèk lisansye ann Ayiti.",
+      lead: "Pakou pwofesyonèl Marie Gaëlle Mentor kòmanse Pòtoprens epi li devlope nan kontak dirèk ak chantye, antrepriz, enstitisyon ak fanmi. Depi 1995, pratik li reyini konsepsyon, sipèvizyon, kowòdinasyon ak realizasyon, avèk atansyon sou sekirite, klima, resous ki disponib ak diyite moun k ap itilize espas yo.",
+      storyTitle: "Soti nan etid achitekti rive nan direksyon pwojè.",
+      story: [
+        "Marie Gaëlle Mentor etidye achitekti nan Inivèsite GOC Pòtoprens ant 1990 ak 1995. Fòmasyon sa a ba li zouti desen, konpozisyon ak refleksyon sou espas, ansanm ak etid sou mouvman ak anviwònman. Depi nan kòmansman, li konsidere espas kòm yon pati nan lavi, abitid ak kilti moun.",
+        "Lè li fini inivèsite, li antre nan Gecim Construction kòm konseptris achitekti ak sipèvizè chantye. Ant 1995 ak 1997, li konpare plan yo ak materyo, delè ak travay ekip yo, epi li kontinye menm responsabilite yo nan Chantiers Nationaux jiska 1999.",
+        "Ant 1999 ak 2003, travay li nan Acropole, Petyonvil, ranfòse eksperyans li nan konsepsyon rezidansyèl. Li devlope yon metòd ki pran an kont òganizasyon enteryè, limyè, vantilasyon ak relasyon kay la ak anviwònman li.",
+        "Eksperyans li ann Ayiti grandi pi lwen pase kay prive. Li travay sou abri, lekòl, blòk sanitè, sistèm dlo potab, tribinal de pè, dispansè ak lòt ekipman kominotè oswa enstitisyonèl. Chak pwojè se yon responsabilite anvè moun ki pral sèvi avè l.",
+        "An 2014, li dirije yon pwojè bilding administratif ak kloti pou Centre d'Art ak FOKAL. Soti dawout 2014 rive jiyè 2019, li se Direktris jeneral ak Achitèk senior nan Shelter IT Haiti & USA, kote li kowòdone etid, ekip ak realizasyon pwojè nan anpil kominote atravè peyi a.",
+        "Reyabilitasyon COUD Nòdès la, yon abri biwo anviwon 100 m² ak ekstansyon lejè biwo UCE yo montre divèsite travay sa a. Kontribisyon li kouvri definisyon achitekti, plan, kowòdinasyon ak swivi egzekisyon.",
+        "Pandan ane yo, li akonpaye tou rezidans ak ekipman nan Jakmèl, Petyonvil, Okap, Fòlibète, Vivy Mitchell, Kafou, Taba, Leyogàn, Laboul, Tomasen ak Boudon. Chak tip pwojè mande pou metòd la adapte ak kote a.",
+        "An 2020, li fonde MGM pou reyini eksperyans sa yo nan yon estrikti ayisyèn pou konsepsyon, sipèvizyon ak konstriksyon. Metòd la klè: konprann sit la ak bezwen yo, pwopoze yon repons reyalis, kowòdone ekip yo epi defann kalite jouk livrezon."
+      ],
+      facts: [{ value: "1995", label: "kòmansman pratik ann Ayiti" }, { value: "2020", label: "fondasyon MGM" }, { value: "10+", label: "ane travay dokimante ann Ayiti" }],
+      quote: "Bati ann Ayiti mande plis pase yon bon lide: fòk yo konprann kote a, prevwa kontrent li yo epi swiv entansyon an jouk li tounen yon travay ki jis ak dirab.",
+      timeline: [
+        { title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens, avèk etid sou mouvman ak anviwònman espasyal." }, { title: "1995–1999", text: "Konseptris achitekti ak sipèvizè chantye nan Gecim Construction, apre sa nan Chantiers Nationaux." }, { title: "1999–2003", text: "Eksperyans nan konsepsyon rezidansyèl ranfòse nan Acropole, Petyonvil." }, { title: "2003–2011", text: "Eksperyans Etazini ajoute desen teknik, kòd, enteryè, antrepriz ak enspeksyon rezidansyèl nan pratik li." }, { title: "Avril–jiyè 2014", text: "Direksyon pwojè bilding administratif ak kloti pou Centre d'Art ak FOKAL." }, { title: "2014–2019", text: "Direksyon pwojè, ekip ak pwogram abri kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA." }, { title: "2018", text: "Konsepsyon ak swivi ekstansyon lejè biwo UCE yo." }, { title: "2019–2020", text: "Reyabilitasyon COUD Nòdès la ak realizasyon yon abri biwo avèk BCE ak GPM." }, { title: "Depi 2020", text: "Fondasyon ak direksyon MGM nan konsepsyon, sipèvizyon, konstriksyon ak lojman rezilyan." }
+      ],
+      values: [{ title: "Rezilyans konstriktif", text: "Solisyon yo pran an kont risk sismik ak siklonik, materyo ki disponib ak dirabilite travay la." }, { title: "Metriz teren", text: "Kowòdinasyon an baze sou eksperyans dirèk ekip yo, kalite egzekisyon ak kontrent lojistik chak sit." }, { title: "Achitekti pou moun", text: "Espas yo fèt dapre abitid, klima, kominote ak santiman moun genyen lè yo rete yon kote." }]
+    },
+    us: {
+      eyebrow: "Konseptris achitekti", title: "Yon pakou ameriken ki mare anbisyon konsepsyon ak presizyon teknik.", portraitAlt: "Pòtrè konseptris achitekti Marie Gaëlle Mentor ak yon rad jòn", portraitCaption: "Marie Gaëlle Mentor, konseptris achitekti.",
+      lead: "Marie Gaëlle Mentor rive Etazini ak yon baz nan achitekti ak sipèvizyon chantye li te deja bati ann Ayiti. New York ak Connecticut fè li dekouvri lòt kilti konstriksyon, règleman ak fason pou kolabore, pandan yo konfime yon prensip santral: yon bon lide vin achitekti sèlman lè li byen trase, byen kowòdone epi byen bati.",
+      storyTitle: "Bati yon pratik ant New York ak Connecticut.",
+      story: [
+        "Chapit pwofesyonèl li Etazini kòmanse nan Queens an 2003. Nan PowerHouse Architect, li travay kòm desenatris epi li aprann tradui entansyon yo nan dokiman achitekti ki presi. Eksperyans sa a ranfòse je li pou pwopòsyon ak detay.",
+        "Ant 2005 ak 2006, li kontinye kòm konseptris achitekti nan MGM Remodeling and Design nan New York. Wòl li elaji nan planifikasyon rezidansyèl ak desizyon pratik ki rann yon kay klè, konfòtab ak realizab.",
+        "An 2006, li antre nan AWA Design Group P.C. nan Stamford, Connecticut. Li patisipe nan pi gwo devlopman rezidansyèl tankou Water View East nan Norwalk ak rezidans Forest Street yo. Plan, elevasyon, ouvèti, sikilasyon ak peyizaj devlope kòm yon sèl lang achitekti.",
+        "Apre sa, li fonde MGM Remodeling and Design nan Hamden, kote li se pwopriyetè, designer enteryè ak kontraktè ant 2009 ak 2010. Eksperyans sa a mete konsepsyon ak egzekisyon an kontak dirèk epi ranfòse kapasite li pou mennen yon pwojè rive nan yon rezilta konkrè.",
+        "Travay li kòm enspektè rezidansyèl nan Institute of Professional Practice nan Woodbridge, ant 2010 ak 2011, ajoute konesans sou kòd, sekirite ak konfòmite. Rigueur teknik la pwoteje moun epi soutni kalite konsepsyon an.",
+        "Ant 2014 ak 2019, li itilize eksperyans sa a kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA. Depi jiyè 2019, travay li nan New England Outdoor Product kenbe pratik li pre kliyan, materyo ak solisyon ki ka bati. Marie Gaëlle Mentor Architectural Designer LLC reyini tout eksperyans sa yo.",
+        "Nan kay kole, rezidans miltifamilyal ak kay endividyèl, metòd li kòmanse ak moun ki pral viv nan espas la. Sikilasyon klè, limyè natirèl, materyo dirab ak yon idantite ki respekte kontèks la rete priyorite."
+      ],
+      facts: [{ value: "30+", label: "ane nan pratik achitekti" }, { value: "NY + CT", label: "eksperyans Etazini" }, { value: "3", label: "lang: angle, franse ak kreyòl" }],
+      quote: "Pi bon achitekti rezidansyèl la pa sèlman òganize espas; li bay lavi chak jou plis klate, konfò ak yon vrè santiman apatenans.",
+      timeline: [{ title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens." }, { title: "2003–2006", text: "Kòmansman pratik Etazini kòm desenatris nan PowerHouse Architect, apre sa kòm konseptris nan MGM Remodeling and Design." }, { title: "2006–2008", text: "Konseptris achitekti nan AWA Design Group nan Stamford, avèk kontribisyon sou Water View East ak Forest Street." }, { title: "2009–2011", text: "Pwopriyetè, designer enteryè ak kontraktè nan Hamden, apre sa enspektè rezidansyèl nan Woodbridge." }, { title: "2014–2019", text: "Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA." }, { title: "2019–Jodi a", text: "Konseptris achitekti nan New England Outdoor Product ak direktris Marie Gaëlle Mentor Architectural Designer LLC." }],
+      values: [{ title: "Entèlijans rezidansyèl", text: "Plan yo òganize selon sikilasyon, limyè, konfò ak fason moun viv toutbon." }, { title: "Klate teknik", text: "Desen, kòd, materyo ak egzijans konstriksyon yo kowòdone pou entansyon an rete klè." }, { title: "Lidèchip kolaboratif", text: "Yon metòd atantif ak dirèk kenbe kliyan ak patnè yo aliyen depi premye lide a rive nan realizasyon an." }]
+    }
+  }
+};
 }());

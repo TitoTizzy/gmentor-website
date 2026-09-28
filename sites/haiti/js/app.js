@@ -11,10 +11,46 @@
     fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Pratique architecturale globale" },
     kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Pratik achitekti global" }
   };
+  var pageTitles = {
+    en: { home: "Global Portal", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", privacy: "Privacy", legal: "Legal Notice", cookies: "Cookies", project: "Project", "404": "Page Not Found" },
+    fr: { home: "Portail global", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", privacy: "Confidentialité", legal: "Mentions légales", cookies: "Cookies", project: "Projet", "404": "Page introuvable" },
+    kr: { home: "Pòtal global", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", privacy: "Konfidansyalite", legal: "Avi legal", cookies: "Cookies", project: "Pwojè", "404": "Paj pa jwenn" }
+  };
 
   function href(name) {
     return assetRoot + "/" + name;
   }
+
+  function currentLocale() {
+    return root.dataset.locale || "fr";
+  }
+
+  function localizedProject(project) {
+    var translations = window.MGM_DATA && window.MGM_DATA.projectLocales;
+    var translated = translations && translations[currentLocale()] && translations[currentLocale()][project.slug];
+    var localized = translated ? Object.assign({}, project, translated) : Object.assign({}, project);
+    var galleryLabels = {
+      en: { "Étude 3D": "3D study", "Chantier": "Construction", "Réalisation": "Built work", "Vue": "View", "Vue intérieure": "Interior view", "Plan": "Plan", "Coupes": "Sections", "Intérieur": "Interior", "Fondations": "Foundations", "Plan 2 chambres": "Two-bedroom plan", "Plan 3 chambres": "Three-bedroom plan" },
+      fr: { "Built work": "Réalisation", "First floor plan": "Plan du rez-de-chaussée", "Front elevation": "Élévation avant", "Landscape": "Paysage", "Interior": "Intérieur", "Basement plan": "Plan du sous-sol", "Floor plans": "Plans", "Elevations": "Élévations" },
+      kr: { "Built work": "Reyalizasyon", "First floor plan": "Plan premye nivo", "Front elevation": "Elevasyon devan", "Landscape": "Peyizaj", "Interior": "Enteryè", "Basement plan": "Plan sousòl", "Floor plans": "Plan yo", "Elevations": "Elevasyon yo", "Étude 3D": "Etid 3D", "Chantier": "Chantye", "Réalisation": "Reyalizasyon", "Vue": "Vi", "Vue intérieure": "Vi enteryè", "Plan": "Plan", "Coupes": "Koup", "Intérieur": "Enteryè", "Fondations": "Fondasyon", "Plan 2 chambres": "Plan 2 chanm", "Plan 3 chambres": "Plan 3 chanm" }
+    };
+    localized.gallery = (project.gallery || []).map(function (item, index) {
+      var itemTranslation = translated && translated.gallery ? translated.gallery[index] : null;
+      var localizedItem = Object.assign({}, item, itemTranslation || {});
+      localizedItem.label = (galleryLabels[currentLocale()] && galleryLabels[currentLocale()][localizedItem.label]) || localizedItem.label;
+      return localizedItem;
+    });
+    return localized;
+  }
+
+  function localizedProfile(market) {
+    var base = window.MGM_DATA.profiles[market];
+    var locales = window.MGM_DATA.profileLocales;
+    var translated = locales && locales[currentLocale()] && locales[currentLocale()][market];
+    return translated ? Object.assign({}, base, translated) : base;
+  }
+
+  window.MGM_LOCALIZE_PROJECT = localizedProject;
 
   function initializePreferences() {
     var browserLanguage = (navigator.language || "en").toLowerCase();
@@ -93,6 +129,7 @@
     root.dataset.market = market;
     root.dataset.locale = locale;
     root.lang = locale === "kr" ? "ht" : locale;
+    if (page !== "project") document.title = (pageTitles[locale][page] || "Marie Gaëlle Mentor") + " | Marie Gaëlle Mentor";
     document.querySelectorAll("[data-market]").forEach(function (button) {
       if (button.tagName === "BUTTON") button.setAttribute("aria-pressed", String(button.dataset.market === market));
     });
@@ -185,6 +222,7 @@
   }
 
   function projectCard(project, index) {
+    project = localizedProject(project);
     return '<article class="project-card" data-project data-market="' + project.markets.join(",") + '" data-country="' + project.country + '" data-city="' + project.city + '" data-year="' + project.year + '" data-type="' + project.type + '">' +
       '<a href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '"><figure><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067" loading="' + (index < 2 ? "eager" : "lazy") + '"></figure>' +
       '<div class="project-copy"><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h2>' + project.title + '</h2><p>' + project.type + '</p></div></a></article>';
@@ -225,19 +263,29 @@
       if (!card.hidden) visible += 1;
     });
     var count = document.querySelector("[data-results-count]");
-    if (count) count.textContent = visible + " projet" + (visible === 1 ? "" : "s");
+    if (count) {
+      var locale = currentLocale();
+      var noun = locale === "en" ? "project" : locale === "kr" ? "pwojè" : "projet";
+      count.textContent = visible + " " + noun + (locale !== "kr" && visible !== 1 ? "s" : "");
+    }
   }
 
   function initializeFilters() {
     var form = document.querySelector("[data-filters]");
     if (!form || !window.MGM_DATA) return;
-    var published = window.MGM_DATA.projects.filter(function (project) { return project.published; });
+    var published = window.MGM_DATA.projects.filter(function (project) { return project.published; }).map(localizedProject);
+    Array.from(form.querySelectorAll("select")).forEach(function (select) {
+      while (select.options.length > 1) select.remove(1);
+    });
     populateSelect(form.elements.country, published.map(function (project) { return project.country; }));
     populateSelect(form.elements.city, published.map(function (project) { return project.city; }));
     populateSelect(form.elements.year, published.map(function (project) { return project.year; }));
     populateSelect(form.elements.type, published.map(function (project) { return project.type; }));
-    form.addEventListener("input", filterProjects);
-    form.addEventListener("reset", function () { window.setTimeout(filterProjects, 0); });
+    if (!form.dataset.filtersBound) {
+      form.addEventListener("input", filterProjects);
+      form.addEventListener("reset", function () { window.setTimeout(filterProjects, 0); });
+      form.dataset.filtersBound = "true";
+    }
   }
 
   function populateSelect(select, values) {
@@ -253,20 +301,26 @@
   function initializeHero() {
     var hero = document.querySelector("[data-hero]");
     if (!hero || !window.MGM_DATA) return;
-    var projects = window.MGM_DATA.projects.filter(function (project) { return project.published && project.featured; }).sort(function (a, b) {
+    var sourceProjects = window.MGM_DATA.projects.filter(function (project) { return project.published && project.featured; }).sort(function (a, b) {
       return Number(b.markets.indexOf("ht") >= 0) - Number(a.markets.indexOf("ht") >= 0);
     });
     var slides = hero.querySelector("[data-hero-slides]");
     var dots = hero.querySelector("[data-hero-dots]");
     var active = 0;
-    slides.innerHTML = projects.map(function (project, index) {
-      return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="Découvrir ' + project.title + '"></a><div class="hero-content"><img class="hero-logo theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
-    }).join("");
-    dots.innerHTML = projects.map(function (project, index) { return '<button type="button" aria-label="Afficher ' + project.title + '" data-hero-dot="' + index + '"></button>'; }).join("");
+    function buildHero() {
+      var projects = sourceProjects.map(localizedProject);
+      var discover = currentLocale() === "en" ? "Discover" : currentLocale() === "kr" ? "Dekouvri" : "Découvrir";
+      var display = currentLocale() === "en" ? "Show" : currentLocale() === "kr" ? "Montre" : "Afficher";
+      slides.innerHTML = projects.map(function (project, index) {
+        return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="' + discover + ' ' + project.title + '"></a><div class="hero-content"><img class="hero-logo theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
+      }).join("");
+      dots.innerHTML = projects.map(function (project, index) { return '<button type="button" aria-label="' + display + ' ' + project.title + '" data-hero-dot="' + index + '"></button>'; }).join("");
+      hero.querySelectorAll("[data-hero-dot]").forEach(function (dot) { dot.addEventListener("click", function () { show(Number(dot.dataset.heroDot)); }); });
+    }
 
     function show(index) {
       var market = root.dataset.market || "global";
-      var eligible = projects.map(function (project, itemIndex) { return market === "global" || project.markets.indexOf(market) >= 0 ? itemIndex : -1; }).filter(function (itemIndex) { return itemIndex >= 0; });
+      var eligible = sourceProjects.map(function (project, itemIndex) { return market === "global" || project.markets.indexOf(market) >= 0 ? itemIndex : -1; }).filter(function (itemIndex) { return itemIndex >= 0; });
       active = eligible.indexOf(index) >= 0 ? index : (eligible[0] || 0);
       hero.querySelectorAll("[data-hero-slide]").forEach(function (slide, itemIndex) {
         slide.hidden = eligible.indexOf(itemIndex) < 0;
@@ -277,8 +331,8 @@
         dot.setAttribute("aria-pressed", String(itemIndex === active));
       });
     }
-    hero.querySelectorAll("[data-hero-dot]").forEach(function (dot) { dot.addEventListener("click", function () { show(Number(dot.dataset.heroDot)); }); });
-    document.addEventListener("mgm:preferences", function () { show(active); });
+    buildHero();
+    document.addEventListener("mgm:preferences", function () { buildHero(); show(active); });
     show(0);
   }
 
@@ -292,13 +346,16 @@
       return;
     }
     var projectMarket = project.markets[0];
+    project = localizedProject(project);
     if (siteVariant !== "global" && projectMarket && root.dataset.market !== projectMarket) {
       root.dataset.market = projectMarket;
       root.dataset.locale = projectMarket === "us" ? "en" : (localStorage.getItem("mgm-locale-ht") || "fr");
       localStorage.setItem("mgm-market", projectMarket);
     }
-    var detailLabels = projectMarket === "us" ? {
+    var detailLabels = currentLocale() === "en" ? {
       project: "Project", location: "Location", year: "Year", type: "Type", role: "Role", unknownYear: "Not specified", gallery: "Project photos and drawings"
+    } : currentLocale() === "kr" ? {
+      project: "Pwojè", location: "Kote", year: "Ane", type: "Kalite", role: "Wòl", unknownYear: "Pa presize", gallery: "Foto ak plan pwojè a"
     } : {
       project: "Projet", location: "Lieu", year: "Année", type: "Typologie", role: "Mission", unknownYear: "Non précisée", gallery: "Photos et plans du projet"
     };
@@ -367,17 +424,19 @@
       var portrait = profile.chapterPortrait || profile.portrait;
       var portraitAlt = profile.chapterPortraitAlt || profile.portraitAlt;
       var portraitCaption = profile.chapterPortraitCaption || profile.portraitCaption;
+      var isPortrait = portrait === profile.portrait;
+      var portraitMarkup = isPortrait ? '<figure class="about-portrait"><div class="portrait-stage"><span class="portrait-geometry portrait-geometry-square" aria-hidden="true"></span><span class="portrait-geometry portrait-geometry-circle" aria-hidden="true"></span><span class="portrait-geometry portrait-geometry-line" aria-hidden="true"></span><img src="' + href("images/" + portrait) + '" alt="' + portraitAlt + '"></div><figcaption>' + portraitCaption + '</figcaption></figure>' : '<figure><img src="' + href("images/" + portrait) + '" alt="' + portraitAlt + '"><figcaption>' + portraitCaption + '</figcaption></figure>';
       return '<section class="global-profile band"><div class="section-heading"><div><p class="eyebrow">' + heading + '</p><h2>' + profile.title + '</h2></div></div>' +
         '<div class="about-facts" aria-label="' + globalCopy.milestones + '">' + facts + '</div>' +
-        '<div class="about-grid"><figure><img src="' + href("images/" + portrait) + '" alt="' + portraitAlt + '"><figcaption>' + portraitCaption + '</figcaption></figure><div class="about-copy"><p class="eyebrow">' + profile.eyebrow + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><p class="practice-statement">' + profile.quote + '</p></div></div>' +
+        '<div class="about-grid">' + portraitMarkup + '<div class="about-copy glass-panel"><p class="eyebrow">' + profile.eyebrow + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><p class="practice-statement">' + profile.quote + '</p></div></div>' +
         '<div class="about-history band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.milestones + '</p></div></div><div class="timeline">' + timeline + '</div></div>' +
         '<div class="about-values band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.principles + '</p></div></div><div class="about-value-list">' + values + '</div></div></section>';
     }
 
     var closingStory = globalCopy.closingParagraphs.map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join("");
     target.innerHTML = '<header class="page-intro"><p class="eyebrow">' + globalCopy.eyebrow + '</p><div><h1>' + globalCopy.title + '</h1><p>' + globalCopy.lead + '</p></div></header>' +
-      profileSection(window.MGM_DATA.profiles.ht, globalCopy.haiti) +
-      profileSection(window.MGM_DATA.profiles.us, globalCopy.usa) +
+      profileSection(localizedProfile("ht"), globalCopy.haiti) +
+      profileSection(localizedProfile("us"), globalCopy.usa) +
       '<section class="about-coda band"><div><p class="eyebrow">' + globalCopy.closingEyebrow + '</p><h2>' + globalCopy.closingTitle + '</h2></div><div class="about-coda-copy">' + closingStory + '</div></section>';
   }
 
@@ -399,7 +458,7 @@
       requests.push(request);
       localStorage.setItem("mgm-demo-requests", JSON.stringify(requests));
       form.reset();
-      if (status) status.textContent = siteVariant === "usa" ? "Request saved in this demonstration. The backend can then send it to Supabase." : "Demande enregistrée dans cette démonstration. Le backend pourra ensuite l’envoyer à Supabase.";
+      if (status) status.textContent = currentLocale() === "en" ? "Request saved in this demonstration. The backend can then send it to Supabase." : currentLocale() === "kr" ? "Demann lan anrejistre nan demonstrasyon sa a. Sèvè a kapab voye li bay Supabase apre sa." : "Demande enregistrée dans cette démonstration. Le backend pourra ensuite l’envoyer à Supabase.";
     });
   }
 
@@ -416,5 +475,8 @@
   initializeContact();
   syncPreferences();
   document.addEventListener("mgm:preferences", filterProjects);
+  document.addEventListener("mgm:preferences", renderProjects);
+  document.addEventListener("mgm:preferences", initializeFilters);
+  document.addEventListener("mgm:preferences", renderProjectDetail);
   document.addEventListener("mgm:preferences", renderAbout);
 }());

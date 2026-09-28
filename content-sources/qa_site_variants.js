@@ -76,10 +76,30 @@ function fileUrl(variant, file) {
   results.push(await inspect("usa", "portfolio.html"));
   results.push(await inspect("global", "index.html"));
   results.push(await inspect("global", "about.html"));
+  const localeChecks = [];
+  for (const locale of ["en", "fr", "kr"]) {
+    await page.goto(fileUrl("global", "about.html"));
+    await page.locator(`button[data-locale="${locale}"]`).click();
+    await page.waitForTimeout(150);
+    const check = await page.evaluate(() => {
+      const stage = document.querySelector(".portrait-stage");
+      const rect = stage && stage.getBoundingClientRect();
+      return {
+        locale: document.documentElement.dataset.locale,
+        lang: document.documentElement.lang,
+        text: document.body.innerText,
+        portraitRatio: rect ? Number((rect.width / rect.height).toFixed(2)) : null,
+        geometryCount: document.querySelectorAll(".portrait-geometry").length
+      };
+    });
+    await page.screenshot({ path: path.join(screenshots, `language-about-${locale}.png`), fullPage: false });
+    await page.locator(".about-portrait").first().screenshot({ path: path.join(screenshots, `portrait-about-${locale}.png`) });
+    localeChecks.push(check);
+  }
   results.push(await inspect("global", "portfolio.html"));
   results.push(await inspect("global-root", "indexhaiti.html", null, { width: 1440, height: 1000 }, rootFileUrl("indexhaiti.html")));
   results.push(await inspect("global-root-nav", "indexhaiti.html", async () => {
-    await page.getByRole("link", { name: "About" }).click();
+    await page.locator('a[href="sites/haiti/about.html"]').click();
   }, { width: 1440, height: 1000 }, rootFileUrl("indexhaiti.html")));
   results.push(await inspect("usa", "index.html", async () => {
     await page.locator("[data-nav-toggle]").click();
@@ -107,10 +127,21 @@ function fileUrl(variant, file) {
     if (result.variant.indexOf("global") === 0 && (result.market !== "global" || result.marketButtons !== 0 || result.localeButtons !== 3)) failures.push(`${result.file}: global portal controls are incorrect`);
     if (result.variant === "global-root-nav" && !result.pathname.endsWith("/sites/haiti/about.html")) failures.push(`${result.file}: global navigation opened ${result.pathname}`);
   }
+  const expectedLocaleText = {
+    en: "From architectural studies to project leadership.",
+    fr: "Des études d’architecture à la direction de projets.",
+    kr: "Soti nan etid achitekti rive nan direksyon pwojè."
+  };
+  for (const check of localeChecks) {
+    if (!check.text.includes(expectedLocaleText[check.locale])) failures.push(`${check.locale}: biography was not translated`);
+    if (check.portraitRatio < 0.9) failures.push(`${check.locale}: portrait frame remains too tall (${check.portraitRatio})`);
+    if (check.geometryCount !== 3) failures.push(`${check.locale}: portrait geometry is missing`);
+  }
 
   console.log(JSON.stringify({
     entrypoints,
     results: results.map(({ visibleText, ...result }) => result),
+    localeChecks: localeChecks.map(({ text, ...check }) => check),
     errors,
     failures
   }, null, 2));

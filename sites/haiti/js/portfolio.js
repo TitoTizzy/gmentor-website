@@ -19,10 +19,10 @@
     return '<article class="book-page ' + pageClass + '"><div class="book-page-media"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"></div><div class="book-page-caption"><span>' + escapeHtml(item.label) + '</span><strong>' + escapeHtml(project.title) + '</strong></div></article>';
   }
 
-  function projectPages(project) {
+  function projectPages(project, copy) {
     var drawing = project.gallery.find(function (item) { return /plan|elevation|coupe|section|fondation/i.test(item.label); }) || project.gallery[0];
     return [
-      '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>Type</dt><dd>' + escapeHtml(project.type) + '</dd></div><div><dt>' + (project.markets[0] === "us" ? "Role" : "Mission") + '</dt><dd>' + escapeHtml(project.role) + '</dd></div></dl></div></div></article>',
+      '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>' + copy.type + '</dt><dd>' + escapeHtml(project.type) + '</dd></div><div><dt>' + copy.role + '</dt><dd>' + escapeHtml(project.role) + '</dd></div></dl></div></div></article>',
       imagePage(project, drawing, "book-drawing")
     ];
   }
@@ -31,13 +31,14 @@
     var locale = root.dataset.locale || "fr";
     var projects = window.MGM_DATA.projects.filter(function (project) {
       return project.published;
-    });
+    }).map(function (project) { return window.MGM_LOCALIZE_PROJECT ? window.MGM_LOCALIZE_PROJECT(project) : project; });
     var cover = projects[0];
     var copy = locale === "en" ? {
       label: "Global Portfolio",
       title: "Architecture across borders.",
       intro: "Built work, photographs and drawings from Haiti and the United States.",
       count: " projects",
+      type: "Type",
       role: "Role",
       contact: "Discuss a project"
     } : locale === "kr" ? {
@@ -45,6 +46,7 @@
       title: "Achitekti atravè fwontyè.",
       intro: "Pwojè, foto ak plan ki soti ann Ayiti ak Ozetazini.",
       count: " pwojè",
+      type: "Kalite",
       role: "Wòl",
       contact: "Pale sou yon pwojè"
     } : {
@@ -52,6 +54,7 @@
       title: "L'architecture au-delà des frontières.",
       intro: "Réalisations, photographies et plans provenant d'Haïti et des États-Unis.",
       count: " projets",
+      type: "Type",
       role: "Mission",
       contact: "Parler de votre projet"
     };
@@ -59,8 +62,9 @@
       '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img class="theme-logo" src="assets/mgm-logo-dark.png" alt="Marie Gaëlle Mentor"><p>' + copy.label + '</p><h2>Marie Gaëlle Mentor</h2><span>Architectural Designer</span></div></article>',
       '<article class="book-page book-opening"><p class="eyebrow">' + copy.label + '</p><h2>' + copy.title + '</h2><p>' + copy.intro + '</p><span class="book-opening-count">' + projects.length + copy.count + '</span></article>'
     ];
-    projects.forEach(function (project) { pages = pages.concat(projectPages(project)); });
-    pages.push('<article class="book-page book-back" data-density="hard"><img class="theme-logo" src="assets/mgm-logo-dark.png" alt="Marie Gaëlle Mentor"><p>Spaces that inspire a better tomorrow</p><a href="contact.html">' + copy.contact + '</a></article>');
+    projects.forEach(function (project) { pages = pages.concat(projectPages(project, copy)); });
+    var promise = locale === "fr" ? "Des espaces qui inspirent un avenir meilleur" : locale === "kr" ? "Espas ki enspire yon demen miyò" : "Spaces that inspire a better tomorrow";
+    pages.push('<article class="book-page book-back" data-density="hard"><img class="theme-logo" src="assets/mgm-logo-dark.png" alt="Marie Gaëlle Mentor"><p>' + promise + '</p><a href="contact.html">' + copy.contact + '</a></article>');
 
     if (pageFlip) {
       pageFlip.destroy();
