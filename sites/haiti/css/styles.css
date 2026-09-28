@@ -30,6 +30,7 @@
 html { background: var(--ink); scroll-behavior: smooth; }
 body { margin: 0; background: var(--ink); color: var(--text); font: 400 1rem/1.65 var(--sans); }
 body.menu-open { overflow: hidden; }
+p, li, dd, figcaption { text-align: justify; text-justify: inter-word; }
 img { display: block; max-width: 100%; }
 .theme-logo { content: var(--theme-logo); }
 a { color: inherit; text-decoration: none; }
