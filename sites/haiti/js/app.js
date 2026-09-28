@@ -317,28 +317,46 @@
     var locale = root.dataset.locale || "fr";
     var globalCopy = locale === "en" ? {
       eyebrow: "Global portal",
-      title: "One career, shaped across Haiti and the United States.",
-      lead: "Discover Marie Gaëlle Mentor's complete professional journey, from architecture and construction leadership in Haiti to residential design and technical practice in New York and Connecticut.",
-      haiti: "Haiti practice",
-      usa: "United States practice",
+      title: "I have built my professional life between Haiti and the United States.",
+      lead: "My story is one of movement, continuity and responsibility: from my architectural education in Port-au-Prince and my first construction sites in Haiti to residential design, inspection and independent practice in New York and Connecticut.",
+      haiti: "Chapter I · Haiti",
+      usa: "Chapter II · United States",
       milestones: "Career milestones",
-      principles: "Principles of practice"
+      principles: "Principles of practice",
+      closingEyebrow: "What guides me today",
+      closingTitle: "Architecture is the thread that connects every chapter of my life.",
+      closingParagraphs: [
+        "Working between two countries has never meant dividing my identity. It has taught me to observe more closely, adapt without losing rigor and recognize that every place carries its own intelligence. Haiti gave me the immediacy of the construction site, resilience and a deep sense of social responsibility. The United States strengthened my technical discipline, my knowledge of residential standards and my experience of collaborative practice.",
+        "Today I bring those lessons together. I approach each client with the same commitment: to listen before drawing, to make complex decisions understandable and to remain attentive from the first conversation through implementation. My ambition is to create architecture that serves people well, ages with dignity and leaves a meaningful place in their lives."
+      ]
     } : locale === "kr" ? {
       eyebrow: "Pòtal global",
-      title: "Yon sèl karyè, bati ant Ayiti ak Etazini.",
-      lead: "Dekouvri tout pakou pwofesyonèl Marie Gaëlle Mentor, depi achitekti ak direksyon chantye ann Ayiti rive nan konsepsyon rezidansyèl ak pratik teknik New York ak Connecticut.",
-      haiti: "Pratik ann Ayiti",
-      usa: "Pratik Ozetazini",
+      title: "Mwen bati lavi pwofesyonèl mwen ant Ayiti ak Etazini.",
+      lead: "Istwa mwen se yon istwa mouvman, kontinite ak responsabilite: depi fòmasyon achitekti mwen Pòtoprens ak premye chantye mwen ann Ayiti rive nan konsepsyon rezidansyèl, enspeksyon ak pratik endepandan nan New York ak Connecticut.",
+      haiti: "Chapit I · Ayiti",
+      usa: "Chapit II · Etazini",
       milestones: "Etap nan karyè a",
-      principles: "Prensip travay"
+      principles: "Prensip travay",
+      closingEyebrow: "Sa k ap gide m jodi a",
+      closingTitle: "Achitekti se fil ki mare tout chapit lavi mwen.",
+      closingParagraphs: [
+        "Travay ant de peyi pa janm divize idantite mwen. Sa aprann mwen obsève pi byen, adapte m san m pa pèdi disiplin epi rekonèt chak kote gen pwòp entèlijans pa li. Ayiti ban mwen eksperyans dirèk chantye, rezilyans ak responsabilite sosyal. Etazini ranfòse presizyon teknik mwen ak eksperyans mwen nan lojman.",
+        "Jodi a, mwen mete tout leson sa yo ansanm. Mwen koute anvan mwen trase, mwen rann desizyon konplèks yo klè epi mwen rete atantif depi premye konvèsasyon an rive nan realizasyon an."
+      ]
     } : {
       eyebrow: "Portail global",
-      title: "Une même carrière, construite entre Haïti et les États-Unis.",
-      lead: "Découvrez l'ensemble du parcours professionnel de Marie Gaëlle Mentor, de la conception et la direction de chantier en Haïti à la pratique résidentielle et technique à New York et au Connecticut.",
-      haiti: "Pratique en Haïti",
-      usa: "Pratique aux États-Unis",
+      title: "J’ai construit ma vie professionnelle entre Haïti et les États-Unis.",
+      lead: "Mon histoire est celle d’un mouvement continu et d’une même responsabilité: de ma formation à Port-au-Prince et de mes premiers chantiers en Haïti jusqu’à la conception résidentielle, l’inspection et la pratique indépendante à New York et au Connecticut.",
+      haiti: "Chapitre I · Haïti",
+      usa: "Chapitre II · États-Unis",
       milestones: "Repères du parcours",
-      principles: "Principes de pratique"
+      principles: "Principes de pratique",
+      closingEyebrow: "Ce qui me guide aujourd’hui",
+      closingTitle: "L’architecture est le fil qui relie tous les chapitres de ma vie.",
+      closingParagraphs: [
+        "Travailler entre deux pays n’a jamais signifié diviser mon identité. Cela m’a appris à regarder plus attentivement, à m’adapter sans perdre ma rigueur et à reconnaître l’intelligence propre à chaque lieu. Haïti m’a transmis l’expérience immédiate du chantier, la résilience et un profond sens de la responsabilité sociale. Les États-Unis ont renforcé ma discipline technique, ma connaissance des standards résidentiels et mon expérience du travail collaboratif.",
+        "Aujourd’hui, je réunis ces apprentissages dans chaque mission. J’écoute avant de dessiner, je rends les décisions complexes compréhensibles et je reste attentive de la première conversation jusqu’à la réalisation. Mon ambition est de créer une architecture qui serve véritablement les personnes, vieillisse avec dignité et occupe une place significative dans leur vie."
+      ]
     };
 
     function profileSection(profile, heading) {
@@ -353,9 +371,11 @@
         '<div class="about-values band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.principles + '</p></div></div><div class="about-value-list">' + values + '</div></div></section>';
     }
 
+    var closingStory = globalCopy.closingParagraphs.map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join("");
     target.innerHTML = '<header class="page-intro"><p class="eyebrow">' + globalCopy.eyebrow + '</p><div><h1>' + globalCopy.title + '</h1><p>' + globalCopy.lead + '</p></div></header>' +
       profileSection(window.MGM_DATA.profiles.ht, globalCopy.haiti) +
-      profileSection(window.MGM_DATA.profiles.us, globalCopy.usa);
+      profileSection(window.MGM_DATA.profiles.us, globalCopy.usa) +
+      '<section class="about-coda band"><div><p class="eyebrow">' + globalCopy.closingEyebrow + '</p><h2>' + globalCopy.closingTitle + '</h2></div><div class="about-coda-copy">' + closingStory + '</div></section>';
   }
 
   function initializeContact() {

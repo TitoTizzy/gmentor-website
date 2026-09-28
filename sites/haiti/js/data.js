@@ -37,16 +37,20 @@
   "profiles": {
     "us": {
       "eyebrow": "Architectural Designer",
-      "title": "A career shaped by architecture, leadership and an international point of view.",
+      "title": "My American journey taught me to connect design ambition with technical precision.",
       "portrait": "usa/water-view-east-cover.webp",
       "portraitAlt": "Water View East residential project in Norwalk, Connecticut",
       "portraitCaption": "Water View East, a residential collaboration in Norwalk, Connecticut.",
-      "lead": "Marie Gaëlle Mentor brings three decades of architectural practice to every commission. Trained in Port-au-Prince and professionally established across New York and Connecticut, she has built a career around one clear ambition: creating places that are practical, expressive and genuinely comfortable to inhabit.",
-      "storyTitle": "Local rigor, global perspective.",
+      "lead": "I arrived in the United States with a foundation in architecture and field supervision already shaped in Haiti. New York and Connecticut gave me new building cultures, regulations and ways of collaborating, while confirming the principle that still guides me: a beautiful idea only becomes architecture when it can be clearly drawn, responsibly coordinated and well built.",
+      "storyTitle": "Building a practice across New York and Connecticut.",
       "story": [
-        "Her United States journey began in New York, where she developed her command of architectural drafting and residential design before moving into increasingly independent roles. At PowerHouse Architect in Queens, MGM Remodeling and Design in New York, and later AWA Design Group in Stamford, she contributed to the drawings, planning and development of residential projects at multiple scales.",
-        "Her practice expanded beyond design alone. As owner of MGM Remodeling and Design in Hamden, she combined interior design with contracting; as a residential inspector in Woodbridge, she strengthened her understanding of codes, compliance and the realities of implementation. Since 2019, her work with New England Outdoor Product has continued this hands-on approach, connecting client needs, technical requirements and buildable solutions.",
-        "Today, through Marie Gaëlle Mentor Architectural Designer LLC, she draws on experience across disciplines and borders. Her Connecticut portfolio includes townhouses and multifamily communities in Waterbury, Norwalk and Forest Street, with an emphasis on efficient plans, durable materials, natural light and a coherent relationship between architecture and everyday life."
+        "My professional chapter in the United States began in Queens in 2003. At PowerHouse Architect, I worked as a draftsperson and learned to translate intentions into disciplined architectural documents. That experience sharpened my eye for proportion and detail, but it also taught me the importance of accuracy: every line on a drawing eventually becomes a decision for a builder, an expense for a client and a lived condition for a family.",
+        "From 2005 to 2006, I continued as an architectural designer with MGM Remodeling and Design in New York. I became increasingly involved in residential planning and in the many practical choices that make a home coherent, comfortable and feasible. My Haitian training remained an important part of my perspective, while my American experience expanded my understanding of local construction methods, permitting expectations and client service.",
+        "In 2006, I joined AWA Design Group P.C. in Stamford, Connecticut. This period allowed me to contribute to larger residential developments and to collaborate within a multidisciplinary office. On projects such as Water View East in Norwalk and the Forest Street residences, I worked on compositions that balanced symmetry, familiar residential forms and contemporary ways of living. The plans, elevations, window assemblies, circulation and relationship to the landscape all had to speak the same architectural language.",
+        "I then created MGM Remodeling and Design in Hamden, where I served as owner, interior designer and contractor from 2009 to 2010. Running my own practice brought design and execution into direct conversation. I listened to homeowners, developed interior solutions, coordinated work and remained accountable for what happened beyond the drawing set. It strengthened the entrepreneurial dimension of my career and my ability to guide a project from an initial need to a tangible result.",
+        "My work as a residential inspector with the Institute of Professional Practice in Woodbridge, from 2010 to 2011, added another essential layer. Examining homes through the lens of codes, safety and compliance reinforced a conviction I had developed on construction sites: technical rigor is not separate from creativity. It is what protects people, gives a project longevity and allows design quality to survive construction.",
+        "From 2014 to 2019, I brought this American experience into my role as General Manager and Senior Architect at Shelter IT Haiti & USA. Since July 2019, my work with New England Outdoor Product has continued to keep me close to clients, materials and buildable solutions. Today, through Marie Gaëlle Mentor Architectural Designer LLC, I bring together drafting, residential design, interiors, inspection knowledge, construction awareness and international leadership in one integrated practice.",
+        "Whether I am studying a townhouse, a multifamily residence or an individual home, I begin with the people who will inhabit it. I look for clear circulation, useful natural light, durable materials and an exterior identity that feels confident without becoming disconnected from its context. My goal is not simply to produce an image, but to create a thoughtful framework for everyday life."
       ],
       "facts": [
         {
@@ -62,60 +66,65 @@
           "label": "languages: English, French and Creole"
         }
       ],
-      "quote": "The best residential architecture does more than organize space. It gives daily life clarity, comfort and a sense of belonging.",
+      "quote": "I believe the best residential architecture does more than organize space. It gives daily life clarity, comfort and a genuine sense of belonging.",
       "timeline": [
         {
           "title": "1990–1995",
-          "text": "Bachelor's degree in Architecture at GOC University in Port-au-Prince, followed by additional study in movement and spatial environments."
+          "text": "I earned my Bachelor's degree in Architecture at GOC University in Port-au-Prince and complemented that foundation with studies in movement and spatial environments."
         },
         {
           "title": "2003–2006",
-          "text": "Architectural drafting and design roles in New York with PowerHouse Architect and MGM Remodeling and Design."
+          "text": "I began my United States practice as a draftsperson at PowerHouse Architect in Queens, then worked as an architectural designer with MGM Remodeling and Design in New York."
         },
         {
           "title": "2006–2008",
-          "text": "Architectural Designer at AWA Design Group in Stamford, Connecticut, contributing to residential plans and developments."
+          "text": "As an Architectural Designer at AWA Design Group in Stamford, I contributed to residential plans and developments including Water View East and Forest Street."
         },
         {
           "title": "2009–2011",
-          "text": "Owner, Interior Designer and Contractor at MGM Remodeling and Design in Hamden, followed by work as a Residential Inspector in Woodbridge."
+          "text": "I led MGM Remodeling and Design in Hamden as owner, interior designer and contractor, then strengthened my code and compliance experience as a Residential Inspector in Woodbridge."
         },
         {
           "title": "2014–2019",
-          "text": "General Manager and Senior Architect at Shelter IT Haiti & USA, leading multidisciplinary work across design and delivery."
+          "text": "As General Manager and Senior Architect at Shelter IT Haiti & USA, I coordinated multidisciplinary teams and connected design decisions with project delivery."
         },
         {
           "title": "2019–Today",
-          "text": "Architectural Designer at New England Outdoor Product and principal of Marie Gaëlle Mentor Architectural Designer LLC."
+          "text": "I continue my practice as an Architectural Designer with New England Outdoor Product and as principal of Marie Gaëlle Mentor Architectural Designer LLC."
         }
       ],
       "values": [
         {
           "title": "Residential intelligence",
-          "text": "Plans shaped around circulation, daylight, comfort and the way people actually live."
+          "text": "I shape plans around circulation, daylight, comfort and the way people actually live, rather than around appearance alone."
         },
         {
           "title": "Technical clarity",
-          "text": "Careful coordination of drawings, codes, materials and construction requirements."
+          "text": "I coordinate drawings, codes, materials and construction requirements so that design intent remains clear at every stage."
         },
         {
           "title": "Collaborative leadership",
-          "text": "A direct, attentive process that keeps clients and project partners aligned from idea to implementation."
+          "text": "I keep clients and project partners in an attentive, direct conversation from the first idea through implementation."
         }
       ]
     },
     "ht": {
       "eyebrow": "Architecte licenciée en Haïti",
-      "title": "Une architecte haïtienne engagée au service de lieux durables et profondément humains.",
+      "title": "En Haïti, j’ai appris que l’architecture se pense sur le papier et se prouve sur le terrain.",
       "portrait": "haiti/beach-house-cover.webp",
       "portraitAlt": "Beach House réalisée à Pierre Payen, Montrouis, Haïti",
       "portraitCaption": "La Beach House de Pierre Payen, entre architecture contemporaine et paysage tropical.",
-      "lead": "Depuis ses premiers chantiers en 1995, Marie Gaëlle Mentor construit un parcours où la conception architecturale ne se sépare jamais de la réalité du terrain. Son expérience haïtienne réunit dessin, supervision, gestion d’équipes et réalisation, avec une attention constante portée à la sécurité, au climat et aux usages.",
-      "storyTitle": "Du dessin au chantier, une vision portée avec constance.",
+      "lead": "Mon parcours professionnel commence à Port-au-Prince et se développe au contact direct des chantiers, des entreprises, des institutions et des familles. Depuis 1995, j’ai appris à réunir conception, supervision, coordination et réalisation, avec une attention constante portée à la sécurité, au climat, aux ressources disponibles et à la dignité des usages.",
+      "storyTitle": "De mes premières études à la direction de projets.",
       "story": [
-        "Diplômée en architecture de l’Université GOC à Port-au-Prince, Marie Gaëlle Mentor débute chez Gecim Construction comme conceptrice et superviseure de chantier. Elle poursuit ensuite aux Chantiers Nationaux puis chez Acropole à Pétion-Ville, approfondissant sa connaissance des matériaux, des équipes de métier et des conditions concrètes de réalisation en Haïti.",
-        "De 2014 à 2019, elle occupe les fonctions de Directrice générale et Architecte senior de Shelter IT Haiti & USA. Elle y encadre les études, la coordination et l’exécution de projets résidentiels, institutionnels et de shelters. Son parcours documente des interventions à Port-au-Prince, Cap-Haïtien, Limbé, Caracol, Port-de-Paix, Jacmel, Léogâne, Les Cayes et dans de nombreuses autres communautés.",
-        "En 2020, elle fonde MGM, entreprise haïtienne de conception, de supervision et de construction. Elle y rassemble architectes, ingénieurs et équipes techniques autour d’une méthode rigoureuse : comprendre le site, définir une solution réaliste, coordonner chaque intervenant et maintenir la qualité jusqu’à la livraison. Les maisons du Grand Sud, la Beach House de Pierre Payen et l’extension des bureaux de l’UCE illustrent cette continuité entre intention architecturale et maîtrise du chantier."
+        "J’ai étudié l’architecture à l’Université GOC de Port-au-Prince de 1990 à 1995. Cette formation m’a donné les outils du dessin, de la composition et de la pensée spatiale, que j’ai approfondis par une formation complémentaire sur le mouvement et les environnements. Très tôt, j’ai compris que l’espace n’est jamais abstrait: il accompagne des gestes, des habitudes, une culture et une manière particulière d’habiter.",
+        "À ma sortie de l’université, j’ai rejoint Gecim Construction comme conceptrice architecturale et superviseure de chantier. De 1995 à 1997, j’ai appris à confronter les plans aux matériaux, aux délais et au travail quotidien des équipes. J’ai poursuivi cette responsabilité aux Chantiers Nationaux jusqu’en 1999. Ces premières années ont installé une discipline qui ne m’a jamais quittée: observer le terrain, anticiper les difficultés et rester présente pendant l’exécution.",
+        "De 1999 à 2003, mon travail chez Acropole à Pétion-Ville m’a permis de consolider mon expérience de conceptrice. J’y ai développé une approche résidentielle attentive à l’organisation intérieure, à la lumière, à la ventilation et à la relation entre la maison et son environnement. Ce passage a aussi préparé la dimension internationale de mon parcours, que j’ai ensuite poursuivie à New York et au Connecticut sans jamais perdre mon lien professionnel avec Haïti.",
+        "Mon expérience haïtienne s’est progressivement étendue au-delà de l’habitat privé. Mon parcours m’a amenée à intervenir dans des programmes de shelters, des écoles, des blocs sanitaires, des systèmes d’alimentation en eau potable, des tribunaux de paix, des dispensaires et différents équipements communautaires ou institutionnels. Sur ces missions, l’architecture devait répondre à des besoins essentiels, à des budgets précis et à des réalités logistiques parfois complexes. Elles m’ont appris à considérer chaque projet comme une responsabilité envers ses futurs usagers.",
+        "En 2014, j’ai assuré la direction d’un projet de bâtiment administratif et de clôture pour le Centre d’Art et la FOKAL. D’août 2014 à juillet 2019, j’ai ensuite occupé les fonctions de Directrice générale et Architecte senior de Shelter IT Haiti & USA. J’y ai coordonné les études, les équipes et l’exécution de projets résidentiels, institutionnels et de shelters, avec des interventions documentées à Port-au-Prince, Cap-Haïtien, Limbé, Pierre Payen, Caracol, Port-de-Paix, Jacmel, Léogâne, Les Cayes et dans de nombreuses autres communautés.",
+        "Parmi les missions qui résument cette période figure la réhabilitation du COUD du Nord-Est et la réalisation d’un shelter de bureaux d’environ 100 m², en collaboration avec BCE et GPM. J’ai participé à la définition architecturale, aux plans, à la coordination et au suivi de l’exécution. L’extension légère des bureaux de l’UCE répondait à une autre problématique: intervenir avec précision, préserver le site et concevoir une structure susceptible d’être démontée. Ces expériences montrent la diversité des réponses qu’un même métier doit savoir apporter.",
+        "Au fil des années, j’ai également accompagné des résidences et des équipements à Jacmel, Pétion-Ville, Cap-Haïtien, Fort-Liberté, Vivy Mitchell, Carrefour, Tabarre, Léogâne, La Boule, Thomassin, Bourdon et ailleurs. Maison individuelle, clinique, orphelinat, bureaux, stationnement, boulangerie ou tour de contrôle: chaque typologie m’a obligée à écouter un usage différent et à adapter ma méthode au lieu plutôt que d’imposer une formule.",
+        "En 2020, j’ai fondé MGM afin de réunir cette expérience au sein d’une structure haïtienne de conception, de supervision et de construction. J’y travaille avec architectes, ingénieurs et équipes techniques selon une méthode claire: comprendre le site et les besoins, définir une réponse réaliste, coordonner chaque intervenant et défendre la qualité jusqu’à la livraison. Les maisons du Grand Sud, la Beach House de Pierre Payen et les projets institutionnels présentés dans ce portfolio témoignent de cette continuité entre intention architecturale et maîtrise du chantier."
       ],
       "facts": [
         {
@@ -131,45 +140,57 @@
           "label": "années d’interventions documentées en Haïti"
         }
       ],
-      "quote": "Construire en Haïti exige plus qu’une bonne idée : il faut comprendre le lieu, anticiper ses contraintes et rester présente jusqu’à la réalisation.",
+      "quote": "Construire en Haïti exige plus qu’une bonne idée. Je dois comprendre le lieu, anticiper ses contraintes et rester présente jusqu’à ce que l’intention devienne un ouvrage juste et durable.",
       "timeline": [
         {
           "title": "1990–1995",
-          "text": "Baccalauréat en architecture à l’Université GOC, Port-au-Prince, complété par une formation en mouvements et environnements spatiaux."
+          "text": "J’obtiens mon baccalauréat en architecture à l’Université GOC de Port-au-Prince et complète cette formation par une étude du mouvement et des environnements spatiaux."
         },
         {
           "title": "1995–1999",
-          "text": "Conceptrice architecturale et superviseure de chantier chez Gecim Construction puis aux Chantiers Nationaux."
+          "text": "Je débute comme conceptrice architecturale et superviseure de chantier chez Gecim Construction, puis j’exerce les mêmes responsabilités aux Chantiers Nationaux."
         },
         {
           "title": "1999–2003",
-          "text": "Architectural Designer chez Acropole à Pétion-Ville, au contact de projets résidentiels et de leur mise en œuvre."
+          "text": "Chez Acropole à Pétion-Ville, je consolide ma pratique de la conception résidentielle et ma compréhension de sa mise en œuvre."
+        },
+        {
+          "title": "2003–2011",
+          "text": "Mon parcours aux États-Unis enrichit ma pratique haïtienne par l’expérience du dessin technique, des codes, des intérieurs, de l’entreprise et de l’inspection résidentielle."
+        },
+        {
+          "title": "Avril–juillet 2014",
+          "text": "Je dirige un projet de bâtiment administratif et de clôture pour le Centre d’Art et la FOKAL, en coordonnant conception et réalisation."
         },
         {
           "title": "2014–2019",
-          "text": "Directrice générale et Architecte senior de Shelter IT Haiti & USA ; direction de projets et de programmes de shelters."
+          "text": "Comme Directrice générale et Architecte senior de Shelter IT Haiti & USA, je dirige des projets, des équipes et des programmes de shelters dans plusieurs régions du pays."
         },
         {
           "title": "2018",
-          "text": "Conception et suivi de l’extension légère des bureaux de l’UCE, pensée pour préserver le site et pouvoir être démontée."
+          "text": "Je conçois et suis l’extension légère des bureaux de l’UCE, une intervention pensée pour préserver le site et pouvoir être démontée."
+        },
+        {
+          "title": "2019–2020",
+          "text": "J’interviens sur la réhabilitation du COUD du Nord-Est et un shelter de bureaux d’environ 100 m², en lien avec BCE et GPM, des plans au suivi d’exécution."
         },
         {
           "title": "Depuis 2020",
-          "text": "Fondatrice et dirigeante de MGM, active en conception, supervision, construction et habitat résilient sur le territoire haïtien."
+          "text": "Je fonde et dirige MGM, une pratique engagée dans la conception, la supervision, la construction et l’habitat résilient sur le territoire haïtien."
         }
       ],
       "values": [
         {
           "title": "Résilience constructive",
-          "text": "Des solutions attentives aux risques sismiques et cycloniques, aux matériaux disponibles et à la pérennité des ouvrages."
+          "text": "Je recherche des solutions attentives aux risques sismiques et cycloniques, aux matériaux disponibles et à la pérennité des ouvrages."
         },
         {
           "title": "Maîtrise du terrain",
-          "text": "Une expérience directe de la coordination des équipes, de la qualité d’exécution et des contraintes logistiques."
+          "text": "Je m’appuie sur une expérience directe des équipes, de la qualité d’exécution et des contraintes logistiques propres à chaque site."
         },
         {
           "title": "Architecture humaine",
-          "text": "Des espaces pensés pour les habitudes, le climat, la communauté et le sentiment d’habiter pleinement un lieu."
+          "text": "Je conçois pour les habitudes, le climat, la communauté et le sentiment d’habiter pleinement un lieu."
         }
       ]
     }
