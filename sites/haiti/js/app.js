@@ -77,7 +77,7 @@
       consent.hidden = true;
       consent.dataset.consent = "";
       consent.setAttribute("aria-label", "Préférences statistiques");
-      consent.innerHTML = '<p data-i18n data-en="We use privacy-friendly analytics to improve the site." data-fr="Nous utilisons des statistiques respectueuses de votre vie privée pour améliorer le site." data-kr="Nou itilize estatistik ki respekte vi prive ou pou amelyore sit la.">Nous utilisons des statistiques respectueuses de votre vie privée pour améliorer le site.</p><div class="consent-actions"><button class="button button-primary" type="button" data-consent-choice="accepted" data-i18n data-en="Accept" data-fr="Accepter" data-kr="Aksepte">Accepter</button><button class="button" type="button" data-consent-choice="refused" data-i18n data-en="Decline" data-fr="Refuser" data-kr="Refize">Refuser</button></div>';
+      consent.innerHTML = '<p data-i18n data-en="This website uses privacy-friendly analytics to improve its content." data-fr="Ce site utilise des statistiques respectueuses de la vie privée afin d’améliorer son contenu." data-kr="Sit sa a itilize estatistik ki respekte vi prive pou amelyore kontni li.">Ce site utilise des statistiques respectueuses de la vie privée afin d’améliorer son contenu.</p><div class="consent-actions"><button class="button button-primary" type="button" data-consent-choice="accepted" data-i18n data-en="Accept" data-fr="Accepter" data-kr="Aksepte">Accepter</button><button class="button" type="button" data-consent-choice="refused" data-i18n data-en="Decline" data-fr="Refuser" data-kr="Refize">Refuser</button></div>';
       body.appendChild(consent);
     }
   }
@@ -317,45 +317,45 @@
     var locale = root.dataset.locale || "fr";
     var globalCopy = locale === "en" ? {
       eyebrow: "Global portal",
-      title: "I have built my professional life between Haiti and the United States.",
-      lead: "My story is one of movement, continuity and responsibility: from my architectural education in Port-au-Prince and my first construction sites in Haiti to residential design, inspection and independent practice in New York and Connecticut.",
+      title: "A professional life built between Haiti and the United States.",
+      lead: "Marie Gaëlle Mentor’s career is defined by continuity, adaptability and responsibility, from her architectural education in Port-au-Prince and her first construction sites in Haiti to residential design, inspection and independent practice in New York and Connecticut.",
       haiti: "Chapter I · Haiti",
       usa: "Chapter II · United States",
       milestones: "Career milestones",
       principles: "Principles of practice",
-      closingEyebrow: "What guides me today",
-      closingTitle: "Architecture is the thread that connects every chapter of my life.",
+      closingEyebrow: "A unified vision",
+      closingTitle: "Architecture connects every chapter of her professional journey.",
       closingParagraphs: [
-        "Working between two countries has never meant dividing my identity. It has taught me to observe more closely, adapt without losing rigor and recognize that every place carries its own intelligence. Haiti gave me the immediacy of the construction site, resilience and a deep sense of social responsibility. The United States strengthened my technical discipline, my knowledge of residential standards and my experience of collaborative practice.",
-        "Today I bring those lessons together. I approach each client with the same commitment: to listen before drawing, to make complex decisions understandable and to remain attentive from the first conversation through implementation. My ambition is to create architecture that serves people well, ages with dignity and leaves a meaningful place in their lives."
+        "Working between two countries has shaped a practice that observes closely, adapts without sacrificing rigor and recognizes the particular intelligence of every place. Haiti provided direct construction-site experience, resilience and a strong sense of social responsibility. The United States strengthened her technical discipline, knowledge of residential standards and experience of collaborative practice.",
+        "These lessons now inform every commission. Her process begins with careful listening, makes complex decisions understandable and maintains attention from the first conversation through implementation. The objective remains consistent: architecture that serves people well, ages with dignity and holds a meaningful place in their lives."
       ]
     } : locale === "kr" ? {
       eyebrow: "Pòtal global",
-      title: "Mwen bati lavi pwofesyonèl mwen ant Ayiti ak Etazini.",
-      lead: "Istwa mwen se yon istwa mouvman, kontinite ak responsabilite: depi fòmasyon achitekti mwen Pòtoprens ak premye chantye mwen ann Ayiti rive nan konsepsyon rezidansyèl, enspeksyon ak pratik endepandan nan New York ak Connecticut.",
+      title: "Yon lavi pwofesyonèl bati ant Ayiti ak Etazini.",
+      lead: "Karyè Marie Gaëlle Mentor chita sou kontinite, adaptasyon ak responsabilite, depi fòmasyon li nan achitekti Pòtoprens ak premye chantye li ann Ayiti rive nan konsepsyon rezidansyèl, enspeksyon ak pratik endepandan nan New York ak Connecticut.",
       haiti: "Chapit I · Ayiti",
       usa: "Chapit II · Etazini",
       milestones: "Etap nan karyè a",
       principles: "Prensip travay",
-      closingEyebrow: "Sa k ap gide m jodi a",
-      closingTitle: "Achitekti se fil ki mare tout chapit lavi mwen.",
+      closingEyebrow: "Yon vizyon ki ini tout eksperyans yo",
+      closingTitle: "Achitekti mare tout chapit nan pakou pwofesyonèl li.",
       closingParagraphs: [
-        "Travay ant de peyi pa janm divize idantite mwen. Sa aprann mwen obsève pi byen, adapte m san m pa pèdi disiplin epi rekonèt chak kote gen pwòp entèlijans pa li. Ayiti ban mwen eksperyans dirèk chantye, rezilyans ak responsabilite sosyal. Etazini ranfòse presizyon teknik mwen ak eksperyans mwen nan lojman.",
-        "Jodi a, mwen mete tout leson sa yo ansanm. Mwen koute anvan mwen trase, mwen rann desizyon konplèks yo klè epi mwen rete atantif depi premye konvèsasyon an rive nan realizasyon an."
+        "Travay ant de peyi fòme yon pratik ki obsève ak anpil atansyon, ki adapte san li pa pèdi disiplin epi ki rekonèt entèlijans chak kote. Ayiti pote eksperyans dirèk chantye, rezilyans ak responsabilite sosyal. Etazini ranfòse presizyon teknik li ak eksperyans li nan lojman.",
+        "Tout leson sa yo reyini nan chak pwojè. Metòd li kòmanse ak bonjan ekout, rann desizyon konplèks yo klè epi kenbe menm nivo atansyon depi premye konvèsasyon an rive nan realizasyon an."
       ]
     } : {
       eyebrow: "Portail global",
-      title: "J’ai construit ma vie professionnelle entre Haïti et les États-Unis.",
-      lead: "Mon histoire est celle d’un mouvement continu et d’une même responsabilité: de ma formation à Port-au-Prince et de mes premiers chantiers en Haïti jusqu’à la conception résidentielle, l’inspection et la pratique indépendante à New York et au Connecticut.",
+      title: "Une vie professionnelle construite entre Haïti et les États-Unis.",
+      lead: "Le parcours de Marie Gaëlle Mentor se distingue par sa continuité, sa capacité d’adaptation et son sens des responsabilités, de sa formation à Port-au-Prince et de ses premiers chantiers en Haïti jusqu’à la conception résidentielle, l’inspection et la pratique indépendante à New York et au Connecticut.",
       haiti: "Chapitre I · Haïti",
       usa: "Chapitre II · États-Unis",
       milestones: "Repères du parcours",
       principles: "Principes de pratique",
-      closingEyebrow: "Ce qui me guide aujourd’hui",
-      closingTitle: "L’architecture est le fil qui relie tous les chapitres de ma vie.",
+      closingEyebrow: "Une vision unifiée",
+      closingTitle: "L’architecture relie tous les chapitres de son parcours professionnel.",
       closingParagraphs: [
-        "Travailler entre deux pays n’a jamais signifié diviser mon identité. Cela m’a appris à regarder plus attentivement, à m’adapter sans perdre ma rigueur et à reconnaître l’intelligence propre à chaque lieu. Haïti m’a transmis l’expérience immédiate du chantier, la résilience et un profond sens de la responsabilité sociale. Les États-Unis ont renforcé ma discipline technique, ma connaissance des standards résidentiels et mon expérience du travail collaboratif.",
-        "Aujourd’hui, je réunis ces apprentissages dans chaque mission. J’écoute avant de dessiner, je rends les décisions complexes compréhensibles et je reste attentive de la première conversation jusqu’à la réalisation. Mon ambition est de créer une architecture qui serve véritablement les personnes, vieillisse avec dignité et occupe une place significative dans leur vie."
+        "Le travail entre deux pays a façonné une pratique attentive, adaptable et rigoureuse, capable de reconnaître l’intelligence propre à chaque lieu. Haïti lui a apporté l’expérience immédiate du chantier, la résilience et un profond sens de la responsabilité sociale. Les États-Unis ont renforcé sa discipline technique, sa connaissance des standards résidentiels et son expérience du travail collaboratif.",
+        "Ces apprentissages sont aujourd’hui réunis dans chaque mission. Sa méthode privilégie l’écoute avant le dessin, rend les décisions complexes compréhensibles et maintient une attention constante de la première conversation jusqu’à la réalisation. L’objectif reste de créer une architecture qui serve véritablement les personnes, vieillisse avec dignité et occupe une place significative dans leur vie."
       ]
     };
 
@@ -364,9 +364,12 @@
       var facts = (profile.facts || []).map(function (fact) { return '<div class="about-fact"><strong>' + fact.value + '</strong><span>' + fact.label + '</span></div>'; }).join("");
       var values = (profile.values || []).map(function (item, index) { return '<article><span>0' + (index + 1) + '</span><div><h3>' + item.title + '</h3><p>' + item.text + '</p></div></article>'; }).join("");
       var timeline = profile.timeline.map(function (item) { return '<article><h3>' + item.title + '</h3><p>' + item.text + '</p></article>'; }).join("");
+      var portrait = profile.chapterPortrait || profile.portrait;
+      var portraitAlt = profile.chapterPortraitAlt || profile.portraitAlt;
+      var portraitCaption = profile.chapterPortraitCaption || profile.portraitCaption;
       return '<section class="global-profile band"><div class="section-heading"><div><p class="eyebrow">' + heading + '</p><h2>' + profile.title + '</h2></div></div>' +
         '<div class="about-facts" aria-label="' + globalCopy.milestones + '">' + facts + '</div>' +
-        '<div class="about-grid"><figure><img src="' + href("images/" + profile.portrait) + '" alt="' + profile.portraitAlt + '"><figcaption>' + profile.portraitCaption + '</figcaption></figure><div class="about-copy"><p class="eyebrow">' + profile.eyebrow + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><blockquote>“' + profile.quote + '”</blockquote></div></div>' +
+        '<div class="about-grid"><figure><img src="' + href("images/" + portrait) + '" alt="' + portraitAlt + '"><figcaption>' + portraitCaption + '</figcaption></figure><div class="about-copy"><p class="eyebrow">' + profile.eyebrow + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><p class="practice-statement">' + profile.quote + '</p></div></div>' +
         '<div class="about-history band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.milestones + '</p></div></div><div class="timeline">' + timeline + '</div></div>' +
         '<div class="about-values band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.principles + '</p></div></div><div class="about-value-list">' + values + '</div></div></section>';
     }

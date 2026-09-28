@@ -109,11 +109,12 @@ main { min-height: 75vh; }
 .global-profile + .global-profile { margin-top: clamp(5rem,10vw,10rem); padding-top: clamp(5rem,10vw,10rem); border-top: 1px solid var(--line); }
 .about-grid figure { position: sticky; top: 110px; margin: 0; }
 .about-grid figure img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.about-grid figure img[src$="marie-gaelle-mentor-portrait.png"] { padding: clamp(.75rem,2vw,1.5rem) clamp(.5rem,2vw,1.5rem) 0; background: var(--surface-2); object-fit: contain; object-position: center bottom; }
 .about-grid figcaption { max-width: 38ch; margin-top: 1rem; color: var(--muted); font-size: .8rem; }
 .about-copy h2 { margin-top: 0; font: 400 clamp(2.4rem,5vw,4.6rem)/1 var(--serif); }
 .about-story { display: grid; gap: 1rem; }
 .about-story p { margin: 0; color: var(--muted); font-size: 1.02rem; }
-.about-copy blockquote { margin: 3rem 0 0; padding: 1.5rem 0 0; border-top: 1px solid var(--copper); font: 400 clamp(1.55rem,3vw,2.35rem)/1.2 var(--serif); }
+.practice-statement { margin: 3rem 0 0; padding: 1.5rem 0 0; border-top: 1px solid var(--copper); font: 400 clamp(1.55rem,3vw,2.35rem)/1.2 var(--serif); }
 .about-facts { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 4rem; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .about-fact { min-height: 160px; display: grid; align-content: space-between; gap: 1rem; padding: 1.4rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .about-fact strong { color: var(--copper); font: 400 clamp(2.5rem,5vw,4.5rem)/1 var(--serif); }

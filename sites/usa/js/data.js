@@ -26,9 +26,9 @@
     "us": {
       "eyebrow": "Architectural Designer",
       "title": "A career shaped by architecture, leadership and an international point of view.",
-      "portrait": "usa/water-view-east-cover.webp",
-      "portraitAlt": "Water View East residential project in Norwalk, Connecticut",
-      "portraitCaption": "Water View East, a residential collaboration in Norwalk, Connecticut.",
+      "portrait": "marie-gaelle-mentor-portrait.png",
+      "portraitAlt": "Portrait of architectural designer Marie Gaëlle Mentor wearing yellow",
+      "portraitCaption": "Marie Gaëlle Mentor, Architectural Designer.",
       "lead": "Marie Gaëlle Mentor brings more than two decades of architectural practice in New York and Connecticut to every commission. Her work is grounded in one clear ambition: creating places that are practical, expressive and genuinely comfortable to inhabit.",
       "storyTitle": "Local rigor, global perspective.",
       "story": [
