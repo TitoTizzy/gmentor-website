@@ -3,7 +3,7 @@
 Le dépôt contient deux applications web autonomes. Elles ne sont plus générées depuis un frontend commun :
 
 - sites/usa/ est le site anglais de mariegaellementor.com. Il contient uniquement le profil, les projets et les images USA.
-- sites/haiti/ est le site de haiti.mariegaellementor.com. Il contient les expériences USA et Haïti avec le sélecteur de marché.
+- sites/haiti/ est le portail global de haiti.mariegaellementor.com. Il présente ensemble les expériences USA et Haïti, sans sélecteur de marché.
 
 Créer deux projets d’hébergement à partir de ce dépôt :
 
@@ -14,9 +14,9 @@ Chaque projet doit être publié depuis son propre dossier. Le site USA ne doit 
 
 ## Entrées GitHub Pages
 
-- \`index.html\` redirige vers le site USA.
-- \`indexhaiti.html\` redirige vers le site Haïti.
-- \`frontend/index.html\` est uniquement une redirection de compatibilité pour les anciens liens USA.
+- `index.html` redirige vers le site USA.
+- `indexhaiti.html` charge directement l'accueil du portail global, sans redirection vers `index.html`.
+- `frontend/index.html` est uniquement une redirection de compatibilité pour les anciens liens USA.
 
 ## Application Astro
 
