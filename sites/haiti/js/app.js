@@ -67,9 +67,8 @@
       ].join("");
     }
     if (footer) {
-      var adminLink = siteVariant === "usa" ? "" : '<a href="' + href("admin/login.html") + '" data-i18n data-en="Administration" data-fr="Administration" data-kr="Administrasyon">Administration</a>';
       footer.innerHTML = '<div><img src="' + href("assets/mgm-logo.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
-        '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a>' + adminLink + '</div>' +
+        '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a></div>' +
         '<p class="footer-note">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor</p>';
     }
     if (!document.querySelector("[data-consent]")) {

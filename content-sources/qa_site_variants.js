@@ -47,6 +47,7 @@ function fileUrl(variant, file) {
         market: document.documentElement.dataset.market,
         marketButtons: document.querySelectorAll("button[data-market]").length,
         localeButtons: document.querySelectorAll("button[data-locale]").length,
+        publicAdminLinks: document.querySelectorAll('a[href*="admin/"]').length,
         brokenImages,
         haitiImages: sources.filter((source) => /images\/haiti\//i.test(source)),
         horizontalOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -98,6 +99,7 @@ function fileUrl(variant, file) {
   for (const result of results) {
     if (result.brokenImages.length) failures.push(`${result.variant}/${result.file}: broken images`);
     if (result.horizontalOverflow) failures.push(`${result.variant}/${result.file}: horizontal overflow`);
+    if (result.publicAdminLinks) failures.push(`${result.variant}/${result.file}: administration link is public`);
     if (result.variant === "usa" && (result.market !== "us" || result.lang !== "en")) failures.push(`${result.file}: USA locale is not locked`);
     if (result.variant === "usa" && (result.marketButtons || result.localeButtons)) failures.push(`${result.file}: USA controls are visible`);
     if (result.variant === "usa" && result.haitiImages.length) failures.push(`${result.file}: Haiti image was loaded`);
