@@ -5,7 +5,7 @@ Ce dépôt contient deux sites web autonomes pour Marie Gaëlle Mentor, ainsi qu
 ## Sites publics
 
 - `sites/usa/` : site anglais réservé aux activités aux États-Unis, destiné à `mariegaellementor.com`.
-- `sites/haiti/` : site Haïti contenant les parcours et projets Haïti et USA, destiné à `haiti.mariegaellementor.com`.
+- `sites/haiti/` : portail global réunissant les parcours et projets Haïti et USA, destiné à `haiti.mariegaellementor.com`.
 
 Les deux dossiers possèdent leurs propres pages HTML, CSS, JavaScript, contenus et médias. Ils peuvent être déployés ou déplacés dans deux dépôts distincts sans reconstruction.
 

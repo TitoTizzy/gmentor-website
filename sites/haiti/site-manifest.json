@@ -1,9 +1,6 @@
 {
-  "variant": "haiti",
+  "variant": "global",
   "domain": "haiti.mariegaellementor.com",
-  "markets": [
-    "us",
-    "ht"
-  ],
+  "markets": ["global"],
   "locale": "fr/ht/en"
 }

@@ -1,6 +1,6 @@
-# Marie Gaëlle Mentor Haïti
+# Marie Gaëlle Mentor | Portail global
 
-Site autonome pour `haiti.mariegaellementor.com`. Il réunit les profils et projets Haïti et USA avec un sélecteur de marché.
+Site autonome pour `haiti.mariegaellementor.com`. Il réunit les profils et projets Haïti et USA dans un même portail global, sans sélecteur de marché. Le domaine d'entrée détermine le portail présenté.
 
 - Ouvrir `index.html` directement dans un navigateur.
 - Les styles sont dans `css/styles.css`.

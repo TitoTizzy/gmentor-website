@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  window.MGM_SITE_VARIANT = "haiti";
+  window.MGM_SITE_VARIANT = "global";
   window.MGM_DATA = {
   "services": [
     {

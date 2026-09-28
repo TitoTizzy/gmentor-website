@@ -5,11 +5,11 @@
   var body = document.body;
   var assetRoot = body.dataset.root || ".";
   var page = body.dataset.page || "home";
-  var siteVariant = window.MGM_SITE_VARIANT || "haiti";
+  var siteVariant = window.MGM_SITE_VARIANT || "global";
   var labels = {
-    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Architectural Designer" },
-    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Architecte licenciée en Haïti" },
-    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Achitèk lisansye an Ayiti" }
+    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Global Architectural Practice" },
+    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Pratique architecturale globale" },
+    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Pratik achitekti global" }
   };
 
   function href(name) {
@@ -18,6 +18,14 @@
 
   function initializePreferences() {
     var browserLanguage = (navigator.language || "en").toLowerCase();
+    if (siteVariant === "global") {
+      var globalLocale = localStorage.getItem("mgm-global-locale") || (browserLanguage.indexOf("ht") === 0 ? "kr" : browserLanguage.indexOf("fr") === 0 ? "fr" : "en");
+      root.dataset.market = "global";
+      root.dataset.locale = globalLocale;
+      root.dataset.siteVariant = "global";
+      root.dataset.theme = localStorage.getItem("mgm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      return;
+    }
     if (siteVariant === "usa") {
       root.dataset.market = "us";
       root.dataset.locale = "en";
@@ -32,7 +40,7 @@
     root.dataset.market = market;
     root.dataset.locale = market === "us" ? "en" : locale;
     root.dataset.theme = theme;
-    root.dataset.siteVariant = "haiti";
+    root.dataset.siteVariant = "global";
   }
 
   function renderShell() {
@@ -44,7 +52,7 @@
     } : {
       home: "accueil", menu: "Ouvrir le menu", navigation: "Navigation principale", theme: "Changer le thème", footer: "Architecte Marie Gaëlle Mentor"
     };
-    var marketTools = siteVariant === "usa" ? "" : '<div class="segmented" aria-label="Marché"><button type="button" data-market="us">USA</button><button type="button" data-market="ht">Haïti</button></div><div class="segmented locale-switch" aria-label="Langue"><button type="button" data-locale="fr">FR</button><button type="button" data-locale="kr">KR</button></div>';
+    var marketTools = siteVariant === "global" ? '<div class="segmented locale-switch" aria-label="Language"><button type="button" data-locale="en">EN</button><button type="button" data-locale="fr">FR</button><button type="button" data-locale="kr">KR</button></div>' : "";
     if (header) {
       header.innerHTML = [
         '<a class="brand" href="' + href("index.html") + '" aria-label="Marie Gaëlle Mentor, ' + shellText.home + '">',
@@ -81,8 +89,8 @@
   }
 
   function syncPreferences() {
-    var market = siteVariant === "usa" ? "us" : (root.dataset.market || "ht");
-    var locale = market === "us" ? "en" : (root.dataset.locale || "fr");
+    var market = siteVariant === "global" ? "global" : "us";
+    var locale = siteVariant === "global" ? (root.dataset.locale || "fr") : "en";
     root.dataset.market = market;
     root.dataset.locale = locale;
     root.lang = locale === "kr" ? "ht" : locale;
@@ -98,13 +106,13 @@
     var title = document.querySelector("[data-market-title]");
     if (title) title.textContent = labels[locale].title;
     var footerTitle = document.querySelector("[data-footer-title]");
-    if (footerTitle) footerTitle.textContent = locale === "en" ? "Marie Gaëlle Mentor Architectural Designer" : locale === "kr" ? "Achitèk Marie Gaëlle Mentor" : "Architecte Marie Gaëlle Mentor";
+    if (footerTitle) footerTitle.textContent = locale === "en" ? "Marie Gaëlle Mentor | Global Architectural Practice" : locale === "kr" ? "Marie Gaëlle Mentor | Pratik achitekti global" : "Marie Gaëlle Mentor | Pratique architecturale globale";
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var translated = node.dataset[locale] || node.dataset.fr;
       if (translated) node.textContent = translated;
     });
     document.querySelectorAll("[data-market-image]").forEach(function (image) {
-      var source = market === "us" ? image.dataset.usSrc : image.dataset.htSrc;
+      var source = siteVariant === "global" ? image.getAttribute("src") : image.dataset.usSrc;
       if (source && image.getAttribute("src") !== source) image.setAttribute("src", source);
     });
     document.dispatchEvent(new CustomEvent("mgm:preferences"));
@@ -137,6 +145,7 @@
         root.dataset.locale = button.dataset.locale;
         localStorage.setItem("mgm-locale", root.dataset.locale);
         localStorage.setItem("mgm-locale-ht", root.dataset.locale);
+        localStorage.setItem("mgm-global-locale", root.dataset.locale);
         syncPreferences();
         closeNavigation();
       });
@@ -178,7 +187,7 @@
 
   function projectCard(project, index) {
     return '<article class="project-card" data-project data-market="' + project.markets.join(",") + '" data-country="' + project.country + '" data-city="' + project.city + '" data-year="' + project.year + '" data-type="' + project.type + '">' +
-      '<a href="project.html?slug=' + encodeURIComponent(project.slug) + '"><figure><img src="images/' + project.cover + '" alt="' + project.alt + '" width="1600" height="1067" loading="' + (index < 2 ? "eager" : "lazy") + '"></figure>' +
+      '<a href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '"><figure><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067" loading="' + (index < 2 ? "eager" : "lazy") + '"></figure>' +
       '<div class="project-copy"><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h2>' + project.title + '</h2><p>' + project.type + '</p></div></a></article>';
   }
 
@@ -205,11 +214,11 @@
     var cards = document.querySelectorAll("[data-project]");
     if (!cards.length) return;
     var form = document.querySelector("[data-filters]");
-    var market = root.dataset.market || "ht";
+    var market = root.dataset.market || "global";
     var values = form ? Object.fromEntries(new FormData(form)) : {};
     var visible = 0;
     cards.forEach(function (card) {
-      var marketMatch = card.dataset.market.split(",").indexOf(market) >= 0;
+      var marketMatch = market === "global" || card.dataset.market.split(",").indexOf(market) >= 0;
       var filterMatch = ["country", "city", "year", "type"].every(function (key) {
         return !values[key] || card.dataset[key] === values[key];
       });
@@ -245,18 +254,20 @@
   function initializeHero() {
     var hero = document.querySelector("[data-hero]");
     if (!hero || !window.MGM_DATA) return;
-    var projects = window.MGM_DATA.projects.filter(function (project) { return project.published && project.featured; });
+    var projects = window.MGM_DATA.projects.filter(function (project) { return project.published && project.featured; }).sort(function (a, b) {
+      return Number(b.markets.indexOf("ht") >= 0) - Number(a.markets.indexOf("ht") >= 0);
+    });
     var slides = hero.querySelector("[data-hero-slides]");
     var dots = hero.querySelector("[data-hero-dots]");
     var active = 0;
     slides.innerHTML = projects.map(function (project, index) {
-      return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="images/' + project.cover + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="project.html?slug=' + encodeURIComponent(project.slug) + '" aria-label="Découvrir ' + project.title + '"></a><div class="hero-content"><img class="hero-logo" src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
+      return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="Découvrir ' + project.title + '"></a><div class="hero-content"><img class="hero-logo" src="' + href("assets/mgm-logo.png") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
     }).join("");
     dots.innerHTML = projects.map(function (project, index) { return '<button type="button" aria-label="Afficher ' + project.title + '" data-hero-dot="' + index + '"></button>'; }).join("");
 
     function show(index) {
-      var market = root.dataset.market || "ht";
-      var eligible = projects.map(function (project, itemIndex) { return project.markets.indexOf(market) >= 0 ? itemIndex : -1; }).filter(function (itemIndex) { return itemIndex >= 0; });
+      var market = root.dataset.market || "global";
+      var eligible = projects.map(function (project, itemIndex) { return market === "global" || project.markets.indexOf(market) >= 0 ? itemIndex : -1; }).filter(function (itemIndex) { return itemIndex >= 0; });
       active = eligible.indexOf(index) >= 0 ? index : (eligible[0] || 0);
       hero.querySelectorAll("[data-hero-slide]").forEach(function (slide, itemIndex) {
         slide.hidden = eligible.indexOf(itemIndex) < 0;
@@ -282,7 +293,7 @@
       return;
     }
     var projectMarket = project.markets[0];
-    if (projectMarket && root.dataset.market !== projectMarket) {
+    if (siteVariant !== "global" && projectMarket && root.dataset.market !== projectMarket) {
       root.dataset.market = projectMarket;
       root.dataset.locale = projectMarket === "us" ? "en" : (localStorage.getItem("mgm-locale-ht") || "fr");
       localStorage.setItem("mgm-market", projectMarket);
@@ -294,9 +305,9 @@
     };
     document.title = project.title + " | Marie Gaëlle Mentor";
     var gallery = (project.gallery || []).map(function (item, index) {
-      return '<figure class="project-media project-media-' + ((index % 5) + 1) + '"><img src="images/' + item.src + '" alt="' + item.alt + '" loading="lazy"><figcaption>' + item.label + '</figcaption></figure>';
+      return '<figure class="project-media project-media-' + ((index % 5) + 1) + '"><img src="' + href("images/" + item.src) + '" alt="' + item.alt + '" loading="lazy"><figcaption>' + item.label + '</figcaption></figure>';
     }).join("");
-    target.innerHTML = '<section class="project-hero"><img src="images/' + project.cover + '" alt="' + project.alt + '"><div class="project-hero-copy"><p class="eyebrow">' + project.type + '</p><h1>' + project.title + '</h1></div></section>' +
+    target.innerHTML = '<section class="project-hero"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '"><div class="project-hero-copy"><p class="eyebrow">' + project.type + '</p><h1>' + project.title + '</h1></div></section>' +
       '<div class="container"><section class="project-intro band"><div><p class="eyebrow">' + detailLabels.project + '</p><p class="project-lead">' + project.description + '</p></div><dl class="project-meta"><div><dt>' + detailLabels.location + '</dt><dd>' + ([project.city, project.country].filter(Boolean).join(", ") || "—") + '</dd></div><div><dt>' + detailLabels.year + '</dt><dd>' + (project.year || detailLabels.unknownYear) + '</dd></div><div><dt>' + detailLabels.type + '</dt><dd>' + project.type + '</dd></div><div><dt>' + detailLabels.role + '</dt><dd>' + project.role + '</dd></div></dl></section>' +
       '<section class="project-gallery band" aria-label="' + detailLabels.gallery + '">' + gallery + '</section></div>';
   }
@@ -304,17 +315,48 @@
   function renderAbout() {
     var target = document.querySelector("[data-about-content]");
     if (!target || !window.MGM_DATA || !window.MGM_DATA.profiles) return;
-    var market = root.dataset.market || "ht";
-    var profile = window.MGM_DATA.profiles[market];
-    var aboutLabels = market === "us" ? { journey: "Her story", milestones: "Career milestones", principles: "Principles of practice" } : { journey: "Son histoire", milestones: "Repères du parcours", principles: "Principes de pratique" };
-    var story = (profile.story || [profile.body]).map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join("");
-    var facts = (profile.facts || []).map(function (fact) { return '<div class="about-fact"><strong>' + fact.value + '</strong><span>' + fact.label + '</span></div>'; }).join("");
-    var values = (profile.values || []).map(function (item, index) { return '<article><span>0' + (index + 1) + '</span><div><h3>' + item.title + '</h3><p>' + item.text + '</p></div></article>'; }).join("");
-    target.innerHTML = '<header class="page-intro"><p class="eyebrow">' + profile.eyebrow + '</p><div><h1>' + profile.title + '</h1><p>' + profile.lead + '</p></div></header>' +
-      '<section class="about-facts" aria-label="' + aboutLabels.milestones + '">' + facts + '</section>' +
-      '<section class="about-grid"><figure><img src="images/' + profile.portrait + '" alt="' + profile.portraitAlt + '"><figcaption>' + profile.portraitCaption + '</figcaption></figure><div class="about-copy"><p class="eyebrow">' + aboutLabels.journey + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><blockquote>“' + profile.quote + '”</blockquote></div></section>' +
-      '<section class="about-history band"><div class="section-heading"><div><p class="eyebrow">' + aboutLabels.milestones + '</p><h2>' + (market === "us" ? "A practice built over time." : "Une pratique construite dans la durée.") + '</h2></div></div><div class="timeline">' + profile.timeline.map(function (item) { return '<article><h3>' + item.title + '</h3><p>' + item.text + '</p></article>'; }).join("") + '</div></section>' +
-      '<section class="about-values band"><div class="section-heading"><div><p class="eyebrow">' + aboutLabels.principles + '</p><h2>' + (market === "us" ? "What guides every project." : "Ce qui guide chaque projet.") + '</h2></div></div><div class="about-value-list">' + values + '</div></section>';
+    var locale = root.dataset.locale || "fr";
+    var globalCopy = locale === "en" ? {
+      eyebrow: "Global portal",
+      title: "One career, shaped across Haiti and the United States.",
+      lead: "Discover Marie Gaëlle Mentor's complete professional journey, from architecture and construction leadership in Haiti to residential design and technical practice in New York and Connecticut.",
+      haiti: "Haiti practice",
+      usa: "United States practice",
+      milestones: "Career milestones",
+      principles: "Principles of practice"
+    } : locale === "kr" ? {
+      eyebrow: "Pòtal global",
+      title: "Yon sèl karyè, bati ant Ayiti ak Etazini.",
+      lead: "Dekouvri tout pakou pwofesyonèl Marie Gaëlle Mentor, depi achitekti ak direksyon chantye ann Ayiti rive nan konsepsyon rezidansyèl ak pratik teknik New York ak Connecticut.",
+      haiti: "Pratik ann Ayiti",
+      usa: "Pratik Ozetazini",
+      milestones: "Etap nan karyè a",
+      principles: "Prensip travay"
+    } : {
+      eyebrow: "Portail global",
+      title: "Une même carrière, construite entre Haïti et les États-Unis.",
+      lead: "Découvrez l'ensemble du parcours professionnel de Marie Gaëlle Mentor, de la conception et la direction de chantier en Haïti à la pratique résidentielle et technique à New York et au Connecticut.",
+      haiti: "Pratique en Haïti",
+      usa: "Pratique aux États-Unis",
+      milestones: "Repères du parcours",
+      principles: "Principes de pratique"
+    };
+
+    function profileSection(profile, heading) {
+      var story = (profile.story || [profile.body]).map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join("");
+      var facts = (profile.facts || []).map(function (fact) { return '<div class="about-fact"><strong>' + fact.value + '</strong><span>' + fact.label + '</span></div>'; }).join("");
+      var values = (profile.values || []).map(function (item, index) { return '<article><span>0' + (index + 1) + '</span><div><h3>' + item.title + '</h3><p>' + item.text + '</p></div></article>'; }).join("");
+      var timeline = profile.timeline.map(function (item) { return '<article><h3>' + item.title + '</h3><p>' + item.text + '</p></article>'; }).join("");
+      return '<section class="global-profile band"><div class="section-heading"><div><p class="eyebrow">' + heading + '</p><h2>' + profile.title + '</h2></div></div>' +
+        '<div class="about-facts" aria-label="' + globalCopy.milestones + '">' + facts + '</div>' +
+        '<div class="about-grid"><figure><img src="' + href("images/" + profile.portrait) + '" alt="' + profile.portraitAlt + '"><figcaption>' + profile.portraitCaption + '</figcaption></figure><div class="about-copy"><p class="eyebrow">' + profile.eyebrow + '</p><h2>' + profile.storyTitle + '</h2><div class="about-story">' + story + '</div><blockquote>“' + profile.quote + '”</blockquote></div></div>' +
+        '<div class="about-history band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.milestones + '</p></div></div><div class="timeline">' + timeline + '</div></div>' +
+        '<div class="about-values band"><div class="section-heading"><div><p class="eyebrow">' + globalCopy.principles + '</p></div></div><div class="about-value-list">' + values + '</div></div></section>';
+    }
+
+    target.innerHTML = '<header class="page-intro"><p class="eyebrow">' + globalCopy.eyebrow + '</p><div><h1>' + globalCopy.title + '</h1><p>' + globalCopy.lead + '</p></div></header>' +
+      profileSection(window.MGM_DATA.profiles.ht, globalCopy.haiti) +
+      profileSection(window.MGM_DATA.profiles.us, globalCopy.usa);
   }
 
   function initializeContact() {
@@ -329,7 +371,7 @@
       }
       var requests = JSON.parse(localStorage.getItem("mgm-demo-requests") || "[]");
       var request = Object.fromEntries(new FormData(form));
-      request.market = root.dataset.market || "ht";
+      request.market = root.dataset.market || "global";
       request.locale = root.dataset.locale || "fr";
       request.createdAt = new Date().toISOString();
       requests.push(request);

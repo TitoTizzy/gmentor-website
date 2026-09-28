@@ -28,18 +28,39 @@
   }
 
   function buildBook() {
-    var market = root.dataset.market || "ht";
-    var isUs = market === "us";
+    var locale = root.dataset.locale || "fr";
     var projects = window.MGM_DATA.projects.filter(function (project) {
-      return project.published && project.markets.indexOf(market) >= 0;
+      return project.published;
     });
     var cover = projects[0];
+    var copy = locale === "en" ? {
+      label: "Global Portfolio",
+      title: "Architecture across borders.",
+      intro: "Built work, photographs and drawings from Haiti and the United States.",
+      count: " projects",
+      role: "Role",
+      contact: "Discuss a project"
+    } : locale === "kr" ? {
+      label: "Pòtfolyo global",
+      title: "Achitekti atravè fwontyè.",
+      intro: "Pwojè, foto ak plan ki soti ann Ayiti ak Ozetazini.",
+      count: " pwojè",
+      role: "Wòl",
+      contact: "Pale sou yon pwojè"
+    } : {
+      label: "Portfolio global",
+      title: "L'architecture au-delà des frontières.",
+      intro: "Réalisations, photographies et plans provenant d'Haïti et des États-Unis.",
+      count: " projets",
+      role: "Mission",
+      contact: "Parler de votre projet"
+    };
     var pages = [
-      '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><p>' + (isUs ? "United States Portfolio" : "Portfolio Haïti") + '</p><h2>Marie Gaëlle Mentor</h2><span>' + (isUs ? "Architectural Designer" : "Architecte licenciée") + '</span></div></article>',
-      '<article class="book-page book-opening"><p class="eyebrow">' + (isUs ? "Selected work" : "Projets sélectionnés") + '</p><h2>' + (isUs ? "Architecture grounded in use, place and detail." : "Une architecture pensée pour les usages, le lieu et la durée.") + '</h2><p>' + (isUs ? "A selection of residential work in Connecticut, presented through built photographs and architectural drawings." : "Une sélection de réalisations en Haïti, présentée à travers les photographies de chantier, les espaces livrés, les rendus et les plans.") + '</p><span class="book-opening-count">' + projects.length + (isUs ? " projects" : " projets") + '</span></article>'
+      '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><p>' + copy.label + '</p><h2>Marie Gaëlle Mentor</h2><span>Architectural Designer</span></div></article>',
+      '<article class="book-page book-opening"><p class="eyebrow">' + copy.label + '</p><h2>' + copy.title + '</h2><p>' + copy.intro + '</p><span class="book-opening-count">' + projects.length + copy.count + '</span></article>'
     ];
     projects.forEach(function (project) { pages = pages.concat(projectPages(project)); });
-    pages.push('<article class="book-page book-back" data-density="hard"><img src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><p>Spaces that inspire a better tomorrow</p><a href="contact.html">' + (isUs ? "Discuss a project" : "Parler de votre projet") + '</a></article>');
+    pages.push('<article class="book-page book-back" data-density="hard"><img src="assets/mgm-logo.png" alt="Marie Gaëlle Mentor"><p>Spaces that inspire a better tomorrow</p><a href="contact.html">' + copy.contact + '</a></article>');
 
     if (pageFlip) {
       pageFlip.destroy();
@@ -71,9 +92,9 @@
     pageFlip.on("init", updateCounter);
     pageFlip.loadFromHTML(bookElement.querySelectorAll(".book-page"));
 
-    document.querySelector("[data-book-market-label]").textContent = isUs ? "United States Portfolio" : "Portfolio Haïti";
-    document.querySelector("[data-book-title]").textContent = isUs ? "Turn the pages." : "Feuilletez les projets.";
-    document.querySelector("[data-book-intro]").textContent = isUs ? "Built work and drawings in an interactive architectural book." : "Photos, rendus et plans réunis dans un livre architectural interactif.";
+    document.querySelector("[data-book-market-label]").textContent = copy.label;
+    document.querySelector("[data-book-title]").textContent = copy.title;
+    document.querySelector("[data-book-intro]").textContent = copy.intro;
   }
 
   function updateCounter(event) {

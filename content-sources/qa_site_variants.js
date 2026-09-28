@@ -13,7 +13,8 @@ function rootFileUrl(file) {
 }
 
 function fileUrl(variant, file) {
-  return `file:///${path.join(root, "sites", variant, file).replace(/\\/g, "/")}`;
+  const directory = variant === "global" ? "haiti" : variant;
+  return `file:///${path.join(root, "sites", directory, file).replace(/\\/g, "/")}`;
 }
 
 (async () => {
@@ -26,9 +27,9 @@ function fileUrl(variant, file) {
     if (message.type() === "error") errors.push(message.text());
   });
 
-  async function inspect(variant, file, action, viewport = { width: 1440, height: 1000 }) {
+  async function inspect(variant, file, action, viewport = { width: 1440, height: 1000 }, url = fileUrl(variant, file)) {
     await page.setViewportSize(viewport);
-    await page.goto(fileUrl(variant, file));
+    await page.goto(url);
     if (action) await action();
     await page.locator("[data-consent]").evaluateAll((items) => items.forEach((item) => { item.hidden = true; }));
     await page.waitForTimeout(250);
@@ -41,6 +42,7 @@ function fileUrl(variant, file) {
         image.src = source;
       })))).filter(Boolean);
       return {
+        pathname: new URL(location.href).pathname,
         lang: document.documentElement.lang,
         market: document.documentElement.dataset.market,
         marketButtons: document.querySelectorAll("button[data-market]").length,
@@ -60,7 +62,7 @@ function fileUrl(variant, file) {
   const entrypoints = [];
   for (const [file, expectedPath] of [
     ["index.html", "/sites/usa/index.html"],
-    ["indexhaiti.html", "/sites/haiti/index.html"],
+    ["indexhaiti.html", "/indexhaiti.html"],
     ["frontend/index.html", "/sites/usa/index.html"]
   ]) {
     await page.goto(rootFileUrl(file));
@@ -71,16 +73,21 @@ function fileUrl(variant, file) {
   results.push(await inspect("usa", "about.html"));
   results.push(await inspect("usa", "contact.html"));
   results.push(await inspect("usa", "portfolio.html"));
-  results.push(await inspect("haiti", "index.html", async () => page.getByRole("button", { name: "Haïti" }).click()));
-  results.push(await inspect("haiti", "about.html", async () => page.getByRole("button", { name: "Haïti" }).click()));
+  results.push(await inspect("global", "index.html"));
+  results.push(await inspect("global", "about.html"));
+  results.push(await inspect("global", "portfolio.html"));
+  results.push(await inspect("global-root", "indexhaiti.html", null, { width: 1440, height: 1000 }, rootFileUrl("indexhaiti.html")));
+  results.push(await inspect("global-root-nav", "indexhaiti.html", async () => {
+    await page.getByRole("link", { name: "About" }).click();
+  }, { width: 1440, height: 1000 }, rootFileUrl("indexhaiti.html")));
   results.push(await inspect("usa", "index.html", async () => {
     await page.locator("[data-nav-toggle]").click();
   }, { width: 390, height: 844 }));
   results.push(await inspect("usa", "about.html", null, { width: 390, height: 844 }));
-  results.push(await inspect("haiti", "index.html", async () => {
+  results.push(await inspect("global", "index.html", async () => {
     await page.locator("[data-nav-toggle]").click();
-    await page.getByRole("button", { name: "Haïti" }).click();
   }, { width: 390, height: 844 }));
+  results.push(await inspect("global-root", "indexhaiti.html", null, { width: 390, height: 844 }, rootFileUrl("indexhaiti.html")));
 
   const failures = [];
   for (const entrypoint of entrypoints) {
@@ -95,7 +102,8 @@ function fileUrl(variant, file) {
     if (result.variant === "usa" && (result.marketButtons || result.localeButtons)) failures.push(`${result.file}: USA controls are visible`);
     if (result.variant === "usa" && result.haitiImages.length) failures.push(`${result.file}: Haiti image was loaded`);
     if (result.variant === "usa" && /Haïti|Haiti/.test(result.visibleText)) failures.push(`${result.file}: Haiti content is visible`);
-    if (result.variant === "haiti" && result.marketButtons !== 2) failures.push(`${result.file}: dual-market controls are missing`);
+    if (result.variant.indexOf("global") === 0 && (result.market !== "global" || result.marketButtons !== 0 || result.localeButtons !== 3)) failures.push(`${result.file}: global portal controls are incorrect`);
+    if (result.variant === "global-root-nav" && !result.pathname.endsWith("/sites/haiti/about.html")) failures.push(`${result.file}: global navigation opened ${result.pathname}`);
   }
 
   console.log(JSON.stringify({
