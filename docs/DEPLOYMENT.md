@@ -1,31 +1,26 @@
-# Déploiement des deux sites
+# Déploiement du site unique
 
-Le dépôt contient deux applications web autonomes. Elles ne sont plus générées depuis un frontend commun :
+Marie Gaëlle Mentor dispose désormais d’un seul site public réunissant ses activités en Haïti et aux États-Unis. Le domaine principal est `mariegaellementor.com`.
 
-- sites/usa/ est le site anglais de mariegaellementor.com. Il contient uniquement le profil, les projets et les images USA.
-- sites/haiti/ est le portail global de haiti.mariegaellementor.com. Il présente ensemble les expériences USA et Haïti, sans sélecteur de marché.
+## Site statique
 
-Créer deux projets d’hébergement à partir de ce dépôt :
+Le site est servi depuis la racine du dépôt, sans étape de compilation :
 
-1. Projet mgm-usa : dossier racine sites/usa, aucun build requis, domaine mariegaellementor.com.
-2. Projet mgm-haiti : dossier racine sites/haiti, aucun build requis, domaine haiti.mariegaellementor.com.
+1. Publier la branche principale depuis la racine.
+2. Configurer `mariegaellementor.com` comme domaine principal.
+3. Rediriger l’ancien sous-domaine `haiti.mariegaellementor.com` vers `https://mariegaellementor.com` au niveau de l’hébergeur ou du DNS.
+4. Vérifier que `index.html`, `about.html`, `projects.html`, `portfolio.html` et `contact.html` répondent directement.
 
-Chaque projet doit être publié depuis son propre dossier. Le site USA ne doit jamais utiliser sites/haiti comme racine ou comme source d’assets.
-
-## Entrées GitHub Pages
-
-- `index.html` redirige vers le site USA.
-- `indexhaiti.html` charge directement l'accueil du portail global, sans redirection vers `index.html`.
-- `frontend/index.html` est uniquement une redirection de compatibilité pour les anciens liens USA.
+Le site détecte la langue du navigateur au premier accès et permet ensuite de choisir EN, FR ou KR. Le thème clair ou sombre et la langue sont mémorisés localement.
 
 ## Application Astro
 
-1. Créer le projet Supabase et appliquer la migration puis le seed.
-2. Créer deux comptes administrateurs et inscrire au moins un facteur TOTP pour chacun.
-3. Créer les clés Cloudflare Turnstile pour mariegaellementor.com et haiti.mariegaellementor.com.
-4. Vérifier le domaine d’envoi dans Resend.
-5. Importer le dépôt dans Vercel et ajouter toutes les variables de `.env.example`.
-6. Déployer avec la commande de build `pnpm build`.
-7. Ajouter les domaines requis, puis vérifier les URL canonical, le sitemap et les emails.
+L’application Astro reste disponible pour les fonctions serveur et l’administration :
 
-Les originaux restent dans les buckets privés. Seul le bucket `public-watermarked` est lisible publiquement. La génération des copies optimisées et filigranées doit être effectuée dans une fonction serveur dédiée avant toute mise en production avec des médias réels.
+1. Appliquer la migration et le seed Supabase.
+2. Créer les comptes administrateurs et activer au moins un facteur TOTP.
+3. Configurer Cloudflare Turnstile et le domaine d’envoi Resend.
+4. Ajouter les variables de `.env.example` dans Vercel.
+5. Déployer avec `npm run build`.
+
+Les originaux restent dans les buckets privés. Seules les copies web optimisées et autorisées doivent être publiées.

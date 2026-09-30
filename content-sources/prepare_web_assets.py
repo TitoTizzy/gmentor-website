@@ -9,10 +9,9 @@ from PIL import Image, ImageFilter, ImageOps
 
 
 ROOT = Path(__file__).resolve().parent
-SITES = ROOT.parent / "sites"
 SITE_IMAGES = {
-    "usa": [SITES / "usa" / "images" / "usa", SITES / "haiti" / "images" / "usa"],
-    "haiti": [SITES / "haiti" / "images" / "haiti"],
+    "usa": [ROOT.parent / "images" / "usa"],
+    "haiti": [ROOT.parent / "images" / "haiti"],
 }
 USA_MEDIA = ROOT / "usa" / "usa-portfolio" / "media"
 HAITI_MIXED = ROOT / "mixed" / "mixed-portfolio" / "haiti-media"

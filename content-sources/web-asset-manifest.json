@@ -8,7 +8,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2880,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-cover.webp"
+    ]
   },
   {
     "market": "usa",
@@ -19,7 +22,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2880,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-side.webp"
+    ]
   },
   {
     "market": "usa",
@@ -30,7 +36,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 3012,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-rear.webp"
+    ]
   },
   {
     "market": "usa",
@@ -41,7 +50,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2708,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-end.webp"
+    ]
   },
   {
     "market": "usa",
@@ -52,7 +64,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2634,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-foundation.webp"
+    ]
   },
   {
     "market": "usa",
@@ -63,7 +78,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2692,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-first-floor.webp"
+    ]
   },
   {
     "market": "usa",
@@ -74,7 +92,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 1769,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/townhouse-waterbury-front-elevation.webp"
+    ]
   },
   {
     "market": "usa",
@@ -85,7 +106,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-cover.webp"
+    ]
   },
   {
     "market": "usa",
@@ -96,7 +120,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-exterior.webp"
+    ]
   },
   {
     "market": "usa",
@@ -107,7 +134,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-walkway.webp"
+    ]
   },
   {
     "market": "usa",
@@ -118,7 +148,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-kitchen.webp"
+    ]
   },
   {
     "market": "usa",
@@ -129,7 +162,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-living.webp"
+    ]
   },
   {
     "market": "usa",
@@ -140,7 +176,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2559,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-basement.webp"
+    ]
   },
   {
     "market": "usa",
@@ -151,7 +190,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2559,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/water-view-east-front-elevation.webp"
+    ]
   },
   {
     "market": "usa",
@@ -162,7 +204,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/forest-street-cover.webp"
+    ]
   },
   {
     "market": "usa",
@@ -173,7 +218,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/forest-street-entry.webp"
+    ]
   },
   {
     "market": "usa",
@@ -184,7 +232,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/forest-street-living.webp"
+    ]
   },
   {
     "market": "usa",
@@ -195,7 +246,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2558,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/forest-street-stair.webp"
+    ]
   },
   {
     "market": "usa",
@@ -206,7 +260,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2559,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/forest-street-plans.webp"
+    ]
   },
   {
     "market": "usa",
@@ -217,7 +274,10 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2559,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/usa/forest-street-elevations.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -228,7 +288,10 @@
     "source_page": 46,
     "output_width": 3840,
     "output_height": 1808,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-render.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -239,7 +302,10 @@
     "source_page": 51,
     "output_width": 3840,
     "output_height": 2454,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-render-angle.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -250,7 +316,10 @@
     "source_page": 52,
     "output_width": 3840,
     "output_height": 3108,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-construction.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -261,7 +330,10 @@
     "source_page": 52,
     "output_width": 3840,
     "output_height": 2682,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-patio.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -272,7 +344,10 @@
     "source_page": 53,
     "output_width": 3840,
     "output_height": 2963,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-sea-view.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -283,7 +358,10 @@
     "source_page": 53,
     "output_width": 3840,
     "output_height": 2826,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-window-view.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -294,7 +372,10 @@
     "source_page": 47,
     "output_width": 2681,
     "output_height": 3840,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-floor-plan.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -305,7 +386,10 @@
     "source_page": 48,
     "output_width": 2613,
     "output_height": 3840,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-sections.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -316,7 +400,10 @@
     "source_page": 56,
     "output_width": 3840,
     "output_height": 2359,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-cover.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -327,7 +414,10 @@
     "source_page": 62,
     "output_width": 3840,
     "output_height": 2926,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-framing-interior.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -338,7 +428,10 @@
     "source_page": 62,
     "output_width": 3840,
     "output_height": 2767,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-framing-exterior.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -349,7 +442,10 @@
     "source_page": 63,
     "output_width": 3840,
     "output_height": 2781,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-construction.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -360,7 +456,10 @@
     "source_page": 64,
     "output_width": 3840,
     "output_height": 2830,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-completed.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -371,7 +470,10 @@
     "source_page": 64,
     "output_width": 3840,
     "output_height": 3210,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-interior.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -382,7 +484,10 @@
     "source_page": 57,
     "output_width": 3840,
     "output_height": 2695,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-office-plan.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -393,7 +498,10 @@
     "source_page": 59,
     "output_width": 3840,
     "output_height": 2985,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/uce-foundation-plan.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -404,7 +512,10 @@
     "source_page": 5,
     "output_width": 3840,
     "output_height": 2546,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-cover.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -415,7 +526,10 @@
     "source_page": 4,
     "output_width": 3840,
     "output_height": 2046,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-house-green.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -426,7 +540,10 @@
     "source_page": 4,
     "output_width": 3840,
     "output_height": 2450,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-construction.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -437,7 +554,10 @@
     "source_page": 5,
     "output_width": 3840,
     "output_height": 2398,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-house-veranda.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -448,7 +568,10 @@
     "source_page": 29,
     "output_width": 3840,
     "output_height": 2822,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-two-bedroom-plan.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -459,7 +582,10 @@
     "source_page": 29,
     "output_width": 3840,
     "output_height": 3181,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-two-bedroom-render.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -470,7 +596,10 @@
     "source_page": 32,
     "output_width": 3840,
     "output_height": 2439,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/grand-sud-three-bedroom-plan.webp"
+    ]
   },
   {
     "market": "haiti",
@@ -481,6 +610,9 @@
     "source_page": null,
     "output_width": 3840,
     "output_height": 2279,
-    "quality_profile": "4K long edge, WebP quality 95"
+    "quality_profile": "4K long edge, WebP quality 95",
+    "web_assets": [
+      "images/haiti/beach-house-cover.webp"
+    ]
   }
 ]
