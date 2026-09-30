@@ -124,6 +124,9 @@ function fileUrl(variant, file) {
     if (result.variant === "usa" && (result.marketButtons || result.localeButtons)) failures.push(`${result.file}: USA controls are visible`);
     if (result.variant === "usa" && result.haitiImages.length) failures.push(`${result.file}: Haiti image was loaded`);
     if (result.variant === "usa" && /Haïti|Haiti/.test(result.visibleText)) failures.push(`${result.file}: Haiti content is visible`);
+    if (result.variant === "usa" && /Architectural Designer|Architectural design|Architectural services|Architectural drawings/i.test(result.visibleText)) failures.push(`${result.file}: restricted professional wording is visible`);
+    if (result.variant === "usa" && !/Building Designer/.test(result.visibleText)) failures.push(`${result.file}: Building Designer positioning is missing`);
+    if (result.variant === "usa" && !/Not a licensed architect in Connecticut or New York/i.test(result.visibleText)) failures.push(`${result.file}: license disclosure is missing`);
     if (result.variant.indexOf("global") === 0 && (result.market !== "global" || result.marketButtons !== 0 || result.localeButtons !== 3)) failures.push(`${result.file}: global portal controls are incorrect`);
     if (result.variant === "global-root-nav" && !result.pathname.endsWith("/sites/haiti/about.html")) failures.push(`${result.file}: global navigation opened ${result.pathname}`);
   }

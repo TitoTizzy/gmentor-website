@@ -12,7 +12,7 @@
   --glass-strong: rgba(27, 25, 23, 0.78);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
-  --theme-logo: url("../assets/mgm-logo-dark.png");
+  --theme-logo: url("../assets/mgm-mark.svg");
   --serif: "Iowan Old Style", Baskerville, "Times New Roman", serif;
   --sans: "Avenir Next", "Segoe UI", Arial, sans-serif;
   color-scheme: dark;
@@ -30,7 +30,7 @@
   --glass-strong: rgba(247, 244, 239, 0.76);
   --glass-border: rgba(255, 255, 255, 0.74);
   --glass-shadow: 0 20px 55px rgba(79, 52, 31, 0.1);
-  --theme-logo: url("../assets/mgm-logo-light.png");
+  --theme-logo: url("../assets/mgm-mark.svg");
   color-scheme: light;
 }
 

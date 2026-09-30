@@ -4,9 +4,9 @@
   window.MGM_DATA = {
   "services": [
     {
-      "en": "Architectural design",
-      "fr": "Conception architecturale",
-      "kr": "Konsepsyon achitekti"
+      "en": "Building design in the U.S. · Architecture in Haiti",
+      "fr": "Conception de bâtiments aux États-Unis · Architecture en Haïti",
+      "kr": "Konsepsyon bilding Ozetazini · Achitekti ann Ayiti"
     },
     {
       "en": "Interior design",
@@ -36,11 +36,11 @@
   ],
   "profiles": {
     "us": {
-      "eyebrow": "Architectural Designer",
+      "eyebrow": "Building Designer",
       "title": "An American journey connecting design ambition with technical precision.",
       "portrait": "marie-gaelle-mentor-portrait.png",
-      "portraitAlt": "Portrait of architectural designer Marie Gaëlle Mentor wearing yellow",
-      "portraitCaption": "Marie Gaëlle Mentor, Architectural Designer.",
+      "portraitAlt": "Portrait of building designer Marie Gaëlle Mentor wearing yellow",
+      "portraitCaption": "Marie Gaëlle Mentor, Building Designer. Not a licensed architect in Connecticut or New York.",
       "chapterPortrait": "usa/water-view-east-cover.webp",
       "chapterPortraitAlt": "Water View East residential project in Norwalk, Connecticut",
       "chapterPortraitCaption": "Water View East, a residential collaboration in Norwalk, Connecticut.",
@@ -48,11 +48,11 @@
       "storyTitle": "Building a practice across New York and Connecticut.",
       "story": [
         "Her professional chapter in the United States began in Queens in 2003. At PowerHouse Architect, she worked as a draftsperson and learned to translate intentions into disciplined architectural documents. The experience sharpened her eye for proportion and detail while establishing the importance of accuracy: every line on a drawing eventually becomes a decision for a builder, an expense for a client and a lived condition for a family.",
-        "From 2005 to 2006, she continued as an architectural designer with MGM Remodeling and Design in New York. Her role expanded into residential planning and the practical choices that make a home coherent, comfortable and feasible. Her Haitian training remained central to her perspective, while the American context broadened her understanding of local construction methods, permitting expectations and client service.",
+        "From 2005 to 2006, she continued in a residential design role with MGM Remodeling and Design in New York. Her work expanded into planning and the practical choices that make a home coherent, comfortable and feasible. Her Haitian training remained central to her perspective, while the American context broadened her understanding of local construction methods, permitting expectations and client service.",
         "In 2006, she joined AWA Design Group P.C. in Stamford, Connecticut. This period brought opportunities to contribute to larger residential developments within a multidisciplinary office. On projects such as Water View East in Norwalk and the Forest Street residences, she worked on compositions balancing symmetry, familiar residential forms and contemporary ways of living. Plans, elevations, window assemblies, circulation and landscape relationships were developed as parts of one architectural language.",
         "She subsequently established MGM Remodeling and Design in Hamden, serving as owner, interior designer and contractor from 2009 to 2010. The practice brought design and execution into direct conversation through homeowner consultation, interior solutions, work coordination and responsibility beyond the drawing set. This experience strengthened both the entrepreneurial dimension of her career and her capacity to guide a project from an initial need to a tangible result.",
         "Her work as a residential inspector with the Institute of Professional Practice in Woodbridge, from 2010 to 2011, added another essential layer. Examining homes through the lens of codes, safety and compliance reinforced a principle developed through years of site experience: technical rigor supports creativity by protecting occupants, extending a project’s useful life and preserving design quality through construction.",
-        "From 2014 to 2019, she applied this American experience as General Manager and Senior Architect at Shelter IT Haiti & USA. Since July 2019, her work with New England Outdoor Product has kept her practice close to clients, materials and buildable solutions. Marie Gaëlle Mentor Architectural Designer LLC now brings together drafting, residential design, interiors, inspection knowledge, construction awareness and international leadership in one integrated practice.",
+        "From 2014 to 2019, she applied this experience as General Manager and Senior Architect at Shelter IT Haiti & USA in Haiti. Since July 2019, her work with New England Outdoor Product has kept her practice close to clients, materials and buildable solutions. Her independent U.S. building design practice now brings together drafting, residential planning, interiors, inspection knowledge, construction awareness and international leadership, within the limits of applicable law.",
         "Across townhouses, multifamily residences and individual homes, her process begins with the people who will inhabit the space. Clear circulation, useful natural light, durable materials and an exterior identity connected to its context remain consistent priorities. The objective extends beyond producing an image to creating a thoughtful framework for everyday life."
       ],
       "facts": [
@@ -77,11 +77,11 @@
         },
         {
           "title": "2003–2006",
-          "text": "Beginning of her United States practice as a draftsperson at PowerHouse Architect in Queens, followed by architectural design work with MGM Remodeling and Design in New York."
+          "text": "Beginning of her United States practice as a draftsperson at PowerHouse Architect in Queens, followed by residential design work with MGM Remodeling and Design in New York."
         },
         {
           "title": "2006–2008",
-          "text": "Architectural Designer at AWA Design Group in Stamford, contributing to residential plans and developments including Water View East and Forest Street."
+          "text": "Design team member at AWA Design Group in Stamford, contributing to residential plans and developments including Water View East and Forest Street."
         },
         {
           "title": "2009–2011",
@@ -93,7 +93,7 @@
         },
         {
           "title": "2019–Today",
-          "text": "Architectural Designer with New England Outdoor Product and principal of Marie Gaëlle Mentor Architectural Designer LLC."
+          "text": "Building design work with New England Outdoor Product and development of an independent U.S. design practice."
         }
       ],
       "values": [
@@ -206,7 +206,7 @@
       "city": "Waterbury, Connecticut",
       "year": "",
       "type": "Multifamily residential",
-      "role": "Architectural design",
+      "role": "Building design",
       "markets": [
         "us"
       ],
@@ -250,7 +250,7 @@
       "city": "Norwalk, Connecticut",
       "year": "",
       "type": "Multifamily residential",
-      "role": "Architectural design in collaboration with AWA Design Group",
+      "role": "Design contribution while working with AWA Design Group",
       "markets": [
         "us"
       ],
@@ -299,7 +299,7 @@
       "city": "Connecticut",
       "year": "",
       "type": "Residential development",
-      "role": "Architectural design in collaboration with AWA Design Group",
+      "role": "Design contribution while working with AWA Design Group",
       "markets": [
         "us"
       ],
@@ -521,34 +521,34 @@ window.MGM_DATA.projectLocales = {
   },
   fr: {
     "townhouse-waterbury": {
-      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial", role: "Conception architecturale",
+      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial", role: "Conception de bâtiment",
       alt: "Maison multifamiliale bleu-gris réalisée à Waterbury, Connecticut",
       description: "Un bâtiment résidentiel contemporain organisé pour optimiser l'espace, la lumière naturelle et la ventilation. Le bardage horizontal, le rythme vertical lisible et la toiture à pignon lui donnent une identité résidentielle durable et mesurée."
     },
     "water-view-east": {
-      country: "États-Unis", city: "Norwalk, Connecticut", type: "Habitat multifamilial", role: "Conception architecturale en collaboration avec AWA Design Group",
+      country: "États-Unis", city: "Norwalk, Connecticut", type: "Habitat multifamilial", role: "Contribution à la conception au sein d’AWA Design Group",
       alt: "Résidence multifamiliale symétrique de Water View East à Norwalk",
       description: "Un ensemble résidentiel multifamilial qui associe des proportions classiques à des modes de vie contemporains. Les bow-windows, les balcons et le soubassement en brique donnent de la profondeur à la façade, tandis que les espaces ouverts relient matériaux chaleureux et lumière naturelle généreuse."
     },
     "forest-street": {
-      title: "Ensemble résidentiel, Forest Street", country: "États-Unis", city: "Connecticut", type: "Ensemble résidentiel", role: "Conception architecturale en collaboration avec AWA Design Group",
+      title: "Ensemble résidentiel, Forest Street", country: "États-Unis", city: "Connecticut", type: "Ensemble résidentiel", role: "Contribution à la conception au sein d’AWA Design Group",
       alt: "Ensemble de maisons mitoyennes sur Forest Street, Connecticut",
       description: "Un quartier résidentiel composé de maisons mitoyennes symétriques, de toitures à pignon et d'entrées soigneusement alignées. Le projet associe des documents d'exécution détaillés à des intérieurs ouverts et chaleureux, dans une relation cohérente entre bâtiments et paysage."
     }
   },
   kr: {
     "townhouse-waterbury": {
-      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal", role: "Konsepsyon achitekti",
+      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal", role: "Konsepsyon bilding",
       alt: "Kay miltifamilyal ki fini nan Waterbury, Connecticut",
       description: "Yon bilding rezidansyèl modèn ki òganize pou byen itilize espas, limyè natirèl ak vantilasyon. Revètman orizontal la, ritm vètikal la ak twati an pignon bay pwojè a yon karaktè dirab ak ekilibre."
     },
     "water-view-east": {
-      country: "Etazini", city: "Norwalk, Connecticut", type: "Lojman miltifamilyal", role: "Konsepsyon achitekti an kolaborasyon ak AWA Design Group",
+      country: "Etazini", city: "Norwalk, Connecticut", type: "Lojman miltifamilyal", role: "Kontribisyon nan konsepsyon pandan travay li avèk AWA Design Group",
       alt: "Rezidans miltifamilyal Water View East nan Norwalk",
       description: "Yon pwojè rezidansyèl miltifamilyal ki mete pwopòsyon klasik ansanm ak fason moun viv jodi a. Fenèt an avan, balkon ak baz an brik bay fasad la pwofondè, pandan espas ouvè yo mare materyo cho ak anpil limyè natirèl."
     },
     "forest-street": {
-      title: "Devlopman rezidansyèl Forest Street", country: "Etazini", city: "Connecticut", type: "Devlopman rezidansyèl", role: "Konsepsyon achitekti an kolaborasyon ak AWA Design Group",
+      title: "Devlopman rezidansyèl Forest Street", country: "Etazini", city: "Connecticut", type: "Devlopman rezidansyèl", role: "Kontribisyon nan konsepsyon pandan travay li avèk AWA Design Group",
       alt: "Devlopman kay kole sou Forest Street nan Connecticut",
       description: "Yon ansanbl rezidansyèl ki fèt ak kay kole simetrik, twati an pignon ak antre ki aliyen avèk presizyon. Pwojè a mete plan konstriksyon detaye ansanm ak enteryè ouvè ak cho, nan yon relasyon klè ant bilding yo ak peyizaj la."
     },
@@ -613,19 +613,19 @@ window.MGM_DATA.profileLocales = {
   fr: {
     ht: window.MGM_DATA.profiles.ht,
     us: {
-      eyebrow: "Conceptrice architecturale",
+      eyebrow: "Conceptrice de bâtiments",
       title: "Un parcours américain reliant ambition de conception et précision technique.",
-      portraitAlt: "Portrait de la conceptrice architecturale Marie Gaëlle Mentor portant une tenue jaune",
-      portraitCaption: "Marie Gaëlle Mentor, conceptrice architecturale.",
+      portraitAlt: "Portrait de la conceptrice de bâtiments Marie Gaëlle Mentor portant une tenue jaune",
+      portraitCaption: "Marie Gaëlle Mentor, conceptrice de bâtiments. Non licenciée comme architecte au Connecticut ou à New York.",
       lead: "Marie Gaëlle Mentor arrive aux États-Unis avec une expérience de l'architecture et du suivi de chantier déjà forgée en Haïti. New York et le Connecticut lui font découvrir de nouvelles cultures constructives, réglementations et formes de collaboration, tout en confirmant un principe central: une idée forte ne devient architecture que lorsqu'elle est clairement dessinée, coordonnée avec responsabilité et bien construite.",
       storyTitle: "Construire une pratique entre New York et le Connecticut.",
       story: [
         "Son parcours professionnel aux États-Unis débute dans le Queens en 2003. Chez PowerHouse Architect, elle exerce comme dessinatrice et apprend à traduire les intentions en documents architecturaux rigoureux. Cette expérience affine son regard sur les proportions et le détail, tout en établissant l'importance de la précision.",
-        "De 2005 à 2006, elle poursuit comme conceptrice architecturale chez MGM Remodeling and Design à New York. Son rôle s'étend à la planification résidentielle et aux choix pratiques qui rendent un logement cohérent, confortable et réalisable.",
+        "De 2005 à 2006, elle poursuit dans une fonction de conception résidentielle chez MGM Remodeling and Design à New York. Son rôle s'étend à la planification et aux choix pratiques qui rendent un logement cohérent, confortable et réalisable.",
         "En 2006, elle rejoint AWA Design Group P.C. à Stamford. Elle contribue à des ensembles résidentiels plus importants, dont Water View East à Norwalk et les résidences de Forest Street. Plans, élévations, ouvertures, circulations et relations paysagères sont développés comme les éléments d'un même langage architectural.",
         "Elle fonde ensuite MGM Remodeling and Design à Hamden, où elle exerce comme propriétaire, designer d'intérieur et entrepreneure de 2009 à 2010. Cette pratique met conception et réalisation en dialogue direct et renforce à la fois la dimension entrepreneuriale de son parcours et sa capacité à conduire un projet jusqu'à un résultat concret.",
         "Son travail d'inspectrice résidentielle à l'Institute of Professional Practice de Woodbridge, de 2010 à 2011, ajoute une dimension essentielle. L'examen des logements sous l'angle des codes, de la sécurité et de la conformité confirme que la rigueur technique soutient la créativité en protégeant les occupants et la qualité du projet.",
-        "De 2014 à 2019, elle mobilise cette expérience comme Directrice générale et Architecte senior de Shelter IT Haiti & USA. Depuis juillet 2019, son activité chez New England Outdoor Product maintient sa pratique au contact des clients, des matériaux et des solutions constructibles. Marie Gaëlle Mentor Architectural Designer LLC réunit aujourd'hui dessin, conception résidentielle, intérieurs, inspection, construction et leadership international.",
+        "De 2014 à 2019, elle mobilise cette expérience en Haïti comme Directrice générale et Architecte senior de Shelter IT Haiti & USA. Depuis juillet 2019, son activité chez New England Outdoor Product maintient sa pratique au contact des clients, des matériaux et des solutions constructibles. Sa pratique américaine indépendante de conception de bâtiments réunit aujourd'hui dessin, planification résidentielle, intérieurs, inspection, construction et leadership international, dans les limites prévues par la loi.",
         "Dans les maisons mitoyennes, les résidences multifamiliales et les maisons individuelles, sa méthode part toujours de celles et ceux qui habiteront les lieux. Circulations claires, lumière naturelle, matériaux durables et identité extérieure liée au contexte restent des priorités constantes."
       ],
       facts: [{ value: "30+", label: "années de pratique architecturale" }, { value: "NY + CT", label: "expérience aux États-Unis" }, { value: "3", label: "langues: anglais, français et créole" }],
@@ -633,10 +633,10 @@ window.MGM_DATA.profileLocales = {
       timeline: [
         { title: "1990–1995", text: "Baccalauréat en architecture à l'Université GOC de Port-au-Prince, complété par des études sur le mouvement et les environnements spatiaux." },
         { title: "2003–2006", text: "Début de sa pratique américaine comme dessinatrice chez PowerHouse Architect dans le Queens, puis comme conceptrice chez MGM Remodeling and Design à New York." },
-        { title: "2006–2008", text: "Conceptrice architecturale chez AWA Design Group à Stamford, avec une contribution à Water View East et Forest Street." },
+        { title: "2006–2008", text: "Membre de l’équipe de conception chez AWA Design Group à Stamford, avec une contribution à Water View East et Forest Street." },
         { title: "2009–2011", text: "Propriétaire, designer d'intérieur et entrepreneure chez MGM Remodeling and Design à Hamden, puis inspectrice résidentielle à Woodbridge." },
         { title: "2014–2019", text: "Directrice générale et Architecte senior de Shelter IT Haiti & USA, avec coordination d'équipes pluridisciplinaires." },
-        { title: "2019–Aujourd'hui", text: "Conceptrice architecturale chez New England Outdoor Product et dirigeante de Marie Gaëlle Mentor Architectural Designer LLC." }
+        { title: "2019–Aujourd'hui", text: "Travail de conception de bâtiments chez New England Outdoor Product et développement d’une pratique indépendante aux États-Unis." }
       ],
       values: [
         { title: "Intelligence résidentielle", text: "Les plans sont conçus autour des circulations, de la lumière, du confort et des usages réels, au-delà de la seule apparence." },
@@ -668,21 +668,21 @@ window.MGM_DATA.profileLocales = {
       values: [{ title: "Rezilyans konstriktif", text: "Solisyon yo pran an kont risk sismik ak siklonik, materyo ki disponib ak dirabilite travay la." }, { title: "Metriz teren", text: "Kowòdinasyon an baze sou eksperyans dirèk ekip yo, kalite egzekisyon ak kontrent lojistik chak sit." }, { title: "Achitekti pou moun", text: "Espas yo fèt dapre abitid, klima, kominote ak santiman moun genyen lè yo rete yon kote." }]
     },
     us: {
-      eyebrow: "Konseptris achitekti", title: "Yon pakou ameriken ki mare anbisyon konsepsyon ak presizyon teknik.", portraitAlt: "Pòtrè konseptris achitekti Marie Gaëlle Mentor ak yon rad jòn", portraitCaption: "Marie Gaëlle Mentor, konseptris achitekti.",
+      eyebrow: "Konseptris bilding", title: "Yon pakou ameriken ki mare anbisyon konsepsyon ak presizyon teknik.", portraitAlt: "Pòtrè konseptris bilding Marie Gaëlle Mentor ak yon rad jòn", portraitCaption: "Marie Gaëlle Mentor, konseptris bilding. Li pa gen lisans kòm achitèk nan Connecticut oswa New York.",
       lead: "Marie Gaëlle Mentor rive Etazini ak yon baz nan achitekti ak sipèvizyon chantye li te deja bati ann Ayiti. New York ak Connecticut fè li dekouvri lòt kilti konstriksyon, règleman ak fason pou kolabore, pandan yo konfime yon prensip santral: yon bon lide vin achitekti sèlman lè li byen trase, byen kowòdone epi byen bati.",
       storyTitle: "Bati yon pratik ant New York ak Connecticut.",
       story: [
         "Chapit pwofesyonèl li Etazini kòmanse nan Queens an 2003. Nan PowerHouse Architect, li travay kòm desenatris epi li aprann tradui entansyon yo nan dokiman achitekti ki presi. Eksperyans sa a ranfòse je li pou pwopòsyon ak detay.",
-        "Ant 2005 ak 2006, li kontinye kòm konseptris achitekti nan MGM Remodeling and Design nan New York. Wòl li elaji nan planifikasyon rezidansyèl ak desizyon pratik ki rann yon kay klè, konfòtab ak realizab.",
+        "Ant 2005 ak 2006, li kontinye nan konsepsyon rezidansyèl nan MGM Remodeling and Design nan New York. Wòl li elaji nan planifikasyon ak desizyon pratik ki rann yon kay klè, konfòtab ak realizab.",
         "An 2006, li antre nan AWA Design Group P.C. nan Stamford, Connecticut. Li patisipe nan pi gwo devlopman rezidansyèl tankou Water View East nan Norwalk ak rezidans Forest Street yo. Plan, elevasyon, ouvèti, sikilasyon ak peyizaj devlope kòm yon sèl lang achitekti.",
         "Apre sa, li fonde MGM Remodeling and Design nan Hamden, kote li se pwopriyetè, designer enteryè ak kontraktè ant 2009 ak 2010. Eksperyans sa a mete konsepsyon ak egzekisyon an kontak dirèk epi ranfòse kapasite li pou mennen yon pwojè rive nan yon rezilta konkrè.",
         "Travay li kòm enspektè rezidansyèl nan Institute of Professional Practice nan Woodbridge, ant 2010 ak 2011, ajoute konesans sou kòd, sekirite ak konfòmite. Rigueur teknik la pwoteje moun epi soutni kalite konsepsyon an.",
-        "Ant 2014 ak 2019, li itilize eksperyans sa a kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA. Depi jiyè 2019, travay li nan New England Outdoor Product kenbe pratik li pre kliyan, materyo ak solisyon ki ka bati. Marie Gaëlle Mentor Architectural Designer LLC reyini tout eksperyans sa yo.",
+        "Ant 2014 ak 2019, li itilize eksperyans sa a ann Ayiti kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA. Depi jiyè 2019, travay li nan New England Outdoor Product kenbe pratik li pre kliyan, materyo ak solisyon ki ka bati. Pratik endepandan konsepsyon bilding li Ozetazini reyini tout eksperyans sa yo, nan limit lalwa pèmèt.",
         "Nan kay kole, rezidans miltifamilyal ak kay endividyèl, metòd li kòmanse ak moun ki pral viv nan espas la. Sikilasyon klè, limyè natirèl, materyo dirab ak yon idantite ki respekte kontèks la rete priyorite."
       ],
       facts: [{ value: "30+", label: "ane nan pratik achitekti" }, { value: "NY + CT", label: "eksperyans Etazini" }, { value: "3", label: "lang: angle, franse ak kreyòl" }],
       quote: "Pi bon achitekti rezidansyèl la pa sèlman òganize espas; li bay lavi chak jou plis klate, konfò ak yon vrè santiman apatenans.",
-      timeline: [{ title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens." }, { title: "2003–2006", text: "Kòmansman pratik Etazini kòm desenatris nan PowerHouse Architect, apre sa kòm konseptris nan MGM Remodeling and Design." }, { title: "2006–2008", text: "Konseptris achitekti nan AWA Design Group nan Stamford, avèk kontribisyon sou Water View East ak Forest Street." }, { title: "2009–2011", text: "Pwopriyetè, designer enteryè ak kontraktè nan Hamden, apre sa enspektè rezidansyèl nan Woodbridge." }, { title: "2014–2019", text: "Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA." }, { title: "2019–Jodi a", text: "Konseptris achitekti nan New England Outdoor Product ak direktris Marie Gaëlle Mentor Architectural Designer LLC." }],
+      timeline: [{ title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens." }, { title: "2003–2006", text: "Kòmansman pratik Etazini kòm desenatris nan PowerHouse Architect, apre sa nan konsepsyon rezidansyèl nan MGM Remodeling and Design." }, { title: "2006–2008", text: "Manm ekip konsepsyon AWA Design Group nan Stamford, avèk kontribisyon sou Water View East ak Forest Street." }, { title: "2009–2011", text: "Pwopriyetè, designer enteryè ak kontraktè nan Hamden, apre sa enspektè rezidansyèl nan Woodbridge." }, { title: "2014–2019", text: "Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA ann Ayiti." }, { title: "2019–Jodi a", text: "Travay nan konsepsyon bilding avèk New England Outdoor Product ak devlopman yon pratik endepandan Ozetazini." }],
       values: [{ title: "Entèlijans rezidansyèl", text: "Plan yo òganize selon sikilasyon, limyè, konfò ak fason moun viv toutbon." }, { title: "Klate teknik", text: "Desen, kòd, materyo ak egzijans konstriksyon yo kowòdone pou entansyon an rete klè." }, { title: "Lidèchip kolaboratif", text: "Yon metòd atantif ak dirèk kenbe kliyan ak patnè yo aliyen depi premye lide a rive nan realizasyon an." }]
     }
   }

@@ -7,9 +7,9 @@
   var page = body.dataset.page || "home";
   var siteVariant = window.MGM_SITE_VARIANT || "global";
   var labels = {
-    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Global Architectural Practice" },
-    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Pratique architecturale globale" },
-    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Pratik achitekti global" }
+    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Global Design Practice" },
+    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Pratique de conception globale" },
+    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Pratik konsepsyon global" }
   };
   var pageTitles = {
     en: { home: "Global Portal", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", privacy: "Privacy", legal: "Legal Notice", cookies: "Cookies", project: "Project", "404": "Page Not Found" },
@@ -84,7 +84,7 @@
     var footer = document.querySelector("[data-site-footer]");
     var shellLocale = siteVariant === "usa" ? "en" : (root.dataset.locale || "fr");
     var shellText = shellLocale === "en" ? {
-      home: "home", menu: "Open menu", navigation: "Primary navigation", theme: "Change theme", footer: "Marie Gaëlle Mentor Architectural Designer"
+      home: "home", menu: "Open menu", navigation: "Primary navigation", theme: "Change theme", footer: "Marie Gaëlle Mentor | Global Design Practice"
     } : {
       home: "accueil", menu: "Ouvrir le menu", navigation: "Navigation principale", theme: "Changer le thème", footer: "Architecte Marie Gaëlle Mentor"
     };
@@ -92,7 +92,7 @@
     if (header) {
       header.innerHTML = [
         '<a class="brand" href="' + href("index.html") + '" aria-label="Marie Gaëlle Mentor, ' + shellText.home + '">',
-        '<img class="theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="" width="56" height="56">',
+        '<img class="theme-logo" src="' + href("assets/mgm-mark.svg") + '" alt="" width="56" height="56">',
         '<span class="brand-copy"><strong>Marie Gaëlle Mentor</strong><small data-market-title></small></span></a>',
         '<button class="icon-button nav-toggle" type="button" aria-label="' + shellText.menu + '" aria-expanded="false" data-nav-toggle><span aria-hidden="true">☰</span></button>',
         '<nav class="main-nav" aria-label="' + shellText.navigation + '" data-nav>',
@@ -103,9 +103,9 @@
       ].join("");
     }
     if (footer) {
-      footer.innerHTML = '<div><img class="theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="Logo Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
+      footer.innerHTML = '<div><img class="theme-logo" src="' + href("assets/mgm-mark.svg") + '" alt="Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
         '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a></div>' +
-        '<p class="footer-note">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor</p>';
+        '<p class="footer-note" data-i18n data-en="© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Building Designer in the U.S. · Licensed Architect in Haiti" data-fr="© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Conceptrice de bâtiments aux États-Unis · Architecte licenciée en Haïti" data-kr="© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Konseptris bilding Ozetazini · Achitèk lisansye ann Ayiti">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Conceptrice de bâtiments aux États-Unis · Architecte licenciée en Haïti</p>';
     }
     if (!document.querySelector("[data-consent]")) {
       var consent = document.createElement("aside");
@@ -142,7 +142,7 @@
     var title = document.querySelector("[data-market-title]");
     if (title) title.textContent = labels[locale].title;
     var footerTitle = document.querySelector("[data-footer-title]");
-    if (footerTitle) footerTitle.textContent = locale === "en" ? "Marie Gaëlle Mentor | Global Architectural Practice" : locale === "kr" ? "Marie Gaëlle Mentor | Pratik achitekti global" : "Marie Gaëlle Mentor | Pratique architecturale globale";
+    if (footerTitle) footerTitle.textContent = locale === "en" ? "Marie Gaëlle Mentor | Global Design Practice" : locale === "kr" ? "Marie Gaëlle Mentor | Pratik konsepsyon global" : "Marie Gaëlle Mentor | Pratique de conception globale";
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var translated = node.dataset[locale] || node.dataset.fr;
       if (translated) node.textContent = translated;
@@ -312,7 +312,7 @@
       var discover = currentLocale() === "en" ? "Discover" : currentLocale() === "kr" ? "Dekouvri" : "Découvrir";
       var display = currentLocale() === "en" ? "Show" : currentLocale() === "kr" ? "Montre" : "Afficher";
       slides.innerHTML = projects.map(function (project, index) {
-        return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="' + discover + ' ' + project.title + '"></a><div class="hero-content"><img class="hero-logo theme-logo" src="' + href("assets/mgm-logo-dark.png") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
+        return '<article class="hero-slide" data-hero-slide data-market="' + project.markets.join(",") + '"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '" width="1600" height="1067"><div class="hero-overlay"></div><a class="hero-link" href="' + href("project.html?slug=" + encodeURIComponent(project.slug)) + '" aria-label="' + discover + ' ' + project.title + '"></a><div class="hero-content"><img class="hero-logo theme-logo" src="' + href("assets/mgm-mark.svg") + '" alt="Marie Gaëlle Mentor"><div class="hero-meta"><div><p class="eyebrow">' + [project.city, project.country].filter(Boolean).join(", ") + '</p><h1>' + project.title + '</h1><p>' + project.type + '</p></div><span class="hero-count">0' + (index + 1) + '</span></div></div></article>';
       }).join("");
       dots.innerHTML = projects.map(function (project, index) { return '<button type="button" aria-label="' + display + ' ' + project.title + '" data-hero-dot="' + index + '"></button>'; }).join("");
       hero.querySelectorAll("[data-hero-dot]").forEach(function (dot) { dot.addEventListener("click", function () { show(Number(dot.dataset.heroDot)); }); });

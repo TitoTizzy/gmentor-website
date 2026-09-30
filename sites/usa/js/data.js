@@ -4,7 +4,7 @@
   window.MGM_DATA = {
   "services": [
     {
-      "en": "Architectural design"
+      "en": "Building design"
     },
     {
       "en": "Interior design"
@@ -16,7 +16,7 @@
       "en": "3D visualization"
     },
     {
-      "en": "Feasibility studies"
+      "en": "Project feasibility"
     },
     {
       "en": "Project coordination"
@@ -24,17 +24,17 @@
   ],
   "profiles": {
     "us": {
-      "eyebrow": "Architectural Designer",
-      "title": "A career shaped by architecture, leadership and an international point of view.",
+      "eyebrow": "Building Designer",
+      "title": "A career shaped by design, leadership and an international point of view.",
       "portrait": "marie-gaelle-mentor-portrait.png",
-      "portraitAlt": "Portrait of architectural designer Marie Gaëlle Mentor wearing yellow",
-      "portraitCaption": "Marie Gaëlle Mentor, Architectural Designer.",
-      "lead": "Marie Gaëlle Mentor brings more than two decades of architectural practice in New York and Connecticut to every commission. Her work is grounded in one clear ambition: creating places that are practical, expressive and genuinely comfortable to inhabit.",
+      "portraitAlt": "Portrait of building designer Marie Gaëlle Mentor wearing yellow",
+      "portraitCaption": "Marie Gaëlle Mentor, Building Designer. Not a licensed architect in Connecticut or New York.",
+      "lead": "Marie Gaëlle Mentor brings more than two decades of experience in residential planning, drafting, interiors, construction and inspection in New York and Connecticut. Her work is grounded in one clear ambition: creating places that are practical, expressive and genuinely comfortable to inhabit. She is not a licensed architect in Connecticut or New York.",
       "storyTitle": "Local rigor, global perspective.",
       "story": [
-        "Her United States journey began in New York, where she developed her command of architectural drafting and residential design before moving into increasingly independent roles. At PowerHouse Architect in Queens, MGM Remodeling and Design in New York, and later AWA Design Group in Stamford, she contributed to the drawings, planning and development of residential projects at multiple scales.",
+        "Her United States journey began in New York, where she developed her command of technical drafting and residential planning before moving into increasingly independent roles. At PowerHouse Architect in Queens, MGM Remodeling and Design in New York, and later AWA Design Group in Stamford, she contributed to the drawings, planning and development of residential projects at multiple scales while working within those professional settings.",
         "Her practice expanded beyond design alone. As owner of MGM Remodeling and Design in Hamden, she combined interior design with contracting; as a residential inspector in Woodbridge, she strengthened her understanding of codes, compliance and the realities of implementation. Since 2019, her work with New England Outdoor Product has continued this hands-on approach, connecting client needs, technical requirements and buildable solutions.",
-        "Today, through Marie Gaëlle Mentor Architectural Designer LLC, she draws on experience across disciplines and borders. Her Connecticut portfolio includes townhouses and multifamily communities in Waterbury, Norwalk and Forest Street, with an emphasis on efficient plans, durable materials, natural light and a coherent relationship between architecture and everyday life."
+        "Today, through her independent building design practice, she draws on experience across disciplines and borders. Her Connecticut portfolio includes townhouses and multifamily communities in Waterbury, Norwalk and Forest Street, with an emphasis on efficient plans, durable materials, natural light and a coherent relationship between buildings and everyday life. Services are limited to project scopes permitted by applicable law."
       ],
       "facts": [
         {
@@ -50,15 +50,15 @@
           "label": "languages: English, French and Creole"
         }
       ],
-      "quote": "The best residential architecture does more than organize space. It gives daily life clarity, comfort and a sense of belonging.",
+      "quote": "The best residential design does more than organize space. It gives daily life clarity, comfort and a sense of belonging.",
       "timeline": [
         {
           "title": "2003–2006",
-          "text": "Architectural drafting and design roles in New York with PowerHouse Architect and MGM Remodeling and Design."
+          "text": "Technical drafting and residential design roles in New York with PowerHouse Architect and MGM Remodeling and Design."
         },
         {
           "title": "2006–2008",
-          "text": "Architectural Designer at AWA Design Group in Stamford, Connecticut, contributing to residential plans and developments."
+          "text": "Design team member at AWA Design Group in Stamford, Connecticut, contributing to residential plans and developments."
         },
         {
           "title": "2009–2011",
@@ -66,7 +66,7 @@
         },
         {
           "title": "2019–Today",
-          "text": "Architectural Designer at New England Outdoor Product and principal of Marie Gaëlle Mentor Architectural Designer LLC."
+          "text": "Building design work with New England Outdoor Product and development of an independent design practice."
         }
       ],
       "values": [
@@ -93,7 +93,7 @@
       "city": "Waterbury, Connecticut",
       "year": "",
       "type": "Multifamily residential",
-      "role": "Architectural design",
+      "role": "Building design",
       "markets": [
         "us"
       ],
@@ -137,7 +137,7 @@
       "city": "Norwalk, Connecticut",
       "year": "",
       "type": "Multifamily residential",
-      "role": "Architectural design in collaboration with AWA Design Group",
+      "role": "Design contribution while working with AWA Design Group",
       "markets": [
         "us"
       ],
@@ -186,7 +186,7 @@
       "city": "Connecticut",
       "year": "",
       "type": "Residential development",
-      "role": "Architectural design in collaboration with AWA Design Group",
+      "role": "Design contribution while working with AWA Design Group",
       "markets": [
         "us"
       ],
