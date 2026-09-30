@@ -1,0 +1,6 @@
+{
+  "variant": "unified",
+  "domain": "mariegaellementor.com",
+  "regions": ["haiti", "usa"],
+  "locales": ["en", "fr", "ht"]
+}
