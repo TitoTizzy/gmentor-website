@@ -89,7 +89,8 @@ function fileUrl(file) {
     await page.reload();
     themeChecks.push(await page.evaluate(() => ({
       theme: document.documentElement.dataset.theme,
-      logoContent: getComputedStyle(document.querySelector(".theme-logo")).content
+      logoContent: getComputedStyle(document.querySelector(".theme-logo")).content,
+      logoSources: [...document.querySelectorAll(".theme-logo")].map((logo) => logo.getAttribute("src"))
     })));
   }
 
@@ -115,6 +116,7 @@ function fileUrl(file) {
   }
   if (!themeChecks.find((check) => check.theme === "dark" && /mgm-mark-white\.png/.test(check.logoContent))) failures.push("Dark theme does not use the white logo");
   if (!themeChecks.find((check) => check.theme === "light" && /mgm-mark-black\.png/.test(check.logoContent))) failures.push("Light theme does not use the black logo");
+  if (themeChecks.some((check) => check.logoSources.some((source) => !source || /\.svg(?:$|\?)/i.test(source)))) failures.push("A theme logo still uses an SVG source");
 
   console.log(JSON.stringify({
     results: results.map(({ visibleText, ...result }) => result),

@@ -11,6 +11,7 @@
   --text: #f7f4ef;
   --header: rgba(17, 16, 15, 0.88);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  --theme-logo: url('/assets/mgm-mark-white.png');
   --serif: 'Iowan Old Style', 'Baskerville', 'Times New Roman', serif;
   --sans: 'Avenir Next', 'Segoe UI', Arial, sans-serif;
   color-scheme: dark;
@@ -26,6 +27,7 @@
   --text: #171513;
   --header: rgba(247, 244, 239, 0.9);
   --shadow: 0 24px 80px rgba(68, 48, 33, 0.12);
+  --theme-logo: url('/assets/mgm-mark-black.png');
   color-scheme: light;
 }
 
@@ -33,6 +35,7 @@
 html { scroll-behavior: smooth; background: var(--ink); }
 body { margin: 0; background: var(--ink); color: var(--text); font: 400 1rem/1.65 var(--sans); text-rendering: optimizeLegibility; }
 img { display: block; max-width: 100%; }
+.theme-logo { content: var(--theme-logo); }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 button { color: inherit; }
@@ -42,7 +45,7 @@ button { color: inherit; }
 
 .site-header { position: fixed; inset: 0 0 auto; z-index: 50; display: grid; grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr); align-items: center; min-height: 78px; padding: .65rem clamp(1rem, 3vw, 3rem); background: var(--header); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px); }
 .brand { display: flex; align-items: center; gap: .8rem; min-width: 0; }
-.brand img { width: 56px; height: 56px; object-fit: contain; background: #fff; }
+.brand img { width: 56px; height: 56px; object-fit: contain; }
 .brand span { display: grid; line-height: 1.15; }
 .brand strong { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; }
 .brand small { color: var(--muted); font-size: .72rem; margin-top: .3rem; }
