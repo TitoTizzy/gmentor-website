@@ -90,7 +90,10 @@ function fileUrl(file) {
     themeChecks.push(await page.evaluate(() => ({
       theme: document.documentElement.dataset.theme,
       logoContent: getComputedStyle(document.querySelector(".theme-logo")).content,
-      logoSources: [...document.querySelectorAll(".theme-logo")].map((logo) => logo.getAttribute("src"))
+      themeLogoCount: document.querySelectorAll(".theme-logo").length,
+      logoSources: [...document.querySelectorAll(".theme-logo, .logo-on-dark, .logo-on-light")].map((logo) => logo.getAttribute("src")),
+      darkSurfaceLogos: [...document.querySelectorAll(".logo-on-dark")].map((logo) => getComputedStyle(logo).content),
+      lightSurfaceLogos: [...document.querySelectorAll(".logo-on-light")].map((logo) => getComputedStyle(logo).content)
     })));
   }
 
@@ -116,6 +119,9 @@ function fileUrl(file) {
   }
   if (!themeChecks.find((check) => check.theme === "dark" && /mgm-mark-white\.png/.test(check.logoContent))) failures.push("Dark theme does not use the white logo");
   if (!themeChecks.find((check) => check.theme === "light" && /mgm-mark-black\.png/.test(check.logoContent))) failures.push("Light theme does not use the black logo");
+  if (themeChecks.some((check) => check.themeLogoCount !== 1)) failures.push("Theme switching must apply only to the header logo");
+  if (themeChecks.some((check) => check.darkSurfaceLogos.some((content) => !/mgm-mark-white\.png/.test(content)))) failures.push("A dark-surface logo does not use the white variant");
+  if (themeChecks.some((check) => check.lightSurfaceLogos.some((content) => !/mgm-mark-black\.png/.test(content)))) failures.push("A light-surface logo does not use the black variant");
   if (themeChecks.some((check) => check.logoSources.some((source) => !source || /\.svg(?:$|\?)/i.test(source)))) failures.push("A theme logo still uses an SVG source");
 
   console.log(JSON.stringify({
