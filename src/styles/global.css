@@ -143,6 +143,9 @@ main { min-height: 75vh; }
 .about-value-list p { max-width: 62ch; margin: 0; color: var(--muted); }
 .about-profile + .about-profile { margin-top: 6rem; padding-top: 6rem; border-top: 1px solid var(--line); }
 .contact-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(2rem, 8vw, 8rem); margin-top: 5rem; }
+.contact-details { display: grid; gap: .55rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-style: normal; }
+.contact-details strong { font: 400 1.35rem var(--serif); }
+.contact-details a { width: fit-content; color: inherit; border-bottom: 1px solid var(--copper); }
 .contact-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .contact-form .span-2 { grid-column: span 2; }
 .checkbox { display: flex; gap: .75rem; align-items: flex-start; }

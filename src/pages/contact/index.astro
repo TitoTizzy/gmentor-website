@@ -13,7 +13,11 @@ const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       <aside>
         <p class="eyebrow">Une pratique, plusieurs contextes</p>
         <h2>Projets locaux et internationaux</h2>
-        <p class="form-note">L’adresse professionnelle et les horaires seront affichés après leur validation. Aucun numéro de téléphone n’est publié.</p>
+        <address class="contact-details">
+          <strong>Marie Gaëlle Mentor</strong>
+          <a href="tel:+12038485807">+1 (203) 848-5807</a>
+          <a href="mailto:mariegmentor@gmail.com">mariegmentor@gmail.com</a>
+        </address>
       </aside>
       <form class="contact-form" action="/api/contact" method="post" data-contact-form>
         <input type="hidden" name="locale" value="fr" data-locale-input />

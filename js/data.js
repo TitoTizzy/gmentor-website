@@ -204,15 +204,20 @@
       "country": "United States",
       "city": "Waterbury, Connecticut",
       "year": "",
-      "type": "Multifamily residential",
+      "type": "New England multifamily housing",
       "role": "Building design",
       "markets": [
         "us"
       ],
-      "cover": "usa/townhouse-waterbury-cover.webp",
-      "alt": "Completed blue-grey multifamily townhouse in Waterbury, Connecticut",
-      "description": "A modern multi-story residential building organized for efficient use of space, daylight and ventilation. Horizontal siding, a clear vertical rhythm and a gable roof give the project a durable and restrained residential character.",
+      "cover": "usa/townhouse-waterbury-new-england.png",
+      "alt": "Completed blue-grey New England style multifamily townhouse in Waterbury, Connecticut",
+      "description": "Traditional New England-style multifamily and townhouse architecture with Colonial Revival influence. The exterior vocabulary draws on New England vernacular through repeated gables, symmetrical window rhythms, horizontal siding, white trim and clearly defined residential entries.",
       "gallery": [
+        {
+          "src": "usa/townhouse-waterbury-cover.webp",
+          "alt": "Construction view of the Waterbury townhouse",
+          "label": "Built work"
+        },
         {
           "src": "usa/townhouse-waterbury-side.webp",
           "alt": "Side view of the Waterbury townhouse",
@@ -496,6 +501,82 @@
       ],
       "published": true,
       "featured": true
+    },
+    {
+      "slug": "contemporary-residence-haiti",
+      "title": "Contemporary Residence in Haiti",
+      "country": "Haïti",
+      "city": "",
+      "year": "",
+      "type": "Résidence privée",
+      "role": "Conception architecturale et visualisation 3D",
+      "markets": ["ht"],
+      "cover": "haiti/contemporary-residence-terrace-render.png",
+      "alt": "Visualisation 3D de la terrasse d’une résidence contemporaine en Haïti",
+      "description": "Une étude résidentielle contemporaine organisée autour de volumes blancs, de menuiseries sombres, de parements en bois et d’espaces intérieurs largement ouverts. Ces images sont des visualisations 3D du projet : les plantations représentent l’intention paysagère et doivent être installées ultérieurement par le propriétaire.",
+      "gallery": [
+        {
+          "src": "haiti/contemporary-residence-entry-render.png",
+          "alt": "Visualisation 3D de l’entrée et du parement en bois",
+          "label": "Étude 3D · entrée"
+        },
+        {
+          "src": "haiti/contemporary-residence-interior-render.png",
+          "alt": "Visualisation 3D de l’espace de vie intérieur",
+          "label": "Étude 3D · intérieur"
+        }
+      ],
+      "published": true,
+      "featured": true
+    },
+    {
+      "slug": "two-level-residential-addition",
+      "title": "Two-Level Residential Addition",
+      "country": "United States",
+      "city": "",
+      "year": "",
+      "type": "Residential renovation",
+      "role": "Building design and construction documents",
+      "markets": ["us"],
+      "cover": "usa/two-level-residential-addition-built.png",
+      "alt": "Completed two-level porch, stairs and exterior access addition",
+      "description": "A two-level exterior addition designed to improve independent access and outdoor use while integrating with the proportions and detailing of the existing residence. Elevation studies and construction drawings coordinated the stacked porches, stairs, landings, structure and roof connection.",
+      "gallery": [
+        {
+          "src": "usa/two-level-residential-addition-elevation.png",
+          "alt": "Annotated front elevation of the residential addition",
+          "label": "Front elevation"
+        },
+        {
+          "src": "usa/two-level-residential-addition-cad.png",
+          "alt": "CAD elevation study of the two-level porch and stairs",
+          "label": "CAD development"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "private-residential-planning-study",
+      "title": "Private Residential Planning Study",
+      "country": "United States",
+      "city": "Location withheld",
+      "year": "",
+      "type": "Residential design study",
+      "role": "Space planning and construction documents",
+      "markets": ["us"],
+      "cover": "usa/private-residence-anonymized-elevations.png",
+      "alt": "Anonymized architectural elevations for a private residence",
+      "description": "An anonymized residential study combining four exterior elevations with a carefully organized floor plan and roof plan. The documents explore circulation, room relationships, openings and envelope proportions while protecting the client’s identity and project address.",
+      "gallery": [
+        {
+          "src": "usa/private-residence-anonymized-floor-plans.png",
+          "alt": "Anonymized floor plan and roof plan for a private residence",
+          "label": "Floor and roof plans"
+        }
+      ],
+      "published": true,
+      "featured": false
     }
   ]
 };
@@ -516,13 +597,18 @@ window.MGM_DATA.projectLocales = {
       title: "Earthquake-Resistant Homes in the Grand Sud", country: "Haiti", city: "Grand Sud", type: "Resilient housing", role: "Design, supervision and construction",
       alt: "House with a veranda completed in Haiti's Grand Sud",
       description: "A family of two- to four-bedroom homes designed for areas exposed to earthquakes and hurricanes. The models combine compact planning, shaded verandas, appropriate materials and confined-masonry principles."
+    },
+    "contemporary-residence-haiti": {
+      title: "Contemporary Residence in Haiti", country: "Haiti", type: "Private residence", role: "Architectural design and 3D visualization",
+      alt: "3D visualization of a contemporary residence terrace in Haiti",
+      description: "A contemporary residential study organized around white volumes, dark frames, wood cladding and generously open interiors. These images are 3D visualizations of the design: the planting represents the landscape intention and is planned for later installation by the owner."
     }
   },
   fr: {
     "townhouse-waterbury": {
-      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial", role: "Conception de bâtiment",
-      alt: "Maison multifamiliale bleu-gris réalisée à Waterbury, Connecticut",
-      description: "Un bâtiment résidentiel contemporain organisé pour optimiser l'espace, la lumière naturelle et la ventilation. Le bardage horizontal, le rythme vertical lisible et la toiture à pignon lui donnent une identité résidentielle durable et mesurée."
+      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial de Nouvelle-Angleterre", role: "Conception de bâtiment",
+      alt: "Maison multifamiliale bleu-gris de style Nouvelle-Angleterre à Waterbury, Connecticut",
+      description: "Une architecture traditionnelle de Nouvelle-Angleterre pour un ensemble multifamilial de maisons mitoyennes, marquée par une influence Colonial Revival. Son vocabulaire vernaculaire se lit dans les pignons répétés, le rythme symétrique des fenêtres, le bardage horizontal, les encadrements blancs et les entrées résidentielles clairement dessinées."
     },
     "water-view-east": {
       country: "États-Unis", city: "Norwalk, Connecticut", type: "Habitat multifamilial", role: "Contribution à la conception au sein d’AWA Design Group",
@@ -533,13 +619,28 @@ window.MGM_DATA.projectLocales = {
       title: "Ensemble résidentiel, Forest Street", country: "États-Unis", city: "Connecticut", type: "Ensemble résidentiel", role: "Contribution à la conception au sein d’AWA Design Group",
       alt: "Ensemble de maisons mitoyennes sur Forest Street, Connecticut",
       description: "Un quartier résidentiel composé de maisons mitoyennes symétriques, de toitures à pignon et d'entrées soigneusement alignées. Le projet associe des documents d'exécution détaillés à des intérieurs ouverts et chaleureux, dans une relation cohérente entre bâtiments et paysage."
+    },
+    "contemporary-residence-haiti": {
+      title: "Résidence contemporaine en Haïti", country: "Haïti", type: "Résidence privée", role: "Conception architecturale et visualisation 3D",
+      alt: "Visualisation 3D de la terrasse d’une résidence contemporaine en Haïti",
+      description: "Une étude résidentielle contemporaine organisée autour de volumes blancs, de menuiseries sombres, de parements en bois et d’espaces intérieurs largement ouverts. Ces images sont des visualisations 3D du projet : les plantations représentent l’intention paysagère et doivent être installées ultérieurement par le propriétaire."
+    },
+    "two-level-residential-addition": {
+      title: "Extension résidentielle sur deux niveaux", country: "États-Unis", type: "Rénovation résidentielle", role: "Conception de bâtiment et documents d’exécution",
+      alt: "Extension réalisée avec galeries, escaliers et accès extérieurs sur deux niveaux",
+      description: "Une extension extérieure sur deux niveaux conçue pour améliorer les accès indépendants et les usages extérieurs tout en s’intégrant aux proportions et aux détails de la résidence existante. Les études d’élévation et les dessins d’exécution coordonnent les galeries superposées, les escaliers, les paliers, la structure et le raccord de toiture."
+    },
+    "private-residential-planning-study": {
+      title: "Étude privée de planification résidentielle", country: "États-Unis", city: "Localisation confidentielle", type: "Étude résidentielle", role: "Organisation des espaces et documents d’exécution",
+      alt: "Élévations architecturales anonymisées d’une résidence privée",
+      description: "Une étude résidentielle anonymisée associant quatre élévations extérieures à un plan d’étage et un plan de toiture soigneusement organisés. Les documents étudient la circulation, les relations entre les pièces, les ouvertures et les proportions de l’enveloppe, tout en protégeant l’identité du client et l’adresse du projet."
     }
   },
   kr: {
     "townhouse-waterbury": {
-      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal", role: "Konsepsyon bilding",
-      alt: "Kay miltifamilyal ki fini nan Waterbury, Connecticut",
-      description: "Yon bilding rezidansyèl modèn ki òganize pou byen itilize espas, limyè natirèl ak vantilasyon. Revètman orizontal la, ritm vètikal la ak twati an pignon bay pwojè a yon karaktè dirab ak ekilibre."
+      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal estil New England", role: "Konsepsyon bilding",
+      alt: "Kay miltifamilyal estil New England ki fini nan Waterbury, Connecticut",
+      description: "Yon achitekti tradisyonèl New England pou kay miltifamilyal ak kay kole, avèk enfliyans Colonial Revival. Vokabilè eksteryè a sèvi ak pignon repete, fenèt simetrik, revètman orizontal, ankadreman blan ak antre rezidansyèl ki byen defini."
     },
     "water-view-east": {
       country: "Etazini", city: "Norwalk, Connecticut", type: "Lojman miltifamilyal", role: "Kontribisyon nan konsepsyon pandan travay li avèk AWA Design Group",
@@ -565,6 +666,21 @@ window.MGM_DATA.projectLocales = {
       title: "Kay ki reziste tranblemanntè nan Gran Sid", country: "Ayiti", city: "Gran Sid", type: "Lojman rezilyan", role: "Konsepsyon, sipèvizyon ak konstriksyon",
       alt: "Kay ak galri ki reyalize nan Gran Sid Ayiti",
       description: "Yon seri kay de rive kat chanm ki fèt pou zòn ki ekspoze ak tranblemanntè ak siklòn. Modèl yo mete ansanm yon plan konpak, galri, materyo adapte ak prensip masonri chennen."
+    },
+    "contemporary-residence-haiti": {
+      title: "Rezidans kontanporen ann Ayiti", country: "Ayiti", type: "Rezidans prive", role: "Konsepsyon achitekti ak vizyalizasyon 3D",
+      alt: "Vizyalizasyon 3D teras yon rezidans kontanporen ann Ayiti",
+      description: "Yon etid rezidansyèl kontanporen ki òganize ak volim blan, ankadreman fonse, revètman bwa ak espas enteryè ki ouvè anpil. Imaj sa yo se vizyalizasyon 3D pwojè a: plant yo montre entansyon amenajman peyizaj la epi pwopriyetè a prevwa mete yo pita."
+    },
+    "two-level-residential-addition": {
+      title: "Ekstansyon rezidansyèl sou de nivo", country: "Etazini", type: "Renovasyon rezidansyèl", role: "Konsepsyon bilding ak dokiman konstriksyon",
+      alt: "Ekstansyon fini ak galri, eskalye ak aksè eksteryè sou de nivo",
+      description: "Yon ekstansyon eksteryè sou de nivo ki amelyore aksè endepandan ak itilizasyon espas deyò pandan li respekte pwopòsyon ak detay kay ki te deja la. Etid elevasyon ak desen konstriksyon yo kowòdone galri yo, eskalye yo, palye yo, estrikti a ak koneksyon twati a."
+    },
+    "private-residential-planning-study": {
+      title: "Etid prive pou planifikasyon rezidansyèl", country: "Etazini", city: "Lokalizasyon konfidansyèl", type: "Etid rezidansyèl", role: "Òganizasyon espas ak dokiman konstriksyon",
+      alt: "Elevasyon achitekti anonim pou yon rezidans prive",
+      description: "Yon etid rezidansyèl anonim ki mete kat elevasyon eksteryè ansanm ak yon plan etaj ak yon plan twati ki byen òganize. Dokiman yo etidye sikilasyon, relasyon ant pyès yo, ouvèti yo ak pwopòsyon anvlòp la pandan yo pwoteje idantite kliyan an ak adrès pwojè a."
     }
   }
 };

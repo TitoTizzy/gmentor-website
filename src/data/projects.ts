@@ -4,7 +4,7 @@ export type Project = {
   country: string;
   city: string;
   year: number | null;
-  type: 'Résidentiel multifamilial' | 'Résidence privée' | 'Bureaux et projets institutionnels';
+  type: 'Résidentiel multifamilial' | 'Résidence privée' | 'Bureaux et projets institutionnels' | 'Rénovation résidentielle' | 'Étude résidentielle';
   role: string | null;
   credits: string | null;
   cover: string;
@@ -24,11 +24,11 @@ export const projects: Project[] = [
     type: 'Résidentiel multifamilial',
     role: null,
     credits: null,
-    cover: '/images/concept-townhouses.webp',
-    coverAlt: 'Temporary editorial concept image of contemporary townhouses',
+    cover: '/images/usa/townhouse-waterbury-new-england.png',
+    coverAlt: 'Traditional New England-style multifamily townhouse with Colonial Revival influence',
     status: 'published',
     featured: true,
-    placeholder: true
+    placeholder: false
   },
   {
     slug: 'water-view-east',
@@ -89,6 +89,51 @@ export const projects: Project[] = [
     status: 'published',
     featured: false,
     placeholder: true
+  },
+  {
+    slug: 'contemporary-residence-haiti',
+    title: 'Contemporary Residence in Haiti',
+    country: 'Haïti',
+    city: '',
+    year: null,
+    type: 'Résidence privée',
+    role: null,
+    credits: null,
+    cover: '/images/haiti/contemporary-residence-terrace-render.png',
+    coverAlt: 'Visualisation 3D de la terrasse d’une résidence contemporaine en Haïti',
+    status: 'published',
+    featured: true,
+    placeholder: false
+  },
+  {
+    slug: 'two-level-residential-addition',
+    title: 'Two-Level Residential Addition',
+    country: 'United States',
+    city: '',
+    year: null,
+    type: 'Rénovation résidentielle',
+    role: null,
+    credits: null,
+    cover: '/images/usa/two-level-residential-addition-built.png',
+    coverAlt: 'Completed two-level porch, stairs and exterior access addition',
+    status: 'published',
+    featured: false,
+    placeholder: false
+  },
+  {
+    slug: 'private-residential-planning-study',
+    title: 'Private Residential Planning Study',
+    country: 'United States',
+    city: 'Location withheld',
+    year: null,
+    type: 'Étude résidentielle',
+    role: null,
+    credits: null,
+    cover: '/images/usa/private-residence-anonymized-elevations.png',
+    coverAlt: 'Anonymized architectural elevations for a private residence',
+    status: 'published',
+    featured: false,
+    placeholder: false
   }
 ];
 
