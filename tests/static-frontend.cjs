@@ -30,6 +30,11 @@ async function verify(viewport) {
   await page.goto(pathToFileURL(path.join(root, 'portfolio.html')).href);
   await page.waitForSelector('.book-page');
   if (await page.locator('.book-gallery-item img').count() < 43) throw new Error('The portfolio book does not expose the full image collection');
+  const galleryLayoutsAreGrids = await page.locator('.book-gallery-layout').evaluateAll((layouts) => layouts.every((layout) => {
+    const style = getComputedStyle(layout);
+    return style.display === 'grid' && style.gridTemplateRows !== 'none';
+  }));
+  if (!galleryLayoutsAreGrids) throw new Error('Portfolio gallery pages are not using the full-height inner grid');
 
   await page.goto(pathToFileURL(path.join(root, 'contact.html')).href);
   if (!(await page.locator('a[href="tel:+12038485807"]').isVisible())) throw new Error('Phone contact is missing');

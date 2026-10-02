@@ -17,9 +17,10 @@
 
   function galleryPage(project, items, pageNumber, copy) {
     var cells = items.map(function (item) {
-      return '<figure class="book-gallery-item"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"><figcaption>' + escapeHtml(item.label) + '</figcaption></figure>';
+      var isDrawing = /plan|elevation|coupe|section|fondation|floor|roof|cad/i.test(item.label);
+      return '<figure class="book-gallery-item' + (isDrawing ? ' is-drawing' : '') + '"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"><figcaption>' + escapeHtml(item.label) + '</figcaption></figure>';
     }).join("");
-    return '<article class="book-page book-gallery"><header><span>' + escapeHtml(copy.selection) + ' ' + pageNumber + '</span><strong>' + escapeHtml(project.title) + '</strong></header><div class="book-gallery-grid book-gallery-grid-' + items.length + '">' + cells + '</div></article>';
+    return '<article class="book-page book-gallery"><div class="book-gallery-layout"><header><span>' + escapeHtml(copy.selection) + ' ' + pageNumber + '</span><strong>' + escapeHtml(project.title) + '</strong></header><div class="book-gallery-grid book-gallery-grid-' + items.length + '">' + cells + '</div></div></article>';
   }
 
   function projectPages(project, copy) {
