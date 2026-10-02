@@ -3,7 +3,7 @@ import type { Project } from '../data/projects';
 interface Props { project: Project; index?: number }
 const { project, index = 0 } = Astro.props;
 ---
-<article class="project-card" data-project-card data-country={project.country} data-city={project.city} data-year={project.year ?? ''} data-type={project.type} data-market={project.markets.join(',')}>
+<article class="project-card" data-project-card data-country={project.country} data-city={project.city} data-year={project.year ?? ''} data-type={project.type}>
   <a href={`/projects/${project.slug}`} aria-label={`Voir ${project.title}`}>
     <figure>
       <img src={project.cover} alt={project.coverAlt} width="1536" height="1024" loading={index < 2 ? 'eager' : 'lazy'} decoding="async" />

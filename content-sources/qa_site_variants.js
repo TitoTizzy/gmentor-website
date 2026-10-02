@@ -97,6 +97,13 @@ function fileUrl(file) {
     })));
   }
 
+  const legacyRedirects = [];
+  for (const legacyFile of ["sites/usa/index.html", "sites/haiti/index.html"]) {
+    await page.goto(fileUrl(legacyFile));
+    await page.waitForURL(/\/index\.html$/);
+    legacyRedirects.push({ legacyFile, destination: page.url() });
+  }
+
   for (const result of results) {
     if (result.site !== "unified") failures.push(`${result.file}: unified site marker is missing`);
     if (result.localeButtons !== 3 || result.marketButtons !== 0) failures.push(`${result.file}: language controls are incorrect`);
@@ -123,11 +130,13 @@ function fileUrl(file) {
   if (themeChecks.some((check) => check.darkSurfaceLogos.some((content) => !/mgm-mark-white\.png/.test(content)))) failures.push("A dark-surface logo does not use the white variant");
   if (themeChecks.some((check) => check.lightSurfaceLogos.some((content) => !/mgm-mark-black\.png/.test(content)))) failures.push("A light-surface logo does not use the black variant");
   if (themeChecks.some((check) => check.logoSources.some((source) => !source || /\.svg(?:$|\?)/i.test(source)))) failures.push("A theme logo still uses an SVG source");
+  if (legacyRedirects.some((redirect) => !redirect.destination.endsWith("/index.html"))) failures.push("A legacy regional URL does not redirect to the unified homepage");
 
   console.log(JSON.stringify({
     results: results.map(({ visibleText, ...result }) => result),
     localeChecks: localeChecks.map(({ text, ...check }) => check),
     themeChecks,
+    legacyRedirects,
     errors,
     failures
   }, null, 2));

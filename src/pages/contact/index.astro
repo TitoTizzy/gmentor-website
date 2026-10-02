@@ -11,12 +11,11 @@ const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     </header>
     <section class="contact-grid">
       <aside>
-        <p class="eyebrow">Marché sélectionné</p>
-        <h2 data-contact-market>Haïti</h2>
+        <p class="eyebrow">Une pratique, plusieurs contextes</p>
+        <h2>Projets locaux et internationaux</h2>
         <p class="form-note">L’adresse professionnelle et les horaires seront affichés après leur validation. Aucun numéro de téléphone n’est publié.</p>
       </aside>
       <form class="contact-form" action="/api/contact" method="post" data-contact-form>
-        <input type="hidden" name="market" value="ht" data-market-input />
         <input type="hidden" name="locale" value="fr" data-locale-input />
         <div class="field"><label for="fullName">Nom complet *</label><input id="fullName" name="fullName" autocomplete="name" required maxlength="120" /></div>
         <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" /></div>
@@ -37,17 +36,12 @@ const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   </div>
   {turnstileKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
   <script>
-    function syncContact() {
-      const market = document.documentElement.dataset.market || 'ht';
+    function syncContactLocale() {
       const locale = document.documentElement.dataset.locale || 'fr';
-      const marketInput = document.querySelector<HTMLInputElement>('[data-market-input]');
       const localeInput = document.querySelector<HTMLInputElement>('[data-locale-input]');
-      const title = document.querySelector('[data-contact-market]');
-      if (marketInput) marketInput.value = market;
       if (localeInput) localeInput.value = locale;
-      if (title) title.textContent = market === 'us' ? 'United States' : 'Haïti';
     }
-    syncContact();
-    window.addEventListener('mgm:preference-change', syncContact);
+    syncContactLocale();
+    window.addEventListener('mgm:preference-change', syncContactLocale);
   </script>
 </BaseLayout>
