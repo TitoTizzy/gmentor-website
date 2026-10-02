@@ -15,16 +15,21 @@
     });
   }
 
-  function imagePage(project, item, pageClass) {
-    return '<article class="book-page ' + pageClass + '"><div class="book-page-media"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"></div><div class="book-page-caption"><span>' + escapeHtml(item.label) + '</span><strong>' + escapeHtml(project.title) + '</strong></div></article>';
+  function galleryPage(project, items, pageNumber, copy) {
+    var cells = items.map(function (item) {
+      return '<figure class="book-gallery-item"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"><figcaption>' + escapeHtml(item.label) + '</figcaption></figure>';
+    }).join("");
+    return '<article class="book-page book-gallery"><header><span>' + escapeHtml(copy.selection) + ' ' + pageNumber + '</span><strong>' + escapeHtml(project.title) + '</strong></header><div class="book-gallery-grid book-gallery-grid-' + items.length + '">' + cells + '</div></article>';
   }
 
   function projectPages(project, copy) {
-    var drawing = project.gallery.find(function (item) { return /plan|elevation|coupe|section|fondation/i.test(item.label); }) || project.gallery[0];
-    return [
+    var pages = [
       '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>' + copy.type + '</dt><dd>' + escapeHtml(project.type) + '</dd></div><div><dt>' + copy.role + '</dt><dd>' + escapeHtml(project.role) + '</dd></div></dl></div></div></article>',
-      imagePage(project, drawing, "book-drawing")
     ];
+    for (var index = 0; index < project.gallery.length; index += 4) {
+      pages.push(galleryPage(project, project.gallery.slice(index, index + 4), (index / 4) + 1, copy));
+    }
+    return pages;
   }
 
   function buildBook() {
@@ -40,6 +45,7 @@
       count: " projects",
       type: "Type",
       role: "Role",
+      selection: "Portfolio selection",
       contact: "Discuss a project"
     } : locale === "kr" ? {
       label: "Ayiti · Etazini",
@@ -48,6 +54,7 @@
       count: " pwojè",
       type: "Kalite",
       role: "Wòl",
+      selection: "Seleksyon pwojè",
       contact: "Pale sou yon pwojè"
     } : {
       label: "Haïti · États-Unis",
@@ -56,6 +63,7 @@
       count: " projets",
       type: "Type",
       role: "Mission",
+      selection: "Sélection du projet",
       contact: "Parler de votre projet"
     };
     var pages = [

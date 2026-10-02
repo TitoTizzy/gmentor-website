@@ -20,10 +20,23 @@ async function verify(viewport) {
   if (await page.locator('button[data-market]').count()) throw new Error('Legacy market selector is still present');
 
   await page.goto(pathToFileURL(path.join(root, 'projects.html')).href);
+  await page.waitForSelector('.project-card');
   const text = await page.locator('body').innerText();
   if (!/Haiti|Haïti|Ayiti/.test(text) || !/United States|États-Unis|Etazini/.test(text)) {
     throw new Error('Projects from both regions are not visible');
   }
+  if (await page.locator('.project-card').count() < 9) throw new Error('The enriched project collection is incomplete');
+
+  await page.goto(pathToFileURL(path.join(root, 'portfolio.html')).href);
+  await page.waitForSelector('.book-page');
+  if (await page.locator('.book-gallery-item img').count() < 43) throw new Error('The portfolio book does not expose the full image collection');
+
+  await page.goto(pathToFileURL(path.join(root, 'contact.html')).href);
+  if (!(await page.locator('a[href="tel:+12038485807"]').isVisible())) throw new Error('Phone contact is missing');
+  if (!(await page.locator('a[href="mailto:mariegmentor@gmail.com"]').isVisible())) throw new Error('Email contact is missing');
+
+  const brokenImages = await page.locator('img').evaluateAll((images) => images.filter((image) => !image.complete || !image.naturalWidth).length);
+  if (brokenImages) throw new Error(`Found ${brokenImages} broken contact images`);
 
   await browser.close();
 }
