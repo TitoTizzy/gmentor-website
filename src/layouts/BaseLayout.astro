@@ -19,7 +19,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="fr" data-theme="dark" data-market="ht" data-locale="fr">
+<html lang="fr" data-theme="dark" data-locale="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -41,14 +41,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       (() => {
         const root = document.documentElement;
         const savedTheme = localStorage.getItem('mgm-theme');
-        const savedMarket = localStorage.getItem('mgm-market');
         const savedLocale = localStorage.getItem('mgm-locale');
         const browserLanguage = navigator.language.toLowerCase();
-        const market = savedMarket || (browserLanguage.startsWith('fr') || browserLanguage.startsWith('ht') ? 'ht' : 'us');
-        const locale = savedLocale || (market === 'us' ? 'en' : browserLanguage.startsWith('ht') ? 'kr' : 'fr');
+        const locale = savedLocale || (browserLanguage.startsWith('ht') ? 'kr' : browserLanguage.startsWith('fr') ? 'fr' : 'en');
         const theme = savedTheme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
         root.dataset.theme = theme;
-        root.dataset.market = market;
         root.dataset.locale = locale;
         root.lang = locale === 'kr' ? 'ht' : locale;
       })();
@@ -59,7 +56,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <header class="site-header" data-header>
       <a class="brand" href="/" aria-label="Architecte Marie Gaëlle Mentor, accueil">
         <img class="theme-logo" src="/assets/mgm-mark-white.png" alt="" width="80" height="80" />
-        <span><strong>Marie Gaëlle Mentor</strong><small data-market-title>Architecte licenciée en Haïti</small></span>
+        <span><strong>Marie Gaëlle Mentor</strong><small data-practice-title>Pratique de conception</small></span>
       </a>
       <button class="icon-button nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle>
         <Menu class="menu-icon" size={22} aria-hidden="true" />
@@ -72,11 +69,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <a href="/contact" data-nav-label="contact">Contact</a>
       </nav>
       <div class="header-tools">
-        <div class="segmented" aria-label="Marché">
-          <button type="button" data-market-button="us">USA</button>
-          <button type="button" data-market-button="ht">Haïti</button>
-        </div>
         <div class="segmented locale-switch" aria-label="Langue">
+          <button type="button" data-locale-button="en">EN</button>
           <button type="button" data-locale-button="fr">FR</button>
           <button type="button" data-locale-button="kr">KR</button>
         </div>
@@ -114,40 +108,28 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <script>
       const root = document.documentElement;
       const labels = {
-        en: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact', title: 'Architectural Designer' },
-        fr: { home: 'Accueil', about: 'À propos', projects: 'Réalisations', contact: 'Contact', title: 'Architecte licenciée en Haïti' },
-        kr: { home: 'Akèy', about: 'Konsènan', projects: 'Pwojè', contact: 'Kontak', title: 'Achitèk lisansye an Ayiti' }
+        en: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact', title: 'Design Practice' },
+        fr: { home: 'Accueil', about: 'À propos', projects: 'Réalisations', contact: 'Contact', title: 'Pratique de conception' },
+        kr: { home: 'Akèy', about: 'Konsènan', projects: 'Pwojè', contact: 'Kontak', title: 'Pratik konsepsyon' }
       };
 
       function syncUi() {
-        const market = root.dataset.market || 'ht';
-        const locale = (market === 'us' ? 'en' : root.dataset.locale || 'fr') as keyof typeof labels;
+        const locale = (root.dataset.locale || 'fr') as keyof typeof labels;
         root.dataset.locale = locale;
         root.lang = locale === 'kr' ? 'ht' : locale;
-        document.querySelectorAll('[data-market-button]').forEach((button) => button.setAttribute('aria-pressed', String(button.getAttribute('data-market-button') === market)));
         document.querySelectorAll('[data-locale-button]').forEach((button) => button.setAttribute('aria-pressed', String(button.getAttribute('data-locale-button') === locale)));
         document.querySelectorAll('[data-nav-label]').forEach((link) => {
           const key = link.getAttribute('data-nav-label') as keyof (typeof labels)['fr'] | null;
           if (key && key in labels[locale]) link.textContent = labels[locale][key];
         });
-        const title = document.querySelector('[data-market-title]');
+        const title = document.querySelector('[data-practice-title]');
         if (title) title.textContent = labels[locale].title;
       }
-
-      document.querySelectorAll('[data-market-button]').forEach((button) => button.addEventListener('click', () => {
-        const market = button.getAttribute('data-market-button') || 'ht';
-        root.dataset.market = market;
-        root.dataset.locale = market === 'us' ? 'en' : (localStorage.getItem('mgm-locale-ht') || 'fr');
-        localStorage.setItem('mgm-market', market);
-        syncUi();
-        window.dispatchEvent(new CustomEvent('mgm:preference-change'));
-      }));
 
       document.querySelectorAll('[data-locale-button]').forEach((button) => button.addEventListener('click', () => {
         const locale = button.getAttribute('data-locale-button') || 'fr';
         root.dataset.locale = locale;
         localStorage.setItem('mgm-locale', locale);
-        localStorage.setItem('mgm-locale-ht', locale);
         syncUi();
         window.dispatchEvent(new CustomEvent('mgm:preference-change'));
       }));

@@ -6,20 +6,19 @@ async function exposeHeaderTools(page: import('@playwright/test').Page) {
   }
 }
 
-test('home exposes the portfolio and preferences', async ({ page }) => {
+test('home exposes one portfolio and language preferences', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('banner')).toBeVisible();
-  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible();
   await exposeHeaderTools(page);
-  await expect(page.getByRole('button', { name: 'USA' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'EN', exact: true })).toBeVisible();
+  await expect(page.locator('[data-market-button]')).toHaveCount(0);
 });
 
-test('projects can be filtered by market', async ({ page }) => {
+test('projects from both countries share one catalogue', async ({ page }) => {
   await page.goto('/projects', { waitUntil: 'domcontentloaded' });
-  await exposeHeaderTools(page);
-  await page.getByRole('button', { name: 'USA' }).click();
   await expect(page.getByText('Townhouse', { exact: true })).toBeVisible();
-  await expect(page.getByText('Beach House', { exact: true })).toBeHidden();
+  await expect(page.getByText('Beach House', { exact: true })).toBeVisible();
 });
 
 test('contact form has required privacy consent', async ({ page }) => {

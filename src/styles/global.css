@@ -58,7 +58,6 @@ button { color: inherit; }
 .segmented { display: inline-flex; border: 1px solid var(--line); padding: 3px; }
 .segmented button { min-height: 34px; padding: 0 .65rem; border: 0; background: transparent; font-size: .72rem; cursor: pointer; }
 .segmented button[aria-pressed='true'] { background: var(--copper); color: #120b05; }
-:root[data-market='us'] .locale-switch { display: none; }
 .icon-button { width: 44px; height: 44px; display: inline-grid; place-items: center; border: 1px solid var(--line); background: transparent; cursor: pointer; }
 .nav-toggle { display: none; }
 .close-icon, :root[data-theme='dark'] .moon-icon, :root[data-theme='light'] .sun-icon { display: none; }
@@ -142,6 +141,7 @@ main { min-height: 75vh; }
 .about-value-list article > span { color: var(--copper); font-size: .75rem; }
 .about-value-list h3 { margin: 0 0 .45rem; font: 400 clamp(1.55rem, 3vw, 2.2rem)/1.1 var(--serif); }
 .about-value-list p { max-width: 62ch; margin: 0; color: var(--muted); }
+.about-profile + .about-profile { margin-top: 6rem; padding-top: 6rem; border-top: 1px solid var(--line); }
 .contact-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(2rem, 8vw, 8rem); margin-top: 5rem; }
 .contact-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .contact-form .span-2 { grid-column: span 2; }

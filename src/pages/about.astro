@@ -73,21 +73,21 @@ const profiles = {
 
 <BaseLayout title="À propos | Architecte Marie Gaëlle Mentor" description="Le parcours professionnel de Marie Gaëlle Mentor en Haïti et aux États-Unis.">
   <div class="page-shell container">
-    {Object.entries(profiles).map(([market, profile]) => (
-      <article data-about-market={market}>
+    {Object.entries(profiles).map(([region, profile]) => (
+      <article class="about-profile" data-region={region}>
         <header class="page-intro">
           <p class="eyebrow">{profile.eyebrow}</p>
           <div><h1>{profile.title}</h1><p>{profile.lead}</p></div>
         </header>
 
-        <section class="about-facts" aria-label={market === 'us' ? 'Career highlights' : 'Repères du parcours'}>
+        <section class="about-facts" aria-label={region === 'us' ? 'Career highlights' : 'Repères du parcours'}>
           {profile.facts.map(([value, label]) => <div class="about-fact"><strong>{value}</strong><span>{label}</span></div>)}
         </section>
 
         <section class="about-grid">
           <figure><img src={profile.image} alt={profile.imageAlt} width="1200" height="1500" /><figcaption>{profile.imageCaption}</figcaption></figure>
           <div class="about-copy">
-            <p class="eyebrow">{market === 'us' ? 'Her story' : 'Son histoire'}</p>
+            <p class="eyebrow">{region === 'us' ? 'Her story' : 'Son histoire'}</p>
             <h2>{profile.storyTitle}</h2>
             <div class="about-story">{profile.story.map((paragraph) => <p>{paragraph}</p>)}</div>
             <blockquote>“{profile.quote}”</blockquote>
@@ -95,26 +95,16 @@ const profiles = {
         </section>
 
         <section class="about-history band">
-          <div class="section-heading"><div><p class="eyebrow">{market === 'us' ? 'Career milestones' : 'Repères du parcours'}</p><h2>{market === 'us' ? 'A practice built over time.' : 'Une pratique construite dans la durée.'}</h2></div></div>
+          <div class="section-heading"><div><p class="eyebrow">{region === 'us' ? 'Career milestones' : 'Repères du parcours'}</p><h2>{region === 'us' ? 'A practice built over time.' : 'Une pratique construite dans la durée.'}</h2></div></div>
           <div class="timeline">{profile.milestones.map(([period, text]) => <article><h3>{period}</h3><p>{text}</p></article>)}</div>
         </section>
 
         <section class="about-values band">
-          <div class="section-heading"><div><p class="eyebrow">{market === 'us' ? 'Principles of practice' : 'Principes de pratique'}</p><h2>{market === 'us' ? 'What guides every project.' : 'Ce qui guide chaque projet.'}</h2></div></div>
+          <div class="section-heading"><div><p class="eyebrow">{region === 'us' ? 'Principles of practice' : 'Principes de pratique'}</p><h2>{region === 'us' ? 'What guides every project.' : 'Ce qui guide chaque projet.'}</h2></div></div>
           <div class="about-value-list">{profile.values.map(([title, text], index) => <article><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
         </section>
       </article>
     ))}
   </div>
 
-  <script>
-    function syncAboutMarket() {
-      const market = document.documentElement.dataset.market || 'ht';
-      document.querySelectorAll<HTMLElement>('[data-about-market]').forEach((profile) => {
-        profile.hidden = profile.dataset.aboutMarket !== market;
-      });
-    }
-    syncAboutMarket();
-    window.addEventListener('mgm:preference-change', syncAboutMarket);
-  </script>
 </BaseLayout>

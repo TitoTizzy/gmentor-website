@@ -5,7 +5,6 @@ export type Project = {
   city: string;
   year: number | null;
   type: 'Résidentiel multifamilial' | 'Résidence privée' | 'Bureaux et projets institutionnels';
-  markets: Array<'us' | 'ht'>;
   role: string | null;
   credits: string | null;
   cover: string;
@@ -23,7 +22,6 @@ export const projects: Project[] = [
     city: 'Waterbury, Connecticut',
     year: null,
     type: 'Résidentiel multifamilial',
-    markets: ['us'],
     role: null,
     credits: null,
     cover: '/images/concept-townhouses.webp',
@@ -39,7 +37,6 @@ export const projects: Project[] = [
     city: 'Norwalk, Connecticut',
     year: null,
     type: 'Résidentiel multifamilial',
-    markets: ['us'],
     role: null,
     credits: null,
     cover: '/images/concept-townhouses.webp',
@@ -55,7 +52,6 @@ export const projects: Project[] = [
     city: 'Connecticut',
     year: null,
     type: 'Résidentiel multifamilial',
-    markets: ['us'],
     role: null,
     credits: null,
     cover: '/images/concept-townhouses.webp',
@@ -71,7 +67,6 @@ export const projects: Project[] = [
     city: 'Pierre Payen, Montrouis',
     year: null,
     type: 'Résidence privée',
-    markets: ['ht'],
     role: null,
     credits: null,
     cover: '/images/concept-coastal-residence.webp',
@@ -87,7 +82,6 @@ export const projects: Project[] = [
     city: '',
     year: null,
     type: 'Bureaux et projets institutionnels',
-    markets: ['ht'],
     role: null,
     credits: null,
     cover: '/images/studio-process.webp',

@@ -10,7 +10,6 @@ const schema = z.object({
   city: z.string().trim().min(2).max(100),
   projectType: z.string().trim().min(2).max(80),
   description: z.string().trim().max(2500).optional().default(''),
-  market: z.enum(['us', 'ht']),
   locale: z.enum(['en', 'fr', 'kr']),
   usesWhatsapp: z.boolean(),
   privacyAccepted: z.literal(true),
@@ -38,7 +37,6 @@ export const POST: APIRoute = async ({ request, clientAddress, redirect }) => {
     city: form.get('city'),
     projectType: form.get('projectType'),
     description: form.get('description') || '',
-    market: form.get('market'),
     locale: form.get('locale'),
     usesWhatsapp: form.get('usesWhatsapp') === 'true',
     privacyAccepted: form.get('privacyAccepted') === 'true',
@@ -60,7 +58,7 @@ export const POST: APIRoute = async ({ request, clientAddress, redirect }) => {
       city: parsed.data.city,
       project_type: parsed.data.projectType,
       description: parsed.data.description || null,
-      market_code: parsed.data.market,
+      market_code: null,
       locale: parsed.data.locale,
       uses_whatsapp: parsed.data.usesWhatsapp,
       privacy_accepted_at: new Date().toISOString(),
@@ -70,7 +68,7 @@ export const POST: APIRoute = async ({ request, clientAddress, redirect }) => {
   }
 
   const resendKey = import.meta.env.RESEND_API_KEY;
-  const recipient = parsed.data.market === 'us' ? import.meta.env.CONTACT_EMAIL_US : import.meta.env.CONTACT_EMAIL_HT;
+  const recipient = import.meta.env.CONTACT_EMAIL || import.meta.env.CONTACT_EMAIL_US || import.meta.env.CONTACT_EMAIL_HT;
   if (resendKey && recipient) {
     await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -89,8 +87,8 @@ export const POST: APIRoute = async ({ request, clientAddress, redirect }) => {
       body: JSON.stringify({
         from: 'Marie Gaëlle Mentor <contact@gaellementor.com>',
         to: [parsed.data.email],
-        subject: parsed.data.market === 'us' ? 'We received your project inquiry' : 'Nous avons reçu votre demande',
-        text: parsed.data.market === 'us' ? 'Thank you. Your inquiry has been received.' : 'Merci. Votre demande a bien été reçue.'
+        subject: parsed.data.locale === 'en' ? 'We received your project inquiry' : 'Nous avons reçu votre demande',
+        text: parsed.data.locale === 'en' ? 'Thank you. Your inquiry has been received.' : 'Merci. Votre demande a bien été reçue.'
       })
     });
   }
