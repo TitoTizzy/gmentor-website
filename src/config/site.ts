@@ -1,7 +1,7 @@
 export const site = {
-  name: 'Architecte Marie Gaëlle Mentor',
+  name: 'Marie Gaëlle Mentor',
   domain: 'gaellementor.com',
-  description: 'Portfolio architectural unique de Marie Gaëlle Mentor, réunissant son parcours et ses projets en Haïti et aux États-Unis.'
+  description: 'Portfolio de Marie Mentor Residential Design & Planning LLC et de la pratique d’architecture licenciée de Marie Gaëlle Mentor en Haïti.'
 } as const;
 
 export type Locale = 'en' | 'fr' | 'kr';

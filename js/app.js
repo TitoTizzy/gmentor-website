@@ -6,9 +6,9 @@
   var assetRoot = body.dataset.root || ".";
   var page = body.dataset.page || "home";
   var labels = {
-    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Design Practice" },
-    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Pratique de conception" },
-    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Pratik konsepsyon" }
+    en: { home: "Home", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", title: "Residential Design & Planning" },
+    fr: { home: "Accueil", about: "À propos", projects: "Réalisations", portfolio: "Portfolio", contact: "Contact", title: "Design résidentiel et planification" },
+    kr: { home: "Akèy", about: "Konsènan", projects: "Pwojè", portfolio: "Pòtfolyo", contact: "Kontak", title: "Konsepsyon ak planifikasyon rezidansyèl" }
   };
   var pageTitles = {
     en: { home: "Design across Haiti and the United States", about: "About", projects: "Projects", portfolio: "Portfolio", contact: "Contact", privacy: "Privacy", legal: "Legal Notice", cookies: "Cookies", project: "Project", "404": "Page Not Found" },
@@ -63,9 +63,9 @@
     var footer = document.querySelector("[data-site-footer]");
     var shellLocale = root.dataset.locale || "fr";
     var shellText = shellLocale === "en" ? {
-      home: "home", menu: "Open menu", navigation: "Primary navigation", theme: "Change theme", footer: "Marie Gaëlle Mentor | Design Practice"
+      home: "home", menu: "Open menu", navigation: "Primary navigation", theme: "Change theme", footer: "Marie Mentor Residential Design & Planning LLC"
     } : {
-      home: "accueil", menu: "Ouvrir le menu", navigation: "Navigation principale", theme: "Changer le thème", footer: "Architecte Marie Gaëlle Mentor"
+      home: "accueil", menu: "Ouvrir le menu", navigation: "Navigation principale", theme: "Changer le thème", footer: "Marie Mentor Residential Design & Planning LLC"
     };
     var languageTools = '<div class="segmented locale-switch" aria-label="Language"><button type="button" data-locale="en">EN</button><button type="button" data-locale="fr">FR</button><button type="button" data-locale="kr">KR</button></div>';
     if (header) {
@@ -84,7 +84,7 @@
     if (footer) {
       footer.innerHTML = '<div><img class="logo-on-dark" src="' + href("assets/mgm-mark-white.png") + '" alt="Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
         '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a></div>' +
-        '<p class="footer-note" data-i18n data-en="© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Building Designer in the U.S. · Licensed Architect in Haiti" data-fr="© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Conceptrice de bâtiments aux États-Unis · Architecte licenciée en Haïti" data-kr="© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Konseptris bilding Ozetazini · Achitèk lisansye ann Ayiti">© ' + new Date().getFullYear() + ' Marie Gaëlle Mentor · Conceptrice de bâtiments aux États-Unis · Architecte licenciée en Haïti</p>';
+        '<p class="footer-note" data-i18n data-en="© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Licensed Architect in Haiti" data-fr="© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Architecte licenciée en Haïti" data-kr="© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Achitèk lisansye ann Ayiti">© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Architecte licenciée en Haïti</p>';
     }
     if (!document.querySelector("[data-consent]")) {
       var consent = document.createElement("aside");
@@ -116,7 +116,7 @@
     var title = document.querySelector("[data-practice-title]");
     if (title) title.textContent = labels[locale].title;
     var footerTitle = document.querySelector("[data-footer-title]");
-    if (footerTitle) footerTitle.textContent = locale === "en" ? "Marie Gaëlle Mentor | Design Practice" : locale === "kr" ? "Marie Gaëlle Mentor | Pratik konsepsyon" : "Marie Gaëlle Mentor | Pratique de conception";
+    if (footerTitle) footerTitle.textContent = "Marie Mentor Residential Design & Planning LLC";
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var translated = node.dataset[locale] || node.dataset.fr;
       if (translated) node.textContent = translated;

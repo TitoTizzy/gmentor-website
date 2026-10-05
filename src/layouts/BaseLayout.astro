@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = 'Portfolio architectural de Marie Gaëlle Mentor.',
+  description = 'Marie Mentor Residential Design & Planning LLC et pratique d’architecture licenciée en Haïti.',
   image,
   noindex = false
 } = Astro.props;
@@ -54,9 +54,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
     <header class="site-header" data-header>
-      <a class="brand" href="/" aria-label="Architecte Marie Gaëlle Mentor, accueil">
+      <a class="brand" href="/" aria-label="Marie Gaëlle Mentor, accueil">
         <img class="theme-logo" src="/assets/mgm-mark-white.png" alt="" width="80" height="80" />
-        <span><strong>Marie Gaëlle Mentor</strong><small data-practice-title>Pratique de conception</small></span>
+        <span><strong>Marie Gaëlle Mentor</strong><small data-practice-title>Design résidentiel et planification</small></span>
       </a>
       <button class="icon-button nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle>
         <Menu class="menu-icon" size={22} aria-hidden="true" />
@@ -86,7 +86,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <footer class="site-footer">
       <div>
         <img class="logo-on-dark" src="/assets/mgm-mark-white.png" alt="Logo Marie Gaëlle Mentor" width="104" height="104" />
-        <p>Architecte Marie Gaëlle Mentor</p>
+        <p>Marie Mentor Residential Design &amp; Planning LLC</p>
       </div>
       <div class="footer-links">
         <a href="/privacy">Confidentialité</a>
@@ -94,7 +94,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <a href="/legal">Mentions légales</a>
         <a href="/admin/login">Administration</a>
       </div>
-      <p class="footer-note">© {new Date().getFullYear()} Marie Gaëlle Mentor</p>
+      <p class="footer-note">© {new Date().getFullYear()} Marie Mentor Residential Design &amp; Planning LLC · NOT A LICENSED ARCHITECT · Architecte licenciée en Haïti</p>
     </footer>
 
     <aside class="consent" hidden data-consent aria-label="Préférences statistiques">
@@ -108,9 +108,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <script>
       const root = document.documentElement;
       const labels = {
-        en: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact', title: 'Design Practice' },
-        fr: { home: 'Accueil', about: 'À propos', projects: 'Réalisations', contact: 'Contact', title: 'Pratique de conception' },
-        kr: { home: 'Akèy', about: 'Konsènan', projects: 'Pwojè', contact: 'Kontak', title: 'Pratik konsepsyon' }
+        en: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact', title: 'Residential Design & Planning' },
+        fr: { home: 'Accueil', about: 'À propos', projects: 'Réalisations', contact: 'Contact', title: 'Design résidentiel et planification' },
+        kr: { home: 'Akèy', about: 'Konsènan', projects: 'Pwojè', contact: 'Kontak', title: 'Konsepsyon ak planifikasyon rezidansyèl' }
       };
 
       function syncUi() {
