@@ -41,34 +41,37 @@
     var cover = projects[0];
     var copy = locale === "en" ? {
       label: "Haiti · United States",
-      title: "Architecture across borders.",
+      title: "Design across borders.",
       intro: "Built work, photographs and drawings from Haiti and the United States.",
       count: " projects",
       type: "Type",
       role: "Role",
       selection: "Portfolio selection",
-      contact: "Discuss a project"
+      contact: "Discuss a project",
+      credential: "Residential Design & Planning · Licensed Architect in Haiti"
     } : locale === "kr" ? {
       label: "Ayiti · Etazini",
-      title: "Achitekti atravè fwontyè.",
+      title: "Konsepsyon atravè fwontyè.",
       intro: "Pwojè, foto ak plan ki soti ann Ayiti ak Ozetazini.",
       count: " pwojè",
       type: "Kalite",
       role: "Wòl",
       selection: "Seleksyon pwojè",
-      contact: "Pale sou yon pwojè"
+      contact: "Pale sou yon pwojè",
+      credential: "Konsepsyon ak planifikasyon rezidansyèl · Achitèk lisansye ann Ayiti"
     } : {
       label: "Haïti · États-Unis",
-      title: "L'architecture au-delà des frontières.",
+      title: "La conception au-delà des frontières.",
       intro: "Réalisations, photographies et plans provenant d'Haïti et des États-Unis.",
       count: " projets",
       type: "Type",
       role: "Mission",
       selection: "Sélection du projet",
-      contact: "Parler de votre projet"
+      contact: "Parler de votre projet",
+      credential: "Design résidentiel et planification · Architecte licenciée en Haïti"
     };
     var pages = [
-      '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img class="logo-on-dark" src="assets/mgm-mark-white.png" alt="Marie Gaëlle Mentor"><p>' + copy.label + '</p><h2>Marie Gaëlle Mentor</h2><span>Building Designer · Licensed Architect in Haiti</span></div></article>',
+      '<article class="book-page book-cover" data-density="hard"><img src="images/' + escapeHtml(cover.cover) + '" alt=""><div class="book-cover-shade"></div><div class="book-cover-copy"><img class="logo-on-dark" src="assets/mgm-mark-white.png" alt="Marie Gaëlle Mentor"><p>' + copy.label + '</p><h2>Marie Gaëlle Mentor</h2><span>' + copy.credential + '</span></div></article>',
       '<article class="book-page book-opening"><p class="eyebrow">' + copy.label + '</p><h2>' + copy.title + '</h2><p>' + copy.intro + '</p><span class="book-opening-count">' + projects.length + copy.count + '</span></article>'
     ];
     projects.forEach(function (project) { pages = pages.concat(projectPages(project, copy)); });

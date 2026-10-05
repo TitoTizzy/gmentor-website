@@ -41,6 +41,15 @@ async function verify(viewport) {
   await page.goto(pathToFileURL(path.join(root, 'contact.html')).href);
   if (!(await page.locator('a[href="tel:+12038485807"]').isVisible())) throw new Error('Phone contact is missing');
   if (!(await page.locator('a[href="mailto:mariegmentor@gmail.com"]').isVisible())) throw new Error('Email contact is missing');
+  const contactText = await page.locator('body').innerText();
+  if (!contactText.includes('Marie Mentor Residential Design & Planning LLC')) throw new Error('The U.S. business name is missing');
+  if (!contactText.includes('NOT A LICENSED ARCHITECT')) throw new Error('The U.S. professional disclosure is missing');
+
+  await page.goto(pathToFileURL(path.join(root, 'legal.html')).href);
+  const legalText = await page.locator('body').innerText();
+  if (!legalText.includes('Marie Mentor Residential Design & Planning LLC')) throw new Error('The legal page has the wrong U.S. business name');
+  if (!legalText.includes('NOT A LICENSED ARCHITECT')) throw new Error('The legal page is missing the U.S. professional disclosure');
+  if (/does not represent an LLC|ne représente pas une LLC|pa reprezante yon LLC/i.test(legalText)) throw new Error('The former non-LLC statement is still visible');
 
   const brokenImages = await page.locator('img').evaluateAll((images) => images.filter((image) => !image.complete || !image.naturalWidth).length);
   if (brokenImages) throw new Error(`Found ${brokenImages} broken contact images`);

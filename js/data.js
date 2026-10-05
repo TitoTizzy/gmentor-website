@@ -3,9 +3,9 @@
   window.MGM_DATA = {
   "services": [
     {
-      "en": "Building design in the U.S. · Architecture in Haiti",
-      "fr": "Conception de bâtiments aux États-Unis · Architecture en Haïti",
-      "kr": "Konsepsyon bilding Ozetazini · Achitekti ann Ayiti"
+      "en": "Residential design & planning in the U.S. · Architecture in Haiti",
+      "fr": "Design résidentiel et planification aux États-Unis · Architecture en Haïti",
+      "kr": "Konsepsyon ak planifikasyon rezidansyèl Ozetazini · Achitekti ann Ayiti"
     },
     {
       "en": "Interior design",
@@ -35,15 +35,15 @@
   ],
   "profiles": {
     "us": {
-      "eyebrow": "Building Designer",
+      "eyebrow": "Residential Design & Planning",
       "title": "An American journey connecting design ambition with technical precision.",
       "portrait": "marie-gaelle-mentor-portrait.png",
-      "portraitAlt": "Portrait of building designer Marie Gaëlle Mentor wearing yellow",
-      "portraitCaption": "Marie Gaëlle Mentor, Building Designer. Not a licensed architect in Connecticut or New York.",
+      "portraitAlt": "Portrait of residential designer Marie Gaëlle Mentor wearing yellow",
+      "portraitCaption": "Marie Gaëlle Mentor, principal of Marie Mentor Residential Design & Planning LLC. NOT A LICENSED ARCHITECT.",
       "chapterPortrait": "usa/townhouse-waterbury-new-england.png",
       "chapterPortraitAlt": "New England-style multifamily townhouse in Waterbury, Connecticut",
       "chapterPortraitCaption": "Multifamily building design in Waterbury, Connecticut.",
-      "lead": "Marie Gaëlle Mentor arrived in the United States with a foundation in architecture and field supervision already shaped in Haiti. New York and Connecticut introduced new building cultures, regulations and forms of collaboration, while confirming a central principle of her practice: a strong idea becomes architecture only when it is clearly drawn, responsibly coordinated and well built.",
+      "lead": "Marie Gaëlle Mentor arrived in the United States with architectural education and field supervision experience already shaped in Haiti. New York and Connecticut introduced new building cultures, regulations and forms of collaboration, while confirming a central principle of her work: a strong idea succeeds only when it is clearly drawn, responsibly coordinated and well built.",
       "storyTitle": "Building a practice across New York and Connecticut.",
       "story": [
         "Her professional chapter in the United States began in Queens in 2003. At PowerHouse Architect, she worked as a draftsperson and learned to translate intentions into disciplined architectural documents. The experience sharpened her eye for proportion and detail while establishing the importance of accuracy: every line on a drawing eventually becomes a decision for a builder, an expense for a client and a lived condition for a family.",
@@ -51,13 +51,13 @@
         "In 2006, she joined AWA Design Group P.C. in Stamford, Connecticut. This period brought opportunities to contribute to larger residential developments within a multidisciplinary office. She worked on compositions balancing symmetry, familiar residential forms and contemporary ways of living. Plans, elevations, window assemblies, circulation and landscape relationships were developed as parts of one architectural language.",
         "She subsequently established MGM Remodeling and Design in Hamden, serving as owner, interior designer and contractor from 2009 to 2010. The practice brought design and execution into direct conversation through homeowner consultation, interior solutions, work coordination and responsibility beyond the drawing set. This experience strengthened both the entrepreneurial dimension of her career and her capacity to guide a project from an initial need to a tangible result.",
         "Her work as a residential inspector with the Institute of Professional Practice in Woodbridge, from 2010 to 2011, added another essential layer. Examining homes through the lens of codes, safety and compliance reinforced a principle developed through years of site experience: technical rigor supports creativity by protecting occupants, extending a project’s useful life and preserving design quality through construction.",
-        "From 2014 to 2019, she applied this experience as General Manager and Senior Architect at Shelter IT Haiti & USA in Haiti. Since July 2019, her work with New England Outdoor Product has kept her practice close to clients, materials and buildable solutions. Her independent U.S. building design practice now brings together drafting, residential planning, interiors, inspection knowledge, construction awareness and international leadership, within the limits of applicable law.",
+        "From 2014 to 2019, she applied this experience as General Manager and Senior Architect at Shelter IT Haiti & USA in Haiti. Since July 2019, her work with New England Outdoor Product has kept her practice close to clients, materials and buildable solutions. Today, Marie Mentor Residential Design & Planning LLC brings together residential layouts, floor plans, elevations, additions, renovations and planning documentation, within the limits of applicable law. Marie Gaëlle Mentor is not a licensed architect in the United States.",
         "Across townhouses, multifamily residences and individual homes, her process begins with the people who will inhabit the space. Clear circulation, useful natural light, durable materials and an exterior identity connected to its context remain consistent priorities. The objective extends beyond producing an image to creating a thoughtful framework for everyday life."
       ],
       "facts": [
         {
           "value": "30+",
-          "label": "years in architectural practice"
+          "label": "years in design and construction practice"
         },
         {
           "value": "NY + CT",
@@ -68,7 +68,7 @@
           "label": "languages: English, French and Creole"
         }
       ],
-      "quote": "The best residential architecture does more than organize space; it gives daily life clarity, comfort and a genuine sense of belonging.",
+      "quote": "The best residential design does more than organize space; it gives daily life clarity, comfort and a genuine sense of belonging.",
       "timeline": [
         {
           "title": "1990–1995",
@@ -92,7 +92,7 @@
         },
         {
           "title": "2019–Today",
-          "text": "Building design work with New England Outdoor Product and development of an independent U.S. design practice."
+          "text": "Residential design work with New England Outdoor Product and leadership of Marie Mentor Residential Design & Planning LLC."
         }
       ],
       "values": [
@@ -205,7 +205,7 @@
       "city": "Waterbury, Connecticut",
       "year": "",
       "type": "New England multifamily housing",
-      "role": "Building design",
+      "role": "Residential design and planning",
       "markets": [
         "us"
       ],
@@ -443,7 +443,7 @@
       "city": "",
       "year": "",
       "type": "Residential renovation",
-      "role": "Building design and construction documents",
+      "role": "Residential design and planning documentation",
       "markets": ["us"],
       "cover": "usa/two-level-residential-addition-built.png",
       "alt": "Completed two-level porch, stairs and exterior access addition",
@@ -513,7 +513,7 @@ window.MGM_DATA.projectLocales = {
   },
   fr: {
     "townhouse-waterbury": {
-      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial de Nouvelle-Angleterre", role: "Conception de bâtiment",
+      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial de Nouvelle-Angleterre", role: "Design et planification résidentiels",
       alt: "Maison multifamiliale bleu-gris de style Nouvelle-Angleterre à Waterbury, Connecticut",
       description: "Une architecture traditionnelle de Nouvelle-Angleterre pour un ensemble multifamilial de maisons mitoyennes, marquée par une influence Colonial Revival. Son vocabulaire vernaculaire se lit dans les pignons répétés, le rythme symétrique des fenêtres, le bardage horizontal, les encadrements blancs et les entrées résidentielles clairement dessinées."
     },
@@ -523,7 +523,7 @@ window.MGM_DATA.projectLocales = {
       description: "Une étude résidentielle contemporaine organisée autour de volumes blancs, de menuiseries sombres, de parements en bois et d’espaces intérieurs largement ouverts. Ces images sont des visualisations 3D du projet : les plantations représentent l’intention paysagère et doivent être installées ultérieurement par le propriétaire."
     },
     "two-level-residential-addition": {
-      title: "Extension résidentielle sur deux niveaux", country: "États-Unis", type: "Rénovation résidentielle", role: "Conception de bâtiment et documents d’exécution",
+      title: "Extension résidentielle sur deux niveaux", country: "États-Unis", type: "Rénovation résidentielle", role: "Design résidentiel et documents de planification",
       alt: "Extension réalisée avec galeries, escaliers et accès extérieurs sur deux niveaux",
       description: "Une extension extérieure sur deux niveaux conçue pour améliorer les accès indépendants et les usages extérieurs tout en s’intégrant aux proportions et aux détails de la résidence existante. Les études d’élévation et les dessins d’exécution coordonnent les galeries superposées, les escaliers, les paliers, la structure et le raccord de toiture."
     },
@@ -535,7 +535,7 @@ window.MGM_DATA.projectLocales = {
   },
   kr: {
     "townhouse-waterbury": {
-      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal estil New England", role: "Konsepsyon bilding",
+      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal estil New England", role: "Konsepsyon ak planifikasyon rezidansyèl",
       alt: "Kay miltifamilyal estil New England ki fini nan Waterbury, Connecticut",
       description: "Yon achitekti tradisyonèl New England pou kay miltifamilyal ak kay kole, avèk enfliyans Colonial Revival. Vokabilè eksteryè a sèvi ak pignon repete, fenèt simetrik, revètman orizontal, ankadreman blan ak antre rezidansyèl ki byen defini."
     },
@@ -560,7 +560,7 @@ window.MGM_DATA.projectLocales = {
       description: "Yon etid rezidansyèl kontanporen ki òganize ak volim blan, ankadreman fonse, revètman bwa ak espas enteryè ki ouvè anpil. Imaj sa yo se vizyalizasyon 3D pwojè a: plant yo montre entansyon amenajman peyizaj la epi pwopriyetè a prevwa mete yo pita."
     },
     "two-level-residential-addition": {
-      title: "Ekstansyon rezidansyèl sou de nivo", country: "Etazini", type: "Renovasyon rezidansyèl", role: "Konsepsyon bilding ak dokiman konstriksyon",
+      title: "Ekstansyon rezidansyèl sou de nivo", country: "Etazini", type: "Renovasyon rezidansyèl", role: "Konsepsyon rezidansyèl ak dokiman planifikasyon",
       alt: "Ekstansyon fini ak galri, eskalye ak aksè eksteryè sou de nivo",
       description: "Yon ekstansyon eksteryè sou de nivo ki amelyore aksè endepandan ak itilizasyon espas deyò pandan li respekte pwopòsyon ak detay kay ki te deja la. Etid elevasyon ak desen konstriksyon yo kowòdone galri yo, eskalye yo, palye yo, estrikti a ak koneksyon twati a."
     },
@@ -615,11 +615,11 @@ window.MGM_DATA.profileLocales = {
   fr: {
     ht: window.MGM_DATA.profiles.ht,
     us: {
-      eyebrow: "Conceptrice de bâtiments",
+      eyebrow: "Design résidentiel et planification",
       title: "Un parcours américain reliant ambition de conception et précision technique.",
-      portraitAlt: "Portrait de la conceptrice de bâtiments Marie Gaëlle Mentor portant une tenue jaune",
-      portraitCaption: "Marie Gaëlle Mentor, conceptrice de bâtiments. Non licenciée comme architecte au Connecticut ou à New York.",
-      lead: "Marie Gaëlle Mentor arrive aux États-Unis avec une expérience de l'architecture et du suivi de chantier déjà forgée en Haïti. New York et le Connecticut lui font découvrir de nouvelles cultures constructives, réglementations et formes de collaboration, tout en confirmant un principe central: une idée forte ne devient architecture que lorsqu'elle est clairement dessinée, coordonnée avec responsabilité et bien construite.",
+      portraitAlt: "Portrait de la designer résidentielle Marie Gaëlle Mentor portant une tenue jaune",
+      portraitCaption: "Marie Gaëlle Mentor, dirigeante de Marie Mentor Residential Design & Planning LLC. NOT A LICENSED ARCHITECT.",
+      lead: "Marie Gaëlle Mentor arrive aux États-Unis avec une formation en architecture et une expérience du suivi de chantier déjà forgées en Haïti. New York et le Connecticut lui font découvrir de nouvelles cultures constructives, réglementations et formes de collaboration, tout en confirmant un principe central: une idée forte réussit lorsqu'elle est clairement dessinée, coordonnée avec responsabilité et bien construite.",
       storyTitle: "Construire une pratique entre New York et le Connecticut.",
       story: [
         "Son parcours professionnel aux États-Unis débute dans le Queens en 2003. Chez PowerHouse Architect, elle exerce comme dessinatrice et apprend à traduire les intentions en documents architecturaux rigoureux. Cette expérience affine son regard sur les proportions et le détail, tout en établissant l'importance de la précision.",
@@ -627,18 +627,18 @@ window.MGM_DATA.profileLocales = {
         "En 2006, elle rejoint AWA Design Group P.C. à Stamford. Elle contribue à des ensembles résidentiels plus importants au sein d’une équipe multidisciplinaire. Plans, élévations, ouvertures, circulations et relations paysagères sont développés comme les éléments d'un même langage architectural.",
         "Elle fonde ensuite MGM Remodeling and Design à Hamden, où elle exerce comme propriétaire, designer d'intérieur et entrepreneure de 2009 à 2010. Cette pratique met conception et réalisation en dialogue direct et renforce à la fois la dimension entrepreneuriale de son parcours et sa capacité à conduire un projet jusqu'à un résultat concret.",
         "Son travail d'inspectrice résidentielle à l'Institute of Professional Practice de Woodbridge, de 2010 à 2011, ajoute une dimension essentielle. L'examen des logements sous l'angle des codes, de la sécurité et de la conformité confirme que la rigueur technique soutient la créativité en protégeant les occupants et la qualité du projet.",
-        "De 2014 à 2019, elle mobilise cette expérience en Haïti comme Directrice générale et Architecte senior de Shelter IT Haiti & USA. Depuis juillet 2019, son activité chez New England Outdoor Product maintient sa pratique au contact des clients, des matériaux et des solutions constructibles. Sa pratique américaine indépendante de conception de bâtiments réunit aujourd'hui dessin, planification résidentielle, intérieurs, inspection, construction et leadership international, dans les limites prévues par la loi.",
+        "De 2014 à 2019, elle mobilise cette expérience en Haïti comme Directrice générale et Architecte senior de Shelter IT Haiti & USA. Depuis juillet 2019, son activité chez New England Outdoor Product maintient sa pratique au contact des clients, des matériaux et des solutions constructibles. Aujourd'hui, Marie Mentor Residential Design & Planning LLC réunit plans résidentiels, plans d'étage, élévations, extensions, rénovations et documents de planification, dans les limites prévues par la loi. Marie Gaëlle Mentor n'est pas architecte licenciée aux États-Unis.",
         "Dans les maisons mitoyennes, les résidences multifamiliales et les maisons individuelles, sa méthode part toujours de celles et ceux qui habiteront les lieux. Circulations claires, lumière naturelle, matériaux durables et identité extérieure liée au contexte restent des priorités constantes."
       ],
-      facts: [{ value: "30+", label: "années de pratique architecturale" }, { value: "NY + CT", label: "expérience aux États-Unis" }, { value: "3", label: "langues: anglais, français et créole" }],
-      quote: "La meilleure architecture résidentielle ne se limite pas à organiser l'espace; elle apporte au quotidien clarté, confort et véritable sentiment d'appartenance.",
+      facts: [{ value: "30+", label: "années en conception et construction" }, { value: "NY + CT", label: "expérience aux États-Unis" }, { value: "3", label: "langues: anglais, français et créole" }],
+      quote: "Le meilleur design résidentiel ne se limite pas à organiser l'espace; il apporte au quotidien clarté, confort et véritable sentiment d'appartenance.",
       timeline: [
         { title: "1990–1995", text: "Baccalauréat en architecture à l'Université GOC de Port-au-Prince, complété par des études sur le mouvement et les environnements spatiaux." },
         { title: "2003–2006", text: "Début de sa pratique américaine comme dessinatrice chez PowerHouse Architect dans le Queens, puis comme conceptrice chez MGM Remodeling and Design à New York." },
         { title: "2006–2008", text: "Membre de l’équipe de conception chez AWA Design Group à Stamford, avec une contribution à des plans et ensembles résidentiels." },
         { title: "2009–2011", text: "Propriétaire, designer d'intérieur et entrepreneure chez MGM Remodeling and Design à Hamden, puis inspectrice résidentielle à Woodbridge." },
         { title: "2014–2019", text: "Directrice générale et Architecte senior de Shelter IT Haiti & USA, avec coordination d'équipes pluridisciplinaires." },
-        { title: "2019–Aujourd'hui", text: "Travail de conception de bâtiments chez New England Outdoor Product et développement d’une pratique indépendante aux États-Unis." }
+        { title: "2019–Aujourd'hui", text: "Travail de design résidentiel chez New England Outdoor Product et direction de Marie Mentor Residential Design & Planning LLC." }
       ],
       values: [
         { title: "Intelligence résidentielle", text: "Les plans sont conçus autour des circulations, de la lumière, du confort et des usages réels, au-delà de la seule apparence." },
@@ -670,8 +670,8 @@ window.MGM_DATA.profileLocales = {
       values: [{ title: "Rezilyans konstriktif", text: "Solisyon yo pran an kont risk sismik ak siklonik, materyo ki disponib ak dirabilite travay la." }, { title: "Metriz teren", text: "Kowòdinasyon an baze sou eksperyans dirèk ekip yo, kalite egzekisyon ak kontrent lojistik chak sit." }, { title: "Achitekti pou moun", text: "Espas yo fèt dapre abitid, klima, kominote ak santiman moun genyen lè yo rete yon kote." }]
     },
     us: {
-      eyebrow: "Konseptris bilding", title: "Yon pakou ameriken ki mare anbisyon konsepsyon ak presizyon teknik.", portraitAlt: "Pòtrè konseptris bilding Marie Gaëlle Mentor ak yon rad jòn", portraitCaption: "Marie Gaëlle Mentor, konseptris bilding. Li pa gen lisans kòm achitèk nan Connecticut oswa New York.",
-      lead: "Marie Gaëlle Mentor rive Etazini ak yon baz nan achitekti ak sipèvizyon chantye li te deja bati ann Ayiti. New York ak Connecticut fè li dekouvri lòt kilti konstriksyon, règleman ak fason pou kolabore, pandan yo konfime yon prensip santral: yon bon lide vin achitekti sèlman lè li byen trase, byen kowòdone epi byen bati.",
+      eyebrow: "Konsepsyon ak planifikasyon rezidansyèl", title: "Yon pakou ameriken ki mare anbisyon konsepsyon ak presizyon teknik.", portraitAlt: "Pòtrè designer rezidansyèl Marie Gaëlle Mentor ak yon rad jòn", portraitCaption: "Marie Gaëlle Mentor, dirijan Marie Mentor Residential Design & Planning LLC. NOT A LICENSED ARCHITECT.",
+      lead: "Marie Gaëlle Mentor rive Etazini ak fòmasyon nan achitekti ak eksperyans sipèvizyon chantye li te deja bati ann Ayiti. New York ak Connecticut fè li dekouvri lòt kilti konstriksyon, règleman ak fason pou kolabore, pandan yo konfime yon prensip santral: yon bon lide reyisi lè li byen trase, byen kowòdone epi byen bati.",
       storyTitle: "Bati yon pratik ant New York ak Connecticut.",
       story: [
         "Chapit pwofesyonèl li Etazini kòmanse nan Queens an 2003. Nan PowerHouse Architect, li travay kòm desenatris epi li aprann tradui entansyon yo nan dokiman achitekti ki presi. Eksperyans sa a ranfòse je li pou pwopòsyon ak detay.",
@@ -679,12 +679,12 @@ window.MGM_DATA.profileLocales = {
         "An 2006, li antre nan AWA Design Group P.C. nan Stamford, Connecticut. Li patisipe nan pi gwo devlopman rezidansyèl nan yon ekip miltidisiplinè. Plan, elevasyon, ouvèti, sikilasyon ak peyizaj devlope kòm yon sèl lang achitekti.",
         "Apre sa, li fonde MGM Remodeling and Design nan Hamden, kote li se pwopriyetè, designer enteryè ak kontraktè ant 2009 ak 2010. Eksperyans sa a mete konsepsyon ak egzekisyon an kontak dirèk epi ranfòse kapasite li pou mennen yon pwojè rive nan yon rezilta konkrè.",
         "Travay li kòm enspektè rezidansyèl nan Institute of Professional Practice nan Woodbridge, ant 2010 ak 2011, ajoute konesans sou kòd, sekirite ak konfòmite. Rigueur teknik la pwoteje moun epi soutni kalite konsepsyon an.",
-        "Ant 2014 ak 2019, li itilize eksperyans sa a ann Ayiti kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA. Depi jiyè 2019, travay li nan New England Outdoor Product kenbe pratik li pre kliyan, materyo ak solisyon ki ka bati. Pratik endepandan konsepsyon bilding li Ozetazini reyini tout eksperyans sa yo, nan limit lalwa pèmèt.",
+        "Ant 2014 ak 2019, li itilize eksperyans sa a ann Ayiti kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA. Depi jiyè 2019, travay li nan New England Outdoor Product kenbe pratik li pre kliyan, materyo ak solisyon ki ka bati. Jodi a, Marie Mentor Residential Design & Planning LLC reyini plan rezidansyèl, plan etaj, elevasyon, ekstansyon, renovasyon ak dokiman planifikasyon, nan limit lalwa pèmèt. Marie Gaëlle Mentor pa yon achitèk lisansye Ozetazini.",
         "Nan kay kole, rezidans miltifamilyal ak kay endividyèl, metòd li kòmanse ak moun ki pral viv nan espas la. Sikilasyon klè, limyè natirèl, materyo dirab ak yon idantite ki respekte kontèks la rete priyorite."
       ],
-      facts: [{ value: "30+", label: "ane nan pratik achitekti" }, { value: "NY + CT", label: "eksperyans Etazini" }, { value: "3", label: "lang: angle, franse ak kreyòl" }],
-      quote: "Pi bon achitekti rezidansyèl la pa sèlman òganize espas; li bay lavi chak jou plis klate, konfò ak yon vrè santiman apatenans.",
-      timeline: [{ title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens." }, { title: "2003–2006", text: "Kòmansman pratik Etazini kòm desenatris nan PowerHouse Architect, apre sa nan konsepsyon rezidansyèl nan MGM Remodeling and Design." }, { title: "2006–2008", text: "Manm ekip konsepsyon AWA Design Group nan Stamford, avèk kontribisyon sou plan ak devlopman rezidansyèl." }, { title: "2009–2011", text: "Pwopriyetè, designer enteryè ak kontraktè nan Hamden, apre sa enspektè rezidansyèl nan Woodbridge." }, { title: "2014–2019", text: "Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA ann Ayiti." }, { title: "2019–Jodi a", text: "Travay nan konsepsyon bilding avèk New England Outdoor Product ak devlopman yon pratik endepandan Ozetazini." }],
+      facts: [{ value: "30+", label: "ane nan konsepsyon ak konstriksyon" }, { value: "NY + CT", label: "eksperyans Etazini" }, { value: "3", label: "lang: angle, franse ak kreyòl" }],
+      quote: "Pi bon konsepsyon rezidansyèl la pa sèlman òganize espas; li bay lavi chak jou plis klate, konfò ak yon vrè santiman apatenans.",
+      timeline: [{ title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens." }, { title: "2003–2006", text: "Kòmansman pratik Etazini kòm desenatris nan PowerHouse Architect, apre sa nan konsepsyon rezidansyèl nan MGM Remodeling and Design." }, { title: "2006–2008", text: "Manm ekip konsepsyon AWA Design Group nan Stamford, avèk kontribisyon sou plan ak devlopman rezidansyèl." }, { title: "2009–2011", text: "Pwopriyetè, designer enteryè ak kontraktè nan Hamden, apre sa enspektè rezidansyèl nan Woodbridge." }, { title: "2014–2019", text: "Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA ann Ayiti." }, { title: "2019–Jodi a", text: "Travay nan konsepsyon rezidansyèl avèk New England Outdoor Product ak direksyon Marie Mentor Residential Design & Planning LLC." }],
       values: [{ title: "Entèlijans rezidansyèl", text: "Plan yo òganize selon sikilasyon, limyè, konfò ak fason moun viv toutbon." }, { title: "Klate teknik", text: "Desen, kòd, materyo ak egzijans konstriksyon yo kowòdone pou entansyon an rete klè." }, { title: "Lidèchip kolaboratif", text: "Yon metòd atantif ak dirèk kenbe kliyan ak patnè yo aliyen depi premye lide a rive nan realizasyon an." }]
     }
   }

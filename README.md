@@ -13,7 +13,7 @@ Le site statique est servi directement depuis la racine du dépôt :
 - `contact.html` : prise de contact
 - `css/`, `js/`, `images/` et `assets/` : ressources partagées
 
-Les médias restent classés dans `images/usa/` et `images/haiti/` afin de préserver leur provenance. Le titre professionnel est présenté selon le territoire : Building Designer aux États-Unis et architecte licenciée en Haïti.
+Les médias restent classés dans `images/usa/` et `images/haiti/` afin de préserver leur provenance. Aux États-Unis, l’activité est présentée sous le nom `Marie Mentor Residential Design & Planning LLC`, avec la mention `NOT A LICENSED ARCHITECT`. En Haïti, Marie Gaëlle Mentor est présentée comme architecte licenciée.
 
 ## Commandes
 
