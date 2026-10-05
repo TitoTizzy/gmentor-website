@@ -15,6 +15,9 @@ async function verify(viewport) {
   }
 
   if (viewport.width < 980) await page.locator('[data-nav-toggle]').click();
+  const navigationFontSize = await page.locator('.main-nav a').first().evaluate((link) => Number.parseFloat(getComputedStyle(link).fontSize));
+  const minimumNavigationFontSize = viewport.width < 980 ? 17 : 16;
+  if (navigationFontSize < minimumNavigationFontSize) throw new Error(`Navigation text is too small at ${viewport.width}px`);
   const localeButtons = await page.locator('button[data-locale]').count();
   if (localeButtons !== 3) throw new Error('Language selector is incomplete');
   if (await page.locator('button[data-market]').count()) throw new Error('Legacy market selector is still present');
@@ -30,13 +33,17 @@ async function verify(viewport) {
 
   await page.goto(pathToFileURL(path.join(root, 'portfolio.html')).href);
   await page.waitForSelector('.book-page');
-  const expectedGalleryImages = await page.evaluate(() => window.MGM_DATA.projects.filter((project) => project.published).reduce((total, project) => total + project.gallery.length, 0));
+  const expectedGalleryImages = await page.evaluate(() => window.MGM_DATA.projects.filter((project) => project.published).reduce((total, project) => total + project.gallery.length + (project.coverFullPage ? 1 : 0), 0));
   if (await page.locator('.book-gallery-item img').count() !== expectedGalleryImages) throw new Error('The portfolio book does not expose the full image collection');
   const galleryLayoutsAreGrids = await page.locator('.book-gallery-layout').evaluateAll((layouts) => layouts.every((layout) => {
     const style = getComputedStyle(layout);
     return style.display === 'grid' && style.gridTemplateRows !== 'none';
   }));
   if (!galleryLayoutsAreGrids) throw new Error('Portfolio gallery pages are not using the full-height inner grid');
+  const drawingsHaveDedicatedPages = await page.locator('.book-gallery-item.is-drawing').evaluateAll((items) => items.every((item) => item.closest('.book-gallery-grid')?.children.length === 1));
+  if (!drawingsHaveDedicatedPages) throw new Error('Portfolio drawings must each have a dedicated page');
+  const fullPageImagesAreIsolated = await page.locator('.book-gallery-item.is-full-page').evaluateAll((items) => items.every((item) => item.closest('.book-gallery-grid')?.children.length === 1));
+  if (!fullPageImagesAreIsolated) throw new Error('Large portfolio images must each have a dedicated page');
 
   await page.goto(pathToFileURL(path.join(root, 'contact.html')).href);
   if (!(await page.locator('a[href="tel:+12038485807"]').isVisible())) throw new Error('Phone contact is missing');

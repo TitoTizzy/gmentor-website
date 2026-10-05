@@ -265,7 +265,8 @@
         {
           "src": "haiti/beach-house-render.webp",
           "alt": "Vue 3D de la Beach House",
-          "label": "Étude 3D"
+          "label": "Étude 3D",
+          "layout": "full"
         },
         {
           "src": "haiti/beach-house-render-angle.webp",
@@ -378,7 +379,8 @@
         {
           "src": "haiti/grand-sud-house-green.webp",
           "alt": "Maison verte réalisée dans le Grand Sud",
-          "label": "Réalisation"
+          "label": "Réalisation",
+          "layout": "full"
         },
         {
           "src": "haiti/grand-sud-construction.webp",
@@ -419,6 +421,7 @@
       "role": "Conception architecturale et visualisation 3D",
       "markets": ["ht"],
       "cover": "haiti/contemporary-residence-terrace-render.png",
+      "coverFullPage": true,
       "alt": "Visualisation 3D de la terrasse d’une résidence contemporaine en Haïti",
       "description": "Une étude résidentielle contemporaine organisée autour de volumes blancs, de menuiseries sombres, de parements en bois et d’espaces intérieurs largement ouverts. Ces images sont des visualisations 3D du projet : les plantations représentent l’intention paysagère et doivent être installées ultérieurement par le propriétaire.",
       "gallery": [
@@ -446,6 +449,7 @@
       "role": "Residential design and planning documentation",
       "markets": ["us"],
       "cover": "usa/two-level-residential-addition-built.png",
+      "coverFullPage": true,
       "alt": "Completed two-level porch, stairs and exterior access addition",
       "description": "A two-level exterior addition designed to improve independent access and outdoor use while integrating with the proportions and detailing of the existing residence. Elevation studies and construction drawings coordinated the stacked porches, stairs, landings, structure and roof connection.",
       "gallery": [
@@ -473,6 +477,7 @@
       "role": "Space planning and construction documents",
       "markets": ["us"],
       "cover": "usa/private-residence-anonymized-elevations.png",
+      "coverFullPage": true,
       "alt": "Anonymized architectural elevations for a private residence",
       "description": "An anonymized residential study combining four exterior elevations with a carefully organized floor plan and roof plan. The documents explore circulation, room relationships, openings and envelope proportions while protecting the client’s identity and project address.",
       "gallery": [
