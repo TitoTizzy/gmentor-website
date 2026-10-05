@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { projects, publishedProjects } from '../src/data/projects';
 
 describe('project publication rules', () => {
-  it('keeps Forest Street unpublished', () => {
-    expect(projects.find((project) => project.slug === 'forest-street')?.status).toBe('draft');
+  it('contains only the six cleared project records', () => {
+    expect(projects).toHaveLength(6);
   });
 
   it('never exposes draft projects in the public list', () => {
