@@ -15,15 +15,15 @@
       us: {
         eyebrow: "Architectural Designer",
         title: "A career shaped by architecture, leadership and an international point of view.",
-        portrait: "usa/water-view-east-cover.webp",
-        portraitAlt: "Water View East residential project in Norwalk, Connecticut",
-        portraitCaption: "Water View East, a residential collaboration in Norwalk, Connecticut.",
+        portrait: "usa/townhouse-waterbury-cover.webp",
+        portraitAlt: "Multifamily townhouse project in Waterbury, Connecticut",
+        portraitCaption: "Multifamily building design in Waterbury, Connecticut.",
         lead: "Marie Gaëlle Mentor brings three decades of architectural practice to every commission. Trained in Port-au-Prince and professionally established across New York and Connecticut, she has built a career around one clear ambition: creating places that are practical, expressive and genuinely comfortable to inhabit.",
         storyTitle: "Local rigor, global perspective.",
         story: [
           "Her United States journey began in New York, where she developed her command of architectural drafting and residential design before moving into increasingly independent roles. At PowerHouse Architect in Queens, MGM Remodeling and Design in New York, and later AWA Design Group in Stamford, she contributed to the drawings, planning and development of residential projects at multiple scales.",
           "Her practice expanded beyond design alone. As owner of MGM Remodeling and Design in Hamden, she combined interior design with contracting; as a residential inspector in Woodbridge, she strengthened her understanding of codes, compliance and the realities of implementation. Since 2019, her work with New England Outdoor Product has continued this hands-on approach, connecting client needs, technical requirements and buildable solutions.",
-          "Today, through Marie Gaëlle Mentor Architectural Designer LLC, she draws on experience across disciplines and borders. Her Connecticut portfolio includes townhouses and multifamily communities in Waterbury, Norwalk and Forest Street, with an emphasis on efficient plans, durable materials, natural light and a coherent relationship between architecture and everyday life."
+          "Today, through Marie Gaëlle Mentor Architectural Designer LLC, she draws on experience across disciplines and borders. Her Connecticut portfolio includes townhouses, additions and residential planning studies, with an emphasis on efficient plans, durable materials, natural light and a coherent relationship between architecture and everyday life."
         ],
         facts: [
           { value: "30+", label: "years in architectural practice" },
@@ -92,33 +92,6 @@
           { src: "usa/townhouse-waterbury-first-floor.webp", alt: "First floor plan for the Waterbury townhouse", label: "First floor plan" },
           { src: "usa/townhouse-waterbury-front-elevation.webp", alt: "Front elevation for the Waterbury townhouse", label: "Front elevation" }
         ], published: true, featured: true
-      },
-      {
-        slug: "water-view-east", title: "Water View East", country: "United States", city: "Norwalk, Connecticut", year: "", type: "Multifamily residential",
-        role: "Architectural design in collaboration with AWA Design Group", markets: ["us"], cover: "usa/water-view-east-cover.webp",
-        alt: "Symmetrical multifamily residence at Water View East in Norwalk",
-        description: "A multifamily residential project balancing classic proportions with contemporary living. Bay windows, balconies and a brick base give depth to the facade, while open interiors connect warm materials with generous natural light.",
-        gallery: [
-          { src: "usa/water-view-east-exterior.webp", alt: "Exterior view of Water View East", label: "Built work" },
-          { src: "usa/water-view-east-walkway.webp", alt: "Landscaped walkway at Water View East", label: "Landscape" },
-          { src: "usa/water-view-east-kitchen.webp", alt: "Open kitchen at Water View East", label: "Interior" },
-          { src: "usa/water-view-east-living.webp", alt: "Living space at Water View East", label: "Interior" },
-          { src: "usa/water-view-east-basement.webp", alt: "Basement plan for Water View East", label: "Basement plan" },
-          { src: "usa/water-view-east-front-elevation.webp", alt: "Front elevation for Water View East", label: "Front elevation" }
-        ], published: true, featured: true
-      },
-      {
-        slug: "forest-street", title: "Residential Development, Forest Street", country: "United States", city: "Connecticut", year: "", type: "Residential development",
-        role: "Architectural design in collaboration with AWA Design Group", markets: ["us"], cover: "usa/forest-street-cover.webp",
-        alt: "Townhouse development on Forest Street, Connecticut",
-        description: "A residential enclave shaped by symmetrical townhouses, gabled roofs and carefully aligned entries. The project combines detailed construction drawings with warm, open interiors and a coherent relationship between buildings and landscape.",
-        gallery: [
-          { src: "usa/forest-street-entry.webp", alt: "Entry facade on Forest Street", label: "Built work" },
-          { src: "usa/forest-street-living.webp", alt: "Living room in the Forest Street development", label: "Interior" },
-          { src: "usa/forest-street-stair.webp", alt: "Stair detail in the Forest Street development", label: "Interior" },
-          { src: "usa/forest-street-plans.webp", alt: "Floor plans for the Forest Street development", label: "Floor plans" },
-          { src: "usa/forest-street-elevations.webp", alt: "Elevations for the Forest Street development", label: "Elevations" }
-        ], published: true, featured: false
       },
       {
         slug: "beach-house-pierre-payen", title: "Beach House", country: "Haïti", city: "Pierre Payen, Montrouis", year: "", type: "Résidence côtière",

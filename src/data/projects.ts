@@ -31,36 +31,6 @@ export const projects: Project[] = [
     placeholder: false
   },
   {
-    slug: 'water-view-east',
-    title: 'Water View East',
-    country: 'United States',
-    city: 'Norwalk, Connecticut',
-    year: null,
-    type: 'Résidentiel multifamilial',
-    role: null,
-    credits: null,
-    cover: '/images/concept-townhouses.webp',
-    coverAlt: 'Temporary editorial concept image for a residential project',
-    status: 'draft',
-    featured: false,
-    placeholder: true
-  },
-  {
-    slug: 'forest-street',
-    title: 'Residential Development — Forest Street',
-    country: 'United States',
-    city: 'Connecticut',
-    year: null,
-    type: 'Résidentiel multifamilial',
-    role: null,
-    credits: null,
-    cover: '/images/concept-townhouses.webp',
-    coverAlt: 'Temporary architectural concept image',
-    status: 'draft',
-    featured: false,
-    placeholder: true
-  },
-  {
     slug: 'beach-house-pierre-payen',
     title: 'Beach House',
     country: 'Haïti',

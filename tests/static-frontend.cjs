@@ -25,11 +25,13 @@ async function verify(viewport) {
   if (!/Haiti|Haïti|Ayiti/.test(text) || !/United States|États-Unis|Etazini/.test(text)) {
     throw new Error('Projects from both regions are not visible');
   }
-  if (await page.locator('.project-card').count() < 9) throw new Error('The enriched project collection is incomplete');
+  const publishedProjectCount = await page.evaluate(() => window.MGM_DATA.projects.filter((project) => project.published).length);
+  if (await page.locator('.project-card').count() !== publishedProjectCount) throw new Error('The project collection is incomplete');
 
   await page.goto(pathToFileURL(path.join(root, 'portfolio.html')).href);
   await page.waitForSelector('.book-page');
-  if (await page.locator('.book-gallery-item img').count() < 43) throw new Error('The portfolio book does not expose the full image collection');
+  const expectedGalleryImages = await page.evaluate(() => window.MGM_DATA.projects.filter((project) => project.published).reduce((total, project) => total + project.gallery.length, 0));
+  if (await page.locator('.book-gallery-item img').count() !== expectedGalleryImages) throw new Error('The portfolio book does not expose the full image collection');
   const galleryLayoutsAreGrids = await page.locator('.book-gallery-layout').evaluateAll((layouts) => layouts.every((layout) => {
     const style = getComputedStyle(layout);
     return style.display === 'grid' && style.gridTemplateRows !== 'none';

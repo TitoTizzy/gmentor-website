@@ -143,7 +143,7 @@ function replaceAllLiteral(value, search, replacement) {
 function localizeHtml(file, html) {
   let result = html
     .replace(/<html lang="fr" data-theme="dark" data-market="ht" data-locale="fr">/g, '<html lang="en" data-theme="dark" data-market="us" data-locale="en">')
-    .replace(/src="images\/haiti\/beach-house-cover\.webp"/g, 'src="images/usa/water-view-east-cover.webp"')
+    .replace(/src="images\/haiti\/beach-house-cover\.webp"/g, 'src="images/usa/townhouse-waterbury-cover.webp"')
     .replace(/\sdata-ht-src="[^"]*"/g, "");
 
   for (const [search, replacement] of englishReplacements[file] || []) {
