@@ -33,7 +33,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--ink); }
-body { margin: 0; background: var(--ink); color: var(--text); font: 400 1rem/1.65 var(--sans); text-rendering: optimizeLegibility; }
+body { margin: 0; background: var(--ink); color: var(--text); font: 400 1.0625rem/1.65 var(--sans); text-rendering: optimizeLegibility; }
 img { display: block; max-width: 100%; }
 .theme-logo { content: var(--theme-logo); }
 .logo-on-dark { content: url('/assets/mgm-mark-white.png'); }
@@ -49,14 +49,14 @@ button { color: inherit; }
 .brand { display: flex; align-items: center; gap: .8rem; min-width: 0; }
 .brand img { width: 56px; height: 56px; object-fit: contain; }
 .brand span { display: grid; line-height: 1.15; }
-.brand strong { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; }
-.brand small { color: var(--muted); font-size: .72rem; margin-top: .3rem; }
+.brand strong { font-family: var(--serif); font-size: 1.16rem; font-weight: 500; }
+.brand small { color: var(--muted); font-size: .82rem; margin-top: .3rem; }
 .main-nav { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
-.main-nav a { font-size: .86rem; transition: color .2s ease; }
+.main-nav a { font-size: 1rem; font-weight: 500; transition: color .2s ease; }
 .main-nav a:hover { color: var(--copper); }
 .header-tools { display: flex; justify-content: flex-end; align-items: center; gap: .55rem; }
 .segmented { display: inline-flex; border: 1px solid var(--line); padding: 3px; }
-.segmented button { min-height: 34px; padding: 0 .65rem; border: 0; background: transparent; font-size: .72rem; cursor: pointer; }
+.segmented button { min-height: 36px; padding: 0 .7rem; border: 0; background: transparent; font-size: .82rem; cursor: pointer; }
 .segmented button[aria-pressed='true'] { background: var(--copper); color: #120b05; }
 .icon-button { width: 44px; height: 44px; display: inline-grid; place-items: center; border: 1px solid var(--line); background: transparent; cursor: pointer; }
 .nav-toggle { display: none; }
@@ -198,7 +198,7 @@ main { min-height: 75vh; }
   .nav-toggle { display: inline-grid; grid-column: 2; grid-row: 1; }
   .main-nav { display: none; position: absolute; inset: 78px 0 auto; padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; }
   .main-nav.is-open { display: flex; }
-  .main-nav a { min-height: 48px; display: flex; align-items: center; }
+  .main-nav a { min-height: 48px; display: flex; align-items: center; font-size: 1.08rem; }
   .header-tools { grid-column: 1 / -1; justify-content: flex-start; display: none; position: absolute; top: 288px; inset-inline: 0; padding: 1rem; background: var(--surface); }
   .main-nav.is-open + .header-tools { display: flex; }
   .brand span { display: none; }

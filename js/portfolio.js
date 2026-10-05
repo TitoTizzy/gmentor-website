@@ -15,10 +15,18 @@
     });
   }
 
+  function isDrawing(item) {
+    return /plan|elevation|élévation|coupe|section|fondation|foundation|floor|roof|cad/i.test((item.label || "") + " " + (item.src || ""));
+  }
+
+  function needsFullPage(item) {
+    return isDrawing(item) || item.layout === "full";
+  }
+
   function galleryPage(project, items, pageNumber, copy) {
     var cells = items.map(function (item) {
-      var isDrawing = /plan|elevation|coupe|section|fondation|floor|roof|cad/i.test(item.label);
-      return '<figure class="book-gallery-item' + (isDrawing ? ' is-drawing' : '') + '"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"><figcaption>' + escapeHtml(item.label) + '</figcaption></figure>';
+      var drawing = isDrawing(item);
+      return '<figure class="book-gallery-item' + (drawing ? ' is-drawing' : '') + (needsFullPage(item) ? ' is-full-page' : '') + '"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"><figcaption>' + escapeHtml(item.label) + '</figcaption></figure>';
     }).join("");
     return '<article class="book-page book-gallery"><div class="book-gallery-layout"><header><span>' + escapeHtml(copy.selection) + ' ' + pageNumber + '</span><strong>' + escapeHtml(project.title) + '</strong></header><div class="book-gallery-grid book-gallery-grid-' + items.length + '">' + cells + '</div></div></article>';
   }
@@ -27,9 +35,30 @@
     var pages = [
       '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>' + copy.type + '</dt><dd>' + escapeHtml(project.type) + '</dd></div><div><dt>' + copy.role + '</dt><dd>' + escapeHtml(project.role) + '</dd></div></dl></div></div></article>',
     ];
-    for (var index = 0; index < project.gallery.length; index += 4) {
-      pages.push(galleryPage(project, project.gallery.slice(index, index + 4), (index / 4) + 1, copy));
+    var galleryGroups = [];
+    var photoGroup = [];
+    function flushPhotos() {
+      if (!photoGroup.length) return;
+      galleryGroups.push(photoGroup);
+      photoGroup = [];
     }
+    if (project.coverFullPage) {
+      galleryGroups.push({ items: [{ src: project.cover, alt: project.alt, label: copy.featuredImage, layout: "full" }], fixed: true });
+    }
+    project.gallery.forEach(function (item) {
+      if (needsFullPage(item)) {
+        flushPhotos();
+        galleryGroups.push({ items: [item], fixed: true });
+        return;
+      }
+      photoGroup.push(item);
+      if (photoGroup.length === 4) flushPhotos();
+    });
+    flushPhotos();
+    galleryGroups.forEach(function (group, index) {
+      var items = group.items || group;
+      pages.push(galleryPage(project, items, index + 1, copy));
+    });
     return pages;
   }
 
@@ -48,6 +77,7 @@
       role: "Role",
       selection: "Portfolio selection",
       contact: "Discuss a project",
+      featuredImage: "Featured view",
       credential: "Residential Design & Planning · Licensed Architect in Haiti"
     } : locale === "kr" ? {
       label: "Ayiti · Etazini",
@@ -58,6 +88,7 @@
       role: "Wòl",
       selection: "Seleksyon pwojè",
       contact: "Pale sou yon pwojè",
+      featuredImage: "Vi prensipal",
       credential: "Konsepsyon ak planifikasyon rezidansyèl · Achitèk lisansye ann Ayiti"
     } : {
       label: "Haïti · États-Unis",
@@ -68,6 +99,7 @@
       role: "Mission",
       selection: "Sélection du projet",
       contact: "Parler de votre projet",
+      featuredImage: "Vue principale",
       credential: "Design résidentiel et planification · Architecte licenciée en Haïti"
     };
     var pages = [
