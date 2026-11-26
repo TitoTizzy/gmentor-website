@@ -30,8 +30,8 @@
     var localized = translated ? Object.assign({}, project, translated) : Object.assign({}, project);
     var galleryLabels = {
       en: { "Étude 3D": "3D study", "Chantier": "Construction", "Réalisation": "Built work", "Vue": "View", "Vue intérieure": "Interior view", "Plan": "Plan", "Coupes": "Sections", "Intérieur": "Interior", "Fondations": "Foundations", "Plan 2 chambres": "Two-bedroom plan", "Plan 3 chambres": "Three-bedroom plan" },
-      fr: { "Built work": "Réalisation", "First floor plan": "Plan du rez-de-chaussée", "Front elevation": "Élévation avant", "Landscape": "Paysage", "Interior": "Intérieur", "Basement plan": "Plan du sous-sol", "Floor plans": "Plans", "Elevations": "Élévations" },
-      kr: { "Built work": "Reyalizasyon", "First floor plan": "Plan premye nivo", "Front elevation": "Elevasyon devan", "Landscape": "Peyizaj", "Interior": "Enteryè", "Basement plan": "Plan sousòl", "Floor plans": "Plan yo", "Elevations": "Elevasyon yo", "Étude 3D": "Etid 3D", "Chantier": "Chantye", "Réalisation": "Reyalizasyon", "Vue": "Vi", "Vue intérieure": "Vi enteryè", "Plan": "Plan", "Coupes": "Koup", "Intérieur": "Enteryè", "Fondations": "Fondasyon", "Plan 2 chambres": "Plan 2 chanm", "Plan 3 chambres": "Plan 3 chanm" }
+      fr: { "Built work": "Réalisation", "Construction": "Chantier", "Completed": "Projet achevé", "AI-assisted 3D": "3D assistée par IA", "CAD development": "Développement CAO", "First floor plan": "Plan du rez-de-chaussée", "Front elevation": "Élévation avant", "Landscape": "Paysage", "Interior": "Intérieur", "Basement plan": "Plan du sous-sol", "Floor plans": "Plans", "Elevations": "Élévations" },
+      kr: { "Built work": "Reyalizasyon", "Construction": "Chantye", "Completed": "Pwojè fini", "AI-assisted 3D": "3D ak asistans IA", "CAD development": "Devlopman CAD", "First floor plan": "Plan premye nivo", "Front elevation": "Elevasyon devan", "Landscape": "Peyizaj", "Interior": "Enteryè", "Basement plan": "Plan sousòl", "Floor plans": "Plan yo", "Elevations": "Elevasyon yo", "Étude 3D": "Etid 3D", "Chantier": "Chantye", "Réalisation": "Reyalizasyon", "Vue": "Vi", "Vue intérieure": "Vi enteryè", "Plan": "Plan", "Coupes": "Koup", "Intérieur": "Enteryè", "Fondations": "Fondasyon", "Plan 2 chambres": "Plan 2 chanm", "Plan 3 chambres": "Plan 3 chanm" }
     };
     localized.gallery = (project.gallery || []).map(function (item, index) {
       var itemTranslation = translated && translated.gallery ? translated.gallery[index] : null;
@@ -85,15 +85,6 @@
       footer.innerHTML = '<div><img class="logo-on-dark" src="' + href("assets/mgm-mark-white.png") + '" alt="Marie Gaëlle Mentor" width="80" height="80"><p data-footer-title>' + shellText.footer + '</p></div>' +
         '<div class="footer-links"><a href="' + href("privacy.html") + '" data-i18n data-en="Privacy" data-fr="Confidentialité" data-kr="Konfidansyalite">Confidentialité</a><a href="' + href("cookies.html") + '">Cookies</a><a href="' + href("legal.html") + '" data-i18n data-en="Legal notice" data-fr="Mentions légales" data-kr="Avi legal">Mentions légales</a></div>' +
         '<p class="footer-note" data-i18n data-en="© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Licensed Architect in Haiti" data-fr="© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Architecte licenciée en Haïti" data-kr="© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Achitèk lisansye ann Ayiti">© ' + new Date().getFullYear() + ' Marie Mentor Residential Design & Planning LLC · NOT A LICENSED ARCHITECT · Architecte licenciée en Haïti</p>';
-    }
-    if (!document.querySelector("[data-consent]")) {
-      var consent = document.createElement("aside");
-      consent.className = "consent";
-      consent.hidden = true;
-      consent.dataset.consent = "";
-      consent.setAttribute("aria-label", "Préférences statistiques");
-      consent.innerHTML = '<p data-i18n data-en="This website uses privacy-friendly analytics to improve its content." data-fr="Ce site utilise des statistiques respectueuses de la vie privée afin d’améliorer son contenu." data-kr="Sit sa a itilize estatistik ki respekte vi prive pou amelyore kontni li.">Ce site utilise des statistiques respectueuses de la vie privée afin d’améliorer son contenu.</p><div class="consent-actions"><button class="button button-primary" type="button" data-consent-choice="accepted" data-i18n data-en="Accept" data-fr="Accepter" data-kr="Aksepte">Accepter</button><button class="button" type="button" data-consent-choice="refused" data-i18n data-en="Decline" data-fr="Refuser" data-kr="Refize">Refuser</button></div>';
-      body.appendChild(consent);
     }
   }
 
@@ -158,18 +149,6 @@
       navButton.firstElementChild.textContent = open ? "×" : "☰";
       nav.classList.toggle("open", open);
       body.classList.toggle("menu-open", open);
-    });
-  }
-
-  function initializeConsent() {
-    var panel = document.querySelector("[data-consent]");
-    if (!panel || localStorage.getItem("mgm-analytics-consent")) return;
-    panel.hidden = false;
-    panel.querySelectorAll("[data-consent-choice]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        localStorage.setItem("mgm-analytics-consent", button.dataset.consentChoice);
-        panel.hidden = true;
-      });
     });
   }
 
@@ -302,18 +281,18 @@
     }
     project = localizedProject(project);
     var detailLabels = currentLocale() === "en" ? {
-      project: "Project", location: "Location", year: "Year", type: "Type", role: "Role", unknownYear: "Not specified", gallery: "Project photos and drawings"
+      project: "Project", location: "Location", year: "Year", type: "Type", program: "Program", gallery: "Project photos and drawings"
     } : currentLocale() === "kr" ? {
-      project: "Pwojè", location: "Kote", year: "Ane", type: "Kalite", role: "Wòl", unknownYear: "Pa presize", gallery: "Foto ak plan pwojè a"
+      project: "Pwojè", location: "Kote", year: "Ane", type: "Kalite", program: "Pwogram", gallery: "Foto ak plan pwojè a"
     } : {
-      project: "Projet", location: "Lieu", year: "Année", type: "Typologie", role: "Mission", unknownYear: "Non précisée", gallery: "Photos et plans du projet"
+      project: "Projet", location: "Lieu", year: "Année", type: "Typologie", program: "Programme", gallery: "Photos et plans du projet"
     };
     document.title = project.title + " | Marie Gaëlle Mentor";
     var gallery = (project.gallery || []).map(function (item, index) {
       return '<figure class="project-media project-media-' + ((index % 5) + 1) + '"><img src="' + href("images/" + item.src) + '" alt="' + item.alt + '" loading="lazy"><figcaption>' + item.label + '</figcaption></figure>';
     }).join("");
     target.innerHTML = '<section class="project-hero"><img src="' + href("images/" + project.cover) + '" alt="' + project.alt + '"><div class="project-hero-copy"><p class="eyebrow">' + project.type + '</p><h1>' + project.title + '</h1></div></section>' +
-      '<div class="container"><section class="project-intro band"><div><p class="eyebrow">' + detailLabels.project + '</p><p class="project-lead">' + project.description + '</p></div><dl class="project-meta"><div><dt>' + detailLabels.location + '</dt><dd>' + ([project.city, project.country].filter(Boolean).join(", ") || "—") + '</dd></div><div><dt>' + detailLabels.year + '</dt><dd>' + (project.year || detailLabels.unknownYear) + '</dd></div><div><dt>' + detailLabels.type + '</dt><dd>' + project.type + '</dd></div><div><dt>' + detailLabels.role + '</dt><dd>' + project.role + '</dd></div></dl></section>' +
+      '<div class="container"><section class="project-intro band"><div><p class="eyebrow">' + detailLabels.project + '</p><p class="project-lead">' + project.description + '</p></div><dl class="project-meta"><div><dt>' + detailLabels.location + '</dt><dd>' + ([project.city, project.country].filter(Boolean).join(", ") || "—") + '</dd></div>' + (project.year ? '<div><dt>' + detailLabels.year + '</dt><dd>' + project.year + '</dd></div>' : '') + '<div><dt>' + detailLabels.type + '</dt><dd>' + project.type + '</dd></div>' + (project.program ? '<div><dt>' + detailLabels.program + '</dt><dd>' + project.program + '</dd></div>' : '') + '</dl></section>' +
       '<section class="project-gallery band" aria-label="' + detailLabels.gallery + '">' + gallery + '</section></div>';
   }
 
@@ -399,14 +378,26 @@
         form.reportValidity();
         return;
       }
-      var requests = JSON.parse(localStorage.getItem("mgm-demo-requests") || "[]");
-      var request = Object.fromEntries(new FormData(form));
-      request.locale = root.dataset.locale || "fr";
-      request.createdAt = new Date().toISOString();
-      requests.push(request);
-      localStorage.setItem("mgm-demo-requests", JSON.stringify(requests));
-      form.reset();
-      if (status) status.textContent = currentLocale() === "en" ? "Request saved in this demonstration. The backend can then send it to Supabase." : currentLocale() === "kr" ? "Demann lan anrejistre nan demonstrasyon sa a. Sèvè a kapab voye li bay Supabase apre sa." : "Demande enregistrée dans cette démonstration. Le backend pourra ensuite l’envoyer à Supabase.";
+      // Static hosting has no server: open a pre-filled email to Mme Mentor so no request is lost.
+      var data = Object.fromEntries(new FormData(form));
+      var locale = currentLocale();
+      var t = locale === "en" ? { subject: "Project request", name: "Name", email: "Email", phone: "Phone", whatsapp: "WhatsApp", place: "Location", type: "Project type", message: "Message", yes: "Yes", no: "No", status: "Your email app is opening with the request ready to send. If nothing opens, write to mariegmentor@gmail.com or call +1 203-848-5807." }
+        : locale === "kr" ? { subject: "Demann pwojè", name: "Non", email: "Imèl", phone: "Telefòn", whatsapp: "WhatsApp", place: "Kote", type: "Kalite pwojè", message: "Mesaj", yes: "Wi", no: "Non", status: "Aplikasyon imèl ou ap louvri ak demann lan pare pou voye. Si anyen pa louvri, ekri mariegmentor@gmail.com oswa rele +1 203-848-5807." }
+        : { subject: "Demande de projet", name: "Nom", email: "Courriel", phone: "Téléphone", whatsapp: "WhatsApp", place: "Lieu", type: "Type de projet", message: "Message", yes: "Oui", no: "Non", status: "Votre messagerie s’ouvre avec la demande prête à envoyer. Si rien ne s’ouvre, écrivez à mariegmentor@gmail.com ou appelez le +1 203-848-5807." };
+      var lines = [
+        t.name + ": " + (data.fullName || ""),
+        t.email + ": " + (data.email || ""),
+        t.phone + ": " + (data.phone || ""),
+        t.whatsapp + ": " + (data.usesWhatsapp ? t.yes : t.no),
+        t.place + ": " + [data.city, data.country].filter(Boolean).join(", "),
+        t.type + ": " + (data.projectType || ""),
+        "",
+        t.message + ":",
+        data.description || ""
+      ];
+      var subject = t.subject + " – " + (data.fullName || "");
+      window.location.href = "mailto:mariegmentor@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+      if (status) status.textContent = t.status;
     });
   }
 
@@ -419,7 +410,6 @@
   renderProjectDetail();
   renderAbout();
   bindControls();
-  initializeConsent();
   initializeContact();
   syncPreferences();
   document.addEventListener("mgm:preferences", filterProjects);

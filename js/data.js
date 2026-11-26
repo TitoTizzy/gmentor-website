@@ -37,10 +37,10 @@
     "us": {
       "eyebrow": "Residential Design & Planning",
       "title": "An American journey connecting design ambition with technical precision.",
-      "portrait": "marie-gaelle-mentor-portrait.png",
+      "portrait": "marie-gaelle-mentor-portrait.webp",
       "portraitAlt": "Portrait of residential designer Marie Gaëlle Mentor wearing yellow",
       "portraitCaption": "Marie Gaëlle Mentor, principal of Marie Mentor Residential Design & Planning LLC. NOT A LICENSED ARCHITECT.",
-      "chapterPortrait": "usa/townhouse-waterbury-new-england.png",
+      "chapterPortrait": "usa/townhouse-waterbury-new-england.webp",
       "chapterPortraitAlt": "New England-style multifamily townhouse in Waterbury, Connecticut",
       "chapterPortraitCaption": "Multifamily building design in Waterbury, Connecticut.",
       "lead": "Marie Gaëlle Mentor arrived in the United States with architectural education and field supervision experience already shaped in Haiti. New York and Connecticut introduced new building cultures, regulations and forms of collaboration, while confirming a central principle of her work: a strong idea succeeds only when it is clearly drawn, responsibly coordinated and well built.",
@@ -113,7 +113,7 @@
     "ht": {
       "eyebrow": "Architecte licenciée en Haïti",
       "title": "En Haïti, une architecture pensée sur le papier et éprouvée sur le terrain.",
-      "portrait": "marie-gaelle-mentor-portrait.png",
+      "portrait": "marie-gaelle-mentor-portrait.webp",
       "portraitAlt": "Portrait de l’architecte Marie Gaëlle Mentor portant une tenue jaune",
       "portraitCaption": "Marie Gaëlle Mentor, architecte licenciée en Haïti.",
       "lead": "Le parcours professionnel de Marie Gaëlle Mentor commence à Port-au-Prince et se développe au contact direct des chantiers, des entreprises, des institutions et des familles. Depuis 1995, sa pratique réunit conception, supervision, coordination et réalisation, avec une attention constante portée à la sécurité, au climat, aux ressources disponibles et à la dignité des usages.",
@@ -200,61 +200,67 @@
   "projects": [
     {
       "slug": "townhouse-waterbury",
-      "title": "Townhouse",
+      "title": "Townhouses",
       "country": "United States",
       "city": "Waterbury, Connecticut",
-      "year": "",
-      "type": "New England multifamily housing",
-      "role": "Residential design and planning",
+      "year": "2022",
+      "type": "Townhouses",
       "markets": [
         "us"
       ],
-      "cover": "usa/townhouse-waterbury-new-england.png",
-      "alt": "Completed blue-grey New England style multifamily townhouse in Waterbury, Connecticut",
-      "description": "Traditional New England-style multifamily and townhouse architecture with Colonial Revival influence. The exterior vocabulary draws on New England vernacular through repeated gables, symmetrical window rhythms, horizontal siding, white trim and clearly defined residential entries.",
+      "cover": "usa/townhouse-waterbury-finished-garages.webp",
+      "alt": "Completed blue-grey New England style townhouses in Waterbury, Connecticut",
+      "description": "Traditional New England-style townhouse architecture with Colonial Revival influence: four units of three bedrooms and one bathroom each. The exterior vocabulary draws on New England vernacular through repeated gables, symmetrical window rhythms, horizontal siding, white trim and clearly defined residential entries.",
       "gallery": [
         {
-          "src": "usa/townhouse-waterbury-cover.webp",
-          "alt": "Construction view of the Waterbury townhouse",
-          "label": "Built work"
-        },
-        {
-          "src": "usa/townhouse-waterbury-side.webp",
-          "alt": "Side view of the Waterbury townhouse",
-          "label": "Built work"
-        },
-        {
-          "src": "usa/townhouse-waterbury-rear.webp",
-          "alt": "Rear facade and garages of the Waterbury townhouse",
-          "label": "Built work"
-        },
-        {
-          "src": "usa/townhouse-waterbury-end.webp",
-          "alt": "End facade of the Waterbury townhouse",
-          "label": "Built work"
-        },
-        {
-          "src": "usa/townhouse-waterbury-first-floor.webp",
-          "alt": "First floor plan for the Waterbury townhouse",
+          "src": "usa/townhouse-waterbury-first-floor-wm.webp",
+          "alt": "First floor plan for the Waterbury townhouses",
           "label": "First floor plan"
         },
         {
-          "src": "usa/townhouse-waterbury-front-elevation.webp",
-          "alt": "Front elevation for the Waterbury townhouse",
+          "src": "usa/townhouse-waterbury-front-elevation-wm.webp",
+          "alt": "Front elevation for the Waterbury townhouses",
           "label": "Front elevation"
+        },
+        {
+          "src": "usa/townhouse-waterbury-cover.webp",
+          "alt": "Construction view of the Waterbury townhouses",
+          "label": "Construction"
+        },
+        {
+          "src": "usa/townhouse-waterbury-side.webp",
+          "alt": "Side facade of the Waterbury townhouses during construction",
+          "label": "Construction"
+        },
+        {
+          "src": "usa/townhouse-waterbury-rear.webp",
+          "alt": "Rear facade and garages of the Waterbury townhouses during construction",
+          "label": "Construction"
+        },
+        {
+          "src": "usa/townhouse-waterbury-finished-garages.webp",
+          "alt": "Completed garage facade of the Waterbury townhouses",
+          "label": "Completed",
+          "layout": "full"
+        },
+        {
+          "src": "usa/townhouse-waterbury-finished-entries.webp",
+          "alt": "Completed entrance facade with porches of the Waterbury townhouses",
+          "label": "Completed",
+          "layout": "full"
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "program": "4 units · 3 bedrooms / 1 bathroom each"
     },
     {
       "slug": "beach-house-pierre-payen",
       "title": "Beach House",
       "country": "Haïti",
       "city": "Pierre Payen, Montrouis",
-      "year": "",
+      "year": "2019",
       "type": "Résidence côtière",
-      "role": "Conception architecturale et coordination",
       "markets": [
         "ht"
       ],
@@ -263,49 +269,55 @@
       "description": "Construite en bord de mer à Pierre Payen, cette résidence associe une organisation ouverte, de larges baies et des prolongements extérieurs tournés vers le paysage. Le projet a été livré dans un contexte logistique exigeant, avec une attention constante portée à la cohérence entre conception et réalisation.",
       "gallery": [
         {
-          "src": "haiti/beach-house-render.webp",
+          "src": "haiti/beach-house-render-v2.webp",
           "alt": "Vue 3D de la Beach House",
           "label": "Étude 3D",
           "layout": "full"
         },
         {
-          "src": "haiti/beach-house-render-angle.webp",
+          "src": "haiti/beach-house-render-angle-v2.webp",
           "alt": "Vue 3D latérale de la Beach House",
           "label": "Étude 3D"
         },
         {
-          "src": "haiti/beach-house-construction.webp",
+          "src": "haiti/beach-house-construction-v2.webp",
           "alt": "Beach House en cours de construction",
           "label": "Chantier"
         },
         {
-          "src": "haiti/beach-house-patio.webp",
-          "alt": "Patio couvert de la Beach House",
+          "src": "haiti/beach-house-patio-v2.webp",
+          "alt": "Galerie couverte de la Beach House",
           "label": "Réalisation"
         },
         {
-          "src": "haiti/beach-house-sea-view.webp",
-          "alt": "Vue sur la mer depuis la Beach House",
+          "src": "haiti/beach-house-living-room.webp",
+          "alt": "Séjour ouvert de la Beach House",
+          "label": "Intérieur"
+        },
+        {
+          "src": "haiti/beach-house-stair-hall.webp",
+          "alt": "Escalier et hall de la Beach House",
+          "label": "Intérieur"
+        },
+        {
+          "src": "haiti/beach-house-sea-view-v2.webp",
+          "alt": "Vue sur la mer depuis la terrasse",
           "label": "Vue"
         },
         {
-          "src": "haiti/beach-house-window-view.webp",
+          "src": "haiti/beach-house-window-view-v2.webp",
           "alt": "Baie ouverte sur la mer",
           "label": "Vue intérieure"
         },
         {
-          "src": "haiti/beach-house-floor-plan.webp",
+          "src": "haiti/beach-house-floor-plan-wm.webp",
           "alt": "Plan de la Beach House",
           "label": "Plan"
-        },
-        {
-          "src": "haiti/beach-house-sections.webp",
-          "alt": "Coupes de la Beach House",
-          "label": "Coupes"
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "program": "5 chambres · 4,5 salles de bain"
     },
     {
       "slug": "extension-uce",
@@ -314,46 +326,50 @@
       "city": "",
       "year": "2018",
       "type": "Bureaux et projet institutionnel",
-      "role": "Conception et suivi de construction",
       "markets": [
         "ht"
       ],
-      "cover": "haiti/uce-cover.webp",
+      "cover": "haiti/uce-cover-v2.webp",
       "alt": "Extension légère des bureaux de l’Unité Centrale d’Exécution en Haïti",
       "description": "Une structure légère conçue au-dessus d’une piscine existante, avec la possibilité d’être démontée si le site devait être restauré. Le projet préserve les arbres et arbustes voisins tout en répondant aux contraintes d’accès et d’implantation.",
       "gallery": [
         {
-          "src": "haiti/uce-framing-interior.webp",
+          "src": "haiti/uce-framing-interior-v2.webp",
           "alt": "Ossature bois intérieure de l’extension UCE",
           "label": "Chantier"
         },
         {
-          "src": "haiti/uce-framing-exterior.webp",
+          "src": "haiti/uce-framing-exterior-v2.webp",
           "alt": "Ossature bois extérieure de l’extension UCE",
           "label": "Chantier"
         },
         {
-          "src": "haiti/uce-construction.webp",
+          "src": "haiti/uce-construction-v2.webp",
           "alt": "Pose du revêtement extérieur de l’extension UCE",
           "label": "Chantier"
         },
         {
-          "src": "haiti/uce-completed.webp",
-          "alt": "Extension UCE achevée",
+          "src": "haiti/uce-completed-v2.webp",
+          "alt": "Extension UCE achevée et cour",
           "label": "Réalisation"
         },
         {
-          "src": "haiti/uce-interior.webp",
-          "alt": "Couloir intérieur de l’extension UCE",
+          "src": "haiti/uce-office-interior.webp",
+          "alt": "Bureau aménagé dans l’extension UCE",
           "label": "Intérieur"
         },
         {
-          "src": "haiti/uce-office-plan.webp",
+          "src": "haiti/uce-office-interior-2.webp",
+          "alt": "Espace de travail de l’extension UCE",
+          "label": "Intérieur"
+        },
+        {
+          "src": "haiti/uce-office-plan-wm.webp",
           "alt": "Plan des bureaux de l’extension UCE",
           "label": "Plan"
         },
         {
-          "src": "haiti/uce-foundation-plan.webp",
+          "src": "haiti/uce-foundation-plan-wm.webp",
           "alt": "Plan de fondation de l’extension UCE",
           "label": "Fondations"
         }
@@ -368,7 +384,6 @@
       "city": "Grand Sud",
       "year": "2021",
       "type": "Habitat résilient",
-      "role": "Conception, supervision et construction",
       "markets": [
         "ht"
       ],
@@ -398,12 +413,12 @@
           "label": "Étude 3D"
         },
         {
-          "src": "haiti/grand-sud-two-bedroom-plan.webp",
+          "src": "haiti/grand-sud-two-bedroom-plan-wm.webp",
           "alt": "Plan d’une maison de deux chambres",
           "label": "Plan 2 chambres"
         },
         {
-          "src": "haiti/grand-sud-three-bedroom-plan.webp",
+          "src": "haiti/grand-sud-three-bedroom-plan-wm.webp",
           "alt": "Plan d’une maison de trois chambres",
           "label": "Plan 3 chambres"
         }
@@ -418,20 +433,21 @@
       "city": "",
       "year": "",
       "type": "Résidence privée",
-      "role": "Conception architecturale et visualisation 3D",
-      "markets": ["ht"],
-      "cover": "haiti/contemporary-residence-terrace-render.png",
+      "markets": [
+        "ht"
+      ],
+      "cover": "haiti/contemporary-residence-terrace-render.webp",
       "coverFullPage": true,
       "alt": "Visualisation 3D de la terrasse d’une résidence contemporaine en Haïti",
       "description": "Une étude résidentielle contemporaine organisée autour de volumes blancs, de menuiseries sombres, de parements en bois et d’espaces intérieurs largement ouverts. Ces images sont des visualisations 3D du projet : les plantations représentent l’intention paysagère et doivent être installées ultérieurement par le propriétaire.",
       "gallery": [
         {
-          "src": "haiti/contemporary-residence-entry-render.png",
+          "src": "haiti/contemporary-residence-entry-render.webp",
           "alt": "Visualisation 3D de l’entrée et du parement en bois",
           "label": "Étude 3D · entrée"
         },
         {
-          "src": "haiti/contemporary-residence-interior-render.png",
+          "src": "haiti/contemporary-residence-interior-render.webp",
           "alt": "Visualisation 3D de l’espace de vie intérieur",
           "label": "Étude 3D · intérieur"
         }
@@ -444,22 +460,23 @@
       "title": "Two-Level Residential Addition",
       "country": "United States",
       "city": "",
-      "year": "",
+      "year": "2026",
       "type": "Residential renovation",
-      "role": "Residential design and planning documentation",
-      "markets": ["us"],
-      "cover": "usa/two-level-residential-addition-built.png",
+      "markets": [
+        "us"
+      ],
+      "cover": "usa/two-level-residential-addition-built.webp",
       "coverFullPage": true,
       "alt": "Completed two-level porch, stairs and exterior access addition",
       "description": "A two-level exterior addition designed to improve independent access and outdoor use while integrating with the proportions and detailing of the existing residence. Elevation studies and construction drawings coordinated the stacked porches, stairs, landings, structure and roof connection.",
       "gallery": [
         {
-          "src": "usa/two-level-residential-addition-elevation.png",
+          "src": "usa/two-level-residential-addition-elevation-wm.webp",
           "alt": "Annotated front elevation of the residential addition",
           "label": "Front elevation"
         },
         {
-          "src": "usa/two-level-residential-addition-cad.png",
+          "src": "usa/two-level-residential-addition-cad-wm.webp",
           "alt": "CAD elevation study of the two-level porch and stairs",
           "label": "CAD development"
         }
@@ -471,24 +488,31 @@
       "slug": "private-residential-planning-study",
       "title": "Private Residential Planning Study",
       "country": "United States",
-      "city": "Location withheld",
-      "year": "",
-      "type": "Residential design study",
-      "role": "Space planning and construction documents",
-      "markets": ["us"],
-      "cover": "usa/private-residence-anonymized-elevations.png",
-      "coverFullPage": true,
-      "alt": "Anonymized architectural elevations for a private residence",
-      "description": "An anonymized residential study combining four exterior elevations with a carefully organized floor plan and roof plan. The documents explore circulation, room relationships, openings and envelope proportions while protecting the client’s identity and project address.",
+      "city": "Greensboro, North Carolina",
+      "year": "2026",
+      "type": "Single-family residence",
+      "markets": [
+        "us"
+      ],
+      "cover": "usa/greensboro-ai-assisted-3d.webp",
+      "coverFullPage": false,
+      "alt": "AI-assisted 3D visualization of a two-story residence in Greensboro, North Carolina",
+      "description": "A two-story single-family residence in Greensboro, North Carolina, with three bedrooms and three and a half bathrooms. The four exterior elevations combine a hipped roof, a covered front porch, horizontal clapboard siding and board-and-batten and shingle accents. The cover image is an AI-assisted 3D visualization developed from the construction drawings; the client’s identity and address remain confidential.",
       "gallery": [
         {
-          "src": "usa/private-residence-anonymized-floor-plans.png",
-          "alt": "Anonymized floor plan and roof plan for a private residence",
-          "label": "Floor and roof plans"
+          "src": "usa/greensboro-building-1-elevations-wm.webp",
+          "alt": "Front, right, rear and left elevations of the Greensboro residence",
+          "label": "Elevations"
+        },
+        {
+          "src": "usa/greensboro-ai-assisted-3d.webp",
+          "alt": "AI-assisted 3D visualization of the Greensboro residence",
+          "label": "AI-assisted 3D"
         }
       ],
       "published": true,
-      "featured": false
+      "featured": false,
+      "program": "3 bedrooms · 3.5 bathrooms"
     }
   ]
 };
@@ -496,83 +520,83 @@
 window.MGM_DATA.projectLocales = {
   en: {
     "beach-house-pierre-payen": {
-      title: "Beach House", country: "Haiti", city: "Pierre Payen, Montrouis", type: "Coastal residence", role: "Architectural design and coordination",
+      title: "Beach House", country: "Haiti", city: "Pierre Payen, Montrouis", type: "Coastal residence", program: "5 bedrooms · 4.5 bathrooms",
       alt: "Beach House built in Pierre Payen, Montrouis, Haiti",
       description: "Built on the waterfront in Pierre Payen, this residence combines an open layout, wide glazed openings and outdoor extensions oriented toward the landscape. The project was delivered in a demanding logistical context, with constant attention to continuity between design and construction."
     },
     "extension-uce": {
-      title: "UCE Office Extension", country: "Haiti", type: "Office and institutional project", role: "Design and construction supervision",
+      title: "UCE Office Extension", country: "Haiti", type: "Office and institutional project",
       alt: "Lightweight extension of the UCE offices in Haiti",
       description: "A lightweight structure designed above an existing swimming pool, with the option of being dismantled if the site needed to be restored. The project preserves nearby trees and shrubs while responding carefully to access and siting constraints."
     },
     "maisons-grand-sud": {
-      title: "Earthquake-Resistant Homes in the Grand Sud", country: "Haiti", city: "Grand Sud", type: "Resilient housing", role: "Design, supervision and construction",
+      title: "Earthquake-Resistant Homes in the Grand Sud", country: "Haiti", city: "Grand Sud", type: "Resilient housing",
       alt: "House with a veranda completed in Haiti's Grand Sud",
       description: "A family of two- to four-bedroom homes designed for areas exposed to earthquakes and hurricanes. The models combine compact planning, shaded verandas, appropriate materials and confined-masonry principles."
     },
     "contemporary-residence-haiti": {
-      title: "Contemporary Residence in Haiti", country: "Haiti", type: "Private residence", role: "Architectural design and 3D visualization",
+      title: "Contemporary Residence in Haiti", country: "Haiti", type: "Private residence",
       alt: "3D visualization of a contemporary residence terrace in Haiti",
       description: "A contemporary residential study organized around white volumes, dark frames, wood cladding and generously open interiors. These images are 3D visualizations of the design: the planting represents the landscape intention and is planned for later installation by the owner."
     }
   },
   fr: {
     "townhouse-waterbury": {
-      title: "Maison multifamiliale", country: "États-Unis", city: "Waterbury, Connecticut", type: "Habitat multifamilial de Nouvelle-Angleterre", role: "Design et planification résidentiels",
-      alt: "Maison multifamiliale bleu-gris de style Nouvelle-Angleterre à Waterbury, Connecticut",
-      description: "Une architecture traditionnelle de Nouvelle-Angleterre pour un ensemble multifamilial de maisons mitoyennes, marquée par une influence Colonial Revival. Son vocabulaire vernaculaire se lit dans les pignons répétés, le rythme symétrique des fenêtres, le bardage horizontal, les encadrements blancs et les entrées résidentielles clairement dessinées."
+      title: "Maisons de ville", country: "États-Unis", city: "Waterbury, Connecticut", type: "Maisons de ville (townhouses)", program: "4 unités · 3 chambres / 1 salle de bain chacune",
+      alt: "Maisons de ville bleu-gris achevées, de style Nouvelle-Angleterre, à Waterbury, Connecticut",
+      description: "Une architecture traditionnelle de Nouvelle-Angleterre pour quatre maisons de ville de trois chambres et une salle de bain chacune, marquée par une influence Colonial Revival. Son vocabulaire vernaculaire se lit dans les pignons répétés, le rythme symétrique des fenêtres, le bardage horizontal, les encadrements blancs et les entrées résidentielles clairement dessinées."
     },
     "contemporary-residence-haiti": {
-      title: "Résidence contemporaine en Haïti", country: "Haïti", type: "Résidence privée", role: "Conception architecturale et visualisation 3D",
+      title: "Résidence contemporaine en Haïti", country: "Haïti", type: "Résidence privée",
       alt: "Visualisation 3D de la terrasse d’une résidence contemporaine en Haïti",
       description: "Une étude résidentielle contemporaine organisée autour de volumes blancs, de menuiseries sombres, de parements en bois et d’espaces intérieurs largement ouverts. Ces images sont des visualisations 3D du projet : les plantations représentent l’intention paysagère et doivent être installées ultérieurement par le propriétaire."
     },
     "two-level-residential-addition": {
-      title: "Extension résidentielle sur deux niveaux", country: "États-Unis", type: "Rénovation résidentielle", role: "Design résidentiel et documents de planification",
+      title: "Extension résidentielle sur deux niveaux", country: "États-Unis", type: "Rénovation résidentielle",
       alt: "Extension réalisée avec galeries, escaliers et accès extérieurs sur deux niveaux",
       description: "Une extension extérieure sur deux niveaux conçue pour améliorer les accès indépendants et les usages extérieurs tout en s’intégrant aux proportions et aux détails de la résidence existante. Les études d’élévation et les dessins d’exécution coordonnent les galeries superposées, les escaliers, les paliers, la structure et le raccord de toiture."
     },
     "private-residential-planning-study": {
-      title: "Étude privée de planification résidentielle", country: "États-Unis", city: "Localisation confidentielle", type: "Étude résidentielle", role: "Organisation des espaces et documents d’exécution",
-      alt: "Élévations architecturales anonymisées d’une résidence privée",
-      description: "Une étude résidentielle anonymisée associant quatre élévations extérieures à un plan d’étage et un plan de toiture soigneusement organisés. Les documents étudient la circulation, les relations entre les pièces, les ouvertures et les proportions de l’enveloppe, tout en protégeant l’identité du client et l’adresse du projet."
+      title: "Étude privée de planification résidentielle", country: "États-Unis", city: "Greensboro, Caroline du Nord", type: "Maison individuelle", program: "3 chambres · 3,5 salles de bain",
+      alt: "Visualisation 3D assistée par IA d’une maison à étage à Greensboro, Caroline du Nord",
+      description: "Une maison individuelle à étage à Greensboro, en Caroline du Nord, comprenant trois chambres et trois salles de bain et demie. Les quatre élévations associent une toiture à quatre pans, une galerie d’entrée couverte, un bardage horizontal et des accents en planches verticales et en bardeaux. L’image de couverture est une visualisation 3D assistée par IA réalisée à partir des plans d’exécution ; l’identité du client et l’adresse restent confidentielles."
     }
   },
   kr: {
     "townhouse-waterbury": {
-      title: "Kay miltifamilyal", country: "Etazini", city: "Waterbury, Connecticut", type: "Lojman miltifamilyal estil New England", role: "Konsepsyon ak planifikasyon rezidansyèl",
+      title: "Kay an ranje (townhouses)", country: "Etazini", city: "Waterbury, Connecticut", type: "Townhouses", program: "4 inite · 3 chanm / 1 twalèt chak",
       alt: "Kay miltifamilyal estil New England ki fini nan Waterbury, Connecticut",
-      description: "Yon achitekti tradisyonèl New England pou kay miltifamilyal ak kay kole, avèk enfliyans Colonial Revival. Vokabilè eksteryè a sèvi ak pignon repete, fenèt simetrik, revètman orizontal, ankadreman blan ak antre rezidansyèl ki byen defini."
+      description: "Yon achitekti tradisyonèl New England pou kat kay kole ki gen twa chanm ak yon twalèt chak, avèk enfliyans Colonial Revival. Vokabilè eksteryè a sèvi ak pignon repete, fenèt simetrik, revètman orizontal, ankadreman blan ak antre rezidansyèl ki byen defini."
     },
     "beach-house-pierre-payen": {
-      title: "Kay bò lanmè", country: "Ayiti", city: "Pierre Payen, Montrouis", type: "Rezidans bò lanmè", role: "Konsepsyon achitekti ak kowòdinasyon",
+      title: "Kay bò lanmè", country: "Ayiti", city: "Pierre Payen, Montrouis", type: "Rezidans bò lanmè", program: "5 chanm · 4 twalèt ak demi",
       alt: "Kay bò lanmè ki bati nan Pierre Payen, Montrouis, Ayiti",
       description: "Rezidans sa a, ki bati bò lanmè nan Pierre Payen, genyen yon òganizasyon ouvè, gwo ouvèti ak espas deyò ki vire sou peyizaj la. Pwojè a te reyalize nan yon kontèks lojistik ki te mande anpil swivi ak atansyon ant konsepsyon ak konstriksyon."
     },
     "extension-uce": {
-      title: "Ekstansyon biwo UCE", country: "Ayiti", type: "Biwo ak pwojè enstitisyonèl", role: "Konsepsyon ak swivi konstriksyon",
+      title: "Ekstansyon biwo UCE", country: "Ayiti", type: "Biwo ak pwojè enstitisyonèl",
       alt: "Ekstansyon lejè biwo UCE ann Ayiti",
       description: "Yon estrikti lejè ki fèt anlè yon pisin ki te deja la, avèk posiblite pou demonte li si sit la ta dwe retabli. Pwojè a pwoteje pyebwa ak plant ki toupre yo pandan li reponn ak presizyon ak kontrent aksè ak anplasman."
     },
     "maisons-grand-sud": {
-      title: "Kay ki reziste tranblemanntè nan Gran Sid", country: "Ayiti", city: "Gran Sid", type: "Lojman rezilyan", role: "Konsepsyon, sipèvizyon ak konstriksyon",
+      title: "Kay ki reziste tranblemanntè nan Gran Sid", country: "Ayiti", city: "Gran Sid", type: "Lojman rezilyan",
       alt: "Kay ak galri ki reyalize nan Gran Sid Ayiti",
       description: "Yon seri kay de rive kat chanm ki fèt pou zòn ki ekspoze ak tranblemanntè ak siklòn. Modèl yo mete ansanm yon plan konpak, galri, materyo adapte ak prensip masonri chennen."
     },
     "contemporary-residence-haiti": {
-      title: "Rezidans kontanporen ann Ayiti", country: "Ayiti", type: "Rezidans prive", role: "Konsepsyon achitekti ak vizyalizasyon 3D",
+      title: "Rezidans kontanporen ann Ayiti", country: "Ayiti", type: "Rezidans prive",
       alt: "Vizyalizasyon 3D teras yon rezidans kontanporen ann Ayiti",
       description: "Yon etid rezidansyèl kontanporen ki òganize ak volim blan, ankadreman fonse, revètman bwa ak espas enteryè ki ouvè anpil. Imaj sa yo se vizyalizasyon 3D pwojè a: plant yo montre entansyon amenajman peyizaj la epi pwopriyetè a prevwa mete yo pita."
     },
     "two-level-residential-addition": {
-      title: "Ekstansyon rezidansyèl sou de nivo", country: "Etazini", type: "Renovasyon rezidansyèl", role: "Konsepsyon rezidansyèl ak dokiman planifikasyon",
+      title: "Ekstansyon rezidansyèl sou de nivo", country: "Etazini", type: "Renovasyon rezidansyèl",
       alt: "Ekstansyon fini ak galri, eskalye ak aksè eksteryè sou de nivo",
       description: "Yon ekstansyon eksteryè sou de nivo ki amelyore aksè endepandan ak itilizasyon espas deyò pandan li respekte pwopòsyon ak detay kay ki te deja la. Etid elevasyon ak desen konstriksyon yo kowòdone galri yo, eskalye yo, palye yo, estrikti a ak koneksyon twati a."
     },
     "private-residential-planning-study": {
-      title: "Etid prive pou planifikasyon rezidansyèl", country: "Etazini", city: "Lokalizasyon konfidansyèl", type: "Etid rezidansyèl", role: "Òganizasyon espas ak dokiman konstriksyon",
-      alt: "Elevasyon achitekti anonim pou yon rezidans prive",
-      description: "Yon etid rezidansyèl anonim ki mete kat elevasyon eksteryè ansanm ak yon plan etaj ak yon plan twati ki byen òganize. Dokiman yo etidye sikilasyon, relasyon ant pyès yo, ouvèti yo ak pwopòsyon anvlòp la pandan yo pwoteje idantite kliyan an ak adrès pwojè a."
+      title: "Etid prive pou planifikasyon rezidansyèl", country: "Etazini", city: "Greensboro, North Carolina", type: "Kay pou yon fanmi", program: "3 chanm · 3 twalèt ak demi",
+      alt: "Vizyalizasyon 3D ak asistans IA yon kay de etaj nan Greensboro, North Carolina",
+      description: "Yon kay de etaj pou yon fanmi nan Greensboro, North Carolina, ki gen twa chanm ak twa twalèt ak demi. Kat elevasyon yo mete ansanm yon twati kat pant, yon galri kouvri devan, revètman orizontal ak aksan an planch vètikal ak bardo. Imaj kouvèti a se yon vizyalizasyon 3D ak asistans IA ki fèt apati plan konstriksyon yo; idantite kliyan an ak adrès la rete konfidansyèl."
     }
   }
 };

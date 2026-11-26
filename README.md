@@ -23,3 +23,15 @@ Les médias restent classés dans `images/usa/` et `images/haiti/` afin de prés
 - `npm run test:e2e` : exécute les tests navigateur
 
 L’application Astro et les fichiers Supabase sont conservés pour les fonctions serveur. Les sources documentaires restent dans `content-sources/` et ne sont pas publiées comme pages du site.
+
+## Publication (GitHub Pages)
+
+Le site est publié par le workflow `.github/workflows/deploy-pages.yml` : à chaque `git push` sur `main`, le script `scripts/build_pages.py` construit un dossier `_site/` contenant **uniquement** les pages, `css/`, `js/`, `assets/` et les images réellement utilisées. Les dossiers `content-sources/`, `archive/`, `src/`, `supabase/` et les plans originaux sans filigrane ne sont plus publiés.
+
+Réglage unique sur GitHub : *Settings → Pages → Build and deployment → Source : GitHub Actions*.
+
+## Images
+
+- Les plans et élévations publiés portent un filigrane MGM très pâle (fichiers `*-wm.webp`).
+- Les images sont redimensionnées (2000–2800 px max) et converties en WebP.
+- Le formulaire de contact ouvre un courriel prérempli vers `mariegmentor@gmail.com` (pas de serveur sur GitHub Pages).

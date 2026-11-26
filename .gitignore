@@ -16,3 +16,4 @@ __pycache__/
 content-sources/qa-screenshots/
 content-sources/**/pages/
 desktop-preview.png
+_site/

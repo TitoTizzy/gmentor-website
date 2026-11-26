@@ -33,7 +33,7 @@
 
   function projectPages(project, copy) {
     var pages = [
-      '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>' + copy.type + '</dt><dd>' + escapeHtml(project.type) + '</dd></div><div><dt>' + copy.role + '</dt><dd>' + escapeHtml(project.role) + '</dd></div></dl></div></div></article>',
+      '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>' + copy.type + '</dt><dd>' + escapeHtml(project.type) + '</dd></div>' + (project.program ? '<div><dt>' + copy.program + '</dt><dd>' + escapeHtml(project.program) + '</dd></div>' : '') + (project.year ? '<div><dt>' + copy.year + '</dt><dd>' + escapeHtml(project.year) + '</dd></div>' : '') + '</dl></div></div></article>',
     ];
     var galleryGroups = [];
     var photoGroup = [];
@@ -74,7 +74,8 @@
       intro: "Built work, photographs and drawings from Haiti and the United States.",
       count: " projects",
       type: "Type",
-      role: "Role",
+      program: "Program",
+      year: "Year",
       selection: "Portfolio selection",
       contact: "Discuss a project",
       featuredImage: "Featured view",
@@ -85,7 +86,8 @@
       intro: "Pwojè, foto ak plan ki soti ann Ayiti ak Ozetazini.",
       count: " pwojè",
       type: "Kalite",
-      role: "Wòl",
+      program: "Pwogram",
+      year: "Ane",
       selection: "Seleksyon pwojè",
       contact: "Pale sou yon pwojè",
       featuredImage: "Vi prensipal",
@@ -96,7 +98,8 @@
       intro: "Réalisations, photographies et plans provenant d'Haïti et des États-Unis.",
       count: " projets",
       type: "Type",
-      role: "Mission",
+      program: "Programme",
+      year: "Année",
       selection: "Sélection du projet",
       contact: "Parler de votre projet",
       featuredImage: "Vue principale",
