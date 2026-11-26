@@ -169,12 +169,12 @@
           "text": "Direction de projets, d’équipes et de programmes de shelters dans plusieurs régions du pays en qualité de Directrice générale et Architecte senior de Shelter IT Haiti & USA."
         },
         {
-          "title": "2018",
-          "text": "Conception et suivi de l’extension légère des bureaux de l’UCE, une intervention pensée pour préserver le site et pouvoir être démontée."
-        },
-        {
           "title": "2019–2020",
           "text": "Intervention sur la réhabilitation du COUD du Nord-Est et un shelter de bureaux d’environ 100 m², en lien avec BCE et GPM, des plans au suivi d’exécution."
+        },
+        {
+          "title": "2020",
+          "text": "Conception et suivi de l’extension légère des bureaux de l’UCE, une intervention pensée pour préserver le site et pouvoir être démontée."
         },
         {
           "title": "Depuis 2020",
@@ -324,7 +324,7 @@
       "title": "Extension des bureaux de l’UCE",
       "country": "Haïti",
       "city": "",
-      "year": "2018",
+      "year": "2020",
       "type": "Bureaux et projet institutionnel",
       "markets": [
         "ht"
@@ -630,8 +630,8 @@ window.MGM_DATA.profileLocales = {
         { title: "2003–2011", text: "United States experience enriched her Haitian practice through technical drafting, codes, interiors, contracting and residential inspection." },
         { title: "April–July 2014", text: "Leadership of an administrative building and enclosure project for the Centre d'Art and FOKAL." },
         { title: "2014–2019", text: "Leadership of projects, teams and shelter programs across Haiti as General Manager and Senior Architect of Shelter IT Haiti & USA." },
-        { title: "2018", text: "Design and supervision of the lightweight UCE office extension, conceived to preserve the site and remain removable." },
         { title: "2019–2020", text: "Rehabilitation of the North-East COUD and development of an office shelter with BCE and GPM." },
+        { title: "2020", text: "Design and supervision of the lightweight UCE office extension, conceived to preserve the site and remain removable." },
         { title: "Since 2020", text: "Founder and director of MGM, active in design, supervision, construction and resilient housing in Haiti." }
       ],
       values: [
@@ -694,7 +694,7 @@ window.MGM_DATA.profileLocales = {
       facts: [{ value: "1995", label: "kòmansman pratik ann Ayiti" }, { value: "2020", label: "fondasyon MGM" }, { value: "10+", label: "ane travay dokimante ann Ayiti" }],
       quote: "Bati ann Ayiti mande plis pase yon bon lide: fòk yo konprann kote a, prevwa kontrent li yo epi swiv entansyon an jouk li tounen yon travay ki jis ak dirab.",
       timeline: [
-        { title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens, avèk etid sou mouvman ak anviwònman espasyal." }, { title: "1995–1999", text: "Konseptris achitekti ak sipèvizè chantye nan Gecim Construction, apre sa nan Chantiers Nationaux." }, { title: "1999–2003", text: "Eksperyans nan konsepsyon rezidansyèl ranfòse nan Acropole, Petyonvil." }, { title: "2003–2011", text: "Eksperyans Etazini ajoute desen teknik, kòd, enteryè, antrepriz ak enspeksyon rezidansyèl nan pratik li." }, { title: "Avril–jiyè 2014", text: "Direksyon pwojè bilding administratif ak kloti pou Centre d'Art ak FOKAL." }, { title: "2014–2019", text: "Direksyon pwojè, ekip ak pwogram abri kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA." }, { title: "2018", text: "Konsepsyon ak swivi ekstansyon lejè biwo UCE yo." }, { title: "2019–2020", text: "Reyabilitasyon COUD Nòdès la ak realizasyon yon abri biwo avèk BCE ak GPM." }, { title: "Depi 2020", text: "Fondasyon ak direksyon MGM nan konsepsyon, sipèvizyon, konstriksyon ak lojman rezilyan." }
+        { title: "1990–1995", text: "Lisans nan achitekti nan Inivèsite GOC Pòtoprens, avèk etid sou mouvman ak anviwònman espasyal." }, { title: "1995–1999", text: "Konseptris achitekti ak sipèvizè chantye nan Gecim Construction, apre sa nan Chantiers Nationaux." }, { title: "1999–2003", text: "Eksperyans nan konsepsyon rezidansyèl ranfòse nan Acropole, Petyonvil." }, { title: "2003–2011", text: "Eksperyans Etazini ajoute desen teknik, kòd, enteryè, antrepriz ak enspeksyon rezidansyèl nan pratik li." }, { title: "Avril–jiyè 2014", text: "Direksyon pwojè bilding administratif ak kloti pou Centre d'Art ak FOKAL." }, { title: "2014–2019", text: "Direksyon pwojè, ekip ak pwogram abri kòm Direktris jeneral ak Achitèk senior Shelter IT Haiti & USA." }, { title: "2019–2020", text: "Reyabilitasyon COUD Nòdès la ak realizasyon yon abri biwo avèk BCE ak GPM." }, { title: "2020", text: "Konsepsyon ak swivi ekstansyon lejè biwo UCE yo." }, { title: "Depi 2020", text: "Fondasyon ak direksyon MGM nan konsepsyon, sipèvizyon, konstriksyon ak lojman rezilyan." }
       ],
       values: [{ title: "Rezilyans konstriktif", text: "Solisyon yo pran an kont risk sismik ak siklonik, materyo ki disponib ak dirabilite travay la." }, { title: "Metriz teren", text: "Kowòdinasyon an baze sou eksperyans dirèk ekip yo, kalite egzekisyon ak kontrent lojistik chak sit." }, { title: "Achitekti pou moun", text: "Espas yo fèt dapre abitid, klima, kominote ak santiman moun genyen lè yo rete yon kote." }]
     },
