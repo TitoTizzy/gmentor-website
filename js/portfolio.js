@@ -16,49 +16,31 @@
   }
 
   function isDrawing(item) {
-    return /plan|elevation|élévation|coupe|section|fondation|foundation|floor|roof|cad/i.test((item.label || "") + " " + (item.src || ""));
+    return /plan|elevation|élévation|coupe|section|fondation|foundation|floor|roof|cad|-wm\./i.test((item.label || "") + " " + (item.src || ""));
   }
 
   function needsFullPage(item) {
     return isDrawing(item) || item.layout === "full";
   }
 
-  function galleryPage(project, items, pageNumber, copy) {
-    var cells = items.map(function (item) {
-      var drawing = isDrawing(item);
-      return '<figure class="book-gallery-item' + (drawing ? ' is-drawing' : '') + (needsFullPage(item) ? ' is-full-page' : '') + '"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '"><figcaption>' + escapeHtml(item.label) + '</figcaption></figure>';
-    }).join("");
-    return '<article class="book-page book-gallery"><div class="book-gallery-layout"><header><span>' + escapeHtml(copy.selection) + ' ' + pageNumber + '</span><strong>' + escapeHtml(project.title) + '</strong></header><div class="book-gallery-grid book-gallery-grid-' + items.length + '">' + cells + '</div></div></article>';
+  var ZOOM_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9V4h5M20 15v5h-5M20 4l-6 6M4 20l6-6"/></svg>';
+  var lightboxSets = {};
+
+  function galleryPage(project, item, position, total, copy) {
+    var drawing = isDrawing(item);
+    return '<article class="book-page book-gallery"><div class="book-gallery-layout"><header><span>' + String(position + 1).padStart(2, "0") + ' / ' + String(total).padStart(2, "0") + '</span><strong>' + escapeHtml(project.title) + '</strong></header>' +
+      '<div class="book-gallery-grid"><figure class="book-gallery-item' + (drawing ? ' is-drawing' : '') + '"><img src="images/' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '" loading="lazy"><figcaption>' + escapeHtml(item.label) + '</figcaption>' +
+      '<button class="zoom-hint" type="button" data-book-zoom="' + escapeHtml(project.slug) + '" data-book-index="' + position + '" aria-label="' + escapeHtml(copy.enlarge) + '">' + ZOOM_ICON + '</button></figure></div></div></article>';
   }
 
   function projectPages(project, copy) {
     var pages = [
       '<article class="book-page book-project"><div class="book-project-layout"><img class="book-project-image" src="images/' + escapeHtml(project.cover) + '" alt="' + escapeHtml(project.alt) + '"><div class="book-project-copy"><p class="eyebrow">' + escapeHtml([project.city, project.country].filter(Boolean).join(", ")) + '</p><h2>' + escapeHtml(project.title) + '</h2><p>' + escapeHtml(project.description) + '</p><dl><div><dt>' + copy.type + '</dt><dd>' + escapeHtml(project.type) + '</dd></div>' + (project.program ? '<div><dt>' + copy.program + '</dt><dd>' + escapeHtml(project.program) + '</dd></div>' : '') + (project.year ? '<div><dt>' + copy.year + '</dt><dd>' + escapeHtml(project.year) + '</dd></div>' : '') + '</dl></div></div></article>',
     ];
-    var galleryGroups = [];
-    var photoGroup = [];
-    function flushPhotos() {
-      if (!photoGroup.length) return;
-      galleryGroups.push(photoGroup);
-      photoGroup = [];
-    }
-    if (project.coverFullPage) {
-      galleryGroups.push({ items: [{ src: project.cover, alt: project.alt, label: copy.featuredImage, layout: "full" }], fixed: true });
-    }
-    project.gallery.forEach(function (item) {
-      if (needsFullPage(item)) {
-        flushPhotos();
-        galleryGroups.push({ items: [item], fixed: true });
-        return;
-      }
-      photoGroup.push(item);
-      if (photoGroup.length === 4) flushPhotos();
-    });
-    flushPhotos();
-    galleryGroups.forEach(function (group, index) {
-      var items = group.items || group;
-      pages.push(galleryPage(project, items, index + 1, copy));
-    });
+    // One image per page, shown whole; any page can open the full-screen viewer.
+    var items = (project.coverFullPage ? [{ src: project.cover, alt: project.alt, label: copy.featuredImage }] : []).concat(project.gallery);
+    lightboxSets[project.slug] = { title: project.title, items: items.map(function (item) { return { src: "images/" + item.src, alt: item.alt, label: item.label, drawing: isDrawing(item) }; }) };
+    items.forEach(function (item, index) { pages.push(galleryPage(project, item, index, items.length, copy)); });
     return pages;
   }
 
@@ -71,7 +53,7 @@
     var copy = locale === "en" ? {
       label: "Haiti · United States",
       title: "Design across borders.",
-      intro: "Built work, photographs and drawings from Haiti and the United States.",
+      intro: "One image per page, shown whole. Click any image to open it full screen and zoom in.",
       count: " projects",
       type: "Type",
       program: "Program",
@@ -79,11 +61,12 @@
       selection: "Portfolio selection",
       contact: "Discuss a project",
       featuredImage: "Featured view",
+      enlarge: "View full screen",
       credential: "Residential Design & Planning · Licensed Architect in Haiti"
     } : locale === "kr" ? {
       label: "Ayiti · Etazini",
       title: "Konsepsyon atravè fwontyè.",
-      intro: "Pwojè, foto ak plan ki soti ann Ayiti ak Ozetazini.",
+      intro: "Yon imaj pa paj, ou wè l antye. Klike sou nenpòt imaj pou louvri l sou tout ekran an epi grosi l.",
       count: " pwojè",
       type: "Kalite",
       program: "Pwogram",
@@ -91,11 +74,12 @@
       selection: "Seleksyon pwojè",
       contact: "Pale sou yon pwojè",
       featuredImage: "Vi prensipal",
+      enlarge: "Gade sou tout ekran an",
       credential: "Konsepsyon ak planifikasyon rezidansyèl · Achitèk lisansye ann Ayiti"
     } : {
       label: "Haïti · États-Unis",
       title: "La conception au-delà des frontières.",
-      intro: "Réalisations, photographies et plans provenant d'Haïti et des États-Unis.",
+      intro: "Une image par page, à voir en entier. Cliquez sur une image pour l’ouvrir en plein écran et zoomer.",
       count: " projets",
       type: "Type",
       program: "Programme",
@@ -103,6 +87,7 @@
       selection: "Sélection du projet",
       contact: "Parler de votre projet",
       featuredImage: "Vue principale",
+      enlarge: "Voir en plein écran",
       credential: "Design résidentiel et planification · Architecte licenciée en Haïti"
     };
     var pages = [
@@ -159,7 +144,21 @@
     if (document.fullscreenElement) document.exitFullscreen();
     else if (stage.requestFullscreen) stage.requestFullscreen();
   });
+  stage.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-book-zoom]");
+    if (!button || !window.MGMLightbox) return;
+    event.preventDefault();
+    event.stopPropagation();
+    var set = lightboxSets[button.dataset.bookZoom];
+    if (document.fullscreenElement) document.exitFullscreen();
+    if (set) window.MGMLightbox.open(set.items, Number(button.dataset.bookIndex), set.title, button);
+  }, true);
+  stage.addEventListener("dblclick", function (event) {
+    var figure = event.target.closest(".book-gallery-item");
+    if (figure) figure.querySelector("[data-book-zoom]").click();
+  });
   document.addEventListener("keydown", function (event) {
+    if (document.body.classList.contains("lightbox-open")) return;
     if (event.key === "ArrowLeft") pageFlip.flipPrev("top");
     if (event.key === "ArrowRight") pageFlip.flipNext("top");
   });

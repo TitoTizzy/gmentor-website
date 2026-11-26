@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio interactif de Marie Gaëlle Mentor réunissant ses projets en Haïti et aux États-Unis.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css">
+  
+  <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#121417"><meta property="og:type" content="website"><meta property="og:site_name" content="Marie Gaëlle Mentor"><meta property="og:title" content="Portfolio | Marie Gaëlle Mentor"><meta property="og:description" content="Portfolio interactif de Marie Gaëlle Mentor réunissant ses projets en Haïti et aux États-Unis."><meta property="og:image" content="https://titotizzy.github.io/gmentor-website/assets/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="css/styles.css">
   <title>Portfolio | Marie Gaëlle Mentor</title>
 </head>
 <body data-root="." data-page="portfolio">
@@ -14,22 +14,22 @@
   <main id="main" class="portfolio-shell">
     <header class="portfolio-heading container">
       <div><p class="eyebrow" data-book-label>Haïti · États-Unis</p><h1 data-book-title>La conception au-delà des frontières.</h1></div>
-      <p data-book-intro>Photos, rendus et plans réunis dans un livre interactif.</p>
+      <p data-book-intro>Une image par page, à voir en entier. Cliquez sur une image pour l’ouvrir en plein écran et zoomer.</p>
     </header>
     <section class="book-stage" data-book-stage aria-label="Portfolio interactif">
       <div class="book-toolbar" aria-label="Commandes du portfolio">
-        <button class="icon-button" type="button" data-book-prev title="Page précédente" aria-label="Page précédente">←</button>
+        <button class="icon-button" type="button" data-book-prev title="Page précédente" aria-label="Page précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="book-counter" data-book-counter aria-live="polite">1 / 1</span>
-        <button class="icon-button" type="button" data-book-next title="Page suivante" aria-label="Page suivante">→</button>
-        <button class="icon-button" type="button" data-book-fullscreen title="Plein écran" aria-label="Afficher le portfolio en plein écran">⛶</button>
+        <button class="icon-button" type="button" data-book-next title="Page suivante" aria-label="Page suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button class="icon-button" type="button" data-book-fullscreen title="Plein écran" aria-label="Afficher le portfolio en plein écran"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg></button>
       </div>
       <div class="portfolio-book" data-portfolio-book></div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script src="js/data.js" defer></script>
+  <script src="js/data.js" defer blocking="render"></script>
   <script src="js/vendor/page-flip.browser.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <script src="js/lightbox.js" defer></script><script src="js/app.js" defer blocking="render"></script>
   <script src="js/portfolio.js" defer></script>
 </body>
 </html>
