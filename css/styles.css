@@ -655,3 +655,7 @@ article.page-shell .page-intro p:last-child { color: var(--muted); }
 .book-gallery-item .zoom-hint:hover { transform: scale(1.08); background: var(--copper); }
 .main-nav .mobile-tools .button { padding: .75rem 1.4rem; border-bottom: 1px solid var(--copper); color: var(--on-copper); font: 500 1rem/1 var(--font); font-stretch: 108%; }
 .main-nav .mobile-tools .button::after { display: none; }
+/* stronger legibility for hero text over bright photos */
+.hero-overlay { background: linear-gradient(180deg, rgba(8,9,11,.45) 0%, rgba(8,9,11,0) 24%, rgba(8,9,11,.18) 46%, rgba(8,9,11,.82) 100%), linear-gradient(90deg, rgba(8,9,11,.45), rgba(8,9,11,0) 60%); }
+.hero-meta { text-shadow: 0 2px 24px rgba(0,0,0,.45); }
+.hero-meta .eyebrow { color: #f0b07a; }
