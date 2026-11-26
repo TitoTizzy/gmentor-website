@@ -483,6 +483,27 @@
     });
   }
 
+  function initializeReadMore() {
+    // On phones, long biography blocks show two paragraphs with a "read more" toggle.
+    var locale = currentLocale();
+    var label = locale === "en" ? ["Read more", "Show less"] : locale === "kr" ? ["Li plis", "Montre mwens"] : ["Lire la suite", "Réduire"];
+    document.querySelectorAll(".about-story").forEach(function (story) {
+      if (story.querySelectorAll("p").length < 3 || story.nextElementSibling && story.nextElementSibling.classList.contains("read-more")) return;
+      story.classList.add("is-collapsed");
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "read-more";
+      button.setAttribute("aria-expanded", "false");
+      button.textContent = label[0];
+      button.addEventListener("click", function () {
+        var open = story.classList.toggle("is-collapsed") === false;
+        button.setAttribute("aria-expanded", String(open));
+        button.textContent = label[open ? 1 : 0];
+      });
+      story.insertAdjacentElement("afterend", button);
+    });
+  }
+
   function initializeMotion() {
     var header = document.querySelector("[data-site-header]");
     var lastY = window.scrollY;
@@ -526,6 +547,7 @@
   renderAbout();
   bindControls();
   initializeMotion();
+  initializeReadMore();
   initializeTransitions();
   initializeContact();
   syncPreferences();
@@ -534,4 +556,5 @@
   document.addEventListener("mgm:preferences", initializeFilters);
   document.addEventListener("mgm:preferences", renderProjectDetail);
   document.addEventListener("mgm:preferences", renderAbout);
+  document.addEventListener("mgm:preferences", initializeReadMore);
 }());
